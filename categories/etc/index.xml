@@ -2,65 +2,19 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Etc on Exception();</title>
-    <link>https://ladicle.github.io/blog/categories/etc/</link>
+    <link>https://ladicle.github.io/categories/etc/</link>
     <description>Recent content in Etc on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Fri, 22 Jul 2016 14:46:57 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/blog/categories/etc/index.xml" rel="self" type="application/rss+xml" />
-    
-    <item>
-      <title>develop environment</title>
-      <link>https://ladicle.github.io/blog/post/develop/</link>
-      <pubDate>Fri, 22 Jul 2016 14:46:57 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/blog/post/develop/</guid>
-      <description>
-
-&lt;p&gt;ちょいちょい開発環境について聞かれるのでまとめてみる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://lh5.googleusercontent.com/XeENzLRvQQ_08Q9C8ux4mEUI-lKIUVfbsuVCqff-7rBHyMW3qQAkyg=w1200-h630-p&#34; alt=&#34;screenshot&#34; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;dotfiles&#34;&gt;dotfiles&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/Ladicle/dotfiles&#34;&gt;https://github.com/Ladicle/dotfiles&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;spaceemacs&#34;&gt;spaceemacs&lt;/h2&gt;
-
-&lt;p&gt;InteliJ等のIDEを併用していた時もあったが、
-goやpythonなどIDEが不要な言語を使うようになってから
-(Terminal内の) emacsで完結している。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;.emacsのメンテがつらくなってきたのでspaceemacsに移行した。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;iterm2-zsh-tmux-ag-peco&#34;&gt;iTerm2 + zsh + tmux + ag + peco&lt;/h2&gt;
-
-&lt;p&gt;zshも画面分割できるがtmuxの画面分割の方が&lt;/p&gt;
-
-&lt;h2 id=&#34;topics&#34;&gt;Topics&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;最近の開発環境
-
-&lt;ul&gt;
-&lt;li&gt;spaceemacs&lt;/li&gt;
-&lt;li&gt;iterm2 + zsh + tmux + ag + peco&lt;/li&gt;
-&lt;li&gt;karabina + realforce&lt;/li&gt;
-&lt;li&gt;docker for mac&lt;/li&gt;
-&lt;li&gt;Azure&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ol&gt;
-</description>
-    </item>
+    <lastBuildDate>Fri, 15 Jul 2016 17:23:37 +0900</lastBuildDate>
+    <atom:link href="https://ladicle.github.io/categories/etc/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>hello world</title>
-      <link>https://ladicle.github.io/blog/post/hello-world/</link>
+      <link>https://ladicle.github.io/post/hello-world/</link>
       <pubDate>Fri, 15 Jul 2016 17:23:37 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/blog/post/hello-world/</guid>
+      <guid>https://ladicle.github.io/post/hello-world/</guid>
       <description>&lt;p&gt;My name is Ladicle.
 I&amp;rsquo;m a software engineer. I develop cloud services.
 My interesting things are distributed system, CI, web application architecture.&lt;/p&gt;

@@ -1,0 +1,253 @@
+    <!DOCTYPE html>
+<html lang="jp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="ladicle&#39;s blog">
+		
+		<meta name="generator" content="Hugo 0.16" />
+		<title>RabbitMQと戯れる &middot; Exception();</title>
+		<link rel="shortcut icon" href="https://ladicle.github.io/blog/images/favicon.ico">
+		<link rel="stylesheet" href="https://ladicle.github.io/blog/css/style.css">
+		<link rel="stylesheet" href="https://ladicle.github.io/blog/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ladicle.github.io/blog/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="https://ladicle.github.io/blog/index.xml" rel="alternate" type="application/rss+xml" title="Exception();" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ladicle.github.io/blog/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='https://ladicle.github.io/blog/about'>About</a>
+	
+
+	
+	<a class="cta" href="https://ladicle.github.io/blog/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>RabbitMQと戯れる</h1>
+                    <h2 class="headline">
+                    July 19, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="https://ladicle.github.io/blog/tags/rabbitmq">rabbitmq</a>
+                        
+                            <a href="https://ladicle.github.io/blog/tags/raft">raft</a>
+                        
+                            <a href="https://ladicle.github.io/blog/tags/mq">mq</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>最近はOpenStackを触っているのだが、
+RabbitMQ周りでハマることが増えてきたので真面目に戯れてみることにした。</p>
+
+<h2 id="what-is-rabbitmq">What is RabbitMQ?</h2>
+
+<p>Erlangで書かれた堅牢なメッセージングシステムで、
+サポートしている言語やプラットフォームが多いのが特徴。
+メンテナはPivotalなので商用サポートもPivotalが提供している。</p>
+
+<p>現時点では3.6.3が最新バージョン。</p>
+
+<h2 id="features">Features</h2>
+
+<h2 id="architecture">Architecture</h2>
+
+<ul>
+<li><a href="http://www.rabbitmq.com/resources/google-tech-talk-final/google.html">http://www.rabbitmq.com/resources/google-tech-talk-final/google.html</a></li>
+</ul>
+
+<h2 id="algorithm">Algorithm</h2>
+
+<ul>
+<li><a href="https://raft.github.io/">https://raft.github.io/</a></li>
+<li><a href="http://thesecretlivesofdata.com/raft/">http://thesecretlivesofdata.com/raft/</a></li>
+</ul>
+
+<h2 id="tutorials">Tutorials</h2>
+
+<ul>
+<li>docker</li>
+</ul>
+
+<blockquote>
+<p>RPCのnoteは地味にいいことが書いてある</p>
+</blockquote>
+
+<h2 id="next-topics">Next Topics</h2>
+
+<ul>
+<li>3.5.0の新機能あたりを試す
+<a href="https://www.rabbitmq.com/blog/2015/12/28/whats-new-in-rabbitmq-3-6-0/#more-660">https://www.rabbitmq.com/blog/2015/12/28/whats-new-in-rabbitmq-3-6-0/#more-660</a></li>
+<li>スケール限界とContainerにのせたときのScale</li>
+<li>障害時の動作とContainerで運用する際のTips</li>
+<li>メッセージの処理性能を他のMQシステムと比較する</li>
+</ul>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/ladicle">
+                        <img class="avatar" src="https://ladicle.github.io/blog/images/avatar.png">
+                        <div>
+                            <span class="dark">ladicle&#39;s blog</span>
+                            <span>Software Engineer - developing cloud services</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fblog%2fpost%2frabbitmq%2f - RabbitMQ%e3%81%a8%e6%88%af%e3%82%8c%e3%82%8b by @ladicle"><span class="icon-twitter">  </span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect">  </span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/develop/">develop environment<aside class="dates">Jul 22</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/ubuntu-systemd-for-upstart/">Systemd for upstart users<aside class="dates">Jul 20</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/etcd/">etcd<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/distributed-consensus/">分散コンセンサス<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/block-chaine/">ブロックチェーンとは<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/distributed-programming-model/">&#39;分散プログラミングモデル及びデザインパターンの考察&#39;を読んで<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/aws-architecture-pattern/">AWSのアーキテクチャパターンを一通り試す<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/fido/">FIDOとは<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/paxos/">Paxosとは<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/blog/post/elastic-beats/">elastic dockerbeatを導入する<aside class="dates">Jul 19</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.facebook.com/ladicle">
+        facebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/Ladicle">
+        github
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/Ladicle">
+        twitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 ladicle&#39;s blog
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ladicle.github.io/blog/js/main.js"></script>
+<script src="https://ladicle.github.io/blog/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

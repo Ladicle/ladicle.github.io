@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Exception();</title>
-    <link>https://ladicle.github.io/</link>
-    <description>Recent content on Exception();</description>
+    <title>Book on Exception();</title>
+    <link>https://ladicle.github.io/tags/book/</link>
+    <description>Recent content in Book on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Wed, 03 Aug 2016 12:33:51 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://ladicle.github.io/tags/book/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
       <title>Kindle Unlimitedの技術本</title>
@@ -56,163 +56,6 @@
 &lt;p&gt;実際に読まれたページ数に対応した金額が著者に支払われるようだが&lt;br /&gt;
 揉めそうな予感しかない。&lt;/p&gt;
 &lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Pull RequestテンプレートでPRの品質を保つ</title>
-      <link>https://ladicle.github.io/post/add-github-templates/</link>
-      <pubDate>Tue, 02 Aug 2016 15:19:34 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/add-github-templates/</guid>
-      <description>
-
-&lt;p&gt;GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから
-RPの品質やレビューの水準が一定に保たれたと感じている。&lt;/p&gt;
-
-&lt;h2 id=&#34;pull-requestのテンプレートを追加する&#34;&gt;Pull Requestのテンプレートを追加する&lt;/h2&gt;
-
-&lt;p&gt;2016年の2月からGitHubが&lt;a href=&#34;https://help.github.com/articles/creating-a-pull-request-template-for-your-repository/&#34;&gt;テンプレート機能&lt;/a&gt;をサポートした。(黒魔術なスクリプトは不要!)
-使い方は簡単で、&lt;strong&gt;レポジトリ&lt;/strong&gt;の&lt;code&gt;root&lt;/code&gt;、又は&lt;code&gt;.github/&lt;/code&gt;ディレクトリに&lt;code&gt;PULL_REQUEST_TEMPLATE.md&lt;/code&gt;を配置するだけだ。&lt;/p&gt;
-
-&lt;p&gt;現在は以下のようなテンプレートを使用している。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cat .github/PULL_REQUEST_TEMPLATE.md
-## Ticket
-* https://[jira-host]/[ticket-id]
-
-## Changes
-*
-
-## Check lists
-* [ ] XXXの時はYYYを行う
-* [ ] 上記に該当しないため不要
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;PRのブランチ名には&lt;a href=&#34;https://www.atlassian.com/software/jira&#34;&gt;JIRA&lt;/a&gt;のチケット番号を入れているため目的やReviewerの指定は省略した。
-重点的にRVしてほしいポイントのみ記述する方式だ。
-また、どうしても自動化できないタスクはチェックリストにして実施漏れを防いでいる。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;br /&gt;
-* Issueのテンプレートも&lt;code&gt;ISSUE_TEMPLATE.md&lt;/code&gt;で作成できる&lt;br /&gt;
-* 拡張子は&lt;code&gt;.md&lt;/code&gt;や&lt;code&gt;.txt&lt;/code&gt;、&lt;code&gt;.org&lt;/code&gt;等&lt;code&gt;README&lt;/code&gt;と同じくだいたい使える&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;contribution-guideを表示する&#34;&gt;Contribution Guideを表示する&lt;/h2&gt;
-
-&lt;p&gt;Contribution Guideは&lt;code&gt;CONTRIBUTING.md&lt;/code&gt;ファイルをレポジトリに配置するだけだ。
-PR作成時、以下のようなリンクが表示されるようになる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/dY6CUwtzcgHTjPTHQDBufy3UR6p0wRWPxcI5a3gSIemkjz8g-InaerI8vrT4IDQD0U5tCWPuGLYHTBydY2K_6Wmoe5L8thztKKTw9Ea1rCAC2ld05ip3uUDioWXcfZlZ6bdCbJJij5Yddr8PqF_sgsWbT6foZG2m5_iGhRjdoghq2RJIScG5AWOeSzJo7QLOqBzuFrSSkRHbshf2hwKWX3kVwFv21wbtieEQgjgqswYA39aJglqWGE6ddC-HR3A8Ga8ATYpvseYW40ZbpXc5IZhBLKBZj99uaPMp7K4t0O4yOjR7tObn2TcLRVdo7R4hb9LC-3WYvB-vc0BvXPg_hxkYjL-sN-eLbFkot-Td5vNEhaJ-3gtv91ZF4oS8RVJJgJwMLRiPdM43_sYXapUxUPee2OzOnqATeTjsgVXM58eUUDP-OkzkGi_Kn0T-iLIoyAWwoXXlvoloZMWezo8CL5SuBVSx6b99EGVau_9d03_pvxqI9XKWsKwW87nojv38Qj7dDSgk8KDjnE28fnzP-CAVaQuhof4P99CYrE7R45UMwB7GFudAl7IEoufegv3wY_oRHKqtzjXRDa9758BomY2OZlTSBudA=w1124-h334-no&#34; alt=&#34;notification&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;br /&gt;
-* CONTRIBUTION.mdはルートに配置する方が見られる機会が増えるので良いと思う&lt;br /&gt;
-* 同じく拡張子は変更可能&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>https://ladicle.github.io/about/</link>
-      <pubDate>Fri, 15 Jul 2016 21:04:38 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/about/</guid>
-      <description>
-
-&lt;h1 id=&#34;ladicle&#34;&gt;Ladicle&lt;/h1&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Just here for code? It&amp;rsquo;s on &lt;a href=&#34;https://github.com/Ladicle&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I am Software Engineer.&lt;br /&gt;
-I develop cloud services at NTT communications.
-My interesting things are distributed system, CI, web application architecture.&lt;/p&gt;
-
-&lt;h2 id=&#34;distributions&#34;&gt;Distributions&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ubuntu : 14.04, 16.04の運用経験&lt;/li&gt;
-&lt;li&gt;CentOS : 7, 6の運用経験&lt;/li&gt;
-&lt;li&gt;AlpineLinux : コンテナイメージとしての運用経験&lt;/li&gt;
-&lt;li&gt;CoreOS : IronicPythonAgentのベースイメージとしての運用経験&lt;/li&gt;
-&lt;li&gt;OSX : 開発環境としての使用&lt;/li&gt;
-&lt;li&gt;Windows : 開発環境として使用&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;opensource&#34;&gt;OpenSource&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Jenkins
-
-&lt;ul&gt;
-&lt;li&gt;GithubやSlack,Docker,k8sと連携したCIの環境の自動構築とJob生成&lt;/li&gt;
-&lt;li&gt;JenkinsJobBuilderによるJob管理&lt;/li&gt;
-&lt;li&gt;APIを使ったGroovyScriptの作成&lt;/li&gt;
-&lt;li&gt;VMやDockerを使用したJenkinsの運用&lt;/li&gt;
-&lt;li&gt;(JenkinsPluginの修正)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Kubernetes
-
-&lt;ul&gt;
-&lt;li&gt;Ubuntu14.04 &amp;amp; 16.04でAnsibleを使用した自動構築&lt;/li&gt;
-&lt;li&gt;helmcを使用したコンテナの運用&lt;/li&gt;
-&lt;li&gt;(モニタリングやロギング等の運用ツールの導入と運用)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Docker&lt;/li&gt;
-&lt;li&gt;OpenStack
-
-&lt;ul&gt;
-&lt;li&gt;IronicPythonAgentの新規機能実装&lt;/li&gt;
-&lt;li&gt;Ironicプロジェクトを参考にしたサービスの開発&lt;/li&gt;
-&lt;li&gt;Troveの新規機能実装と運用(主にPostgreSQLのバックアップまわり)&lt;/li&gt;
-&lt;li&gt;(Swiftの運用)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Ansible
-
-&lt;ul&gt;
-&lt;li&gt;AnsiblePlaybookを作成し、開発/本番環境のBlueGreenDeploymentの実施&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;languages&#34;&gt;Languages&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Golang&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;Java&lt;/li&gt;
-&lt;li&gt;Ruby&lt;/li&gt;
-&lt;li&gt;JavaScript&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc&#34;&gt;https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;contact-me&#34;&gt;Contact Me&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;ladiclexxx@gmail.com&lt;/li&gt;
-&lt;/ul&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>hello world</title>
-      <link>https://ladicle.github.io/post/hello-world/</link>
-      <pubDate>Fri, 15 Jul 2016 17:23:37 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/hello-world/</guid>
-      <description>&lt;p&gt;My name is Ladicle.
-I&amp;rsquo;m a software engineer. I develop cloud services.
-My interesting things are distributed system, CI, web application architecture.&lt;/p&gt;
-
-&lt;p&gt;This blog is generated by hugo :)&lt;/p&gt;
 </description>
     </item>
     

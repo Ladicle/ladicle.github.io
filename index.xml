@@ -18,7 +18,7 @@
       <description>
 
 &lt;p&gt;Kindle Unlimitedが今日から開始した。&lt;br /&gt;
-意外と持っている本や良みたかった本が登録されていたので紹介する。&lt;/p&gt;
+持っている本や良みたかった本が登録されていたのでまとめてみた。&lt;/p&gt;
 
 &lt;h2 id=&#34;technology&#34;&gt;Technology&lt;/h2&gt;
 
@@ -36,7 +36,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00CY9256C/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00CY9256C&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;プログラミングコンテスト・チャレンジブック&lt;/a&gt; : パズルとして楽しめる&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;href=&amp;quot;https://www.amazon.co.jp/gp/product/B00X99MC1E/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00X99MC1E&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;Write Portable Code&lt;/a&gt; : 読みたい&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00P7R545M/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00P7R545M&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;Code Craft&lt;/a&gt; : 読みたい&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00HR19TSO/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00HR19TSO&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;世界で闘うプログラミング力を鍛える150問&lt;/a&gt; : よい本。コーディング面接に最適 :+1:&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00HR19TSO/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00HR19TSO&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;世界で闘うプログラミング力を鍛える150問&lt;/a&gt; : よい本。コーディング面接に最適 :)&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00IR1HYI0/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00IR1HYI0&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;30日でできる! OS自作入門&lt;/a&gt; : 学生のときに読んだ。ただしフロッピーなので&lt;a href=&#34;http://symfoware.blog68.fc2.com/blog-entry-706.html&#34;&gt;ここら辺&lt;/a&gt;参照&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00U5MVXZO/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00U5MVXZO&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;プログラミングコンテスト攻略のためのアルゴリズムとデータ構造&lt;/a&gt;: 読みたい&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00IR1HYGW/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00IR1HYGW&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;アジャイルな見積もりと計画づくり&lt;/a&gt; : ザッとでも読むと感覚がわかる&lt;/li&gt;
@@ -50,7 +50,7 @@
 &lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00XCIETIG/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00XCIETIG&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;ウトライン・プロセッシング入門&lt;/a&gt; : 後で読む&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;h2 id=&#34;追記&#34;&gt;追記&lt;/h2&gt;
+&lt;h2 id=&#34;所感&#34;&gt;所感&lt;/h2&gt;
 
 &lt;blockquote&gt;
 &lt;p&gt;実際に読まれたページ数に対応した金額が著者に支払われるようだが&lt;br /&gt;
@@ -128,76 +128,16 @@ PR作成時、以下のようなリンクが表示されるようになる。&lt
 &lt;p&gt;Just here for code? It&amp;rsquo;s on &lt;a href=&#34;https://github.com/Ladicle&#34;&gt;Github&lt;/a&gt;.&lt;/p&gt;
 &lt;/blockquote&gt;
 
-&lt;p&gt;I am Software Engineer.&lt;br /&gt;
+&lt;p&gt;I am Software Engineer.
 I develop cloud services at NTT communications.
 My interesting things are distributed system, CI, web application architecture.&lt;/p&gt;
-
-&lt;h2 id=&#34;distributions&#34;&gt;Distributions&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Ubuntu : 14.04, 16.04の運用経験&lt;/li&gt;
-&lt;li&gt;CentOS : 7, 6の運用経験&lt;/li&gt;
-&lt;li&gt;AlpineLinux : コンテナイメージとしての運用経験&lt;/li&gt;
-&lt;li&gt;CoreOS : IronicPythonAgentのベースイメージとしての運用経験&lt;/li&gt;
-&lt;li&gt;OSX : 開発環境としての使用&lt;/li&gt;
-&lt;li&gt;Windows : 開発環境として使用&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;opensource&#34;&gt;OpenSource&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Jenkins
-
-&lt;ul&gt;
-&lt;li&gt;GithubやSlack,Docker,k8sと連携したCIの環境の自動構築とJob生成&lt;/li&gt;
-&lt;li&gt;JenkinsJobBuilderによるJob管理&lt;/li&gt;
-&lt;li&gt;APIを使ったGroovyScriptの作成&lt;/li&gt;
-&lt;li&gt;VMやDockerを使用したJenkinsの運用&lt;/li&gt;
-&lt;li&gt;(JenkinsPluginの修正)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Kubernetes
-
-&lt;ul&gt;
-&lt;li&gt;Ubuntu14.04 &amp;amp; 16.04でAnsibleを使用した自動構築&lt;/li&gt;
-&lt;li&gt;helmcを使用したコンテナの運用&lt;/li&gt;
-&lt;li&gt;(モニタリングやロギング等の運用ツールの導入と運用)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Docker&lt;/li&gt;
-&lt;li&gt;OpenStack
-
-&lt;ul&gt;
-&lt;li&gt;IronicPythonAgentの新規機能実装&lt;/li&gt;
-&lt;li&gt;Ironicプロジェクトを参考にしたサービスの開発&lt;/li&gt;
-&lt;li&gt;Troveの新規機能実装と運用(主にPostgreSQLのバックアップまわり)&lt;/li&gt;
-&lt;li&gt;(Swiftの運用)&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;Ansible
-
-&lt;ul&gt;
-&lt;li&gt;AnsiblePlaybookを作成し、開発/本番環境のBlueGreenDeploymentの実施&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;languages&#34;&gt;Languages&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Golang&lt;/li&gt;
-&lt;li&gt;Python&lt;/li&gt;
-&lt;li&gt;Java&lt;/li&gt;
-&lt;li&gt;Ruby&lt;/li&gt;
-&lt;li&gt;JavaScript&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;slides&#34;&gt;Slides&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc&#34;&gt;https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 
 &lt;h2 id=&#34;contact-me&#34;&gt;Contact Me&lt;/h2&gt;
 
 &lt;ul&gt;
-&lt;li&gt;ladiclexxx@gmail.com&lt;/li&gt;
+&lt;li&gt;E-mail : ladiclexxx@gmail.com&lt;/li&gt;
+&lt;li&gt;GitHub : &lt;a href=&#34;https://github.com/Ladicle&#34;&gt;https://github.com/Ladicle&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Twitter: &lt;a href=&#34;https://twitter.com/Ladicle&#34;&gt;https://twitter.com/Ladicle&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

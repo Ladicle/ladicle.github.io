@@ -7,7 +7,7 @@
 		<meta name="author" content="ladicle">
 		
 		<meta name="generator" content="Hugo 0.16" />
-		<title>about &middot; Exception();</title>
+		<title>Hugoで静的なブログを作成する &middot; Exception();</title>
 		<link rel="shortcut icon" href="https://ladicle.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://ladicle.github.io/css/style.css">
 		<link rel="stylesheet" href="https://ladicle.github.io/css/highlight.css">
@@ -30,6 +30,8 @@
 	
 
 	
+		<a href='https://ladicle.github.io/about'>About</a>
+	
 
 	
 	<a class="cta" href="https://ladicle.github.io/index.xml">Subscribe</a>
@@ -39,33 +41,107 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>about</h1>
+                    <h1>Hugoで静的なブログを作成する</h1>
                     <h2 class="headline">
-                    July 15, 2016 
+                    August 1, 2016 
                     <br>
+                    
+                    
+                        
+                            <a href="https://ladicle.github.io/tags/hugo">hugo</a>
+                        
+                    
                     
                     </h2>
                 </header>
                 <section id="post-body">
                     
 
-<h1 id="ladicle">Ladicle</h1>
+<p>このブログは<a href="https://gohugo.io/">Hugo</a>を使用してGithub.io上に建てている。<br />
+静的Webサイトジェネレータは有名どころだとRailsの<a href="https://github.com/jekyll/jekyll">Jekyll</a>や<a href="http://octopress.org/">Octopress</a>、Pythonの<a href="https://github.com/getpelican/pelican">Pelican</a>、Nodeの<a href="https://hexo.io/">Hexo</a>などが存在するが、
+Hugoは速さを売りにしている。</p>
+
+<h2 id="why-hugo">Why Hugo?</h2>
+
+<ol>
+<li><strong>Golang</strong>で書かれている。I&rsquo;m gopher!!</li>
+<li>モダンな<a href="http://themes.gohugo.io/">Themes</a>が揃っている</li>
+</ol>
+
+<h2 id="hugoをインストールする">Hugoをインストールする</h2>
+
+<ol>
+<li><code>brew install hugo</code>を実行してhugoをインストール<sup><a href="#ref1">1</a></sup></li>
+<li>hugoコマンドでサイトのベースを作成する</li>
+</ol>
+
+<pre><code>$ hugo new site &lt;YOUR_SITE_NAME&gt;
+$ tree .
+.
+├── archetypes: : 独自のプロパティ定義
+├── config.toml : サイトのTitleや説明、テーマなど全体設定のファイル
+├── content : ブログ記事等、サイトの中身を格納する
+├── data : TOML, JSONなどの設定ファイル
+├── layouts : 静的サイトを作成する時の変換レイアウトの指定
+├── static : CSSやJavaScriptを配置する
+└── themes : サイトのテーマを格納する
+
+6 directories, 1 file
+</code></pre>
+
+<ol>
+<li><code>hugo server</code>で起動し、<code>localhost:1313</code>にアクセスする</li>
+</ol>
 
 <blockquote>
-<p>Just here for code? It&rsquo;s on <a href="https://github.com/Ladicle">Github</a>.</p>
+<p><span id="ref1">1</span>. OSX以外の場合は<a href="https://github.com/spf13/hugo/releases">Releases</a>から該当のバイナリをDLしてPathを通す</p>
 </blockquote>
 
-<p>I am Software Engineer.
-I develop cloud services at NTT communications.
-My interesting things are distributed system, CI, web application architecture.</p>
+<h2 id="テーマを変更する">テーマを変更する</h2>
 
-<h2 id="contact-me">Contact Me</h2>
+<p>テーマの<a href="http://themes.gohugo.io/">ここ</a>一覧はここで見ることができる。<br />
+今回は例としてこのブログに使われている<a href="http://themes.gohugo.io/cactus/">cactus</a>を使う。</p>
 
-<ul>
-<li>E-mail : ladiclexxx@gmail.com</li>
-<li>GitHub : <a href="https://github.com/Ladicle">https://github.com/Ladicle</a></li>
-<li>Twitter: <a href="https://twitter.com/Ladicle">https://twitter.com/Ladicle</a></li>
-</ul>
+<ol>
+<li>テーマのディレクトリに移動する</li>
+</ol>
+
+<pre><code>cd themes
+</code></pre>
+
+<ol>
+<li>テーマをGit cloneする</li>
+</ol>
+
+<pre><code>git clone https://github.com/digitalcraftsman/hugo-cactus-theme.git
+</code></pre>
+
+<ol>
+<li>repositoryのルートに戻り、config.tomlにテーマを追加する</li>
+</ol>
+
+<pre><code>$ cat config.toml | grep theme
+theme = &quot;hugo-cactus-theme&quot;
+</code></pre>
+
+<blockquote>
+<p>他の設定については、<code>themes/hugo-cactus-theme/exampleSite/config.toml</code>を参考にするとよい</p>
+</blockquote>
+
+<ol>
+<li>サーバを起動し、テーマが反映されていることを確認する</li>
+</ol>
+
+<pre><code>hugo server
+</code></pre>
+
+<p>おそらく、シンプルな画面が表示されるだろう。</p>
+
+<h2 id="次回">次回</h2>
+
+<blockquote>
+<p>記事の投稿とGitHub.ioを使った配信あたりについて書く。</p>
+</blockquote>
 
                 </section>
             </article>
@@ -78,7 +154,7 @@ My interesting things are distributed system, CI, web application architecture.<
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fabout%2f - about by @ladicle"><span class="icon-twitter">  </span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fhugo-de-blog%2f - Hugo%e3%81%a7%e9%9d%99%e7%9a%84%e3%81%aa%e3%83%96%e3%83%ad%e3%82%b0%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b by @ladicle"><span class="icon-twitter">  </span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(

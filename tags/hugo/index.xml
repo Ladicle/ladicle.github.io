@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo on Exception();</title>
+    <link>https://ladicle.github.io/tags/hugo/</link>
+    <description>Recent content in Hugo on Exception();</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Mon, 01 Aug 2016 21:46:40 +0900</lastBuildDate>
+    <atom:link href="https://ladicle.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Hugoで静的なブログを作成する</title>
+      <link>https://ladicle.github.io/post/hugo-de-blog/</link>
+      <pubDate>Mon, 01 Aug 2016 21:46:40 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/hugo-de-blog/</guid>
+      <description>
+
+&lt;p&gt;このブログは&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を使用してGithub.io上に建てている。&lt;br /&gt;
+静的Webサイトジェネレータは有名どころだとRailsの&lt;a href=&#34;https://github.com/jekyll/jekyll&#34;&gt;Jekyll&lt;/a&gt;や&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;、Pythonの&lt;a href=&#34;https://github.com/getpelican/pelican&#34;&gt;Pelican&lt;/a&gt;、Nodeの&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;などが存在するが、
+Hugoは速さを売りにしている。&lt;/p&gt;
+
+&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Golang&lt;/strong&gt;で書かれている。I&amp;rsquo;m gopher!!&lt;/li&gt;
+&lt;li&gt;モダンな&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;Themes&lt;/a&gt;が揃っている&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;hugoをインストールする&#34;&gt;Hugoをインストールする&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;brew install hugo&lt;/code&gt;を実行してhugoをインストール&lt;sup&gt;&lt;a href=&#34;#ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
+&lt;li&gt;hugoコマンドでサイトのベースを作成する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new site &amp;lt;YOUR_SITE_NAME&amp;gt;
+$ tree .
+.
+├── archetypes: : 独自のプロパティ定義
+├── config.toml : サイトのTitleや説明、テーマなど全体設定のファイル
+├── content : ブログ記事等、サイトの中身を格納する
+├── data : TOML, JSONなどの設定ファイル
+├── layouts : 静的サイトを作成する時の変換レイアウトの指定
+├── static : CSSやJavaScriptを配置する
+└── themes : サイトのテーマを格納する
+
+6 directories, 1 file
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;hugo server&lt;/code&gt;で起動し、&lt;code&gt;localhost:1313&lt;/code&gt;にアクセスする&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;span id=&#34;ref1&#34;&gt;1&lt;/span&gt;. OSX以外の場合は&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Releases&lt;/a&gt;から該当のバイナリをDLしてPathを通す&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;テーマを変更する&#34;&gt;テーマを変更する&lt;/h2&gt;
+
+&lt;p&gt;テーマの&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;ここ&lt;/a&gt;一覧はここで見ることができる。&lt;br /&gt;
+今回は例としてこのブログに使われている&lt;a href=&#34;http://themes.gohugo.io/cactus/&#34;&gt;cactus&lt;/a&gt;を使う。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;テーマのディレクトリに移動する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;cd themes
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;テーマをGit cloneする&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;git clone https://github.com/digitalcraftsman/hugo-cactus-theme.git
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;repositoryのルートに戻り、config.tomlにテーマを追加する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat config.toml | grep theme
+theme = &amp;quot;hugo-cactus-theme&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;他の設定については、&lt;code&gt;themes/hugo-cactus-theme/exampleSite/config.toml&lt;/code&gt;を参考にするとよい&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;サーバを起動し、テーマが反映されていることを確認する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;hugo server
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;おそらく、シンプルな画面が表示されるだろう。&lt;/p&gt;
+
+&lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;記事の投稿とGitHub.ioを使った配信あたりについて書く。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

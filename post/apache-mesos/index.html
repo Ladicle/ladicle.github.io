@@ -1,0 +1,282 @@
+    <!DOCTYPE html>
+<html lang="jp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="ladicle">
+		
+		<meta name="generator" content="Hugo 0.16" />
+		<title>Apache Mesos勉強会に行ってみた &middot; Exception();</title>
+		<link rel="shortcut icon" href="https://ladicle.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/style.css">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ladicle.github.io/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="https://ladicle.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Exception();" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ladicle.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='https://ladicle.github.io/about'>About</a>
+	
+
+	
+	<a class="cta" href="https://ladicle.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Apache Mesos勉強会に行ってみた</h1>
+                    <h2 class="headline">
+                    August 4, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="https://ladicle.github.io/tags/mesos">mesos</a>
+                        
+                            <a href="https://ladicle.github.io/tags/apache">apache</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>MesosはKubernetesと比較されることが多いので気になっていた。<br />
+イベントのURLは<a href="https://www.google.com/url?q=http%3A%2F%2Fconnpass.com%2Fevent%2F36415%2F&amp;sa=D&amp;usd=2&amp;usg=AFQjCNHlDmy2a6EiNcCrDPxYCtHWQoGSIg">こちら</a>。</p>
+
+<h2 id="1-mesos-とは何か">1. Mesos とは何か</h2>
+
+<p>木内さん @クリエーションライン</p>
+
+<h3 id="概要">概要</h3>
+
+<ul>
+<li>DCOS(ﾃﾞｨｰｼｰｵｰｴｽ)と呼べ</li>
+<li>YARN日書いが、YARNはHadoopのためのジョブスケジューラ</li>
+<li>Mesosはサービス基盤の運用を目的にしている(対象範囲が広い)</li>
+<li>Mesos is cluster of cluster</li>
+<li>Dockerとの統合をサポート<br /></li>
+</ul>
+
+<h3 id="コンテナ化すると分業が可能">コンテナ化すると分業が可能</h3>
+
+<ul>
+<li>データセンタチーム : 実行基盤の配置だけ</li>
+<li>インフラチーム : リソースの稼働状況だけ</li>
+<li>アプリケーションチーム : コンテナの内容だけ</li>
+</ul>
+
+<blockquote>
+<p>この手の物は作業が少なくなるというより<br />
+(むしろ見るコンポーネントは増えていることが多々)
+分業できるところに利点を置いてるので、小さいチームもしくは大きいチームでも分業されないと
+運用負荷は上がるばかりだと思う</p>
+</blockquote>
+
+<h2 id="2-docker-ホスティングサービス-arukas-での-mesos-marathon-の活用について">2. Docker ホスティングサービス &lsquo;Arukas&rsquo; での Mesos + Marathon の活用について</h2>
+
+<p>山田 修司 さん @さくらインターネット</p>
+
+<h3 id="構成">構成</h3>
+
+<ul>
+<li>Zookeeper</li>
+<li>Master</li>
+<li>Slave: executor実行, CPU情報の送信</li>
+</ul>
+
+<h3 id="k8s-vs-mesos">k8s VS Mesos</h3>
+
+<p>k8sはセットアップ簡単だけどシングルテナント向けでコンテナOnly。</p>
+
+<blockquote>
+<p>k8sのMultiTenant話は<a href="http://blog.kubernetes.io/2016/05/hypernetes-security-and-multi-tenancy-in-kubernetes.html?utm_content=buffer08df8&amp;utm_medium=social&amp;utm_source=twitter.com&amp;utm_campaign=buffer">ここら</a>辺にある。<br />
+セットアップ楽という話が出ていたが&hellip;。(Mesosがものすごくツライのかもしれない)</p>
+</blockquote>
+
+<h3 id="twitterでの議論">Twitterでの議論</h3>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">Mesos+Marathonはなぜヘビー級に汚れる環境向けなのかの説明が結局なかった気がするが、なんでだろ。環境が分離されるから、がその理由だった? <a href="https://twitter.com/hashtag/mesosjp?src=hash">#mesosjp</a></p>&mdash; tagomoris (@tagomoris) <a href="https://twitter.com/tagomoris/status/761150770943135744">2016年8月4日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr"><a href="https://twitter.com/tagomoris">@tagomoris</a> 対比でいうと、シングルテナント向けかどうかと組み合わせると、割と大きな差がついてると思います。あと最初から狙ってるかどうか</p>&mdash; SO-Copy&#39;n&#39;paster (@kuenishi) <a href="https://twitter.com/kuenishi/status/761152013132365824">2016年8月4日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="mesos-marathon-demo">mesos-marathon-demo</h2>
+
+<ul>
+<li><a href="https://github.com/uzyexe/mesos-marathon-demo">https://github.com/uzyexe/mesos-marathon-demo</a></li>
+</ul>
+
+<h2 id="3-mesos-frameworkの作り方">3. Mesos Frameworkの作り方</h2>
+
+<p>上西さん @ノーチラス・テクノロジーズ</p>
+
+<script async class="speakerdeck-embed" data-id="759e5933c08c4460a10ab21b97949384" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
+
+<h3 id="概要-1">概要</h3>
+
+<ul>
+<li>Scheduller &amp; Framework時のファイルオーバーとなどは自前で実装する必要あり(辛そう)</li>
+<li>Frameworkを自分で作らないとMesosを作ったとは言えない(emacsのメインモードを作らないと 以下略</li>
+<li>CPUもGPUもcgroupsで隔離されている</li>
+</ul>
+
+<h3 id="retz">Retz</h3>
+
+<ul>
+<li><a href="https://github.com/retz">https://github.com/retz</a></li>
+</ul>
+
+<h2 id="4-mesos-に-gpu-を食わせてみるテスト-2016夏">4. Mesos に GPU を食わせてみるテスト ～2016夏～</h2>
+
+<p>須藤さん @さくらインターネット</p>
+
+<h3 id="概要-2">概要</h3>
+
+<ul>
+<li>高火力は、大量の計算資源を使ってもらうためのクローズドサービス</li>
+<li>機械学習での利用がおおい</li>
+<li>GPGPU界隈はこわい</li>
+<li>Framework作る人向けにMesos層を提供する(かもしれない)</li>
+</ul>
+
+<h2 id="5-iaasの実装をフルスクラッチした人が思う-もうmesosで良いじゃんって話">5. IaaSの実装をフルスクラッチした人が思う、もうMesosで良いじゃんって話</h2>
+
+<p>山崎 泰宏さん @Axsh</p>
+
+<h3 id="概要-3">概要</h3>
+
+<ul>
+<li>Mesosを使ってるわけではないけど、IaaSを作っている人から見たMesosの話</li>
+<li>仮想ネットワークだけ求めているお客さんが多かった</li>
+<li>OS相当のソフトウェアがDCにも必要</li>
+</ul>
+
+<blockquote>
+<p>ものすごくうまく情報収集して設計していて凄い&hellip;<br />
+概念的なOSかと思っていたらPOSIXの互換APIを実装している :o</p>
+</blockquote>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/ladicle">
+                        <img class="avatar" src="https://ladicle.github.io/images/avatar.png">
+                        <div>
+                            <span class="dark">ladicle</span>
+                            <span>Software Engineer - developing cloud services</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fapache-mesos%2f - Apache%20Mesos%e5%8b%89%e5%bc%b7%e4%bc%9a%e3%81%ab%e8%a1%8c%e3%81%a3%e3%81%a6%e3%81%bf%e3%81%9f by @ladicle"><span class="icon-twitter">  </span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect">  </span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/apache-mesos/">Apache Mesos勉強会に行ってみた<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/kindle-unlimited/">Kindle Unlimitedの技術本<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/add-github-templates/">Pull RequestテンプレートでPRの品質を保つ<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/hello-world/">hello world<aside class="dates">Jul 15</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.facebook.com/ladicle">
+        facebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/Ladicle">
+        github
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/Ladicle">
+        twitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 ladicle
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ladicle.github.io/js/main.js"></script>
+<script src="https://ladicle.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

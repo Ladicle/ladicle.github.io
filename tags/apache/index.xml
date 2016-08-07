@@ -53,6 +53,8 @@
 
 &lt;p&gt;山田 修司 さん @さくらインターネット&lt;/p&gt;
 
+&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/3gGcyVAODDcPXg&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt; &lt;strong&gt; &lt;a href=&#34;//www.slideshare.net/sakura_pr/201608-mesos-studypublic-64721613&#34; title=&#34;Docker ホスティングサービス &amp;#x27;Arukas&amp;#x27; での Mesos + Marathon の活用について（Mesos勉強会）&#34; target=&#34;_blank&#34;&gt;Docker ホスティングサービス &amp;#x27;Arukas&amp;#x27; での Mesos + Marathon の活用について（Mesos勉強会）&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a target=&#34;_blank&#34; href=&#34;//www.slideshare.net/sakura_pr&#34;&gt;さくらインターネット株式会社&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;&lt;/p&gt;
+
 &lt;h3 id=&#34;構成&#34;&gt;構成&lt;/h3&gt;
 
 &lt;ul&gt;

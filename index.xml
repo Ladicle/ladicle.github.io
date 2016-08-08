@@ -42,6 +42,11 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
+HTTP tracingデバッグとチューニングにとても便利そう&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;h2 id=&#34;3-about-contribution-of-go-by-stanaka&#34;&gt;3. About contribution of Go by @stanaka&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -49,6 +54,11 @@
 &lt;li&gt;まずはContribution Guidlineをよむ&lt;/li&gt;
 &lt;li&gt;GitHubではなくGerritを使う(&lt;code&gt;FIX&lt;/code&gt;, &lt;code&gt;DONE&lt;/code&gt;なコンパクトなコメントを返せる)&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
+未だにGerrit慣れないが、コメントボタンよさそう&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;4-context-package-by-ono-matope&#34;&gt;4. context package by @ono_matope&lt;/h2&gt;
 
@@ -97,6 +107,11 @@
 &lt;/ul&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
+JSON parseのチェックよく悩んでいたので&lt;code&gt;lookup()&lt;/code&gt;は嬉しい変更だ&lt;/p&gt;
+&lt;/blockquote&gt;
+
 &lt;h2 id=&#34;7-goji-とレイヤ化アーキテクチャ-by-t2y&#34;&gt;7. Goji とレイヤ化アーキテクチャ by @t2y&lt;/h2&gt;
 
 &lt;ul&gt;
@@ -104,8 +119,14 @@
 &lt;li&gt;Frameworkは&lt;a href=&#34;https://github.com/goji/goji&#34;&gt;Goji&lt;/a&gt;を使っている(レポジトリは移動してる)&lt;/li&gt;
 &lt;li&gt;サービスには(基本的に)終わりがなく、設計は継続する&lt;/li&gt;
 &lt;li&gt;AOPはGoにないのか? &amp;ndash; Roadmapにはない。go nutsで議論するといいよ&lt;/li&gt;
-&lt;li&gt;コードに変更がない == 安定する == 要件が変わっても変更が必要がない == Bugが出ない&lt;/li&gt;
+&lt;li&gt;コードに変更がない == 安定する&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
+私は標準 or Revelをよく使っているが、よさそうと思っていたginは最近あまり更新されていない&amp;hellip;。
+いま一番よいWebFrameworkは何だろう?&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;8-unity-plugin-by-tenntenn&#34;&gt;8. Unity Plugin by @tenntenn&lt;/h2&gt;
 
@@ -119,6 +140,13 @@
 
 &lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pandax381&#34;&gt;@pandax381&lt;/a&gt; &lt;a href=&#34;https://twitter.com/tenntenn&#34;&gt;@tenntenn&lt;/a&gt; the future is bright!&lt;/p&gt;&amp;mdash; Dαve Cheney (@davecheney) &lt;a href=&#34;https://twitter.com/davecheney/status/761787273159462914&#34;&gt;2016年8月6日&lt;/a&gt;&lt;/blockquote&gt;
 &lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
+MakerFair行きたかったが間に合わなかったX(&lt;br /&gt;
+最近Android開発してないのでGoMobile周り追いかけてないけど、　　
+アップデートで大幅に変わるの大変そうだ。&lt;/p&gt;
+&lt;/blockquote&gt;
 
 &lt;h2 id=&#34;thanks&#34;&gt;Thanks :)&lt;/h2&gt;
 

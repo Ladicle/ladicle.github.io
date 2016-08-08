@@ -1,0 +1,288 @@
+    <!DOCTYPE html>
+<html lang="jp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="ladicle">
+		
+		<meta name="generator" content="Hugo 0.16" />
+		<title>Golang 1.7 release party in Tokyo &middot; Exception();</title>
+		<link rel="shortcut icon" href="https://ladicle.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/style.css">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ladicle.github.io/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="https://ladicle.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Exception();" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ladicle.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='https://ladicle.github.io/about'>About</a>
+	
+
+	
+	<a class="cta" href="https://ladicle.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>Golang 1.7 release party in Tokyo</h1>
+                    <h2 class="headline">
+                    August 8, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="https://ladicle.github.io/tags/golang">golang</a>
+                        
+                            <a href="https://ladicle.github.io/tags/study">study</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>補欠だったので無理かと思っていたら、当日繰り上がった。
+イベントページは<a href="http://gocon.connpass.com/event/37332/">こちら</a></p>
+
+<h2 id="1-what-s-new-go1-7-by-deeeet">1. What&rsquo;s new Go1.7? by @deeeet</h2>
+
+<p>Golang1.7、残念ながらRelease表明されなかった(1.6の時以来2回目)</p>
+
+<h3 id="2-release-note-points">2. Release note points</h3>
+
+<ul>
+<li>MacOS Sierraをサポート</li>
+<li>Linkerが速くなった(特にk8sのような大規模のコードへの恩恵は大きい)</li>
+<li>StackFrameが入り、LinuxのProfilerが使えるようになった</li>
+<li><code>-X</code>オプションをつけると、key=valueでつなげないものはエラーになる</li>
+<li>vendoring optionが使えなくなった</li>
+<li><code>// go-binary-only-package</code>を付けるとバイナリだけを提供できるようになった</li>
+<li>標準パッケージは以下のようなものが変更された(他にもあるよ)
+
+<ul>
+<li>context: 今まで標準ではなかった</li>
+<li>testing: subtestとbenchmarkが作成できる</li>
+<li>http tracing: httpリクエストの各ステップにフック関数の挿入が可能に</li>
+</ul></li>
+</ul>
+
+<h2 id="3-about-contribution-of-go-by-stanaka">3. About contribution of Go by @stanaka</h2>
+
+<ul>
+<li>GolangへのContribution方法(前回のGoConと同じ!)</li>
+<li>まずはContribution Guidlineをよむ</li>
+<li>GitHubではなくGerritを使う(<code>FIX</code>, <code>DONE</code>なコンパクトなコメントを返せる)</li>
+</ul>
+
+<h2 id="4-context-package-by-ono-matope">4. context package by @ono_matope</h2>
+
+<p>スライドは<a href="http://go-talks.appspot.com/github.com/matope/talks/2016/context/context.slide#1">こちら</a></p>
+
+<ul>
+<li>1.7に標準パッケージに入ったが2014年にはPJが始まっていた</li>
+<li>様々なライブラリのキャンセル要求インタフェースの標準か</li>
+</ul>
+
+<h3 id="ここら辺参照">ここら辺参照:</h3>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">このへんにキャンセルの話とか書いてある ▶ Go Concurrency Patterns: Pipelines and cancellation - The Go Blog <a href="https://t.co/gVD3tw0x5G">https://t.co/gVD3tw0x5G</a> <a href="https://twitter.com/hashtag/go17party?src=hash">#go17party</a></p>&mdash; Yoshifumi YAMAGUCHI (@ymotongpoo) <a href="https://twitter.com/ymotongpoo/status/762600547287392256">2016年8月8日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="5-introduction-to-ssa-by-shinpeinkt">5. Introduction to SSA by @shinpeiNKT</h2>
+
+<ul>
+<li>Go1.7のSingle Static Single Assignment(SSA)のお話</li>
+<li>ベンチマークスピードが5-35%速くなり、バイナリサイズも2-30%削減された</li>
+<li>今まで中身を返さない関数も全てコンパイルしていたが、1.7から中身はskip</li>
+<li>1変数に対する代入は1つのみとし、それ以外のものを不要変数と判定する</li>
+<li>最適化はされるが、コンパイル速度は10%ほど低下した</li>
+<li>SSAを回避するフラグもある</li>
+</ul>
+
+<h3 id="ここら辺参照-1">ここら辺参照:</h3>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">SSA (Static Single Assignment) についてわかりやすく書いてある <a href="https://t.co/a5loVKfGOA">https://t.co/a5loVKfGOA</a> <a href="https://twitter.com/hashtag/go17party?src=hash">#go17party</a></p>&mdash; Yoshifumi YAMAGUCHI (@ymotongpoo) <a href="https://twitter.com/ymotongpoo/status/762606087333818368">2016年8月8日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="6-don-t-use-reflect-by-lestrrat">6. Don&rsquo;t use reflect by @lestrrat</h2>
+
+<p><iframe src="//www.slideshare.net/slideshow/embed_code/key/5Pn3CxxmumAP04" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"></p>
+
+<ul>
+<li>&ldquo;みんなのGo言語&rdquo; よろしく</li>
+<li>Reflectは遅くなるし、本当に必要な時だけ使おう</li>
+<li>1.7の変更点
+
+<ul>
+<li>フィールドの位置が極端に大きいものはpanic</li>
+<li>exportしていない関数の取得が不可能に</li>
+<li>動的にstructが定義できるように</li>
+<li>struct tagに<code>lookup()</code>が導入された</li>
+</ul></li>
+</ul>
+
+<h2 id="7-goji-とレイヤ化アーキテクチャ-by-t2y">7. Goji とレイヤ化アーキテクチャ by @t2y</h2>
+
+<ul>
+<li>白ヤギでAPIサーバをGolangで開発し、1年が経過したのでその知見</li>
+<li>Frameworkは<a href="https://github.com/goji/goji">Goji</a>を使っている(レポジトリは移動してる)</li>
+<li>サービスには(基本的に)終わりがなく、設計は継続する</li>
+<li>AOPはGoにないのか? &ndash; Roadmapにはない。go nutsで議論するといいよ</li>
+<li>コードに変更がない == 安定する == 要件が変わっても変更が必要がない == Bugが出ない</li>
+</ul>
+
+<h2 id="8-unity-plugin-by-tenntenn">8. Unity Plugin by @tenntenn</h2>
+
+<ul>
+<li>昨日、一昨日やっていたMakerFairで<code>UnityちゃんのVR吐息ヘッドフォン</code>を作った話</li>
+<li>GolangでUnityのネイティブプラグインを作った</li>
+<li>Go Mobileを使っている(最近またアップデートされたのでbuildオプションが変わった&hellip;)</li>
+</ul>
+
+<h3 id="反響">反響:</h3>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="en" dir="ltr"><a href="https://twitter.com/pandax381">@pandax381</a> <a href="https://twitter.com/tenntenn">@tenntenn</a> the future is bright!</p>&mdash; Dαve Cheney (@davecheney) <a href="https://twitter.com/davecheney/status/761787273159462914">2016年8月6日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+<h2 id="thanks">Thanks :)</h2>
+
+<p><blockquote class="twitter-tweet" data-lang="ja"><p lang="ja" dir="ltr">ヤッホー🍺 <a href="https://twitter.com/hashtag/go17party?src=hash">#go17party</a> <a href="https://t.co/4Hw2Z0o2rH">pic.twitter.com/4Hw2Z0o2rH</a></p>&mdash; ladicle (@Ladicle) <a href="https://twitter.com/Ladicle/status/762592924043317248">2016年8月8日</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script></p>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/ladicle">
+                        <img class="avatar" src="https://ladicle.github.io/images/avatar.png">
+                        <div>
+                            <span class="dark">ladicle</span>
+                            <span>Software Engineer - developing cloud services</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fgolang1.7-release-party%2f - Golang%201.7%20release%20party%20in%20Tokyo by @ladicle"><span class="icon-twitter">  </span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect">  </span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/golang1.7-release-party/">Golang 1.7 release party in Tokyo<aside class="dates">Aug 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/apache-mesos/">Apache Mesos勉強会に行ってきた<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/kindle-unlimited/">Kindle Unlimitedの技術本<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/add-github-templates/">Pull RequestテンプレートでPRの品質を保つ<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/hugo-de-blog/">Hugoで静的なブログを作成する<aside class="dates">Aug 1</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/hello-world/">hello world<aside class="dates">Jul 15</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.facebook.com/ladicle">
+        facebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/Ladicle">
+        github
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/Ladicle">
+        twitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 ladicle
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ladicle.github.io/js/main.js"></script>
+<script src="https://ladicle.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

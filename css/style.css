@@ -47,6 +47,10 @@ html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abb
   margin-bottom: 10px;
 }
 
+ul ul, ul ol, ol ol, ol ul {
+  margin-left: 1em;
+}
+
 h2, h3 {
   margin-top: 20px;  
 }

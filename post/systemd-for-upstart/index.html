@@ -1,0 +1,304 @@
+    <!DOCTYPE html>
+<html lang="jp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="ladicle">
+		
+		<meta name="generator" content="Hugo 0.16" />
+		<title>k8sをUbuntu14.04から16.04に移行した &middot; Exception();</title>
+		<link rel="shortcut icon" href="https://ladicle.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/style.css">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ladicle.github.io/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="https://ladicle.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Exception();" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ladicle.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='https://ladicle.github.io/about'>About</a>
+	
+
+	
+	<a class="cta" href="https://ladicle.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>k8sをUbuntu14.04から16.04に移行した</h1>
+                    <h2 class="headline">
+                    August 9, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="https://ladicle.github.io/tags/ubuntu">ubuntu</a>
+                        
+                            <a href="https://ladicle.github.io/tags/kubernetes">kubernetes</a>
+                        
+                            <a href="https://ladicle.github.io/tags/systemd">systemd</a>
+                        
+                            <a href="https://ladicle.github.io/tags/upstart">upstart</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>Kubernetesを14.04から16.04に移行した。<br />
+もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
+修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。</p>
+
+<blockquote>
+<p>元にしているk8sのansibleは<a href="https://github.com/kubernetes/contrib">kubernetes/contrib</a>の<code>ansible</code>ディレクトリにある
+ubuntu16.04対応のPRはそのうち&hellip;</p>
+</blockquote>
+
+<h2 id="what-is-systemd">What is Systemd?</h2>
+
+<p>Systemdを真面目に触るのが初めてだったのでここから始めた。
+以下ページを参考にした。</p>
+
+<ul>
+<li><a href="http://enakai00.hatenablog.com/entry/20130914/1379146157">Systemd入門(1) - Unitの概念を理解する</a></li>
+<li><a href="http://enakai00.hatenablog.com/entry/20130915/1379212787">Systemd入門(2) - Serviceの操作方法</a></li>
+<li><a href="http://enakai00.hatenablog.com/entry/20130916/1379295816">Systemd入門(3) - cgroupsと動的生成Unitに関する小ネタ</a></li>
+<li><a href="http://enakai00.hatenablog.com/entry/20130917/1379374797">Systemd入門(4) - serviceタイプUnitの設定ファイル</a></li>
+<li><a href="http://enakai00.hatenablog.com/entry/20130923/1379927579">Systemd入門(5) - PrivateTmpの実装を見る</a></li>
+</ul>
+
+<blockquote>
+<p>(4)はgroupなど変わっているので参考程度</p>
+</blockquote>
+
+<h3 id="file-path">File path</h3>
+
+<p>UbuntuはFedoraとファイルパスなどが微妙に違い、
+システムデフォルト設定は<code>/usr/lib/systemd/system</code>ではなく<code>/lib/systemd/system</code>にある。</p>
+
+<h3 id="environmentfile">EnvironmentFile</h3>
+
+<pre><code>EnvironmentFile=-/etc/sysconfig/whatever
+</code></pre>
+
+<p><code>-</code>の有無によってファイルが存在しなかった時の動作が以下のように変わる。(<a href="https://lists.freedesktop.org/archives/systemd-devel/2013-February/009229.html">参考</a>)</p>
+
+<ul>
+<li><strong>有り</strong>の場合: ファイルが存在しなかった場合も無視</li>
+<li><strong>無し</strong>の場合: ファイルが存在しないとエラーを発生させる</li>
+</ul>
+
+<blockquote>
+<p>複数ファイルを読み込む時は複数の<code>EnvironmentFile</code>を定義する</p>
+</blockquote>
+
+<h2 id="convert-upstart-file-to-systemd-file">Convert upstart file to systemd file</h2>
+
+<p>公式で<a href="https://wiki.ubuntu.com/SystemdForUpstartUsers">変換方法</a>についてわかりやすいドキュメントが公開されている。
+ざっくりとした移行手順は以下の通り(細かいところは上記リンク参照)</p>
+
+<ol>
+<li>設定ファイルを<code>/etc/sysconfig</code>に移行し<code>EnvironmentFile</code>で読み込み。</li>
+<li><code>start on</code>の依存関係は<strong>Unit</strong>の<code>After</code>に書き換え</li>
+<li><code>pre-start</code>コマンドは<strong>Service</strong>の<code>ExecStartPre</code>に書き換え</li>
+<li><code>exec</code>コマンドは<strong>Service</strong>の<code>ExecStart</code>に書き換え</li>
+</ol>
+
+<h3 id="sample-upstart-file">Sample Upstart file</h3>
+
+<pre><code>description &quot;Kube-Apiserver service&quot;
+
+respawn
+
+# start in conjunction with etcd
+start on started etcd
+stop on stopping etcd
+
+pre-start script
+	# see also https://github.com/jainvipin/kubernetes-start
+	KUBE_APISERVER=/opt/bin/$UPSTART_JOB
+	if [ -f /etc/default/$UPSTART_JOB ]; then
+		. /etc/default/$UPSTART_JOB
+	fi
+	if [ -f $KUBE_APISERVER ]; then
+		exit 0
+	fi
+    exit 22
+end script
+
+script
+	# modify these in /etc/default/$UPSTART_JOB (/etc/default/docker)
+	KUBE_APISERVER=/opt/bin/$UPSTART_JOB
+	KUBE_APISERVER_OPTS=&quot;&quot;
+	if [ -f /etc/default/$UPSTART_JOB ]; then
+		. /etc/default/$UPSTART_JOB
+	fi
+	exec &quot;$KUBE_APISERVER&quot; $KUBE_APISERVER_OPTS
+end script
+</code></pre>
+
+<h3 id="sample-systemd-file">Sample Systemd file</h3>
+
+<pre><code>[Unit]
+Description=Kubernetes API Server
+After=etcd2.service
+
+[Service]
+Restart=on-failure
+EnvironmentFile=-/etc/sysconfig/kube-apiserver
+ExecStart=&quot;$KUBE_APISERVER&quot; $KUBE_APISERVER_OPTS
+
+[Install]
+WantedBy=multi-user.target
+</code></pre>
+
+<h2 id="おわり">おわり</h2>
+
+<blockquote>
+<p>Systemdとのお友達度が1あがった</p>
+</blockquote>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/ladicle">
+                        <img class="avatar" src="https://ladicle.github.io/images/avatar.png">
+                        <div>
+                            <span class="dark">ladicle</span>
+                            <span>Software Engineer - developing cloud services</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fsystemd-for-upstart%2f - k8s%e3%82%92Ubuntu14.04%e3%81%8b%e3%82%8916.04%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f by @ladicle"><span class="icon-twitter">  </span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect">  </span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/systemd-for-upstart/">k8sをUbuntu14.04から16.04に移行した<aside class="dates">Aug 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/golang1.7-release-party/">Golang 1.7 release party in Tokyo<aside class="dates">Aug 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/apache-mesos/">Apache Mesos勉強会に行ってきた<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/kindle-unlimited/">Kindle Unlimitedの技術本<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/add-github-templates/">Pull RequestテンプレートでPRの品質を保つ<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/hugo-de-blog/">Hugoで静的なブログを作成する<aside class="dates">Aug 1</aside></a>
+        </li>
+        
+   
+    
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/hello-world/">hello world<aside class="dates">Jul 15</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.facebook.com/ladicle">
+        facebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/Ladicle">
+        github
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/Ladicle">
+        twitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 ladicle
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ladicle.github.io/js/main.js"></script>
+<script src="https://ladicle.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

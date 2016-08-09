@@ -2,20 +2,133 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Systemd on Exception();</title>
-    <link>https://ladicle.github.io/blog/tags/systemd/</link>
+    <link>https://ladicle.github.io/tags/systemd/</link>
     <description>Recent content in Systemd on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 20 Jul 2016 10:15:48 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/blog/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2016 19:42:46 +0900</lastBuildDate>
+    <atom:link href="https://ladicle.github.io/tags/systemd/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
-      <title>Systemd for upstart users</title>
-      <link>https://ladicle.github.io/blog/post/ubuntu-systemd-for-upstart/</link>
-      <pubDate>Wed, 20 Jul 2016 10:15:48 +0900</pubDate>
+      <title>k8sをUbuntu14.04から16.04に移行した</title>
+      <link>https://ladicle.github.io/post/systemd-for-upstart/</link>
+      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/blog/post/ubuntu-systemd-for-upstart/</guid>
-      <description>&lt;p&gt;age&lt;/p&gt;
+      <guid>https://ladicle.github.io/post/systemd-for-upstart/</guid>
+      <description>
+
+&lt;p&gt;Kubernetesを14.04から16.04に移行した。&lt;br /&gt;
+もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
+修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;元にしているk8sのansibleは&lt;a href=&#34;https://github.com/kubernetes/contrib&#34;&gt;kubernetes/contrib&lt;/a&gt;の&lt;code&gt;ansible&lt;/code&gt;ディレクトリにある
+ubuntu16.04対応のPRはそのうち&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;what-is-systemd&#34;&gt;What is Systemd?&lt;/h2&gt;
+
+&lt;p&gt;Systemdを真面目に触るのが初めてだったのでここから始めた。
+以下ページを参考にした。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://enakai00.hatenablog.com/entry/20130914/1379146157&#34;&gt;Systemd入門(1) - Unitの概念を理解する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://enakai00.hatenablog.com/entry/20130915/1379212787&#34;&gt;Systemd入門(2) - Serviceの操作方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://enakai00.hatenablog.com/entry/20130916/1379295816&#34;&gt;Systemd入門(3) - cgroupsと動的生成Unitに関する小ネタ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://enakai00.hatenablog.com/entry/20130917/1379374797&#34;&gt;Systemd入門(4) - serviceタイプUnitの設定ファイル&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://enakai00.hatenablog.com/entry/20130923/1379927579&#34;&gt;Systemd入門(5) - PrivateTmpの実装を見る&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;(4)はgroupなど変わっているので参考程度&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id=&#34;file-path&#34;&gt;File path&lt;/h3&gt;
+
+&lt;p&gt;UbuntuはFedoraとファイルパスなどが微妙に違い、
+システムデフォルト設定は&lt;code&gt;/usr/lib/systemd/system&lt;/code&gt;ではなく&lt;code&gt;/lib/systemd/system&lt;/code&gt;にある。&lt;/p&gt;
+
+&lt;h3 id=&#34;environmentfile&#34;&gt;EnvironmentFile&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;EnvironmentFile=-/etc/sysconfig/whatever
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;-&lt;/code&gt;の有無によってファイルが存在しなかった時の動作が以下のように変わる。(&lt;a href=&#34;https://lists.freedesktop.org/archives/systemd-devel/2013-February/009229.html&#34;&gt;参考&lt;/a&gt;)&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;有り&lt;/strong&gt;の場合: ファイルが存在しなかった場合も無視&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;無し&lt;/strong&gt;の場合: ファイルが存在しないとエラーを発生させる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;複数ファイルを読み込む時は複数の&lt;code&gt;EnvironmentFile&lt;/code&gt;を定義する&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;convert-upstart-file-to-systemd-file&#34;&gt;Convert upstart file to systemd file&lt;/h2&gt;
+
+&lt;p&gt;公式で&lt;a href=&#34;https://wiki.ubuntu.com/SystemdForUpstartUsers&#34;&gt;変換方法&lt;/a&gt;についてわかりやすいドキュメントが公開されている。
+ざっくりとした移行手順は以下の通り(細かいところは上記リンク参照)&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;設定ファイルを&lt;code&gt;/etc/sysconfig&lt;/code&gt;に移行し&lt;code&gt;EnvironmentFile&lt;/code&gt;で読み込み。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;start on&lt;/code&gt;の依存関係は&lt;strong&gt;Unit&lt;/strong&gt;の&lt;code&gt;After&lt;/code&gt;に書き換え&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;pre-start&lt;/code&gt;コマンドは&lt;strong&gt;Service&lt;/strong&gt;の&lt;code&gt;ExecStartPre&lt;/code&gt;に書き換え&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;exec&lt;/code&gt;コマンドは&lt;strong&gt;Service&lt;/strong&gt;の&lt;code&gt;ExecStart&lt;/code&gt;に書き換え&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id=&#34;sample-upstart-file&#34;&gt;Sample Upstart file&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;description &amp;quot;Kube-Apiserver service&amp;quot;
+
+respawn
+
+# start in conjunction with etcd
+start on started etcd
+stop on stopping etcd
+
+pre-start script
+	# see also https://github.com/jainvipin/kubernetes-start
+	KUBE_APISERVER=/opt/bin/$UPSTART_JOB
+	if [ -f /etc/default/$UPSTART_JOB ]; then
+		. /etc/default/$UPSTART_JOB
+	fi
+	if [ -f $KUBE_APISERVER ]; then
+		exit 0
+	fi
+    exit 22
+end script
+
+script
+	# modify these in /etc/default/$UPSTART_JOB (/etc/default/docker)
+	KUBE_APISERVER=/opt/bin/$UPSTART_JOB
+	KUBE_APISERVER_OPTS=&amp;quot;&amp;quot;
+	if [ -f /etc/default/$UPSTART_JOB ]; then
+		. /etc/default/$UPSTART_JOB
+	fi
+	exec &amp;quot;$KUBE_APISERVER&amp;quot; $KUBE_APISERVER_OPTS
+end script
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;sample-systemd-file&#34;&gt;Sample Systemd file&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code&gt;[Unit]
+Description=Kubernetes API Server
+After=etcd2.service
+
+[Service]
+Restart=on-failure
+EnvironmentFile=-/etc/sysconfig/kube-apiserver
+ExecStart=&amp;quot;$KUBE_APISERVER&amp;quot; $KUBE_APISERVER_OPTS
+
+[Install]
+WantedBy=multi-user.target
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;おわり&#34;&gt;おわり&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Systemdとのお友達度が1あがった&lt;/p&gt;
+&lt;/blockquote&gt;
 </description>
     </item>
     

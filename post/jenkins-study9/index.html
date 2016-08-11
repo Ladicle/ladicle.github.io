@@ -7,7 +7,7 @@
 		<meta name="author" content="ladicle">
 		
 		<meta name="generator" content="Hugo 0.16" />
-		<title>Pull RequestテンプレートでPRの品質を保つ &middot; Exception();</title>
+		<title>Jenkins勉強会#9で発表してきた &middot; Exception();</title>
 		<link rel="shortcut icon" href="https://ladicle.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://ladicle.github.io/css/style.css">
 		<link rel="stylesheet" href="https://ladicle.github.io/css/highlight.css">
@@ -41,14 +41,18 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Pull RequestテンプレートでPRの品質を保つ</h1>
+                    <h1>Jenkins勉強会#9で発表してきた</h1>
                     <h2 class="headline">
-                    August 2, 2016 
+                    August 11, 2016 
                     <br>
                     
                     
                         
-                            <a href="https://ladicle.github.io/tags/github">github</a>
+                            <a href="https://ladicle.github.io/tags/jenkins">jenkins</a>
+                        
+                            <a href="https://ladicle.github.io/tags/container">container</a>
+                        
+                            <a href="https://ladicle.github.io/tags/study">study</a>
                         
                     
                     
@@ -57,50 +61,46 @@
                 <section id="post-body">
                     
 
-<p>GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから
-RPの品質やレビューの水準が一定に保たれたと感じている。</p>
+<p>コンテナCIとJobの管理方法について話してきた。
+話した内容や質問された内容を補足する。
+スライドはこちら。</p>
 
-<h2 id="pull-requestのテンプレートを追加する">Pull Requestのテンプレートを追加する</h2>
+<script async class="speakerdeck-embed" data-id="2632992e716b4ae5b4e975aedcbf3374" data-ratio="1.33333333333333" src="//speakerdeck.com/assets/embed.js"></script>
 
-<p>2016年の2月からGitHubが<a href="https://help.github.com/articles/creating-a-pull-request-template-for-your-repository/">テンプレート機能</a>をサポートした。(黒魔術なスクリプトは不要!)
-使い方は簡単で、<strong>レポジトリ</strong>の<code>root</code>、又は<code>.github/</code>ディレクトリに<code>PULL_REQUEST_TEMPLATE.md</code>を配置するだけだ。</p>
+<h2 id="コンテナciの流れ">コンテナCIの流れ</h2>
 
-<p>現在は以下のようなテンプレートを使用している。</p>
+<p>ありがちではあるが、以下の通り。</p>
 
-<pre><code class="language-bash">$ cat .github/PULL_REQUEST_TEMPLATE.md
-## Ticket
-* https://[jira-host]/[ticket-id]
+<ol>
+<li>GitHubへ変更内容をPush or PRのコメント欄に<code>test this please</code>と記述</li>
+<li>上記のイベントをトリガとしてJenkinsのJobが実行</li>
+<li>試験内容はJenkinsではなく、Kubernetes上のコンテナで実行</li>
+<li>試験結果をSlackに通知する</li>
+</ol>
 
-## Changes
-*
-
-## Check lists
-* [ ] XXXの時はYYYを行う
-* [ ] 上記に該当しないため不要
-</code></pre>
-
-<p>PRのブランチ名には<a href="https://www.atlassian.com/software/jira">JIRA</a>のチケット番号を入れているため目的やReviewerの指定は省略した。
-重点的にRVしてほしいポイントのみ記述する方式だ。
-また、どうしても自動化できないタスクはチェックリストにして実施漏れを防いでいる。</p>
+<h2 id="環境構成">環境構成</h2>
 
 <blockquote>
-<p><strong>Note</strong><br />
-* Issueのテンプレートも<code>ISSUE_TEMPLATE.md</code>で作成できる<br />
-* 拡張子は<code>.md</code>や<code>.txt</code>、<code>.org</code>等<code>README</code>と同じくだいたい使える</p>
+<p>図は、分かりやすさを優先してだいぶ省略している</p>
 </blockquote>
 
-<h2 id="contribution-guideを表示する">Contribution Guideを表示する</h2>
-
-<p>Contribution Guideは<code>CONTRIBUTING.md</code>ファイルをレポジトリに配置するだけだ。
-PR作成時、以下のようなリンクが表示されるようになる。</p>
-
-<p><img src="https://lh3.googleusercontent.com/dY6CUwtzcgHTjPTHQDBufy3UR6p0wRWPxcI5a3gSIemkjz8g-InaerI8vrT4IDQD0U5tCWPuGLYHTBydY2K_6Wmoe5L8thztKKTw9Ea1rCAC2ld05ip3uUDioWXcfZlZ6bdCbJJij5Yddr8PqF_sgsWbT6foZG2m5_iGhRjdoghq2RJIScG5AWOeSzJo7QLOqBzuFrSSkRHbshf2hwKWX3kVwFv21wbtieEQgjgqswYA39aJglqWGE6ddC-HR3A8Ga8ATYpvseYW40ZbpXc5IZhBLKBZj99uaPMp7K4t0O4yOjR7tObn2TcLRVdo7R4hb9LC-3WYvB-vc0BvXPg_hxkYjL-sN-eLbFkot-Td5vNEhaJ-3gtv91ZF4oS8RVJJgJwMLRiPdM43_sYXapUxUPee2OzOnqATeTjsgVXM58eUUDP-OkzkGi_Kn0T-iLIoyAWwoXXlvoloZMWezo8CL5SuBVSx6b99EGVau_9d03_pvxqI9XKWsKwW87nojv38Qj7dDSgk8KDjnE28fnzP-CAVaQuhof4P99CYrE7R45UMwB7GFudAl7IEoufegv3wY_oRHKqtzjXRDa9758BomY2OZlTSBudA=w1124-h334-no" alt="notification" /></p>
+<p>試験の目的は、OpenStackの1コンポーネントに対して入れた修正の動作確認。
+そのため、他のコンポーネントについては基本修正が入らない。
+修正が行われるコンポーネントのみコンテナ化して、他のものはVM上に固定で作っている。
+これは、コンテナ化には初期コスト&amp;起動時間を回避するためである。</p>
 
 <blockquote>
-<p><strong>Note</strong><br />
-* CONTRIBUTION.mdはルートに配置する方が見られる機会が増えるので良いと思う<br />
-* 同じく拡張子は変更可能</p>
+<p>VMはOpenStackのNovaで作ったものなので、OpenStack上に試験用OpenStackがいる</p>
 </blockquote>
+
+<h2 id="job構成">Job構成</h2>
+
+<p>ITとUTは並列して走るようになっており、
+どちらかの試験がコケた段階でもう一方の試験も停止して結果を返す。</p>
+
+<p>また、コンテナの後片付けは試験の開始時に行っている。
+試験の最後にコンテナを片付けてしまうと、
+試験に失敗した時の解析ができなくなってしまうためである。</p>
 
                 </section>
             </article>
@@ -113,7 +113,7 @@ PR作成時、以下のようなリンクが表示されるようになる。</p
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fadd-github-templates%2f - Pull%20Request%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%81%a7PR%e3%81%ae%e5%93%81%e8%b3%aa%e3%82%92%e4%bf%9d%e3%81%a4 by @ladicle"><span class="icon-twitter">  </span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fjenkins-study9%2f - Jenkins%e5%8b%89%e5%bc%b7%e4%bc%9a%239%e3%81%a7%e7%99%ba%e8%a1%a8%e3%81%97%e3%81%a6%e3%81%8d%e3%81%9f by @ladicle"><span class="icon-twitter">  </span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(

@@ -6,8 +6,59 @@
     <description>Recent content in Posts on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 09 Aug 2016 19:42:46 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
     <atom:link href="https://ladicle.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Jenkins勉強会#9で発表してきた</title>
+      <link>https://ladicle.github.io/post/jenkins-study9/</link>
+      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/jenkins-study9/</guid>
+      <description>
+
+&lt;p&gt;コンテナCIとJobの管理方法について話してきた。
+話した内容や質問された内容を補足する。
+スライドはこちら。&lt;/p&gt;
+
+&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;2632992e716b4ae5b4e975aedcbf3374&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
+
+&lt;h2 id=&#34;コンテナciの流れ&#34;&gt;コンテナCIの流れ&lt;/h2&gt;
+
+&lt;p&gt;ありがちではあるが、以下の通り。&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;GitHubへ変更内容をPush or PRのコメント欄に&lt;code&gt;test this please&lt;/code&gt;と記述&lt;/li&gt;
+&lt;li&gt;上記のイベントをトリガとしてJenkinsのJobが実行&lt;/li&gt;
+&lt;li&gt;試験内容はJenkinsではなく、Kubernetes上のコンテナで実行&lt;/li&gt;
+&lt;li&gt;試験結果をSlackに通知する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;環境構成&#34;&gt;環境構成&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;図は、分かりやすさを優先してだいぶ省略している&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;試験の目的は、OpenStackの1コンポーネントに対して入れた修正の動作確認。
+そのため、他のコンポーネントについては基本修正が入らない。
+修正が行われるコンポーネントのみコンテナ化して、他のものはVM上に固定で作っている。
+これは、コンテナ化には初期コスト&amp;amp;起動時間を回避するためである。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;VMはOpenStackのNovaで作ったものなので、OpenStack上に試験用OpenStackがいる&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;job構成&#34;&gt;Job構成&lt;/h2&gt;
+
+&lt;p&gt;ITとUTは並列して走るようになっており、
+どちらかの試験がコケた段階でもう一方の試験も停止して結果を返す。&lt;/p&gt;
+
+&lt;p&gt;また、コンテナの後片付けは試験の開始時に行っている。
+試験の最後にコンテナを片付けてしまうと、
+試験に失敗した時の解析ができなくなってしまうためである。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>k8sをUbuntu14.04から16.04に移行した</title>
@@ -514,7 +565,7 @@ PR作成時、以下のようなリンクが表示されるようになる。&lt
     <item>
       <title>Hugoで静的なブログを作成する</title>
       <link>https://ladicle.github.io/post/hugo-de-blog/</link>
-      <pubDate>Mon, 01 Aug 2016 21:46:40 +0900</pubDate>
+      <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
       
       <guid>https://ladicle.github.io/post/hugo-de-blog/</guid>
       <description>

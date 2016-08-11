@@ -51,6 +51,14 @@ ul ul, ul ol, ol ol, ol ul {
   margin-left: 1em;
 }
 
+ol {
+  list-style-type: decimal;
+}
+
+ul ul {
+  list-style-type: initial;
+}
+
 h2, h3 {
   margin-top: 20px;  
 }

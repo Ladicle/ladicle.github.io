@@ -51,11 +51,11 @@ ul ul, ul ol, ol ol, ol ul {
   margin-left: 1em;
 }
 
-ol {
+ol li {
   list-style-type: decimal;
 }
 
-ul ul {
+ul ul li {
   list-style-type: initial;
 }
 

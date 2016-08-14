@@ -585,6 +585,60 @@ PR作成時、以下のようなリンクが表示されるようになる。&lt
     </item>
     
     <item>
+      <title>コンテナとDockerについて思うこと</title>
+      <link>https://ladicle.github.io/post/docker-left-oci/</link>
+      <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/docker-left-oci/</guid>
+      <description>
+
+&lt;p&gt;ガチャピン先生の&lt;a href=&#34;http://blog.gachapin-sensei.com/archives/5174099.html&#34;&gt;Docker、OCIやめるってよ&lt;/a&gt;の記事が話題だったので、
+コンテナとDockerについて思ったことを書いてみる。&lt;/p&gt;
+
+&lt;h2 id=&#34;コンテナ-dockerか&#34;&gt;コンテナ = Dockerか?&lt;/h2&gt;
+
+&lt;p&gt;Dockerによってコンテナが多くの人に使われるようになったのは確かだ。&lt;br /&gt;
+しかし、&lt;strong&gt;コンテナ = Dockerか?&lt;/strong&gt; という訳ではないと思う。&lt;br /&gt;
+単純なコンテナの利点の利用&amp;mdash;&lt;br /&gt;
+例えば、『コンテナ化して各アプリケーションを隔離したい。』と思った時、
+DockerはLinuxコンテナの技術を複雑に組み合わせたDockerはオーバースキルであることが多い。&lt;/p&gt;
+
+&lt;h2 id=&#34;dockerのよさ&#34;&gt;Dockerのよさ&lt;/h2&gt;
+
+&lt;p&gt;Dockerによってコンテナが流行(?)した理由として以下のようなものが考えられる。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;ol&gt;
+&lt;li&gt;技術の隠蔽化&lt;/li&gt;
+&lt;li&gt;DockerHubの存在&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Linuxコンテナ技術自体は昔から利用されていたが、
+これらが統合されてDockerという形でラッピングされたことによって、
+アプリケーションレイヤのエンジニアにとっても使いやすいものとなった。&lt;/p&gt;
+
+&lt;p&gt;また、DockerHubはDockerが流行に一躍をかっている。
+様々なアプリケーションがDockerHubに登録されたことによって、
+今までコンテナというものに触れたことがなかった人でも&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ docker run nginx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;という簡単なコマンドだけで&lt;br /&gt;
+『コンテナという技術によって簡単にアプリケーションが立ちがる』&lt;br /&gt;
+という体験ができる。&lt;br /&gt;
+(&lt;code&gt;brew&lt;/code&gt;や&lt;code&gt;apt&lt;/code&gt;のようなパッケージマネージャのように)&lt;/p&gt;
+
+&lt;h2 id=&#34;参考になる&#34;&gt;参考になる&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;こういう文脈で I agreeではじまってるときは、たいていagreeしてない&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Hugoで静的なブログを作成する</title>
       <link>https://ladicle.github.io/post/hugo-de-blog/</link>
       <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>

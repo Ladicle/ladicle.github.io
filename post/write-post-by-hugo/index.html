@@ -7,7 +7,7 @@
 		<meta name="author" content="ladicle">
 		
 		<meta name="generator" content="Hugo 0.16" />
-		<title>Pull RequestテンプレートでPRの品質を保つ &middot; Exception();</title>
+		<title>Hugoで記事と固定ページを書く &middot; Exception();</title>
 		<link rel="shortcut icon" href="https://ladicle.github.io/images/favicon.ico">
 		<link rel="stylesheet" href="https://ladicle.github.io/css/style.css">
 		<link rel="stylesheet" href="https://ladicle.github.io/css/highlight.css">
@@ -41,14 +41,14 @@
         <section id="wrapper">
             <article class="post">
                 <header>
-                    <h1>Pull RequestテンプレートでPRの品質を保つ</h1>
+                    <h1>Hugoで記事と固定ページを書く</h1>
                     <h2 class="headline">
-                    August 2, 2016 
+                    August 5, 2016 
                     <br>
                     
                     
                         
-                            <a href="https://ladicle.github.io/tags/github">github</a>
+                            <a href="https://ladicle.github.io/tags/hugo">hugo</a>
                         
                     
                     
@@ -57,49 +57,94 @@
                 <section id="post-body">
                     
 
-<p>GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから
-RPの品質やレビューの水準が一定に保たれたと感じている。</p>
+<p><a href="https://ladicle.github.io/post/hugo-de-blog/">前回</a>は、Hugoのインストール方法とテーマの変更方法について説明した。
+今回は記事の作成と配信方法について解説する。</p>
 
-<h2 id="pull-requestのテンプレートを追加する">Pull Requestのテンプレートを追加する</h2>
+<h2 id="記事を書く">記事を書く</h2>
 
-<p>2016年の2月からGitHubが<a href="https://help.github.com/articles/creating-a-pull-request-template-for-your-repository/">テンプレート機能</a>をサポートした。(黒魔術なスクリプトは不要!)
-使い方は簡単で、<strong>レポジトリ</strong>の<code>root</code>、又は<code>.github/</code>ディレクトリに<code>PULL_REQUEST_TEMPLATE.md</code>を配置するだけだ。</p>
+<p>記事の作成には、前回作成したレポジトリの<strong>ルート</strong>でnewコマンドを使う。</p>
 
-<p>現在は以下のようなテンプレートを使用している。</p>
-
-<pre><code class="language-bash">$ cat .github/PULL_REQUEST_TEMPLATE.md
-## Ticket
-* https://[jira-host]/[ticket-id]
-
-## Changes
-*
-
-## Check lists
-* [ ] XXXの時はYYYを行う
-* [ ] 上記に該当しないため不要
+<pre><code>$ hugo new post/&lt;post-title&gt;.md
 </code></pre>
 
-<p>PRのブランチ名には<a href="https://www.atlassian.com/software/jira">JIRA</a>のチケット番号を入れているため目的やReviewerの指定は省略した。
-重点的にRVしてほしいポイントのみ記述する方式だ。
-また、どうしても自動化できないタスクはチェックリストにして実施漏れを防いでいる。</p>
+<p>実行すると、<code>content/post</code>ディレクトリに<code>&lt;post-title&gt;.md</code>が作成されている。</p>
+
+<pre><code>$ cat content/post
++++
+date = &quot;2016-08-05T07:48:33+09:00&quot;
+description = &quot;&quot;
+title = &quot;test&quot;
+
++++
+</code></pre>
+
+<p>この時、<code>draft</code>オプションをつけてserverを起動させると、
+リアルタイムに編集内容を確認することができる。</p>
+
+<pre><code>$ hugo server -builDrafts
+</code></pre>
+
+<h3 id="記事をサクッと作成する">記事をサクッと作成する</h3>
+
+<p>hugoコマンドはレポジトリのルートでしか動かないが、
+書きたいことを思いついた時レポジトリルートにいるとは限らないので、
+このようなスクリプトを<code>.zshrc</code>に登録している。</p>
+
+<pre><code>function blog() {
+    postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/content/post
+    if [ $# -eq 0 ]; then
+        BLOG_FILES=$(ag -l 'draft = true' $postPath)
+    elif [ $1 = '-p' ]; then
+        BLOG_FILES=$(ag -l 'draft = false' $postPath)
+    elif [ $1 = '-a' ]; then
+        BLOG_FILES=$(\ls $postPath)
+    else
+        cat&lt;&lt;EOF &gt; $postPath/$1.md
++++
+draft = true
+date = &quot;$(date &quot;+%Y-%m-%dT%H:%M:%S+09:00&quot;)&quot;
+description = &quot;$3&quot;
+title = &quot;$2&quot;
+categories = []
+tags = []
++++
+EOF
+        emacsclient -nw -a &quot;&quot; $postPath/$1.md
+        return 0;
+    fi
+    
+    echo &quot;$BLOG_FILES&quot; |\
+        sed 's/^.*\/\(.*\)\.[^\.]*$/\1/' |\
+        peco |\
+        xargs -I{} emacsclient -nw -a &quot;&quot; $postPath/{}.md
+
+}
+</code></pre>
+
+<p><code>-p</code>をつけたら公開済み記事一覧、<code>-a</code>をつけたら全ての記事一覧を[peco][2]を使って選択し、emacsで開くようにしている。</p>
+
+<h2 id="aboutページを追加する">Aboutページを追加する</h2>
+
+<p>上記の手順で記事は<code>content/post/*</code>に作成したが、
+固定ページは<code>content/*</code>配下に配置する。<br />
+例えば、</p>
+
+<pre><code>(%-U-)&lt; tree content
+content
+├── about.md
+└── post
+    ├── add-github-templates.md
+    ├── apache-mesos.md
+    ├── docker-left-oci.md
+</code></pre>
+
+<p>このように<code>about.md</code>を配置すると
+<code>https://your-site-host/about</code>に公開される。</p>
+
+<h2 id="次回">次回</h2>
 
 <blockquote>
-<p><strong>Note</strong><br />
-* Issueのテンプレートも<code>ISSUE_TEMPLATE.md</code>で作成できる<br />
-* 拡張子は<code>.md</code>や<code>.txt</code>、<code>.org</code>等<code>README</code>と同じくだいたい使える</p>
-</blockquote>
-
-<h2 id="contribution-guideを表示する">Contribution Guideを表示する</h2>
-
-<p>Contribution Guideは<code>CONTRIBUTING.md</code>ファイルをレポジトリに配置するだけだ。
-PR作成時、以下のようなリンクが表示されるようになる。</p>
-
-<p><img src="https://lh3.googleusercontent.com/dY6CUwtzcgHTjPTHQDBufy3UR6p0wRWPxcI5a3gSIemkjz8g-InaerI8vrT4IDQD0U5tCWPuGLYHTBydY2K_6Wmoe5L8thztKKTw9Ea1rCAC2ld05ip3uUDioWXcfZlZ6bdCbJJij5Yddr8PqF_sgsWbT6foZG2m5_iGhRjdoghq2RJIScG5AWOeSzJo7QLOqBzuFrSSkRHbshf2hwKWX3kVwFv21wbtieEQgjgqswYA39aJglqWGE6ddC-HR3A8Ga8ATYpvseYW40ZbpXc5IZhBLKBZj99uaPMp7K4t0O4yOjR7tObn2TcLRVdo7R4hb9LC-3WYvB-vc0BvXPg_hxkYjL-sN-eLbFkot-Td5vNEhaJ-3gtv91ZF4oS8RVJJgJwMLRiPdM43_sYXapUxUPee2OzOnqATeTjsgVXM58eUUDP-OkzkGi_Kn0T-iLIoyAWwoXXlvoloZMWezo8CL5SuBVSx6b99EGVau_9d03_pvxqI9XKWsKwW87nojv38Qj7dDSgk8KDjnE28fnzP-CAVaQuhof4P99CYrE7R45UMwB7GFudAl7IEoufegv3wY_oRHKqtzjXRDa9758BomY2OZlTSBudA=w1124-h334-no" alt="notification" /></p>
-
-<blockquote>
-<p><strong>Note</strong><br />
-* CONTRIBUTION.mdはルートに配置する方が見られる機会が増えるので良いと思う<br />
-* 同じく拡張子は変更可能</p>
+<p>Github.io上でサイトを公開する方法について書く。</p>
 </blockquote>
 
                 </section>
@@ -113,7 +158,7 @@ PR作成時、以下のようなリンクが表示されるようになる。</p
                         </div>
                     </a>
                 <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fadd-github-templates%2f - Pull%20Request%e3%83%86%e3%83%b3%e3%83%97%e3%83%ac%e3%83%bc%e3%83%88%e3%81%a7PR%e3%81%ae%e5%93%81%e8%b3%aa%e3%82%92%e4%bf%9d%e3%81%a4 by @ladicle"><span class="icon-twitter">  </span></a>
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2fwrite-post-by-hugo%2f - Hugo%e3%81%a7%e8%a8%98%e4%ba%8b%e3%81%a8%e5%9b%ba%e5%ae%9a%e3%83%9a%e3%83%bc%e3%82%b8%e3%82%92%e6%9b%b8%e3%81%8f by @ladicle"><span class="icon-twitter">  </span></a>
 
 <a class="facebook" href="#" onclick="
     window.open(

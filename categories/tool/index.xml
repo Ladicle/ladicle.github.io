@@ -100,7 +100,8 @@ theme = &amp;quot;hugo-cactus-theme&amp;quot;
 &lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;記事の投稿とGitHub.ioを使った配信あたりについて書く。&lt;/p&gt;
+&lt;p&gt;記事と固定ページの作成あたりについて書く。&lt;br /&gt;
+=&amp;gt; &lt;a href=&#34;https://ladicle.github.io/post/write-post-by-hugo/&#34;&gt;Hugoで記事と固定ページを書く&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
     </item>

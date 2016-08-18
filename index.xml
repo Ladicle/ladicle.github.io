@@ -444,6 +444,106 @@ index 1b2ec1a..8d5cfdb 100644
     </item>
     
     <item>
+      <title>Hugoで記事と固定ページを書く</title>
+      <link>https://ladicle.github.io/post/write-post-by-hugo/</link>
+      <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/write-post-by-hugo/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
+今回は記事の作成と配信方法について解説する。&lt;/p&gt;
+
+&lt;h2 id=&#34;記事を書く&#34;&gt;記事を書く&lt;/h2&gt;
+
+&lt;p&gt;記事の作成には、前回作成したレポジトリの&lt;strong&gt;ルート&lt;/strong&gt;でnewコマンドを使う。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo new post/&amp;lt;post-title&amp;gt;.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;実行すると、&lt;code&gt;content/post&lt;/code&gt;ディレクトリに&lt;code&gt;&amp;lt;post-title&amp;gt;.md&lt;/code&gt;が作成されている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ cat content/post
++++
+date = &amp;quot;2016-08-05T07:48:33+09:00&amp;quot;
+description = &amp;quot;&amp;quot;
+title = &amp;quot;test&amp;quot;
+
++++
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;この時、&lt;code&gt;draft&lt;/code&gt;オプションをつけてserverを起動させると、
+リアルタイムに編集内容を確認することができる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ hugo server -builDrafts
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;記事をサクッと作成する&#34;&gt;記事をサクッと作成する&lt;/h3&gt;
+
+&lt;p&gt;hugoコマンドはレポジトリのルートでしか動かないが、
+書きたいことを思いついた時レポジトリルートにいるとは限らないので、
+このようなスクリプトを&lt;code&gt;.zshrc&lt;/code&gt;に登録している。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function blog() {
+    postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/content/post
+    if [ $# -eq 0 ]; then
+        BLOG_FILES=$(ag -l &#39;draft = true&#39; $postPath)
+    elif [ $1 = &#39;-p&#39; ]; then
+        BLOG_FILES=$(ag -l &#39;draft = false&#39; $postPath)
+    elif [ $1 = &#39;-a&#39; ]; then
+        BLOG_FILES=$(\ls $postPath)
+    else
+        cat&amp;lt;&amp;lt;EOF &amp;gt; $postPath/$1.md
++++
+draft = true
+date = &amp;quot;$(date &amp;quot;+%Y-%m-%dT%H:%M:%S+09:00&amp;quot;)&amp;quot;
+description = &amp;quot;$3&amp;quot;
+title = &amp;quot;$2&amp;quot;
+categories = []
+tags = []
++++
+EOF
+        emacsclient -nw -a &amp;quot;&amp;quot; $postPath/$1.md
+        return 0;
+    fi
+    
+    echo &amp;quot;$BLOG_FILES&amp;quot; |\
+        sed &#39;s/^.*\/\(.*\)\.[^\.]*$/\1/&#39; |\
+        peco |\
+        xargs -I{} emacsclient -nw -a &amp;quot;&amp;quot; $postPath/{}.md
+
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;-p&lt;/code&gt;をつけたら公開済み記事一覧、&lt;code&gt;-a&lt;/code&gt;をつけたら全ての記事一覧を[peco][2]を使って選択し、emacsで開くようにしている。&lt;/p&gt;
+
+&lt;h2 id=&#34;aboutページを追加する&#34;&gt;Aboutページを追加する&lt;/h2&gt;
+
+&lt;p&gt;上記の手順で記事は&lt;code&gt;content/post/*&lt;/code&gt;に作成したが、
+固定ページは&lt;code&gt;content/*&lt;/code&gt;配下に配置する。&lt;br /&gt;
+例えば、&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;(%-U-)&amp;lt; tree content
+content
+├── about.md
+└── post
+    ├── add-github-templates.md
+    ├── apache-mesos.md
+    ├── docker-left-oci.md
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;このように&lt;code&gt;about.md&lt;/code&gt;を配置すると
+&lt;code&gt;https://your-site-host/about&lt;/code&gt;に公開される。&lt;/p&gt;
+
+&lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Github.io上でサイトを公開する方法について書く。&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Apache Mesos勉強会に行ってきた</title>
       <link>https://ladicle.github.io/post/apache-mesos/</link>
       <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
@@ -821,7 +921,8 @@ theme = &amp;quot;hugo-cactus-theme&amp;quot;
 &lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
 
 &lt;blockquote&gt;
-&lt;p&gt;記事の投稿とGitHub.ioを使った配信あたりについて書く。&lt;/p&gt;
+&lt;p&gt;記事と固定ページの作成あたりについて書く。&lt;br /&gt;
+=&amp;gt; &lt;a href=&#34;https://ladicle.github.io/post/write-post-by-hugo/&#34;&gt;Hugoで記事と固定ページを書く&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;
 </description>
     </item>

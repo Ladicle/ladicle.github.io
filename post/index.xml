@@ -6,8 +6,279 @@
     <description>Recent content in Posts on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 21 Aug 2016 16:14:55 +0900</lastBuildDate>
     <atom:link href="https://ladicle.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>OSX上でTWE-LITEによるドアセンサをつくる (1) - 準備編 -</title>
+      <link>https://ladicle.github.io/post/tocos-door-sensor1/</link>
+      <pubDate>Sun, 21 Aug 2016 16:14:55 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/tocos-door-sensor1/</guid>
+      <description>
+
+&lt;p&gt;開閉センサの情報をTWE-Lite-DIPとToCoSTICKでとばし、OSX上で制御する。&lt;br /&gt;
+(TOCOStickは既に生産を終了し、後継のMONOStickが発売されている。)&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;TWE-Liteの情報はは公式ページに色々あるのだが、Windows中心なのと間違いがちょこちょこあるので分かりづらい&amp;hellip;。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://ladicle.github.io/post/tocos-door-sensor/&#34;&gt;準備編&lt;/a&gt; ⇦ 今回
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;#install&#34;&gt;ドライバのインストール&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#jenprog&#34;&gt;jenprogでファームウェアを書き込む&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#setting&#34;&gt;TWE-Lite-DIPの設定を書き換える&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;電子工作編
+
+&lt;ol&gt;
+&lt;li&gt;開閉センサの回路をつくる&lt;/li&gt;
+&lt;li&gt;動作を確認する&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;li&gt;制御編
+
+&lt;ol&gt;
+&lt;li&gt;センサデータを読み取るプログラムを書く&lt;/li&gt;
+&lt;li&gt;ドアの開閉をSlackに通知する&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;a-name-install-a-1-ドライバのインストール&#34;&gt;&lt;a name=&#34;install&#34;&gt;&lt;/a&gt;1. ドライバのインストール&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.ftdichip.com/&#34;&gt;FTDICHIP&lt;/a&gt;のサイトからOSX用のドライバをインストール&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;Direct URL: &lt;a href=&#34;http://www.ftdichip.com/Drivers/VCP/MacOSX/FTDIUSBSerialDriver_v2_2_18.dmg&#34;&gt;http://www.ftdichip.com/Drivers/VCP/MacOSX/FTDIUSBSerialDriver_v2_2_18.dmg&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;dmgパッケージを実行し、&lt;code&gt;FTDICHIPUSBSerialDriver_10_4_10_5_10_6_10_7&lt;/code&gt;の方をインストールする&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;開発者が登録されていないので警告がでる&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;TOCOSTICをMacにさし、USBデバイスが認識していることを確認する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls /dev/tty.usb*
+
+crw-rw-rw-  1 root  wheel   18,   2  8 21 12:55 /dev/tty.usbserial-AHXMZWKX
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;TOCOSTICKをMACから抜く&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&#34;a-name-jenprog-a-2-jenprogでファームウェアを書き込む&#34;&gt;&lt;a name=&#34;jenprog&#34;&gt;&lt;/a&gt;2. jenprogでファームウェアを書き込む&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;TWE-LITE R単体をUSBケーブルでMACとつなげる&lt;/li&gt;
+&lt;li&gt;認識したことを確認する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls /dev/tty.usb*
+crw-rw-rw-  1 root  wheel   18,   6  8 21 13:23 /dev/tty.usbserial-AHYJH3IH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;pyserialとTWE-SDKをインストールする&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;# install pyserial
+$ pip install pyserial
+
+# Download TWE-SDK
+$ curl -O -L http://mono-wireless.com/download/SDK/TWESDK_201408-31-2/TWESDK_OSX_201408-31.zip
+$ unzip TWESDK_OSX_201408-31.zip
+
+# Add a binary file somewhere in your `PATH` list
+$ cd TWESDK/Tools/jenprog
+$ ln -s `pwd`/jenprog /usr/local/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;TWE-Lite-Rをはずし、TWE-Lite-DIPを装着する&lt;/li&gt;
+&lt;li&gt;TWE-Lite-Rの左下の&lt;code&gt;PRG&lt;/code&gt;ボタンを押したままMACにUSB接続し、プログラムモードで起動する&lt;/li&gt;
+&lt;li&gt;デバイスIDを確認する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ ls /dev/tty.usb*
+crw-rw-rw-  1 root  wheel   18,   8  8 21 14:59 /dev/tty.usbserial-AHYJH3IH
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;jenprogでTWE-LiteのMACアドレスを表示し、正常に接続されていることを確認する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ jenprog -t /dev/tty.usbserial-AHYJH3IH -s
+*** jenprog ver 1.3 ***
+  flash   : JN516x Internal Flash
+  chip id : 0x10008686
+  mac addr: 0x001bc501210109bc
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Trouble shooting&lt;/strong&gt;&lt;br /&gt;
+&lt;code&gt;ERROR(2): communicate with the target&lt;/code&gt; が表示された場合は、TWE-Liteがプログラムモードで起動していない。
+その他のエラーの場合は、pyserialが正常にinstallできていないか、
+&lt;code&gt;sudo kextload -bundle com.FTDI.driver.FTDIUSBSerialDriver&lt;/code&gt; でFIDIのドライバを読み直すとなおる。
+ただし、Macbookのドライバ周りはたまに不調になるので、再起動するとPRGモードに入れることも&amp;hellip;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;書き込むファームウェアをダウンロードする&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl -L -O http://mono-wireless.com/jp/products/Software_download/firmware/App_TweLite_1_7_1_unoff.zip
+$ unzip App_TweLite_1_7_1_unoff.zip
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;ファームウェアをTWE-Liteに書き込む&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;$ jenprog -t /dev/tty.usbserial-AHYJH3IH App_TweLite/Master/Build/App_TweLite_Master_JN5164_1_7_1.bin
+*** jenprog ver 1.3 ***
+ file info: 04 03 0008
+writing...
+  0%..10%..20%..30%..40%..50%..60%..70%..80%..90%..done - 7.90 kb/s
+done
+
+OK: firmware is successfully programmed.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;a-name-setting-a-3-twe-lite-dipの設定を書き換える&#34;&gt;&lt;a name=&#34;setting&#34;&gt;&lt;/a&gt;3. TWE-Lite-DIPの設定を書き換える&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;cuコマンドでシリアルポートにアクセスする&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo cu -s 115200 -l /dev/tty.usbserial-AHYJH3IH
+Password:
+Connected.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;接続を解除するには、&lt;code&gt;~&lt;/code&gt;を入力しプロンプトが表示されたら&lt;code&gt;.&lt;/code&gt;を入力する&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;TWE-Lite-Rの右中央あたりにある&lt;code&gt;RESET&lt;/code&gt;ボタンを押すと、以下のようなメッセージが表示される&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;!INF TOCOS TWELITE DIP APP V1-07-1, SID=0x810109BC, LID=0x78
+!INF Default config (no save info)...
+!INF DIO --&amp;gt; 00000000000000010000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;+&lt;/code&gt;キーを3回ゆっくり押す(1秒かからないくらい)と、設定画面が表示される&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;--- CONFIG/TOCOS TWELITE DIP APP V1-07-1/SID=0x810109bc/LID=0x78 ---
+ a: set Application ID (0x67720102)
+ i: set Device ID (--)
+ c: set Channels (18)
+ x: set Tx Power (3)
+ t: set mode4 sleep dur (1000ms)
+ y: set mode7 sleep dur (10s)
+ f: set mode3 fps (32)
+ z: set PWM HZ (1000)
+ o: set Option Bits    (0x00000000)
+ O: set Option Bits #2 (0x00000000)
+ b: set UART baud (38400)
+ p: set UART parity (N)
+---
+ S: save Configuration
+ R: reset to Defaults
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;a&lt;/code&gt;のApplication IDを任意の値に変更する(作成するアプリケーションごとにこの値を統一する)
+今回はとりあえず&lt;code&gt;0x66664444&lt;/code&gt;に設定する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;a
+
+Input ApplicationID (HEX:32bit): 66664444
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;マルチアプリケーションが混在している時、この値で各アプリケーションを判定するため&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;i&lt;/code&gt;のDevice IDを設定する(アプリケーション内でデバイスごとに&lt;code&gt;1~100&lt;/code&gt;のユニークな値を設定する)
+今回はとりあえず1に設定する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;i
+
+Input Device ID (DEC:1-100): 1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;y&lt;/code&gt;のSleep durationを変更する(信号の送信間隔の指定で、短くすれば反応は早くなるが電池の消費が激しくなる)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;y
+
+Input mode7 sleep dur[ms] (DEC:0-10000): 120
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;O&lt;/code&gt;のOption Bit #2を変更する(0x00000001に設定するとプルアップが無効になる)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;O
+
+Input option bits #2 (HEX): 00000001
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;S&lt;/code&gt;を入力し、設定を保存する。成功すると以下のようなメッセージが表示される&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;!INF FlashWrite Success
+!INF RESET SYSTEM...
+!INF TOCOS TWELITE DIP APP V1-07-1, SID=0x810109BC, LID=0x01
+!INF DIO --&amp;gt; 00000000000000010000
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ol&gt;
+&lt;li&gt;シリアル通信を終了する&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;pre&gt;&lt;code&gt;~[ladicle].
+
+Disconnected.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;本題の電子工作をはじめる&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;参考&#34;&gt;参考&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://blog.clockwise.ne.jp/post-171/&#34;&gt;結構ハマる。非純正ドライバをつかってOS-X 10.9でToCoStickとシリアル通信をする方法&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://karaage.hatenadiary.jp/entry/2015/05/20/090000&#34;&gt;ウェアラブルデバイスを自作してみる「TWE-Lite Setup編」&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/ksasao/items/1a221843894fdb57677b&#34;&gt;ボタン電池1個で数年持つ無線ドア開閉センサを作る&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>Jenkins勉強会#9で発表してきた</title>

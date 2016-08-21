@@ -1,0 +1,468 @@
+    <!DOCTYPE html>
+<html lang="jp">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="author" content="ladicle">
+		
+		<meta name="generator" content="Hugo 0.16" />
+		<title>OSX上でTWE-LITEによるドアセンサをつくる (1) - 準備編 - &middot; Exception();</title>
+		<link rel="shortcut icon" href="https://ladicle.github.io/images/favicon.ico">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/style.css">
+		<link rel="stylesheet" href="https://ladicle.github.io/css/highlight.css">
+		
+
+		
+		<link rel="stylesheet" href="https://ladicle.github.io/css/monosocialiconsfont.css">
+		
+
+		
+		<link href="https://ladicle.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Exception();" />
+		
+	</head>
+
+    <body>
+       <nav class="main-nav">
+	
+	
+		<a href='https://ladicle.github.io/'> <span class="arrow">←</span>Home</a>
+	
+
+	
+		<a href='https://ladicle.github.io/about'>About</a>
+	
+
+	
+	<a class="cta" href="https://ladicle.github.io/index.xml">Subscribe</a>
+	
+</nav>
+
+        <section id="wrapper">
+            <article class="post">
+                <header>
+                    <h1>OSX上でTWE-LITEによるドアセンサをつくる (1) - 準備編 -</h1>
+                    <h2 class="headline">
+                    August 21, 2016 
+                    <br>
+                    
+                    
+                        
+                            <a href="https://ladicle.github.io/tags/iot">iot</a>
+                        
+                            <a href="https://ladicle.github.io/tags/zigbee">zigbee</a>
+                        
+                            <a href="https://ladicle.github.io/tags/tocos">tocos</a>
+                        
+                    
+                    
+                    </h2>
+                </header>
+                <section id="post-body">
+                    
+
+<p>開閉センサの情報をTWE-Lite-DIPとToCoSTICKでとばし、OSX上で制御する。<br />
+(TOCOStickは既に生産を終了し、後継のMONOStickが発売されている。)</p>
+
+<blockquote>
+<p>TWE-Liteの情報はは公式ページに色々あるのだが、Windows中心なのと間違いがちょこちょこあるので分かりづらい&hellip;。</p>
+</blockquote>
+
+<h2 id="概要">概要</h2>
+
+<ul>
+<li><a href="https://ladicle.github.io/post/tocos-door-sensor/">準備編</a> ⇦ 今回
+
+<ol>
+<li><a href="#install">ドライバのインストール</a></li>
+<li><a href="#jenprog">jenprogでファームウェアを書き込む</a></li>
+<li><a href="#setting">TWE-Lite-DIPの設定を書き換える</a></li>
+</ol></li>
+<li>電子工作編
+
+<ol>
+<li>開閉センサの回路をつくる</li>
+<li>動作を確認する</li>
+</ol></li>
+<li>制御編
+
+<ol>
+<li>センサデータを読み取るプログラムを書く</li>
+<li>ドアの開閉をSlackに通知する</li>
+</ol></li>
+</ul>
+
+<h2 id="a-name-install-a-1-ドライバのインストール"><a name="install"></a>1. ドライバのインストール</h2>
+
+<ol>
+<li><a href="http://www.ftdichip.com/">FTDICHIP</a>のサイトからOSX用のドライバをインストール</li>
+</ol>
+
+<blockquote>
+<p>Direct URL: <a href="http://www.ftdichip.com/Drivers/VCP/MacOSX/FTDIUSBSerialDriver_v2_2_18.dmg">http://www.ftdichip.com/Drivers/VCP/MacOSX/FTDIUSBSerialDriver_v2_2_18.dmg</a></p>
+</blockquote>
+
+<ol>
+<li>dmgパッケージを実行し、<code>FTDICHIPUSBSerialDriver_10_4_10_5_10_6_10_7</code>の方をインストールする</li>
+</ol>
+
+<blockquote>
+<p>開発者が登録されていないので警告がでる</p>
+</blockquote>
+
+<ol>
+<li>TOCOSTICをMacにさし、USBデバイスが認識していることを確認する</li>
+</ol>
+
+<pre><code>$ ls /dev/tty.usb*
+
+crw-rw-rw-  1 root  wheel   18,   2  8 21 12:55 /dev/tty.usbserial-AHXMZWKX
+</code></pre>
+
+<ol>
+<li>TOCOSTICKをMACから抜く</li>
+</ol>
+
+<h2 id="a-name-jenprog-a-2-jenprogでファームウェアを書き込む"><a name="jenprog"></a>2. jenprogでファームウェアを書き込む</h2>
+
+<ol>
+<li>TWE-LITE R単体をUSBケーブルでMACとつなげる</li>
+<li>認識したことを確認する</li>
+</ol>
+
+<pre><code>$ ls /dev/tty.usb*
+crw-rw-rw-  1 root  wheel   18,   6  8 21 13:23 /dev/tty.usbserial-AHYJH3IH
+</code></pre>
+
+<ol>
+<li>pyserialとTWE-SDKをインストールする</li>
+</ol>
+
+<pre><code># install pyserial
+$ pip install pyserial
+
+# Download TWE-SDK
+$ curl -O -L http://mono-wireless.com/download/SDK/TWESDK_201408-31-2/TWESDK_OSX_201408-31.zip
+$ unzip TWESDK_OSX_201408-31.zip
+
+# Add a binary file somewhere in your `PATH` list
+$ cd TWESDK/Tools/jenprog
+$ ln -s `pwd`/jenprog /usr/local/bin
+</code></pre>
+
+<ol>
+<li>TWE-Lite-Rをはずし、TWE-Lite-DIPを装着する</li>
+<li>TWE-Lite-Rの左下の<code>PRG</code>ボタンを押したままMACにUSB接続し、プログラムモードで起動する</li>
+<li>デバイスIDを確認する</li>
+</ol>
+
+<pre><code>$ ls /dev/tty.usb*
+crw-rw-rw-  1 root  wheel   18,   8  8 21 14:59 /dev/tty.usbserial-AHYJH3IH
+</code></pre>
+
+<ol>
+<li>jenprogでTWE-LiteのMACアドレスを表示し、正常に接続されていることを確認する</li>
+</ol>
+
+<pre><code>$ jenprog -t /dev/tty.usbserial-AHYJH3IH -s
+*** jenprog ver 1.3 ***
+  flash   : JN516x Internal Flash
+  chip id : 0x10008686
+  mac addr: 0x001bc501210109bc
+</code></pre>
+
+<blockquote>
+<p><strong>Trouble shooting</strong><br />
+<code>ERROR(2): communicate with the target</code> が表示された場合は、TWE-Liteがプログラムモードで起動していない。
+その他のエラーの場合は、pyserialが正常にinstallできていないか、
+<code>sudo kextload -bundle com.FTDI.driver.FTDIUSBSerialDriver</code> でFIDIのドライバを読み直すとなおる。
+ただし、Macbookのドライバ周りはたまに不調になるので、再起動するとPRGモードに入れることも&hellip;</p>
+</blockquote>
+
+<ol>
+<li>書き込むファームウェアをダウンロードする</li>
+</ol>
+
+<pre><code>$ curl -L -O http://mono-wireless.com/jp/products/Software_download/firmware/App_TweLite_1_7_1_unoff.zip
+$ unzip App_TweLite_1_7_1_unoff.zip
+</code></pre>
+
+<ol>
+<li>ファームウェアをTWE-Liteに書き込む</li>
+</ol>
+
+<pre><code>$ jenprog -t /dev/tty.usbserial-AHYJH3IH App_TweLite/Master/Build/App_TweLite_Master_JN5164_1_7_1.bin
+*** jenprog ver 1.3 ***
+ file info: 04 03 0008
+writing...
+  0%..10%..20%..30%..40%..50%..60%..70%..80%..90%..done - 7.90 kb/s
+done
+
+OK: firmware is successfully programmed.
+</code></pre>
+
+<h2 id="a-name-setting-a-3-twe-lite-dipの設定を書き換える"><a name="setting"></a>3. TWE-Lite-DIPの設定を書き換える</h2>
+
+<ol>
+<li>cuコマンドでシリアルポートにアクセスする</li>
+</ol>
+
+<pre><code>sudo cu -s 115200 -l /dev/tty.usbserial-AHYJH3IH
+Password:
+Connected.
+</code></pre>
+
+<blockquote>
+<p>接続を解除するには、<code>~</code>を入力しプロンプトが表示されたら<code>.</code>を入力する</p>
+</blockquote>
+
+<ol>
+<li>TWE-Lite-Rの右中央あたりにある<code>RESET</code>ボタンを押すと、以下のようなメッセージが表示される</li>
+</ol>
+
+<pre><code>!INF TOCOS TWELITE DIP APP V1-07-1, SID=0x810109BC, LID=0x78
+!INF Default config (no save info)...
+!INF DIO --&gt; 00000000000000010000
+</code></pre>
+
+<ol>
+<li><code>+</code>キーを3回ゆっくり押す(1秒かからないくらい)と、設定画面が表示される</li>
+</ol>
+
+<pre><code>--- CONFIG/TOCOS TWELITE DIP APP V1-07-1/SID=0x810109bc/LID=0x78 ---
+ a: set Application ID (0x67720102)
+ i: set Device ID (--)
+ c: set Channels (18)
+ x: set Tx Power (3)
+ t: set mode4 sleep dur (1000ms)
+ y: set mode7 sleep dur (10s)
+ f: set mode3 fps (32)
+ z: set PWM HZ (1000)
+ o: set Option Bits    (0x00000000)
+ O: set Option Bits #2 (0x00000000)
+ b: set UART baud (38400)
+ p: set UART parity (N)
+---
+ S: save Configuration
+ R: reset to Defaults
+</code></pre>
+
+<ol>
+<li><code>a</code>のApplication IDを任意の値に変更する(作成するアプリケーションごとにこの値を統一する)
+今回はとりあえず<code>0x66664444</code>に設定する</li>
+</ol>
+
+<pre><code class="language-bash">a
+
+Input ApplicationID (HEX:32bit): 66664444
+</code></pre>
+
+<blockquote>
+<p>マルチアプリケーションが混在している時、この値で各アプリケーションを判定するため</p>
+</blockquote>
+
+<ol>
+<li><code>i</code>のDevice IDを設定する(アプリケーション内でデバイスごとに<code>1~100</code>のユニークな値を設定する)
+今回はとりあえず1に設定する</li>
+</ol>
+
+<pre><code class="language-bash">i
+
+Input Device ID (DEC:1-100): 1
+</code></pre>
+
+<ol>
+<li><code>y</code>のSleep durationを変更する(信号の送信間隔の指定で、短くすれば反応は早くなるが電池の消費が激しくなる)</li>
+</ol>
+
+<pre><code class="language-bash">y
+
+Input mode7 sleep dur[ms] (DEC:0-10000): 120
+</code></pre>
+
+<ol>
+<li><code>O</code>のOption Bit #2を変更する(0x00000001に設定するとプルアップが無効になる)</li>
+</ol>
+
+<pre><code class="language-bash">O
+
+Input option bits #2 (HEX): 00000001
+</code></pre>
+
+<ol>
+<li><code>S</code>を入力し、設定を保存する。成功すると以下のようなメッセージが表示される</li>
+</ol>
+
+<pre><code>!INF FlashWrite Success
+!INF RESET SYSTEM...
+!INF TOCOS TWELITE DIP APP V1-07-1, SID=0x810109BC, LID=0x01
+!INF DIO --&gt; 00000000000000010000
+</code></pre>
+
+<ol>
+<li>シリアル通信を終了する</li>
+</ol>
+
+<pre><code>~[ladicle].
+
+Disconnected.
+</code></pre>
+
+<h2 id="次回">次回</h2>
+
+<blockquote>
+<p>本題の電子工作をはじめる</p>
+</blockquote>
+
+<h2 id="参考">参考</h2>
+
+<ul>
+<li><a href="http://blog.clockwise.ne.jp/post-171/">結構ハマる。非純正ドライバをつかってOS-X 10.9でToCoStickとシリアル通信をする方法</a></li>
+<li><a href="http://karaage.hatenadiary.jp/entry/2015/05/20/090000">ウェアラブルデバイスを自作してみる「TWE-Lite Setup編」</a></li>
+<li><a href="http://qiita.com/ksasao/items/1a221843894fdb57677b">ボタン電池1個で数年持つ無線ドア開閉センサを作る</a></li>
+</ul>
+
+                </section>
+            </article>
+            <footer id="post-meta" class="clearfix">
+                <a href="https://twitter.com/ladicle">
+                        <img class="avatar" src="https://ladicle.github.io/images/avatar.png">
+                        <div>
+                            <span class="dark">ladicle</span>
+                            <span>Software Engineer - developing cloud services</span>
+                        </div>
+                    </a>
+                <section id="sharing">
+                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fladicle.github.io%2fpost%2ftocos-door-sensor1%2f - OSX%e4%b8%8a%e3%81%a7TWE-LITE%e3%81%ab%e3%82%88%e3%82%8b%e3%83%89%e3%82%a2%e3%82%bb%e3%83%b3%e3%82%b5%e3%82%92%e3%81%a4%e3%81%8f%e3%82%8b%20%281%29%20-%20%e6%ba%96%e5%82%99%e7%b7%a8%20- by @ladicle"><span class="icon-twitter">  </span></a>
+
+<a class="facebook" href="#" onclick="
+    window.open(
+      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
+      'facebook-share-dialog',
+      'width=626,height=436');
+    return false;"><span class="icon-facebook-rect">  </span>
+</a>
+
+                </section>
+            </footer>
+
+            
+
+            <ul id="post-list" class="archive readmore">
+    <h3>Read more</h3>
+    
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/tocos-door-sensor1/">OSX上でTWE-LITEによるドアセンサをつくる (1) - 準備編 -<aside class="dates">Aug 21</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/jenkins-study9/">Jenkins勉強会#9で発表してきた<aside class="dates">Aug 11</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/systemd-for-upstart/">k8sをUbuntu14.04から16.04に移行した<aside class="dates">Aug 9</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/golang1.7-release-party/">Golang 1.7 release party in Tokyo<aside class="dates">Aug 8</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/">Golangのバイナリに静的ファイルを組み込む<aside class="dates">Aug 6</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/write-post-by-hugo/">Hugoで記事と固定ページを書く<aside class="dates">Aug 5</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/apache-mesos/">Apache Mesos勉強会に行ってきた<aside class="dates">Aug 4</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/kindle-unlimited/">Kindle Unlimitedの技術本<aside class="dates">Aug 3</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/add-github-templates/">Pull RequestテンプレートでPRの品質を保つ<aside class="dates">Aug 2</aside></a>
+        </li>
+        
+   
+    
+        
+        <li>
+            <a href="https://ladicle.github.io/post/docker-left-oci/">コンテナとDockerについて思うこと<aside class="dates">Aug 1</aside></a>
+        </li>
+        
+   
+</ul>
+            <footer id="footer">
+    
+        <div id="social">
+
+	
+	
+    
+    <a class="symbol" href="https://www.facebook.com/ladicle">
+        facebook
+    </a>
+    
+    <a class="symbol" href="https://www.github.com/Ladicle">
+        github
+    </a>
+    
+    <a class="symbol" href="https://www.twitter.com/Ladicle">
+        twitterbird
+    </a>
+    
+
+
+</div>
+
+    
+    <p class="small">
+    
+        © Copyright 2016 ladicle
+    
+    </p>
+</footer>
+
+        </section>
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://ladicle.github.io/js/main.js"></script>
+<script src="https://ladicle.github.io/js/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+    </body>
+</html>

@@ -2,216 +2,62 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tips on Exception();</title>
-    <link>https://ladicle.github.io/categories/tips/</link>
+    <link>//ladicle.github.io/categories/tips/</link>
     <description>Recent content in Tips on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Fri, 05 Aug 2016 16:43:31 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="//ladicle.github.io/categories/tips/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hugoで記事と固定ページを書く</title>
-      <link>https://ladicle.github.io/post/write-post-by-hugo/</link>
+      <link>//ladicle.github.io/post/write-post-by-hugo/</link>
       <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/write-post-by-hugo/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
-今回は記事の作成と配信方法について解説する。&lt;/p&gt;
-
-&lt;h2 id=&#34;記事を書く&#34;&gt;記事を書く&lt;/h2&gt;
-
-&lt;p&gt;記事の作成には、前回作成したレポジトリの&lt;strong&gt;ルート&lt;/strong&gt;でnewコマンドを使う。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo new post/&amp;lt;post-title&amp;gt;.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;実行すると、&lt;code&gt;content/post&lt;/code&gt;ディレクトリに&lt;code&gt;&amp;lt;post-title&amp;gt;.md&lt;/code&gt;が作成されている。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cat content/post
-+++
-date = &amp;quot;2016-08-05T07:48:33+09:00&amp;quot;
-description = &amp;quot;&amp;quot;
-title = &amp;quot;test&amp;quot;
-
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この時、&lt;code&gt;draft&lt;/code&gt;オプションをつけてserverを起動させると、
-リアルタイムに編集内容を確認することができる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo server -builDrafts
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;記事をサクッと作成する&#34;&gt;記事をサクッと作成する&lt;/h3&gt;
-
-&lt;p&gt;hugoコマンドはレポジトリのルートでしか動かないが、
-書きたいことを思いついた時レポジトリルートにいるとは限らないので、
-このようなスクリプトを&lt;code&gt;.zshrc&lt;/code&gt;に登録している。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;function blog() {
-    postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/content/post
-    if [ $# -eq 0 ]; then
-        BLOG_FILES=$(ag -l &#39;draft = true&#39; $postPath)
-    elif [ $1 = &#39;-p&#39; ]; then
-        BLOG_FILES=$(ag -l &#39;draft = false&#39; $postPath)
-    elif [ $1 = &#39;-a&#39; ]; then
-        BLOG_FILES=$(\ls $postPath)
-    else
-        cat&amp;lt;&amp;lt;EOF &amp;gt; $postPath/$1.md
-+++
-draft = true
-date = &amp;quot;$(date &amp;quot;+%Y-%m-%dT%H:%M:%S+09:00&amp;quot;)&amp;quot;
-description = &amp;quot;$3&amp;quot;
-title = &amp;quot;$2&amp;quot;
-categories = []
-tags = []
-+++
-EOF
-        emacsclient -nw -a &amp;quot;&amp;quot; $postPath/$1.md
-        return 0;
-    fi
-    
-    echo &amp;quot;$BLOG_FILES&amp;quot; |\
-        sed &#39;s/^.*\/\(.*\)\.[^\.]*$/\1/&#39; |\
-        peco |\
-        xargs -I{} emacsclient -nw -a &amp;quot;&amp;quot; $postPath/{}.md
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;-p&lt;/code&gt;をつけたら公開済み記事一覧、&lt;code&gt;-a&lt;/code&gt;をつけたら全ての記事一覧を[peco][2]を使って選択し、emacsで開くようにしている。&lt;/p&gt;
-
-&lt;h2 id=&#34;aboutページを追加する&#34;&gt;Aboutページを追加する&lt;/h2&gt;
-
-&lt;p&gt;上記の手順で記事は&lt;code&gt;content/post/*&lt;/code&gt;に作成したが、
-固定ページは&lt;code&gt;content/*&lt;/code&gt;配下に配置する。&lt;br /&gt;
-例えば、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(%-U-)&amp;lt; tree content
-content
-├── about.md
-└── post
-    ├── add-github-templates.md
-    ├── apache-mesos.md
-    ├── docker-left-oci.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このように&lt;code&gt;about.md&lt;/code&gt;を配置すると
-&lt;code&gt;https://your-site-host/about&lt;/code&gt;に公開される。&lt;/p&gt;
-
-&lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Github.io上でサイトを公開する方法について書く。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>//ladicle.github.io/post/write-post-by-hugo/</guid>
+      <description>前回は、Hugoのインストール方法とテーマの変更方法について説明した。 今回は記事の作成と配信方法について解説する。
+記事を書く 記事の作成には、前回作成したレポジトリのルートでnewコマンドを使う。
+$ hugo new post/&amp;lt;post-title&amp;gt;.md  実行すると、content/postディレクトリに&amp;lt;post-title&amp;gt;.mdが作成されている。
+$ cat content/post +++ date = &amp;quot;2016-08-05T07:48:33+09:00&amp;quot; description = &amp;quot;&amp;quot; title = &amp;quot;test&amp;quot; +++  この時、draftオプションをつけてserverを起動させると、 リアルタイムに編集内容を確認することができる。
+$ hugo server -builDrafts  記事をサクッと作成する hugoコマンドはレポジトリのルートでしか動かないが、 書きたいことを思いついた時レポジトリルートにいるとは限らないので、 このようなスクリプトを.zshrcに登録している。
+function blog() { postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/content/post if [ $# -eq 0 ]; then BLOG_FILES=$(ag -l &#39;draft = true&#39; $postPath) elif [ $1 = &#39;-p&#39; ]; then BLOG_FILES=$(ag -l &#39;draft = false&#39; $postPath) elif [ $1 = &#39;-a&#39; ]; then BLOG_FILES=$(\ls $postPath) else cat&amp;lt;&amp;lt;EOF &amp;gt; $postPath/$1.</description>
     </item>
     
     <item>
       <title>Kindle Unlimitedの技術本</title>
-      <link>https://ladicle.github.io/post/kindle-unlimited/</link>
+      <link>//ladicle.github.io/post/kindle-unlimited/</link>
       <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/kindle-unlimited/</guid>
-      <description>
-
-&lt;p&gt;Kindle Unlimitedが今日から開始した。&lt;br /&gt;
-持っている本や良みたかった本が登録されていたのでまとめてみた。&lt;/p&gt;
-
-&lt;h2 id=&#34;technology&#34;&gt;Technology&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00L7FYBMK/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00L7FYBMK&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00L7FYBMK&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00CY9256C/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00CY9256C&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00CY9256C&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00X99MC1E/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00X99MC1E&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00X99MC1E&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00P7R545M/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00P7R545M&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00P7R545M&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00HR19TSO/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00HR19TSO&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00HR19TSO&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00IR1HYI0/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00IR1HYI0&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00IR1HYI0&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00U5MVXZO/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00U5MVXZO&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00U5MVXZO&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;
-&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00IR1HYGW/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00IR1HYGW&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00IR1HYGW&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00L7FYBMK/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00L7FYBMK&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;オンラインジャッジではじめるC/C++プログラミング入門&lt;/a&gt; : 読みたい&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00CY9256C/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00CY9256C&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;プログラミングコンテスト・チャレンジブック&lt;/a&gt; : パズルとして楽しめる&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00X99MC1E/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00X99MC1E&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;Write Portable Code&lt;/a&gt; : 読みたい&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00P7R545M/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00P7R545M&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;Code Craft&lt;/a&gt; : 読みたい&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00HR19TSO/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00HR19TSO&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;世界で闘うプログラミング力を鍛える150問&lt;/a&gt; : よい本。コーディング面接に最適 :)&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00IR1HYI0/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00IR1HYI0&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;30日でできる! OS自作入門&lt;/a&gt; : 学生のときに読んだ。ただしフロッピーなので&lt;a href=&#34;http://symfoware.blog68.fc2.com/blog-entry-706.html&#34;&gt;ここら辺&lt;/a&gt;参照&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00U5MVXZO/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00U5MVXZO&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;プログラミングコンテスト攻略のためのアルゴリズムとデータ構造&lt;/a&gt;: 読みたい&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00IR1HYGW/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00IR1HYGW&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;アジャイルな見積もりと計画づくり&lt;/a&gt; : ザッとでも読むと感覚がわかる&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;others&#34;&gt;Others&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00XCIETIG/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00XCIETIG&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;&lt;img src=&#34;http://ws-fe.amazon-adsystem.com/widgets/q?_encoding=UTF8&amp;amp;ASIN=B00XCIETIG&amp;amp;Format=_SL160_&amp;amp;ID=AsinImage&amp;amp;MarketPlace=JP&amp;amp;ServiceVersion=20070822&amp;amp;WS=1&amp;amp;tag=ladicle-22&#34; alt=&#34;img&#34; /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/gp/product/B00XCIETIG/ref=as_li_ss_il?ie=UTF8&amp;amp;camp=247&amp;amp;creative=7399&amp;amp;creativeASIN=B00XCIETIG&amp;amp;linkCode=as2&amp;amp;tag=ladicle-22&#34;&gt;ウトライン・プロセッシング入門&lt;/a&gt; : 後で読む&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;所感&#34;&gt;所感&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;実際に読まれたページ数に対応した金額が著者に支払われるようだが&lt;br /&gt;
-揉めそうな予感しかない。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>//ladicle.github.io/post/kindle-unlimited/</guid>
+      <description> Kindle Unlimitedが今日から開始した。
+持っている本や良みたかった本が登録されていたのでまとめてみた。
+Technology        
+ オンラインジャッジではじめるC/C++プログラミング入門 : 読みたい プログラミングコンテスト・チャレンジブック : パズルとして楽しめる Write Portable Code : 読みたい Code Craft : 読みたい 世界で闘うプログラミング力を鍛える150問 : よい本。コーディング面接に最適 :) 30日でできる! OS自作入門 : 学生のときに読んだ。ただしフロッピーなのでここら辺参照 プログラミングコンテスト攻略のためのアルゴリズムとデータ構造: 読みたい アジャイルな見積もりと計画づくり : ザッとでも読むと感覚がわかる  Others 
+ ウトライン・プロセッシング入門 : 後で読む  所感  実際に読まれたページ数に対応した金額が著者に支払われるようだが
+揉めそうな予感しかない。
+ </description>
     </item>
     
     <item>
       <title>Pull RequestテンプレートでPRの品質を保つ</title>
-      <link>https://ladicle.github.io/post/add-github-templates/</link>
+      <link>//ladicle.github.io/post/add-github-templates/</link>
       <pubDate>Tue, 02 Aug 2016 15:19:34 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/add-github-templates/</guid>
-      <description>
-
-&lt;p&gt;GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから
-RPの品質やレビューの水準が一定に保たれたと感じている。&lt;/p&gt;
-
-&lt;h2 id=&#34;pull-requestのテンプレートを追加する&#34;&gt;Pull Requestのテンプレートを追加する&lt;/h2&gt;
-
-&lt;p&gt;2016年の2月からGitHubが&lt;a href=&#34;https://help.github.com/articles/creating-a-pull-request-template-for-your-repository/&#34;&gt;テンプレート機能&lt;/a&gt;をサポートした。(黒魔術なスクリプトは不要!)
-使い方は簡単で、&lt;strong&gt;レポジトリ&lt;/strong&gt;の&lt;code&gt;root&lt;/code&gt;、又は&lt;code&gt;.github/&lt;/code&gt;ディレクトリに&lt;code&gt;PULL_REQUEST_TEMPLATE.md&lt;/code&gt;を配置するだけだ。&lt;/p&gt;
-
-&lt;p&gt;現在は以下のようなテンプレートを使用している。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ cat .github/PULL_REQUEST_TEMPLATE.md
-## Ticket
-* https://[jira-host]/[ticket-id]
-
-## Changes
-*
-
-## Check lists
-* [ ] XXXの時はYYYを行う
-* [ ] 上記に該当しないため不要
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;PRのブランチ名には&lt;a href=&#34;https://www.atlassian.com/software/jira&#34;&gt;JIRA&lt;/a&gt;のチケット番号を入れているため目的やReviewerの指定は省略した。
-重点的にRVしてほしいポイントのみ記述する方式だ。
-また、どうしても自動化できないタスクはチェックリストにして実施漏れを防いでいる。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;br /&gt;
-* Issueのテンプレートも&lt;code&gt;ISSUE_TEMPLATE.md&lt;/code&gt;で作成できる&lt;br /&gt;
-* 拡張子は&lt;code&gt;.md&lt;/code&gt;や&lt;code&gt;.txt&lt;/code&gt;、&lt;code&gt;.org&lt;/code&gt;等&lt;code&gt;README&lt;/code&gt;と同じくだいたい使える&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;contribution-guideを表示する&#34;&gt;Contribution Guideを表示する&lt;/h2&gt;
-
-&lt;p&gt;Contribution Guideは&lt;code&gt;CONTRIBUTING.md&lt;/code&gt;ファイルをレポジトリに配置するだけだ。
-PR作成時、以下のようなリンクが表示されるようになる。&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&#34;https://lh3.googleusercontent.com/dY6CUwtzcgHTjPTHQDBufy3UR6p0wRWPxcI5a3gSIemkjz8g-InaerI8vrT4IDQD0U5tCWPuGLYHTBydY2K_6Wmoe5L8thztKKTw9Ea1rCAC2ld05ip3uUDioWXcfZlZ6bdCbJJij5Yddr8PqF_sgsWbT6foZG2m5_iGhRjdoghq2RJIScG5AWOeSzJo7QLOqBzuFrSSkRHbshf2hwKWX3kVwFv21wbtieEQgjgqswYA39aJglqWGE6ddC-HR3A8Ga8ATYpvseYW40ZbpXc5IZhBLKBZj99uaPMp7K4t0O4yOjR7tObn2TcLRVdo7R4hb9LC-3WYvB-vc0BvXPg_hxkYjL-sN-eLbFkot-Td5vNEhaJ-3gtv91ZF4oS8RVJJgJwMLRiPdM43_sYXapUxUPee2OzOnqATeTjsgVXM58eUUDP-OkzkGi_Kn0T-iLIoyAWwoXXlvoloZMWezo8CL5SuBVSx6b99EGVau_9d03_pvxqI9XKWsKwW87nojv38Qj7dDSgk8KDjnE28fnzP-CAVaQuhof4P99CYrE7R45UMwB7GFudAl7IEoufegv3wY_oRHKqtzjXRDa9758BomY2OZlTSBudA=w1124-h334-no&#34; alt=&#34;notification&#34; /&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;&lt;br /&gt;
-* CONTRIBUTION.mdはルートに配置する方が見られる機会が増えるので良いと思う&lt;br /&gt;
-* 同じく拡張子は変更可能&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>//ladicle.github.io/post/add-github-templates/</guid>
+      <description> GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから RPの品質やレビューの水準が一定に保たれたと感じている。
+Pull Requestのテンプレートを追加する 2016年の2月からGitHubがテンプレート機能をサポートした。(黒魔術なスクリプトは不要!) 使い方は簡単で、レポジトリのroot、又は.github/ディレクトリにPULL_REQUEST_TEMPLATE.mdを配置するだけだ。
+現在は以下のようなテンプレートを使用している。
+$ cat .github/PULL_REQUEST_TEMPLATE.md ## Ticket * https://[jira-host]/[ticket-id] ## Changes * ## Check lists * [ ] XXXの時はYYYを行う * [ ] 上記に該当しないため不要  PRのブランチ名にはJIRAのチケット番号を入れているため目的やReviewerの指定は省略した。 重点的にRVしてほしいポイントのみ記述する方式だ。 また、どうしても自動化できないタスクはチェックリストにして実施漏れを防いでいる。
+ Note
+* IssueのテンプレートもISSUE_TEMPLATE.mdで作成できる
+* 拡張子は.mdや.txt、.org等READMEと同じくだいたい使える
+ Contribution Guideを表示する Contribution GuideはCONTRIBUTING.mdファイルをレポジトリに配置するだけだ。 PR作成時、以下のようなリンクが表示されるようになる。
+ Note
+* CONTRIBUTION.mdはルートに配置する方が見られる機会が増えるので良いと思う
+* 同じく拡張子は変更可能
+ </description>
     </item>
     
   </channel>

@@ -1,74 +1,261 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://ladicle.github.io/</loc>
+    <loc>//ladicle.github.io/post/tocos-door-sensor1/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/tocos-door-sensor1/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ladicle.github.io/post/jenkins-study9/</loc>
+    <loc>//ladicle.github.io/post/jenkins-study9/</loc>
     <lastmod>2016-08-11T23:39:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/systemd-for-upstart/</loc>
+    <loc>//ladicle.github.io/post/systemd-for-upstart/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/golang1.7-release-party/</loc>
+    <loc>//ladicle.github.io/post/golang1.7-release-party/</loc>
     <lastmod>2016-08-08T19:48:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</loc>
+    <loc>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</loc>
     <lastmod>2016-08-06T10:06:25+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/write-post-by-hugo/</loc>
+    <loc>//ladicle.github.io/post/write-post-by-hugo/</loc>
     <lastmod>2016-08-05T16:43:31+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/apache-mesos/</loc>
+    <loc>//ladicle.github.io/post/apache-mesos/</loc>
     <lastmod>2016-08-04T20:22:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/kindle-unlimited/</loc>
+    <loc>//ladicle.github.io/post/kindle-unlimited/</loc>
     <lastmod>2016-08-03T12:33:51+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/add-github-templates/</loc>
+    <loc>//ladicle.github.io/post/add-github-templates/</loc>
     <lastmod>2016-08-02T15:19:34+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/docker-left-oci/</loc>
+    <loc>//ladicle.github.io/post/docker-left-oci/</loc>
     <lastmod>2016-08-01T21:52:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/hugo-de-blog/</loc>
+    <loc>//ladicle.github.io/post/hugo-de-blog/</loc>
     <lastmod>2016-07-31T21:46:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/about/</loc>
+    <loc>//ladicle.github.io/about/</loc>
     <lastmod>2016-07-15T21:04:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>https://ladicle.github.io/post/hello-world/</loc>
+    <loc>//ladicle.github.io/post/hello-world/</loc>
     <lastmod>2016-07-15T17:23:37+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/apache/</loc>
+    <lastmod>2016-08-04T20:22:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/binary/</loc>
+    <lastmod>2016-08-06T10:06:25+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/book/</loc>
+    <lastmod>2016-08-03T12:33:51+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/container/</loc>
+    <lastmod>2016-08-01T21:52:39+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/container/</loc>
+    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/docker/</loc>
+    <lastmod>2016-08-01T21:52:39+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/etc/</loc>
+    <lastmod>2016-07-15T17:23:37+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/</loc>
+    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/github/</loc>
+    <lastmod>2016-08-02T15:19:34+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/golang/</loc>
+    <lastmod>2016-08-08T19:48:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/golang/</loc>
+    <lastmod>2016-08-08T19:48:11+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/hugo/</loc>
+    <lastmod>2016-08-05T16:43:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/iot/</loc>
+    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/iot/</loc>
+    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/jenkins/</loc>
+    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/jenkins/</loc>
+    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/kubernetes/</loc>
+    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/kubernetes/</loc>
+    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/mesos/</loc>
+    <lastmod>2016-08-04T20:22:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/post/</loc>
+    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/study/</loc>
+    <lastmod>2016-08-04T20:22:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/study/</loc>
+    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/systemd/</loc>
+    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/</loc>
+    <lastmod>2016-08-04T20:22:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/tips/</loc>
+    <lastmod>2016-08-05T16:43:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/tocos/</loc>
+    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/tool/</loc>
+    <lastmod>2016-07-31T21:46:40+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/categories/ubuntu/</loc>
+    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/ubuntu/</loc>
+    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/upstart/</loc>
+    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>//ladicle.github.io/tags/zigbee/</loc>
+    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <priority>0</priority>
   </url>
   
 </urlset>

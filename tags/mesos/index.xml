@@ -2,139 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mesos on Exception();</title>
-    <link>https://ladicle.github.io/tags/mesos/</link>
+    <link>//ladicle.github.io/tags/mesos/</link>
     <description>Recent content in Mesos on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Thu, 04 Aug 2016 20:22:57 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/tags/mesos/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="//ladicle.github.io/tags/mesos/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Apache Mesos勉強会に行ってきた</title>
-      <link>https://ladicle.github.io/post/apache-mesos/</link>
+      <link>//ladicle.github.io/post/apache-mesos/</link>
       <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/apache-mesos/</guid>
-      <description>
-
-&lt;p&gt;MesosはKubernetesと比較されることが多いので気になっていた。&lt;br /&gt;
-イベントのURLは&lt;a href=&#34;https://www.google.com/url?q=http%3A%2F%2Fconnpass.com%2Fevent%2F36415%2F&amp;amp;sa=D&amp;amp;usd=2&amp;amp;usg=AFQjCNHlDmy2a6EiNcCrDPxYCtHWQoGSIg&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
-
-&lt;h2 id=&#34;1-mesos-とは何か&#34;&gt;1. Mesos とは何か&lt;/h2&gt;
-
-&lt;p&gt;木内さん @クリエーションライン&lt;/p&gt;
-
-&lt;h3 id=&#34;概要&#34;&gt;概要&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;DCOS(ﾃﾞｨｰｼｰｵｰｴｽ)と呼べ&lt;/li&gt;
-&lt;li&gt;YARN日書いが、YARNはHadoopのためのジョブスケジューラ&lt;/li&gt;
-&lt;li&gt;Mesosはサービス基盤の運用を目的にしている(対象範囲が広い)&lt;/li&gt;
-&lt;li&gt;Mesos is cluster of cluster&lt;/li&gt;
-&lt;li&gt;Dockerとの統合をサポート&lt;br /&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;コンテナ化すると分業が可能&#34;&gt;コンテナ化すると分業が可能&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;データセンタチーム : 実行基盤の配置だけ&lt;/li&gt;
-&lt;li&gt;インフラチーム : リソースの稼働状況だけ&lt;/li&gt;
-&lt;li&gt;アプリケーションチーム : コンテナの内容だけ&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;この手の物は作業が少なくなるというより&lt;br /&gt;
-(むしろ見るコンポーネントは増えていることが多々)
-分業できるところに利点を置いてるので、小さいチームもしくは大きいチームでも分業されないと
-運用負荷は上がるばかりだと思う&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;2-docker-ホスティングサービス-arukas-での-mesos-marathon-の活用について&#34;&gt;2. Docker ホスティングサービス &amp;lsquo;Arukas&amp;rsquo; での Mesos + Marathon の活用について&lt;/h2&gt;
-
-&lt;p&gt;山田 修司 さん @さくらインターネット&lt;/p&gt;
-
-&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/3gGcyVAODDcPXg&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;構成&#34;&gt;構成&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Zookeeper&lt;/li&gt;
-&lt;li&gt;Master&lt;/li&gt;
-&lt;li&gt;Slave: executor実行, CPU情報の送信&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;k8s-vs-mesos&#34;&gt;k8s VS Mesos&lt;/h3&gt;
-
-&lt;p&gt;k8sはセットアップ簡単だけどシングルテナント向けでコンテナOnly。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;k8sのMultiTenant話は&lt;a href=&#34;http://blog.kubernetes.io/2016/05/hypernetes-security-and-multi-tenancy-in-kubernetes.html?utm_content=buffer08df8&amp;amp;utm_medium=social&amp;amp;utm_source=twitter.com&amp;amp;utm_campaign=buffer&#34;&gt;ここら&lt;/a&gt;辺にある。&lt;br /&gt;
-セットアップ楽という話が出ていたが&amp;hellip;。(Mesosがものすごくツライのかもしれない)&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h3 id=&#34;twitterでの議論&#34;&gt;Twitterでの議論&lt;/h3&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;Mesos+Marathonはなぜヘビー級に汚れる環境向けなのかの説明が結局なかった気がするが、なんでだろ。環境が分離されるから、がその理由だった? &lt;a href=&#34;https://twitter.com/hashtag/mesosjp?src=hash&#34;&gt;#mesosjp&lt;/a&gt;&lt;/p&gt;&amp;mdash; tagomoris (@tagomoris) &lt;a href=&#34;https://twitter.com/tagomoris/status/761150770943135744&#34;&gt;2016年8月4日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;
-&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/tagomoris&#34;&gt;@tagomoris&lt;/a&gt; 対比でいうと、シングルテナント向けかどうかと組み合わせると、割と大きな差がついてると思います。あと最初から狙ってるかどうか&lt;/p&gt;&amp;mdash; SO-Copy&amp;#39;n&amp;#39;paster (@kuenishi) &lt;a href=&#34;https://twitter.com/kuenishi/status/761152013132365824&#34;&gt;2016年8月4日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h3 id=&#34;mesos-marathon-demo&#34;&gt;mesos-marathon-demo&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/uzyexe/mesos-marathon-demo&#34;&gt;https://github.com/uzyexe/mesos-marathon-demo&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;3-mesos-frameworkの作り方&#34;&gt;3. Mesos Frameworkの作り方&lt;/h2&gt;
-
-&lt;p&gt;上西さん @ノーチラス・テクノロジーズ&lt;/p&gt;
-
-&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;759e5933c08c4460a10ab21b97949384&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-
-&lt;h3 id=&#34;概要-1&#34;&gt;概要&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Scheduller &amp;amp; Framework時のファイルオーバーとなどは自前で実装する必要あり(辛そう)&lt;/li&gt;
-&lt;li&gt;Frameworkを自分で作らないとMesosを作ったとは言えない(emacsのメインモードを作らないと 以下略&lt;/li&gt;
-&lt;li&gt;CPUもGPUもcgroupsで隔離されている&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;retz&#34;&gt;Retz&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/retz&#34;&gt;https://github.com/retz&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;4-mesos-に-gpu-を食わせてみるテスト-2016夏&#34;&gt;4. Mesos に GPU を食わせてみるテスト ～2016夏～&lt;/h2&gt;
-
-&lt;p&gt;須藤さん @さくらインターネット&lt;/p&gt;
-
-&lt;h3 id=&#34;概要-2&#34;&gt;概要&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;高火力は、大量の計算資源を使ってもらうためのクローズドサービス&lt;/li&gt;
-&lt;li&gt;機械学習での利用がおおい&lt;/li&gt;
-&lt;li&gt;GPGPU界隈はこわい&lt;/li&gt;
-&lt;li&gt;Framework作る人向けにMesos層を提供する(かもしれない)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&#34;5-iaasの実装をフルスクラッチした人が思う-もうmesosで良いじゃんって話&#34;&gt;5. IaaSの実装をフルスクラッチした人が思う、もうMesosで良いじゃんって話&lt;/h2&gt;
-
-&lt;p&gt;山崎 泰宏さん @Axsh&lt;/p&gt;
-
-&lt;h3 id=&#34;概要-3&#34;&gt;概要&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Mesosを使ってるわけではないけど、IaaSを作っている人から見たMesosの話&lt;/li&gt;
-&lt;li&gt;仮想ネットワークだけ求めているお客さんが多かった&lt;/li&gt;
-&lt;li&gt;OS相当のソフトウェアがDCにも必要&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;ものすごくうまく情報収集して設計していて凄い&amp;hellip;&lt;br /&gt;
-概念的なOSかと思っていたらPOSIXの互換APIを実装している :o&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>//ladicle.github.io/post/apache-mesos/</guid>
+      <description>MesosはKubernetesと比較されることが多いので気になっていた。
+イベントのURLはこちら。
+1. Mesos とは何か 木内さん @クリエーションライン
+概要  DCOS(ﾃﾞｨｰｼｰｵｰｴｽ)と呼べ YARN日書いが、YARNはHadoopのためのジョブスケジューラ Mesosはサービス基盤の運用を目的にしている(対象範囲が広い) Mesos is cluster of cluster Dockerとの統合をサポート
+  コンテナ化すると分業が可能  データセンタチーム : 実行基盤の配置だけ インフラチーム : リソースの稼働状況だけ アプリケーションチーム : コンテナの内容だけ   この手の物は作業が少なくなるというより
+(むしろ見るコンポーネントは増えていることが多々) 分業できるところに利点を置いてるので、小さいチームもしくは大きいチームでも分業されないと 運用負荷は上がるばかりだと思う
+ 2. Docker ホスティングサービス &amp;lsquo;Arukas&amp;rsquo; での Mesos + Marathon の活用について 山田 修司 さん @さくらインターネット
+ 構成  Zookeeper Master Slave: executor実行, CPU情報の送信  k8s VS Mesos k8sはセットアップ簡単だけどシングルテナント向けでコンテナOnly。
+ k8sのMultiTenant話はここら辺にある。
+セットアップ楽という話が出ていたが&amp;hellip;。(Mesosがものすごくツライのかもしれない)
+ Twitterでの議論 Mesos+Marathonはなぜヘビー級に汚れる環境向けなのかの説明が結局なかった気がするが、なんでだろ。環境が分離されるから、がその理由だった?</description>
     </item>
     
   </channel>

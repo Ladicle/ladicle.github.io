@@ -2,208 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Exception();</title>
-    <link>https://ladicle.github.io/tags/hugo/</link>
+    <link>//ladicle.github.io/tags/hugo/</link>
     <description>Recent content in Hugo on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Fri, 05 Aug 2016 16:43:31 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="//ladicle.github.io/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Hugoで記事と固定ページを書く</title>
-      <link>https://ladicle.github.io/post/write-post-by-hugo/</link>
+      <link>//ladicle.github.io/post/write-post-by-hugo/</link>
       <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/write-post-by-hugo/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
-今回は記事の作成と配信方法について解説する。&lt;/p&gt;
-
-&lt;h2 id=&#34;記事を書く&#34;&gt;記事を書く&lt;/h2&gt;
-
-&lt;p&gt;記事の作成には、前回作成したレポジトリの&lt;strong&gt;ルート&lt;/strong&gt;でnewコマンドを使う。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo new post/&amp;lt;post-title&amp;gt;.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;実行すると、&lt;code&gt;content/post&lt;/code&gt;ディレクトリに&lt;code&gt;&amp;lt;post-title&amp;gt;.md&lt;/code&gt;が作成されている。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cat content/post
-+++
-date = &amp;quot;2016-08-05T07:48:33+09:00&amp;quot;
-description = &amp;quot;&amp;quot;
-title = &amp;quot;test&amp;quot;
-
-+++
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;この時、&lt;code&gt;draft&lt;/code&gt;オプションをつけてserverを起動させると、
-リアルタイムに編集内容を確認することができる。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo server -builDrafts
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;記事をサクッと作成する&#34;&gt;記事をサクッと作成する&lt;/h3&gt;
-
-&lt;p&gt;hugoコマンドはレポジトリのルートでしか動かないが、
-書きたいことを思いついた時レポジトリルートにいるとは限らないので、
-このようなスクリプトを&lt;code&gt;.zshrc&lt;/code&gt;に登録している。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;function blog() {
-    postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/content/post
-    if [ $# -eq 0 ]; then
-        BLOG_FILES=$(ag -l &#39;draft = true&#39; $postPath)
-    elif [ $1 = &#39;-p&#39; ]; then
-        BLOG_FILES=$(ag -l &#39;draft = false&#39; $postPath)
-    elif [ $1 = &#39;-a&#39; ]; then
-        BLOG_FILES=$(\ls $postPath)
-    else
-        cat&amp;lt;&amp;lt;EOF &amp;gt; $postPath/$1.md
-+++
-draft = true
-date = &amp;quot;$(date &amp;quot;+%Y-%m-%dT%H:%M:%S+09:00&amp;quot;)&amp;quot;
-description = &amp;quot;$3&amp;quot;
-title = &amp;quot;$2&amp;quot;
-categories = []
-tags = []
-+++
-EOF
-        emacsclient -nw -a &amp;quot;&amp;quot; $postPath/$1.md
-        return 0;
-    fi
-    
-    echo &amp;quot;$BLOG_FILES&amp;quot; |\
-        sed &#39;s/^.*\/\(.*\)\.[^\.]*$/\1/&#39; |\
-        peco |\
-        xargs -I{} emacsclient -nw -a &amp;quot;&amp;quot; $postPath/{}.md
-
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;code&gt;-p&lt;/code&gt;をつけたら公開済み記事一覧、&lt;code&gt;-a&lt;/code&gt;をつけたら全ての記事一覧を[peco][2]を使って選択し、emacsで開くようにしている。&lt;/p&gt;
-
-&lt;h2 id=&#34;aboutページを追加する&#34;&gt;Aboutページを追加する&lt;/h2&gt;
-
-&lt;p&gt;上記の手順で記事は&lt;code&gt;content/post/*&lt;/code&gt;に作成したが、
-固定ページは&lt;code&gt;content/*&lt;/code&gt;配下に配置する。&lt;br /&gt;
-例えば、&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;(%-U-)&amp;lt; tree content
-content
-├── about.md
-└── post
-    ├── add-github-templates.md
-    ├── apache-mesos.md
-    ├── docker-left-oci.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このように&lt;code&gt;about.md&lt;/code&gt;を配置すると
-&lt;code&gt;https://your-site-host/about&lt;/code&gt;に公開される。&lt;/p&gt;
-
-&lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Github.io上でサイトを公開する方法について書く。&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>//ladicle.github.io/post/write-post-by-hugo/</guid>
+      <description>前回は、Hugoのインストール方法とテーマの変更方法について説明した。 今回は記事の作成と配信方法について解説する。
+記事を書く 記事の作成には、前回作成したレポジトリのルートでnewコマンドを使う。
+$ hugo new post/&amp;lt;post-title&amp;gt;.md  実行すると、content/postディレクトリに&amp;lt;post-title&amp;gt;.mdが作成されている。
+$ cat content/post +++ date = &amp;quot;2016-08-05T07:48:33+09:00&amp;quot; description = &amp;quot;&amp;quot; title = &amp;quot;test&amp;quot; +++  この時、draftオプションをつけてserverを起動させると、 リアルタイムに編集内容を確認することができる。
+$ hugo server -builDrafts  記事をサクッと作成する hugoコマンドはレポジトリのルートでしか動かないが、 書きたいことを思いついた時レポジトリルートにいるとは限らないので、 このようなスクリプトを.zshrcに登録している。
+function blog() { postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/content/post if [ $# -eq 0 ]; then BLOG_FILES=$(ag -l &#39;draft = true&#39; $postPath) elif [ $1 = &#39;-p&#39; ]; then BLOG_FILES=$(ag -l &#39;draft = false&#39; $postPath) elif [ $1 = &#39;-a&#39; ]; then BLOG_FILES=$(\ls $postPath) else cat&amp;lt;&amp;lt;EOF &amp;gt; $postPath/$1.</description>
     </item>
     
     <item>
       <title>Hugoで静的なブログを作成する</title>
-      <link>https://ladicle.github.io/post/hugo-de-blog/</link>
+      <link>//ladicle.github.io/post/hugo-de-blog/</link>
       <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/hugo-de-blog/</guid>
-      <description>
-
-&lt;p&gt;このブログは&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を使用してGithub.io上に建てている。&lt;br /&gt;
-静的Webサイトジェネレータは有名どころだとRailsの&lt;a href=&#34;https://github.com/jekyll/jekyll&#34;&gt;Jekyll&lt;/a&gt;や&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;、Pythonの&lt;a href=&#34;https://github.com/getpelican/pelican&#34;&gt;Pelican&lt;/a&gt;、Nodeの&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;などが存在するが、
-Hugoは速さを売りにしている。&lt;/p&gt;
-
-&lt;h2 id=&#34;why-hugo&#34;&gt;Why Hugo?&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;strong&gt;Golang&lt;/strong&gt;で書かれている。I&amp;rsquo;m gopher!!&lt;/li&gt;
-&lt;li&gt;モダンな&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;Themes&lt;/a&gt;が揃っている&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;hugoをインストールする&#34;&gt;Hugoをインストールする&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;brew install hugo&lt;/code&gt;を実行してhugoをインストール&lt;sup&gt;&lt;a href=&#34;#ref1&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/li&gt;
-&lt;li&gt;hugoコマンドでサイトのベースを作成する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ hugo new site &amp;lt;YOUR_SITE_NAME&amp;gt;
-$ tree .
-.
-├── archetypes: : 独自のプロパティ定義
-├── config.toml : サイトのTitleや説明、テーマなど全体設定のファイル
-├── content : ブログ記事等、サイトの中身を格納する
-├── data : TOML, JSONなどの設定ファイル
-├── layouts : 静的サイトを作成する時の変換レイアウトの指定
-├── static : CSSやJavaScriptを配置する
-└── themes : サイトのテーマを格納する
-
-6 directories, 1 file
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;code&gt;hugo server&lt;/code&gt;で起動し、&lt;code&gt;localhost:1313&lt;/code&gt;にアクセスする&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;span id=&#34;ref1&#34;&gt;1&lt;/span&gt;. OSX以外の場合は&lt;a href=&#34;https://github.com/spf13/hugo/releases&#34;&gt;Releases&lt;/a&gt;から該当のバイナリをDLしてPathを通す&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;テーマを変更する&#34;&gt;テーマを変更する&lt;/h2&gt;
-
-&lt;p&gt;テーマの&lt;a href=&#34;http://themes.gohugo.io/&#34;&gt;ここ&lt;/a&gt;一覧はここで見ることができる。&lt;br /&gt;
-今回は例としてこのブログに使われている&lt;a href=&#34;http://themes.gohugo.io/cactus/&#34;&gt;cactus&lt;/a&gt;を使う。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;テーマのディレクトリに移動する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;cd themes
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;テーマをGit cloneする&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;git clone https://github.com/digitalcraftsman/hugo-cactus-theme.git
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;repositoryのルートに戻り、config.tomlにテーマを追加する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ cat config.toml | grep theme
-theme = &amp;quot;hugo-cactus-theme&amp;quot;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;他の設定については、&lt;code&gt;themes/hugo-cactus-theme/exampleSite/config.toml&lt;/code&gt;を参考にするとよい&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-&lt;li&gt;サーバを起動し、テーマが反映されていることを確認する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;おそらく、シンプルな画面が表示されるだろう。&lt;/p&gt;
-
-&lt;h2 id=&#34;次回&#34;&gt;次回&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;記事と固定ページの作成あたりについて書く。&lt;br /&gt;
-=&amp;gt; &lt;a href=&#34;https://ladicle.github.io/post/write-post-by-hugo/&#34;&gt;Hugoで記事と固定ページを書く&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <guid>//ladicle.github.io/post/hugo-de-blog/</guid>
+      <description>このブログはHugoを使用してGithub.io上に建てている。
+静的Webサイトジェネレータは有名どころだとRailsのJekyllやOctopress、PythonのPelican、NodeのHexoなどが存在するが、 Hugoは速さを売りにしている。
+Why Hugo?  Golangで書かれている。I&amp;rsquo;m gopher!! モダンなThemesが揃っている  Hugoをインストールする  brew install hugoを実行してhugoをインストール1 hugoコマンドでサイトのベースを作成する  $ hugo new site &amp;lt;YOUR_SITE_NAME&amp;gt; $ tree . . ├── archetypes: : 独自のプロパティ定義 ├── config.toml : サイトのTitleや説明、テーマなど全体設定のファイル ├── content : ブログ記事等、サイトの中身を格納する ├── data : TOML, JSONなどの設定ファイル ├── layouts : 静的サイトを作成する時の変換レイアウトの指定 ├── static : CSSやJavaScriptを配置する └── themes : サイトのテーマを格納する 6 directories, 1 file   hugo serverで起動し、localhost:1313にアクセスする   1. OSX以外の場合はReleasesから該当のバイナリをDLしてPathを通す
+ テーマを変更する テーマのここ一覧はここで見ることができる。</description>
     </item>
     
   </channel>

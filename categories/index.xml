@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on Exception();</title>
+    <link>//ladicle.github.io/categories/</link>
+    <description>Recent content in Categories on Exception();</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    
+	<atom:link href="//ladicle.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Container</title>
+      <link>//ladicle.github.io/categories/container/</link>
+      <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Etc</title>
+      <link>//ladicle.github.io/categories/etc/</link>
+      <pubDate>Fri, 15 Jul 2016 17:23:37 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/etc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>//ladicle.github.io/categories/golang/</link>
+      <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iot</title>
+      <link>//ladicle.github.io/categories/iot/</link>
+      <pubDate>Sun, 21 Aug 2016 16:14:55 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>//ladicle.github.io/categories/jenkins/</link>
+      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>//ladicle.github.io/categories/kubernetes/</link>
+      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study</title>
+      <link>//ladicle.github.io/categories/study/</link>
+      <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tips</title>
+      <link>//ladicle.github.io/categories/tips/</link>
+      <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/tips/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tool</title>
+      <link>//ladicle.github.io/categories/tool/</link>
+      <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/tool/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>//ladicle.github.io/categories/ubuntu/</link>
+      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/categories/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

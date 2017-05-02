@@ -2,103 +2,23 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Binary on Exception();</title>
-    <link>https://ladicle.github.io/tags/binary/</link>
+    <link>//ladicle.github.io/tags/binary/</link>
     <description>Recent content in Binary on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Sat, 06 Aug 2016 10:06:25 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/tags/binary/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="//ladicle.github.io/tags/binary/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Golangのバイナリに静的ファイルを組み込む</title>
-      <link>https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</link>
+      <link>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</link>
       <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</guid>
-      <description>
-
-&lt;p&gt;markdownをgithubスタイルのHTMLに変換する&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;mark2h&lt;/a&gt;というものを作成したが、
-使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。
-今回は、&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;go-bindata&lt;/a&gt;を使って静的ファイルをGoのバイナリに組み込んでみる。&lt;/p&gt;
-
-&lt;h2 id=&#34;go-bindataを使う&#34;&gt;go-bindataを使う&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;go-bindataのinstall&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get -u github.com/jteeuwen/go-bindata/...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;静的ファイルを格納するディレクトリを作る(名前は適当なもの)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ mkdir assets
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;go-bindataを実行する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go-bindata -o assets.go assets
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;template読み込み部分を置き換える&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/main.go b/main.go
-index 1b2ec1a..8d5cfdb 100644
---- a/main.go
-+++ b/main.go
-@@ -55,13 +55,13 @@ func main(){
-                os.Exit(0)
-        }
-
--       tpl, err := ioutil.ReadFile(&amp;quot;markdown.html&amp;quot;)
-+       tpl, err := Asset(templatePath)
-        if err != nil {
-                fmt.Println(err)
-                os.Exit(1)
-        }
-
--       t := template.Must(template.New(&amp;quot;markdown&amp;quot;).Parse(string(tpl)))
-+       t := template.Must(template.New(templatePath).Parse(string(tpl)))
-        if err = t.Execute(os.Stdout, template.HTML(string(html))); err != nil {
-                fmt.Println(err)
-                os.Exit(1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;ReadFile&lt;/code&gt; していた部分を &lt;code&gt;Asset&lt;/code&gt; に置き換えるだけ&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-&lt;li&gt;通常通りバイナリを生成する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go build
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;以上でパスを変えて実行してもHTMLのテンプレートが読み込まれるようになった。
-もちろん、バイナリサイズは増えるので用途に応じてつかうのが良い。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;debugする&#34;&gt;Debugする&lt;/h2&gt;
-
-&lt;p&gt;静的ファイルを変更するたびに&lt;code&gt;go-bindata&lt;/code&gt;を実行するのは大変だが、
-これを回避するための&lt;code&gt;-debug&lt;/code&gt;オプションが存在している。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go-bindata -debug -o assets.go assets
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このフラグをつけると、インタフェースは保ったまま挙動だけ
-実行時に静的ファイルが読み込まれるよう変更される。&lt;/p&gt;
-</description>
+      <guid>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</guid>
+      <description>markdownをgithubスタイルのHTMLに変換するmark2hというものを作成したが、 使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。 今回は、go-bindataを使って静的ファイルをGoのバイナリに組み込んでみる。
+go-bindataを使う  go-bindataのinstall  $ go get -u github.com/jteeuwen/go-bindata/...   静的ファイルを格納するディレクトリを作る(名前は適当なもの)  $ mkdir assets   go-bindataを実行する  $ go-bindata -o assets.go assets   template読み込み部分を置き換える  1 file changed, 2 insertions(+), 2 deletions(-) diff --git a/main.go b/main.go index 1b2ec1a..8d5cfdb 100644 --- a/main.go +++ b/main.go @@ -55,13 +55,13 @@ func main(){ os.Exit(0) } - tpl, err := ioutil.ReadFile(&amp;quot;markdown.html&amp;quot;) + tpl, err := Asset(templatePath) if err !</description>
     </item>
     
   </channel>

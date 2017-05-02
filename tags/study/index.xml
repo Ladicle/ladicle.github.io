@@ -2,230 +2,50 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Study on Exception();</title>
-    <link>https://ladicle.github.io/tags/study/</link>
+    <link>//ladicle.github.io/tags/study/</link>
     <description>Recent content in Study on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/tags/study/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="//ladicle.github.io/tags/study/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Jenkins勉強会#9で発表してきた</title>
-      <link>https://ladicle.github.io/post/jenkins-study9/</link>
+      <link>//ladicle.github.io/post/jenkins-study9/</link>
       <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/jenkins-study9/</guid>
-      <description>
-
-&lt;p&gt;コンテナCIとJobの管理方法について話してきた。&lt;br /&gt;
-話した内容や質問された内容を補足する。&lt;br /&gt;
-スライドはこちら。&lt;/p&gt;
-
-&lt;script async class=&#34;speakerdeck-embed&#34; data-id=&#34;2632992e716b4ae5b4e975aedcbf3374&#34; data-ratio=&#34;1.33333333333333&#34; src=&#34;//speakerdeck.com/assets/embed.js&#34;&gt;&lt;/script&gt;
-
-&lt;h2 id=&#34;コンテナciの流れ&#34;&gt;コンテナCIの流れ&lt;/h2&gt;
-
-&lt;p&gt;ありがちではあるが、以下の通り。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;GitHubへ変更内容をPush or PRのコメント欄に&lt;code&gt;test this please&lt;/code&gt;と記述&lt;/li&gt;
-&lt;li&gt;上記のイベントをトリガとしてJenkinsのJobが実行&lt;/li&gt;
-&lt;li&gt;試験内容はJenkinsではなく、Kubernetes上のコンテナで実行&lt;/li&gt;
-&lt;li&gt;試験結果をSlackに通知する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;環境構成&#34;&gt;環境構成&lt;/h2&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;図は、分かりやすさを優先してだいぶ省略している&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;試験の目的は、OpenStackの1コンポーネントに対して入れた修正の動作確認。
-そのため、他のコンポーネントについては基本修正が入らない。
-修正が行われるコンポーネントのみコンテナ化して、他のものはVM上に固定で作っている。
-これは、コンテナ化には初期コスト&amp;amp;起動時間を回避するためだ。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;VMはOpenStackのNovaで作ったものなので、OpenStack上に試験用OpenStackがいる&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;job構成&#34;&gt;Job構成&lt;/h2&gt;
-
-&lt;p&gt;ITとUTは並列して走るようになっており、&lt;br /&gt;
-どちらかの試験がコケた段階でもう一方の試験も停止して結果を返す。&lt;/p&gt;
-
-&lt;p&gt;また、コンテナの後片付けは試験の開始時に行っている。
-試験の最後にコンテナを片付けてしまうと、
-試験に失敗した時の解析ができなくなってしまうためである。&lt;/p&gt;
-
-&lt;h2 id=&#34;job管理&#34;&gt;Job管理&lt;/h2&gt;
-
-&lt;p&gt;チームでは、&lt;a href=&#34;http://docs.openstack.org/infra/jenkins-job-builder/&#34;&gt;Jenkins Job Builder&lt;/a&gt;(略してJJB)というYAML(/JSON)でJobを定義できるものを使用している。
-Jenkinsの2.0がオススメしている&lt;a href=&#34;https://jenkins.io/doc/pipeline/jenkinsfile/&#34;&gt;Jenkinsfile&lt;/a&gt;を使えばGitでJobを管理できるが、
-昔のPluginを全て捨てPiplineに移行するのは大変であるし、
-Jenkinsfileの指定には結局GUIが必要になってしまう。
-しかし、JJBなら全てをCLI上で完結することができる。&lt;/p&gt;
-
-&lt;p&gt;YAMLのキーはJenkinsJob設定のXMLファイルと要素がほぼ一致しているので、
-Jenkinsに慣れている人であれば、すぐに書けるようになると思う。&lt;/p&gt;
-
-&lt;h2 id=&#34;jobの反映フロー&#34;&gt;Jobの反映フロー&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;JJBのDocument or Code参照しつつYAMLを書く&lt;/li&gt;
-&lt;li&gt;適用して動作を見る&lt;/li&gt;
-&lt;li&gt;GitHubのPRをつくる&lt;/li&gt;
-&lt;li&gt;メンバーにレビューしてもらう&lt;/li&gt;
-&lt;li&gt;Mergeされる&lt;/li&gt;
-&lt;li&gt;Mergeイベントを契機に、Jenkinsが自身に対してMasterのJob定義を反映する&lt;/li&gt;
-&lt;/ol&gt;
-</description>
+      <guid>//ladicle.github.io/post/jenkins-study9/</guid>
+      <description> コンテナCIとJobの管理方法について話してきた。
+話した内容や質問された内容を補足する。
+スライドはこちら。
+ コンテナCIの流れ ありがちではあるが、以下の通り。
+ GitHubへ変更内容をPush or PRのコメント欄にtest this pleaseと記述 上記のイベントをトリガとしてJenkinsのJobが実行 試験内容はJenkinsではなく、Kubernetes上のコンテナで実行 試験結果をSlackに通知する  環境構成  図は、分かりやすさを優先してだいぶ省略している
+ 試験の目的は、OpenStackの1コンポーネントに対して入れた修正の動作確認。 そのため、他のコンポーネントについては基本修正が入らない。 修正が行われるコンポーネントのみコンテナ化して、他のものはVM上に固定で作っている。 これは、コンテナ化には初期コスト&amp;amp;起動時間を回避するためだ。
+ VMはOpenStackのNovaで作ったものなので、OpenStack上に試験用OpenStackがいる
+ Job構成 ITとUTは並列して走るようになっており、
+どちらかの試験がコケた段階でもう一方の試験も停止して結果を返す。
+また、コンテナの後片付けは試験の開始時に行っている。 試験の最後にコンテナを片付けてしまうと、 試験に失敗した時の解析ができなくなってしまうためである。
+Job管理 チームでは、Jenkins Job Builder(略してJJB)というYAML(/JSON)でJobを定義できるものを使用している。 Jenkinsの2.0がオススメしているJenkinsfileを使えばGitでJobを管理できるが、 昔のPluginを全て捨てPiplineに移行するのは大変であるし、 Jenkinsfileの指定には結局GUIが必要になってしまう。 しかし、JJBなら全てをCLI上で完結することができる。
+YAMLのキーはJenkinsJob設定のXMLファイルと要素がほぼ一致しているので、 Jenkinsに慣れている人であれば、すぐに書けるようになると思う。
+Jobの反映フロー  JJBのDocument or Code参照しつつYAMLを書く 適用して動作を見る GitHubのPRをつくる メンバーにレビューしてもらう Mergeされる Mergeイベントを契機に、Jenkinsが自身に対してMasterのJob定義を反映する  </description>
     </item>
     
     <item>
       <title>Golang 1.7 release party in Tokyo</title>
-      <link>https://ladicle.github.io/post/golang1.7-release-party/</link>
+      <link>//ladicle.github.io/post/golang1.7-release-party/</link>
       <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/golang1.7-release-party/</guid>
-      <description>
-
-&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
-イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;1-what-s-new-go1-7-by-deeeet&#34;&gt;1. What&amp;rsquo;s new Go1.7? by @deeeet&lt;/h2&gt;
-
-&lt;p&gt;Golang1.7、残念ながらRelease表明されなかった(1.6の時以来2回目)&lt;/p&gt;
-
-&lt;h3 id=&#34;2-release-note-points&#34;&gt;2. Release note points&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;MacOS Sierraをサポート&lt;/li&gt;
-&lt;li&gt;Linkerが速くなった(特にk8sのような大規模のコードへの恩恵は大きい)&lt;/li&gt;
-&lt;li&gt;StackFrameが入り、LinuxのProfilerが使えるようになった&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-X&lt;/code&gt;オプションをつけると、key=valueでつなげないものはエラーになる&lt;/li&gt;
-&lt;li&gt;vendoring optionが使えなくなった&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;// go-binary-only-package&lt;/code&gt;を付けるとバイナリだけを提供できるようになった&lt;/li&gt;
-&lt;li&gt;標準パッケージは以下のようなものが変更された(他にもあるよ)
-
-&lt;ul&gt;
-&lt;li&gt;context: 今まで標準ではなかった&lt;/li&gt;
-&lt;li&gt;testing: subtestとbenchmarkが作成できる&lt;/li&gt;
-&lt;li&gt;http tracing: httpリクエストの各ステップにフック関数の挿入が可能に&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-HTTP tracingデバッグとチューニングにとても便利そう&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;3-about-contribution-of-go-by-stanaka&#34;&gt;3. About contribution of Go by @stanaka&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;GolangへのContribution方法(前回のGoConと同じ!)&lt;/li&gt;
-&lt;li&gt;まずはContribution Guidlineをよむ&lt;/li&gt;
-&lt;li&gt;GitHubではなくGerritを使う(&lt;code&gt;FIX&lt;/code&gt;, &lt;code&gt;DONE&lt;/code&gt;なコンパクトなコメントを返せる)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-未だにGerrit慣れないが、コメントボタンよさそう&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;4-context-package-by-ono-matope&#34;&gt;4. context package by @ono_matope&lt;/h2&gt;
-
-&lt;p&gt;スライドは&lt;a href=&#34;http://go-talks.appspot.com/github.com/matope/talks/2016/context/context.slide#1&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1.7に標準パッケージに入ったが2014年にはPJが始まっていた&lt;/li&gt;
-&lt;li&gt;様々なライブラリのキャンセル要求インタフェースの標準か&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;ここら辺参照&#34;&gt;ここら辺参照:&lt;/h3&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;このへんにキャンセルの話とか書いてある ▶ Go Concurrency Patterns: Pipelines and cancellation - The Go Blog &lt;a href=&#34;https://t.co/gVD3tw0x5G&#34;&gt;https://t.co/gVD3tw0x5G&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/go17party?src=hash&#34;&gt;#go17party&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yoshifumi YAMAGUCHI (@ymotongpoo) &lt;a href=&#34;https://twitter.com/ymotongpoo/status/762600547287392256&#34;&gt;2016年8月8日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;5-introduction-to-ssa-by-shinpeinkt&#34;&gt;5. Introduction to SSA by @shinpeiNKT&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Go1.7のSingle Static Single Assignment(SSA)のお話&lt;/li&gt;
-&lt;li&gt;ベンチマークスピードが5-35%速くなり、バイナリサイズも2-30%削減された&lt;/li&gt;
-&lt;li&gt;今まで中身を返さない関数も全てコンパイルしていたが、1.7から中身はskip&lt;/li&gt;
-&lt;li&gt;1変数に対する代入は1つのみとし、それ以外のものを不要変数と判定する&lt;/li&gt;
-&lt;li&gt;最適化はされるが、コンパイル速度は10%ほど低下した&lt;/li&gt;
-&lt;li&gt;SSAを回避するフラグもある&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;ここら辺参照-1&#34;&gt;ここら辺参照:&lt;/h3&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;SSA (Static Single Assignment) についてわかりやすく書いてある &lt;a href=&#34;https://t.co/a5loVKfGOA&#34;&gt;https://t.co/a5loVKfGOA&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/go17party?src=hash&#34;&gt;#go17party&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yoshifumi YAMAGUCHI (@ymotongpoo) &lt;a href=&#34;https://twitter.com/ymotongpoo/status/762606087333818368&#34;&gt;2016年8月8日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;6-don-t-use-reflect-by-lestrrat&#34;&gt;6. Don&amp;rsquo;t use reflect by @lestrrat&lt;/h2&gt;
-
-&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/5Pn3CxxmumAP04&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;みんなのGo言語&amp;rdquo; よろしく&lt;/li&gt;
-&lt;li&gt;Reflectは遅くなるし、本当に必要な時だけ使おう&lt;/li&gt;
-&lt;li&gt;1.7の変更点
-
-&lt;ul&gt;
-&lt;li&gt;フィールドの位置が極端に大きいものはpanic&lt;/li&gt;
-&lt;li&gt;exportしていない関数の取得が不可能に&lt;/li&gt;
-&lt;li&gt;動的にstructが定義できるように&lt;/li&gt;
-&lt;li&gt;struct tagに&lt;code&gt;lookup()&lt;/code&gt;が導入された&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-JSON parseのチェックよく悩んでいたので&lt;code&gt;lookup()&lt;/code&gt;は嬉しい変更だ&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;7-goji-とレイヤ化アーキテクチャ-by-t2y&#34;&gt;7. Goji とレイヤ化アーキテクチャ by @t2y&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;白ヤギでAPIサーバをGolangで開発し、1年が経過したのでその知見&lt;/li&gt;
-&lt;li&gt;Frameworkは&lt;a href=&#34;https://github.com/goji/goji&#34;&gt;Goji&lt;/a&gt;を使っている(レポジトリは移動してる)&lt;/li&gt;
-&lt;li&gt;サービスには(基本的に)終わりがなく、設計は継続する&lt;/li&gt;
-&lt;li&gt;AOPはGoにないのか? &amp;ndash; Roadmapにはない。go nutsで議論するといいよ&lt;/li&gt;
-&lt;li&gt;コードに変更がない == 安定する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-私は標準 or Revelをよく使っているが、よさそうと思っていたginは最近あまり更新されていない&amp;hellip;。
-いま一番よいWebFrameworkは何だろう?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;8-unity-plugin-by-tenntenn&#34;&gt;8. Unity Plugin by @tenntenn&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;昨日、一昨日やっていたMakerFairで&lt;code&gt;UnityちゃんのVR吐息ヘッドフォン&lt;/code&gt;を作った話&lt;/li&gt;
-&lt;li&gt;GolangでUnityのネイティブプラグインを作った&lt;/li&gt;
-&lt;li&gt;Go Mobileを使っている(最近またアップデートされたのでbuildオプションが変わった&amp;hellip;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;反響&#34;&gt;反響:&lt;/h3&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pandax381&#34;&gt;@pandax381&lt;/a&gt; &lt;a href=&#34;https://twitter.com/tenntenn&#34;&gt;@tenntenn&lt;/a&gt; the future is bright!&lt;/p&gt;&amp;mdash; Dαve Cheney (@davecheney) &lt;a href=&#34;https://twitter.com/davecheney/status/761787273159462914&#34;&gt;2016年8月6日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-MakerFair行きたかったが間に合わなかったX(&lt;br /&gt;
-最近Android開発してないのでGoMobile周り追いかけてないけど、&lt;br /&gt;
-アップデートで大幅に変わるの大変そうだ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;thanks&#34;&gt;Thanks :)&lt;/h2&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;ヤッホー🍺 &lt;a href=&#34;https://twitter.com/hashtag/go17party?src=hash&#34;&gt;#go17party&lt;/a&gt; &lt;a href=&#34;https://t.co/4Hw2Z0o2rH&#34;&gt;pic.twitter.com/4Hw2Z0o2rH&lt;/a&gt;&lt;/p&gt;&amp;mdash; ladicle (@Ladicle) &lt;a href=&#34;https://twitter.com/Ladicle/status/762592924043317248&#34;&gt;2016年8月8日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
+      <guid>//ladicle.github.io/post/golang1.7-release-party/</guid>
+      <description>補欠だったので無理かと思っていたら、当日繰り上がった。 イベントページはこちら
+1. What&amp;rsquo;s new Go1.7? by @deeeet Golang1.7、残念ながらRelease表明されなかった(1.6の時以来2回目)
+2. Release note points  MacOS Sierraをサポート Linkerが速くなった(特にk8sのような大規模のコードへの恩恵は大きい) StackFrameが入り、LinuxのProfilerが使えるようになった -Xオプションをつけると、key=valueでつなげないものはエラーになる vendoring optionが使えなくなった // go-binary-only-packageを付けるとバイナリだけを提供できるようになった 標準パッケージは以下のようなものが変更された(他にもあるよ)  context: 今まで標準ではなかった testing: subtestとbenchmarkが作成できる http tracing: httpリクエストの各ステップにフック関数の挿入が可能に    所感
+HTTP tracingデバッグとチューニングにとても便利そう
+ 3. About contribution of Go by @stanaka  GolangへのContribution方法(前回のGoConと同じ!) まずはContribution Guidlineをよむ GitHubではなくGerritを使う(FIX, DONEなコンパクトなコメントを返せる)   所感
+未だにGerrit慣れないが、コメントボタンよさそう
+ 4. context package by @ono_matope スライドはこちら
+ 1.7に標準パッケージに入ったが2014年にはPJが始まっていた 様々なライブラリのキャンセル要求インタフェースの標準か  ここら辺参照: このへんにキャンセルの話とか書いてある ▶ Go Concurrency Patterns: Pipelines and cancellation - The Go Blog https://t.</description>
     </item>
     
   </channel>

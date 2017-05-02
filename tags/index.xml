@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Exception();</title>
+    <link>//ladicle.github.io/tags/</link>
+    <description>Recent content in Tags on Exception();</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>jp</language>
+    <lastBuildDate>Thu, 04 Aug 2016 20:22:57 +0900</lastBuildDate>
+    
+	<atom:link href="//ladicle.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Apache</title>
+      <link>//ladicle.github.io/tags/apache/</link>
+      <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Binary</title>
+      <link>//ladicle.github.io/tags/binary/</link>
+      <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/binary/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Book</title>
+      <link>//ladicle.github.io/tags/book/</link>
+      <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/book/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Container</title>
+      <link>//ladicle.github.io/tags/container/</link>
+      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/container/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Docker</title>
+      <link>//ladicle.github.io/tags/docker/</link>
+      <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Github</title>
+      <link>//ladicle.github.io/tags/github/</link>
+      <pubDate>Tue, 02 Aug 2016 15:19:34 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/github/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Golang</title>
+      <link>//ladicle.github.io/tags/golang/</link>
+      <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hugo</title>
+      <link>//ladicle.github.io/tags/hugo/</link>
+      <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/hugo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iot</title>
+      <link>//ladicle.github.io/tags/iot/</link>
+      <pubDate>Sun, 21 Aug 2016 16:14:55 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/iot/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jenkins</title>
+      <link>//ladicle.github.io/tags/jenkins/</link>
+      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/jenkins/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kubernetes</title>
+      <link>//ladicle.github.io/tags/kubernetes/</link>
+      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/kubernetes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mesos</title>
+      <link>//ladicle.github.io/tags/mesos/</link>
+      <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/mesos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Study</title>
+      <link>//ladicle.github.io/tags/study/</link>
+      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/study/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Systemd</title>
+      <link>//ladicle.github.io/tags/systemd/</link>
+      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/systemd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tocos</title>
+      <link>//ladicle.github.io/tags/tocos/</link>
+      <pubDate>Sun, 21 Aug 2016 16:14:55 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/tocos/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ubuntu</title>
+      <link>//ladicle.github.io/tags/ubuntu/</link>
+      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/ubuntu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Upstart</title>
+      <link>//ladicle.github.io/tags/upstart/</link>
+      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/upstart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Zigbee</title>
+      <link>//ladicle.github.io/tags/zigbee/</link>
+      <pubDate>Sun, 21 Aug 2016 16:14:55 +0900</pubDate>
+      
+      <guid>//ladicle.github.io/tags/zigbee/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

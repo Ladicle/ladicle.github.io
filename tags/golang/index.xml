@@ -2,249 +2,39 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Exception();</title>
-    <link>https://ladicle.github.io/tags/golang/</link>
+    <link>//ladicle.github.io/tags/golang/</link>
     <description>Recent content in Golang on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Mon, 08 Aug 2016 19:48:11 +0900</lastBuildDate>
-    <atom:link href="https://ladicle.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+	<atom:link href="//ladicle.github.io/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
     
     <item>
       <title>Golang 1.7 release party in Tokyo</title>
-      <link>https://ladicle.github.io/post/golang1.7-release-party/</link>
+      <link>//ladicle.github.io/post/golang1.7-release-party/</link>
       <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/golang1.7-release-party/</guid>
-      <description>
-
-&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
-イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;1-what-s-new-go1-7-by-deeeet&#34;&gt;1. What&amp;rsquo;s new Go1.7? by @deeeet&lt;/h2&gt;
-
-&lt;p&gt;Golang1.7、残念ながらRelease表明されなかった(1.6の時以来2回目)&lt;/p&gt;
-
-&lt;h3 id=&#34;2-release-note-points&#34;&gt;2. Release note points&lt;/h3&gt;
-
-&lt;ul&gt;
-&lt;li&gt;MacOS Sierraをサポート&lt;/li&gt;
-&lt;li&gt;Linkerが速くなった(特にk8sのような大規模のコードへの恩恵は大きい)&lt;/li&gt;
-&lt;li&gt;StackFrameが入り、LinuxのProfilerが使えるようになった&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;-X&lt;/code&gt;オプションをつけると、key=valueでつなげないものはエラーになる&lt;/li&gt;
-&lt;li&gt;vendoring optionが使えなくなった&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;// go-binary-only-package&lt;/code&gt;を付けるとバイナリだけを提供できるようになった&lt;/li&gt;
-&lt;li&gt;標準パッケージは以下のようなものが変更された(他にもあるよ)
-
-&lt;ul&gt;
-&lt;li&gt;context: 今まで標準ではなかった&lt;/li&gt;
-&lt;li&gt;testing: subtestとbenchmarkが作成できる&lt;/li&gt;
-&lt;li&gt;http tracing: httpリクエストの各ステップにフック関数の挿入が可能に&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-HTTP tracingデバッグとチューニングにとても便利そう&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;3-about-contribution-of-go-by-stanaka&#34;&gt;3. About contribution of Go by @stanaka&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;GolangへのContribution方法(前回のGoConと同じ!)&lt;/li&gt;
-&lt;li&gt;まずはContribution Guidlineをよむ&lt;/li&gt;
-&lt;li&gt;GitHubではなくGerritを使う(&lt;code&gt;FIX&lt;/code&gt;, &lt;code&gt;DONE&lt;/code&gt;なコンパクトなコメントを返せる)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-未だにGerrit慣れないが、コメントボタンよさそう&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;4-context-package-by-ono-matope&#34;&gt;4. context package by @ono_matope&lt;/h2&gt;
-
-&lt;p&gt;スライドは&lt;a href=&#34;http://go-talks.appspot.com/github.com/matope/talks/2016/context/context.slide#1&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;1.7に標準パッケージに入ったが2014年にはPJが始まっていた&lt;/li&gt;
-&lt;li&gt;様々なライブラリのキャンセル要求インタフェースの標準か&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;ここら辺参照&#34;&gt;ここら辺参照:&lt;/h3&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;このへんにキャンセルの話とか書いてある ▶ Go Concurrency Patterns: Pipelines and cancellation - The Go Blog &lt;a href=&#34;https://t.co/gVD3tw0x5G&#34;&gt;https://t.co/gVD3tw0x5G&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/go17party?src=hash&#34;&gt;#go17party&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yoshifumi YAMAGUCHI (@ymotongpoo) &lt;a href=&#34;https://twitter.com/ymotongpoo/status/762600547287392256&#34;&gt;2016年8月8日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;5-introduction-to-ssa-by-shinpeinkt&#34;&gt;5. Introduction to SSA by @shinpeiNKT&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Go1.7のSingle Static Single Assignment(SSA)のお話&lt;/li&gt;
-&lt;li&gt;ベンチマークスピードが5-35%速くなり、バイナリサイズも2-30%削減された&lt;/li&gt;
-&lt;li&gt;今まで中身を返さない関数も全てコンパイルしていたが、1.7から中身はskip&lt;/li&gt;
-&lt;li&gt;1変数に対する代入は1つのみとし、それ以外のものを不要変数と判定する&lt;/li&gt;
-&lt;li&gt;最適化はされるが、コンパイル速度は10%ほど低下した&lt;/li&gt;
-&lt;li&gt;SSAを回避するフラグもある&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;ここら辺参照-1&#34;&gt;ここら辺参照:&lt;/h3&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;SSA (Static Single Assignment) についてわかりやすく書いてある &lt;a href=&#34;https://t.co/a5loVKfGOA&#34;&gt;https://t.co/a5loVKfGOA&lt;/a&gt; &lt;a href=&#34;https://twitter.com/hashtag/go17party?src=hash&#34;&gt;#go17party&lt;/a&gt;&lt;/p&gt;&amp;mdash; Yoshifumi YAMAGUCHI (@ymotongpoo) &lt;a href=&#34;https://twitter.com/ymotongpoo/status/762606087333818368&#34;&gt;2016年8月8日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;h2 id=&#34;6-don-t-use-reflect-by-lestrrat&#34;&gt;6. Don&amp;rsquo;t use reflect by @lestrrat&lt;/h2&gt;
-
-&lt;p&gt;&lt;iframe src=&#34;//www.slideshare.net/slideshow/embed_code/key/5Pn3CxxmumAP04&#34; width=&#34;595&#34; height=&#34;485&#34; frameborder=&#34;0&#34; marginwidth=&#34;0&#34; marginheight=&#34;0&#34; scrolling=&#34;no&#34; style=&#34;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&#34; allowfullscreen&gt; &lt;/iframe&gt; &lt;div style=&#34;margin-bottom:5px&#34;&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&amp;ldquo;みんなのGo言語&amp;rdquo; よろしく&lt;/li&gt;
-&lt;li&gt;Reflectは遅くなるし、本当に必要な時だけ使おう&lt;/li&gt;
-&lt;li&gt;1.7の変更点
-
-&lt;ul&gt;
-&lt;li&gt;フィールドの位置が極端に大きいものはpanic&lt;/li&gt;
-&lt;li&gt;exportしていない関数の取得が不可能に&lt;/li&gt;
-&lt;li&gt;動的にstructが定義できるように&lt;/li&gt;
-&lt;li&gt;struct tagに&lt;code&gt;lookup()&lt;/code&gt;が導入された&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-JSON parseのチェックよく悩んでいたので&lt;code&gt;lookup()&lt;/code&gt;は嬉しい変更だ&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;7-goji-とレイヤ化アーキテクチャ-by-t2y&#34;&gt;7. Goji とレイヤ化アーキテクチャ by @t2y&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;白ヤギでAPIサーバをGolangで開発し、1年が経過したのでその知見&lt;/li&gt;
-&lt;li&gt;Frameworkは&lt;a href=&#34;https://github.com/goji/goji&#34;&gt;Goji&lt;/a&gt;を使っている(レポジトリは移動してる)&lt;/li&gt;
-&lt;li&gt;サービスには(基本的に)終わりがなく、設計は継続する&lt;/li&gt;
-&lt;li&gt;AOPはGoにないのか? &amp;ndash; Roadmapにはない。go nutsで議論するといいよ&lt;/li&gt;
-&lt;li&gt;コードに変更がない == 安定する&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-私は標準 or Revelをよく使っているが、よさそうと思っていたginは最近あまり更新されていない&amp;hellip;。
-いま一番よいWebFrameworkは何だろう?&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;8-unity-plugin-by-tenntenn&#34;&gt;8. Unity Plugin by @tenntenn&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;昨日、一昨日やっていたMakerFairで&lt;code&gt;UnityちゃんのVR吐息ヘッドフォン&lt;/code&gt;を作った話&lt;/li&gt;
-&lt;li&gt;GolangでUnityのネイティブプラグインを作った&lt;/li&gt;
-&lt;li&gt;Go Mobileを使っている(最近またアップデートされたのでbuildオプションが変わった&amp;hellip;)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;反響&#34;&gt;反響:&lt;/h3&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;en&#34; dir=&#34;ltr&#34;&gt;&lt;a href=&#34;https://twitter.com/pandax381&#34;&gt;@pandax381&lt;/a&gt; &lt;a href=&#34;https://twitter.com/tenntenn&#34;&gt;@tenntenn&lt;/a&gt; the future is bright!&lt;/p&gt;&amp;mdash; Dαve Cheney (@davecheney) &lt;a href=&#34;https://twitter.com/davecheney/status/761787273159462914&#34;&gt;2016年8月6日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;strong&gt;所感&lt;/strong&gt;&lt;br /&gt;
-MakerFair行きたかったが間に合わなかったX(&lt;br /&gt;
-最近Android開発してないのでGoMobile周り追いかけてないけど、&lt;br /&gt;
-アップデートで大幅に変わるの大変そうだ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;thanks&#34;&gt;Thanks :)&lt;/h2&gt;
-
-&lt;p&gt;&lt;blockquote class=&#34;twitter-tweet&#34; data-lang=&#34;ja&#34;&gt;&lt;p lang=&#34;ja&#34; dir=&#34;ltr&#34;&gt;ヤッホー🍺 &lt;a href=&#34;https://twitter.com/hashtag/go17party?src=hash&#34;&gt;#go17party&lt;/a&gt; &lt;a href=&#34;https://t.co/4Hw2Z0o2rH&#34;&gt;pic.twitter.com/4Hw2Z0o2rH&lt;/a&gt;&lt;/p&gt;&amp;mdash; ladicle (@Ladicle) &lt;a href=&#34;https://twitter.com/Ladicle/status/762592924043317248&#34;&gt;2016年8月8日&lt;/a&gt;&lt;/blockquote&gt;
-&lt;script async src=&#34;//platform.twitter.com/widgets.js&#34; charset=&#34;utf-8&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-</description>
+      <guid>//ladicle.github.io/post/golang1.7-release-party/</guid>
+      <description>補欠だったので無理かと思っていたら、当日繰り上がった。 イベントページはこちら
+1. What&amp;rsquo;s new Go1.7? by @deeeet Golang1.7、残念ながらRelease表明されなかった(1.6の時以来2回目)
+2. Release note points  MacOS Sierraをサポート Linkerが速くなった(特にk8sのような大規模のコードへの恩恵は大きい) StackFrameが入り、LinuxのProfilerが使えるようになった -Xオプションをつけると、key=valueでつなげないものはエラーになる vendoring optionが使えなくなった // go-binary-only-packageを付けるとバイナリだけを提供できるようになった 標準パッケージは以下のようなものが変更された(他にもあるよ)  context: 今まで標準ではなかった testing: subtestとbenchmarkが作成できる http tracing: httpリクエストの各ステップにフック関数の挿入が可能に    所感
+HTTP tracingデバッグとチューニングにとても便利そう
+ 3. About contribution of Go by @stanaka  GolangへのContribution方法(前回のGoConと同じ!) まずはContribution Guidlineをよむ GitHubではなくGerritを使う(FIX, DONEなコンパクトなコメントを返せる)   所感
+未だにGerrit慣れないが、コメントボタンよさそう
+ 4. context package by @ono_matope スライドはこちら
+ 1.7に標準パッケージに入ったが2014年にはPJが始まっていた 様々なライブラリのキャンセル要求インタフェースの標準か  ここら辺参照: このへんにキャンセルの話とか書いてある ▶ Go Concurrency Patterns: Pipelines and cancellation - The Go Blog https://t.</description>
     </item>
     
     <item>
       <title>Golangのバイナリに静的ファイルを組み込む</title>
-      <link>https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</link>
+      <link>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</link>
       <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</guid>
-      <description>
-
-&lt;p&gt;markdownをgithubスタイルのHTMLに変換する&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;mark2h&lt;/a&gt;というものを作成したが、
-使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。
-今回は、&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;go-bindata&lt;/a&gt;を使って静的ファイルをGoのバイナリに組み込んでみる。&lt;/p&gt;
-
-&lt;h2 id=&#34;go-bindataを使う&#34;&gt;go-bindataを使う&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;go-bindataのinstall&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go get -u github.com/jteeuwen/go-bindata/...
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;静的ファイルを格納するディレクトリを作る(名前は適当なもの)&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ mkdir assets
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;go-bindataを実行する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go-bindata -o assets.go assets
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;template読み込み部分を置き換える&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;1 file changed, 2 insertions(+), 2 deletions(-)
-
-diff --git a/main.go b/main.go
-index 1b2ec1a..8d5cfdb 100644
---- a/main.go
-+++ b/main.go
-@@ -55,13 +55,13 @@ func main(){
-                os.Exit(0)
-        }
-
--       tpl, err := ioutil.ReadFile(&amp;quot;markdown.html&amp;quot;)
-+       tpl, err := Asset(templatePath)
-        if err != nil {
-                fmt.Println(err)
-                os.Exit(1)
-        }
-
--       t := template.Must(template.New(&amp;quot;markdown&amp;quot;).Parse(string(tpl)))
-+       t := template.Must(template.New(templatePath).Parse(string(tpl)))
-        if err = t.Execute(os.Stdout, template.HTML(string(html))); err != nil {
-                fmt.Println(err)
-                os.Exit(1)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;&lt;code&gt;ReadFile&lt;/code&gt; していた部分を &lt;code&gt;Asset&lt;/code&gt; に置き換えるだけ&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;ol&gt;
-&lt;li&gt;通常通りバイナリを生成する&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;&lt;code&gt;$ go build
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;以上でパスを変えて実行してもHTMLのテンプレートが読み込まれるようになった。
-もちろん、バイナリサイズは増えるので用途に応じてつかうのが良い。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&#34;debugする&#34;&gt;Debugする&lt;/h2&gt;
-
-&lt;p&gt;静的ファイルを変更するたびに&lt;code&gt;go-bindata&lt;/code&gt;を実行するのは大変だが、
-これを回避するための&lt;code&gt;-debug&lt;/code&gt;オプションが存在している。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;go-bindata -debug -o assets.go assets
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;このフラグをつけると、インタフェースは保ったまま挙動だけ
-実行時に静的ファイルが読み込まれるよう変更される。&lt;/p&gt;
-</description>
+      <guid>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</guid>
+      <description>markdownをgithubスタイルのHTMLに変換するmark2hというものを作成したが、 使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。 今回は、go-bindataを使って静的ファイルをGoのバイナリに組み込んでみる。
+go-bindataを使う  go-bindataのinstall  $ go get -u github.com/jteeuwen/go-bindata/...   静的ファイルを格納するディレクトリを作る(名前は適当なもの)  $ mkdir assets   go-bindataを実行する  $ go-bindata -o assets.go assets   template読み込み部分を置き換える  1 file changed, 2 insertions(+), 2 deletions(-) diff --git a/main.go b/main.go index 1b2ec1a..8d5cfdb 100644 --- a/main.go +++ b/main.go @@ -55,13 +55,13 @@ func main(){ os.Exit(0) } - tpl, err := ioutil.ReadFile(&amp;quot;markdown.html&amp;quot;) + tpl, err := Asset(templatePath) if err !</description>
     </item>
     
   </channel>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Exception();</title>
-    <link>//ladicle.github.io/post/</link>
+    <link>https://blog.ladicle.com/post/</link>
     <description>Recent content in Posts on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Sun, 21 Aug 2016 16:14:55 +0900</lastBuildDate>
     
-	<atom:link href="//ladicle.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ladicle.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>OSX上でTWE-LITEによるドアセンサをつくる (1) - 準備編 -</title>
-      <link>//ladicle.github.io/post/tocos-door-sensor1/</link>
+      <link>https://blog.ladicle.com/post/tocos-door-sensor1/</link>
       <pubDate>Sun, 21 Aug 2016 16:14:55 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/tocos-door-sensor1/</guid>
+      <guid>https://blog.ladicle.com/post/tocos-door-sensor1/</guid>
       <description>開閉センサの情報をTWE-Lite-DIP(下写真)とToCoSTICKでとばし、OSX上で制御する。
 (TOCOStickは既に生産を終了し、後継のMONOStickが発売されている。)
 概要  準備編 ⇦ 今回  ドライバのインストール jenprogでファームウェアを書き込む TWE-Lite-DIP(センサ側)の設定を書き換える ToCoSTICK(受信側)の設定を書き換える  電子工作編  開閉センサの回路をつくる 動作を確認する  制御編  センサデータを読み取るプログラムを書く ドアの開閉をSlackに通知する   1. ドライバのインストール  FTDICHIPのサイトから該当のドライバをダウンロードする (直リンクはこちら) FTDICHIPUSBSerialDriver_10_4_10_5_10_6_10_7をインストール TOCOSTICをMacにさし、USBデバイスが認識していることを確認する
@@ -26,10 +26,10 @@ $ ls /dev/tty.usb* crw-rw-rw- 1 root wheel 18, 2 8 21 12:55 /dev/tty.usbserial-A
     
     <item>
       <title>Jenkins勉強会#9で発表してきた</title>
-      <link>//ladicle.github.io/post/jenkins-study9/</link>
+      <link>https://blog.ladicle.com/post/jenkins-study9/</link>
       <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/jenkins-study9/</guid>
+      <guid>https://blog.ladicle.com/post/jenkins-study9/</guid>
       <description> コンテナCIとJobの管理方法について話してきた。
 話した内容や質問された内容を補足する。
 スライドはこちら。
@@ -47,10 +47,10 @@ Jobの反映フロー  JJBのDocument or Code参照しつつYAMLを書く 適用
     
     <item>
       <title>k8sをUbuntu14.04から16.04に移行した</title>
-      <link>//ladicle.github.io/post/systemd-for-upstart/</link>
+      <link>https://blog.ladicle.com/post/systemd-for-upstart/</link>
       <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/systemd-for-upstart/</guid>
+      <guid>https://blog.ladicle.com/post/systemd-for-upstart/</guid>
       <description>Kubernetesを14.04から16.04に移行した。
 もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、 修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。
  元にしているk8sのansibleはkubernetes/contribのansibleディレクトリにある ubuntu16.04対応のPRはそのうち&amp;hellip;
@@ -65,10 +65,10 @@ EnvironmentFile EnvironmentFile=-/etc/sysconfig/whatever  -の有無によって
     
     <item>
       <title>Golang 1.7 release party in Tokyo</title>
-      <link>//ladicle.github.io/post/golang1.7-release-party/</link>
+      <link>https://blog.ladicle.com/post/golang1.7-release-party/</link>
       <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/golang1.7-release-party/</guid>
+      <guid>https://blog.ladicle.com/post/golang1.7-release-party/</guid>
       <description>補欠だったので無理かと思っていたら、当日繰り上がった。 イベントページはこちら
 1. What&amp;rsquo;s new Go1.7? by @deeeet Golang1.7、残念ながらRelease表明されなかった(1.6の時以来2回目)
 2. Release note points  MacOS Sierraをサポート Linkerが速くなった(特にk8sのような大規模のコードへの恩恵は大きい) StackFrameが入り、LinuxのProfilerが使えるようになった -Xオプションをつけると、key=valueでつなげないものはエラーになる vendoring optionが使えなくなった // go-binary-only-packageを付けるとバイナリだけを提供できるようになった 標準パッケージは以下のようなものが変更された(他にもあるよ)  context: 今まで標準ではなかった testing: subtestとbenchmarkが作成できる http tracing: httpリクエストの各ステップにフック関数の挿入が可能に    所感
@@ -81,20 +81,20 @@ HTTP tracingデバッグとチューニングにとても便利そう
     
     <item>
       <title>Golangのバイナリに静的ファイルを組み込む</title>
-      <link>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</link>
+      <link>https://blog.ladicle.com/post/pack-staic-file-to-binary-for-golang/</link>
       <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</guid>
+      <guid>https://blog.ladicle.com/post/pack-staic-file-to-binary-for-golang/</guid>
       <description>markdownをgithubスタイルのHTMLに変換するmark2hというものを作成したが、 使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。 今回は、go-bindataを使って静的ファイルをGoのバイナリに組み込んでみる。
 go-bindataを使う  go-bindataのinstall  $ go get -u github.com/jteeuwen/go-bindata/...   静的ファイルを格納するディレクトリを作る(名前は適当なもの)  $ mkdir assets   go-bindataを実行する  $ go-bindata -o assets.go assets   template読み込み部分を置き換える  1 file changed, 2 insertions(+), 2 deletions(-) diff --git a/main.go b/main.go index 1b2ec1a..8d5cfdb 100644 --- a/main.go +++ b/main.go @@ -55,13 +55,13 @@ func main(){ os.Exit(0) } - tpl, err := ioutil.ReadFile(&amp;quot;markdown.html&amp;quot;) + tpl, err := Asset(templatePath) if err !</description>
     </item>
     
     <item>
       <title>Hugoで記事と固定ページを書く</title>
-      <link>//ladicle.github.io/post/write-post-by-hugo/</link>
+      <link>https://blog.ladicle.com/post/write-post-by-hugo/</link>
       <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/write-post-by-hugo/</guid>
+      <guid>https://blog.ladicle.com/post/write-post-by-hugo/</guid>
       <description>前回は、Hugoのインストール方法とテーマの変更方法について説明した。 今回は記事の作成と配信方法について解説する。
 記事を書く 記事の作成には、前回作成したレポジトリのルートでnewコマンドを使う。
 $ hugo new post/&amp;lt;post-title&amp;gt;.md  実行すると、content/postディレクトリに&amp;lt;post-title&amp;gt;.mdが作成されている。
@@ -105,10 +105,10 @@ function blog() { postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/co
     
     <item>
       <title>Apache Mesos勉強会に行ってきた</title>
-      <link>//ladicle.github.io/post/apache-mesos/</link>
+      <link>https://blog.ladicle.com/post/apache-mesos/</link>
       <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/apache-mesos/</guid>
+      <guid>https://blog.ladicle.com/post/apache-mesos/</guid>
       <description>MesosはKubernetesと比較されることが多いので気になっていた。
 イベントのURLはこちら。
 1. Mesos とは何か 木内さん @クリエーションライン
@@ -124,10 +124,10 @@ function blog() { postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/co
     
     <item>
       <title>Kindle Unlimitedの技術本</title>
-      <link>//ladicle.github.io/post/kindle-unlimited/</link>
+      <link>https://blog.ladicle.com/post/kindle-unlimited/</link>
       <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/kindle-unlimited/</guid>
+      <guid>https://blog.ladicle.com/post/kindle-unlimited/</guid>
       <description> Kindle Unlimitedが今日から開始した。
 持っている本や良みたかった本が登録されていたのでまとめてみた。
 Technology        
@@ -139,10 +139,10 @@ Technology
     
     <item>
       <title>Pull RequestテンプレートでPRの品質を保つ</title>
-      <link>//ladicle.github.io/post/add-github-templates/</link>
+      <link>https://blog.ladicle.com/post/add-github-templates/</link>
       <pubDate>Tue, 02 Aug 2016 15:19:34 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/add-github-templates/</guid>
+      <guid>https://blog.ladicle.com/post/add-github-templates/</guid>
       <description> GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから RPの品質やレビューの水準が一定に保たれたと感じている。
 Pull Requestのテンプレートを追加する 2016年の2月からGitHubがテンプレート機能をサポートした。(黒魔術なスクリプトは不要!) 使い方は簡単で、レポジトリのroot、又は.github/ディレクトリにPULL_REQUEST_TEMPLATE.mdを配置するだけだ。
 現在は以下のようなテンプレートを使用している。
@@ -159,10 +159,10 @@ $ cat .github/PULL_REQUEST_TEMPLATE.md ## Ticket * https://[jira-host]/[ticket-i
     
     <item>
       <title>コンテナとDockerについて思うこと</title>
-      <link>//ladicle.github.io/post/docker-left-oci/</link>
+      <link>https://blog.ladicle.com/post/docker-left-oci/</link>
       <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/docker-left-oci/</guid>
+      <guid>https://blog.ladicle.com/post/docker-left-oci/</guid>
       <description> ガチャピン先生のDocker、OCIやめるってよの記事が話題だったので、 コンテナとDockerについて思ったことを書いてみる。
 コンテナ = Dockerか? Dockerによってコンテナが多くの人に使われるようになったのは確かだ。
 しかし、コンテナ = Dockerか? という訳ではないと思う。
@@ -181,10 +181,10 @@ $ docker run nginx  という簡単なコマンドだけで
     
     <item>
       <title>Hugoで静的なブログを作成する</title>
-      <link>//ladicle.github.io/post/hugo-de-blog/</link>
+      <link>https://blog.ladicle.com/post/hugo-de-blog/</link>
       <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/hugo-de-blog/</guid>
+      <guid>https://blog.ladicle.com/post/hugo-de-blog/</guid>
       <description>このブログはHugoを使用してGithub.io上に建てている。
 静的Webサイトジェネレータは有名どころだとRailsのJekyllやOctopress、PythonのPelican、NodeのHexoなどが存在するが、 Hugoは速さを売りにしている。
 Why Hugo?  Golangで書かれている。I&amp;rsquo;m gopher!! モダンなThemesが揃っている  Hugoをインストールする  brew install hugoを実行してhugoをインストール1 hugoコマンドでサイトのベースを作成する  $ hugo new site &amp;lt;YOUR_SITE_NAME&amp;gt; $ tree . . ├── archetypes: : 独自のプロパティ定義 ├── config.toml : サイトのTitleや説明、テーマなど全体設定のファイル ├── content : ブログ記事等、サイトの中身を格納する ├── data : TOML, JSONなどの設定ファイル ├── layouts : 静的サイトを作成する時の変換レイアウトの指定 ├── static : CSSやJavaScriptを配置する └── themes : サイトのテーマを格納する 6 directories, 1 file   hugo serverで起動し、localhost:1313にアクセスする   1. OSX以外の場合はReleasesから該当のバイナリをDLしてPathを通す
@@ -193,10 +193,10 @@ Why Hugo?  Golangで書かれている。I&amp;rsquo;m gopher!! モダンなThem
     
     <item>
       <title>hello world</title>
-      <link>//ladicle.github.io/post/hello-world/</link>
+      <link>https://blog.ladicle.com/post/hello-world/</link>
       <pubDate>Fri, 15 Jul 2016 17:23:37 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/hello-world/</guid>
+      <guid>https://blog.ladicle.com/post/hello-world/</guid>
       <description>My name is Ladicle. I&amp;rsquo;m a software engineer. I develop cloud services. My interesting things are distributed system, CI, web application architecture.
 This blog is generated by hugo :)</description>
     </item>

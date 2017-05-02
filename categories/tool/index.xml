@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tool on Exception();</title>
-    <link>//ladicle.github.io/categories/tool/</link>
+    <link>https://blog.ladicle.com/categories/tool/</link>
     <description>Recent content in Tool on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Sun, 31 Jul 2016 21:46:40 +0900</lastBuildDate>
     
-	<atom:link href="//ladicle.github.io/categories/tool/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ladicle.com/categories/tool/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugoで静的なブログを作成する</title>
-      <link>//ladicle.github.io/post/hugo-de-blog/</link>
+      <link>https://blog.ladicle.com/post/hugo-de-blog/</link>
       <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/hugo-de-blog/</guid>
+      <guid>https://blog.ladicle.com/post/hugo-de-blog/</guid>
       <description>このブログはHugoを使用してGithub.io上に建てている。
 静的Webサイトジェネレータは有名どころだとRailsのJekyllやOctopress、PythonのPelican、NodeのHexoなどが存在するが、 Hugoは速さを売りにしている。
 Why Hugo?  Golangで書かれている。I&amp;rsquo;m gopher!! モダンなThemesが揃っている  Hugoをインストールする  brew install hugoを実行してhugoをインストール1 hugoコマンドでサイトのベースを作成する  $ hugo new site &amp;lt;YOUR_SITE_NAME&amp;gt; $ tree . . ├── archetypes: : 独自のプロパティ定義 ├── config.toml : サイトのTitleや説明、テーマなど全体設定のファイル ├── content : ブログ記事等、サイトの中身を格納する ├── data : TOML, JSONなどの設定ファイル ├── layouts : 静的サイトを作成する時の変換レイアウトの指定 ├── static : CSSやJavaScriptを配置する └── themes : サイトのテーマを格納する 6 directories, 1 file   hugo serverで起動し、localhost:1313にアクセスする   1. OSX以外の場合はReleasesから該当のバイナリをDLしてPathを通す

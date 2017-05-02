@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Container on Exception();</title>
-    <link>//ladicle.github.io/categories/container/</link>
+    <link>https://blog.ladicle.com/categories/container/</link>
     <description>Recent content in Container on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Mon, 01 Aug 2016 21:52:39 +0900</lastBuildDate>
     
-	<atom:link href="//ladicle.github.io/categories/container/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ladicle.com/categories/container/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>コンテナとDockerについて思うこと</title>
-      <link>//ladicle.github.io/post/docker-left-oci/</link>
+      <link>https://blog.ladicle.com/post/docker-left-oci/</link>
       <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/docker-left-oci/</guid>
+      <guid>https://blog.ladicle.com/post/docker-left-oci/</guid>
       <description> ガチャピン先生のDocker、OCIやめるってよの記事が話題だったので、 コンテナとDockerについて思ったことを書いてみる。
 コンテナ = Dockerか? Dockerによってコンテナが多くの人に使われるようになったのは確かだ。
 しかし、コンテナ = Dockerか? という訳ではないと思う。

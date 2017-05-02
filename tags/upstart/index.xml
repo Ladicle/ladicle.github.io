@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Upstart on Exception();</title>
-    <link>//ladicle.github.io/tags/upstart/</link>
+    <link>https://blog.ladicle.com/tags/upstart/</link>
     <description>Recent content in Upstart on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Tue, 09 Aug 2016 19:42:46 +0900</lastBuildDate>
     
-	<atom:link href="//ladicle.github.io/tags/upstart/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ladicle.com/tags/upstart/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>k8sをUbuntu14.04から16.04に移行した</title>
-      <link>//ladicle.github.io/post/systemd-for-upstart/</link>
+      <link>https://blog.ladicle.com/post/systemd-for-upstart/</link>
       <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/systemd-for-upstart/</guid>
+      <guid>https://blog.ladicle.com/post/systemd-for-upstart/</guid>
       <description>Kubernetesを14.04から16.04に移行した。
 もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、 修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。
  元にしているk8sのansibleはkubernetes/contribのansibleディレクトリにある ubuntu16.04対応のPRはそのうち&amp;hellip;

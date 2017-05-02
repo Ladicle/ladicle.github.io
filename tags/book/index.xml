@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Book on Exception();</title>
-    <link>//ladicle.github.io/tags/book/</link>
+    <link>https://blog.ladicle.com/tags/book/</link>
     <description>Recent content in Book on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Wed, 03 Aug 2016 12:33:51 +0900</lastBuildDate>
     
-	<atom:link href="//ladicle.github.io/tags/book/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ladicle.com/tags/book/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Kindle Unlimitedの技術本</title>
-      <link>//ladicle.github.io/post/kindle-unlimited/</link>
+      <link>https://blog.ladicle.com/post/kindle-unlimited/</link>
       <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
       
-      <guid>//ladicle.github.io/post/kindle-unlimited/</guid>
+      <guid>https://blog.ladicle.com/post/kindle-unlimited/</guid>
       <description> Kindle Unlimitedが今日から開始した。
 持っている本や良みたかった本が登録されていたのでまとめてみた。
 Technology        

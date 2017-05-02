@@ -3,257 +3,257 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>//ladicle.github.io/post/tocos-door-sensor1/</loc>
+    <loc>https://blog.ladicle.com/post/tocos-door-sensor1/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/jenkins-study9/</loc>
+    <loc>https://blog.ladicle.com/post/jenkins-study9/</loc>
     <lastmod>2016-08-11T23:39:14+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/systemd-for-upstart/</loc>
+    <loc>https://blog.ladicle.com/post/systemd-for-upstart/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/golang1.7-release-party/</loc>
+    <loc>https://blog.ladicle.com/post/golang1.7-release-party/</loc>
     <lastmod>2016-08-08T19:48:11+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</loc>
+    <loc>https://blog.ladicle.com/post/pack-staic-file-to-binary-for-golang/</loc>
     <lastmod>2016-08-06T10:06:25+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/write-post-by-hugo/</loc>
+    <loc>https://blog.ladicle.com/post/write-post-by-hugo/</loc>
     <lastmod>2016-08-05T16:43:31+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/apache-mesos/</loc>
+    <loc>https://blog.ladicle.com/post/apache-mesos/</loc>
     <lastmod>2016-08-04T20:22:57+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/kindle-unlimited/</loc>
+    <loc>https://blog.ladicle.com/post/kindle-unlimited/</loc>
     <lastmod>2016-08-03T12:33:51+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/add-github-templates/</loc>
+    <loc>https://blog.ladicle.com/post/add-github-templates/</loc>
     <lastmod>2016-08-02T15:19:34+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/docker-left-oci/</loc>
+    <loc>https://blog.ladicle.com/post/docker-left-oci/</loc>
     <lastmod>2016-08-01T21:52:39+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/hugo-de-blog/</loc>
+    <loc>https://blog.ladicle.com/post/hugo-de-blog/</loc>
     <lastmod>2016-07-31T21:46:40+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/about/</loc>
+    <loc>https://blog.ladicle.com/about/</loc>
     <lastmod>2016-07-15T21:04:38+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/hello-world/</loc>
+    <loc>https://blog.ladicle.com/post/hello-world/</loc>
     <lastmod>2016-07-15T17:23:37+09:00</lastmod>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/apache/</loc>
+    <loc>https://blog.ladicle.com/tags/apache/</loc>
     <lastmod>2016-08-04T20:22:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/binary/</loc>
+    <loc>https://blog.ladicle.com/tags/binary/</loc>
     <lastmod>2016-08-06T10:06:25+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/book/</loc>
+    <loc>https://blog.ladicle.com/tags/book/</loc>
     <lastmod>2016-08-03T12:33:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/</loc>
+    <loc>https://blog.ladicle.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/container/</loc>
-    <lastmod>2016-08-01T21:52:39+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//ladicle.github.io/tags/container/</loc>
+    <loc>https://blog.ladicle.com/tags/container/</loc>
     <lastmod>2016-08-11T23:39:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/docker/</loc>
+    <loc>https://blog.ladicle.com/categories/container/</loc>
     <lastmod>2016-08-01T21:52:39+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/etc/</loc>
+    <loc>https://blog.ladicle.com/tags/docker/</loc>
+    <lastmod>2016-08-01T21:52:39+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ladicle.com/categories/etc/</loc>
     <lastmod>2016-07-15T17:23:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/</loc>
+    <loc>https://blog.ladicle.com/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/github/</loc>
+    <loc>https://blog.ladicle.com/tags/github/</loc>
     <lastmod>2016-08-02T15:19:34+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/golang/</loc>
+    <loc>https://blog.ladicle.com/tags/golang/</loc>
     <lastmod>2016-08-08T19:48:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/golang/</loc>
+    <loc>https://blog.ladicle.com/categories/golang/</loc>
     <lastmod>2016-08-08T19:48:11+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/hugo/</loc>
+    <loc>https://blog.ladicle.com/tags/hugo/</loc>
     <lastmod>2016-08-05T16:43:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/iot/</loc>
+    <loc>https://blog.ladicle.com/tags/iot/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/iot/</loc>
+    <loc>https://blog.ladicle.com/categories/iot/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/jenkins/</loc>
+    <loc>https://blog.ladicle.com/tags/jenkins/</loc>
     <lastmod>2016-08-11T23:39:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/jenkins/</loc>
+    <loc>https://blog.ladicle.com/categories/jenkins/</loc>
     <lastmod>2016-08-11T23:39:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/kubernetes/</loc>
+    <loc>https://blog.ladicle.com/tags/kubernetes/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/kubernetes/</loc>
+    <loc>https://blog.ladicle.com/categories/kubernetes/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/mesos/</loc>
+    <loc>https://blog.ladicle.com/tags/mesos/</loc>
     <lastmod>2016-08-04T20:22:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/post/</loc>
+    <loc>https://blog.ladicle.com/post/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/study/</loc>
-    <lastmod>2016-08-04T20:22:57+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//ladicle.github.io/tags/study/</loc>
+    <loc>https://blog.ladicle.com/tags/study/</loc>
     <lastmod>2016-08-11T23:39:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/systemd/</loc>
-    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>//ladicle.github.io/tags/</loc>
+    <loc>https://blog.ladicle.com/categories/study/</loc>
     <lastmod>2016-08-04T20:22:57+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/tips/</loc>
+    <loc>https://blog.ladicle.com/tags/systemd/</loc>
+    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ladicle.com/tags/</loc>
+    <lastmod>2016-08-04T20:22:57+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.ladicle.com/categories/tips/</loc>
     <lastmod>2016-08-05T16:43:31+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/tocos/</loc>
+    <loc>https://blog.ladicle.com/tags/tocos/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/tool/</loc>
+    <loc>https://blog.ladicle.com/categories/tool/</loc>
     <lastmod>2016-07-31T21:46:40+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/categories/ubuntu/</loc>
+    <loc>https://blog.ladicle.com/tags/ubuntu/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/ubuntu/</loc>
+    <loc>https://blog.ladicle.com/categories/ubuntu/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/upstart/</loc>
+    <loc>https://blog.ladicle.com/tags/upstart/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>//ladicle.github.io/tags/zigbee/</loc>
+    <loc>https://blog.ladicle.com/tags/zigbee/</loc>
     <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>

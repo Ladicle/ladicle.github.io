@@ -3,11 +3,6 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://blog.ladicle.com/post/tocos-door-sensor1/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/post/jenkins-study9/</loc>
     <lastmod>2016-08-11T23:39:14+09:00</lastmod>
   </url>
@@ -63,11 +58,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/post/hello-world/</loc>
-    <lastmod>2016-07-15T17:23:37+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/tags/apache/</loc>
     <lastmod>2016-08-04T20:22:57+09:00</lastmod>
     <priority>0</priority>
@@ -109,14 +99,8 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/categories/etc/</loc>
-    <lastmod>2016-07-15T17:23:37+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -141,18 +125,6 @@
   <url>
     <loc>https://blog.ladicle.com/tags/hugo/</loc>
     <lastmod>2016-08-05T16:43:31+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ladicle.com/tags/iot/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ladicle.com/categories/iot/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -188,7 +160,7 @@
   
   <url>
     <loc>https://blog.ladicle.com/post/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
+    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -223,12 +195,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/tags/tocos/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/categories/tool/</loc>
     <lastmod>2016-07-31T21:46:40+09:00</lastmod>
     <priority>0</priority>
@@ -249,12 +215,6 @@
   <url>
     <loc>https://blog.ladicle.com/tags/upstart/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ladicle.com/tags/zigbee/</loc>
-    <lastmod>2016-08-21T16:14:55+09:00</lastmod>
     <priority>0</priority>
   </url>
   

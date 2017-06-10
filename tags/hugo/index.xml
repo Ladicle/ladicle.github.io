@@ -17,12 +17,10 @@
       <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/write-post-by-hugo/</guid>
-      <description>前回は、Hugoのインストール方法とテーマの変更方法について説明した。 今回は記事の作成と配信方法について解説する。
-記事を書く 記事の作成には、前回作成したレポジトリのルートでnewコマンドを使う。
-$ hugo new post/&amp;lt;post-title&amp;gt;.md  実行すると、content/postディレクトリに&amp;lt;post-title&amp;gt;.mdが作成されている。
-$ cat content/post +++ date = &amp;quot;2016-08-05T07:48:33+09:00&amp;quot; description = &amp;quot;&amp;quot; title = &amp;quot;test&amp;quot; +++  この時、draftオプションをつけてserverを起動させると、 リアルタイムに編集内容を確認することができる。
-$ hugo server -builDrafts  記事をサクッと作成する hugoコマンドはレポジトリのルートでしか動かないが、 書きたいことを思いついた時レポジトリルートにいるとは限らないので、 このようなスクリプトを.zshrcに登録している。
-function blog() { postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/content/post if [ $# -eq 0 ]; then BLOG_FILES=$(ag -l &#39;draft = true&#39; $postPath) elif [ $1 = &#39;-p&#39; ]; then BLOG_FILES=$(ag -l &#39;draft = false&#39; $postPath) elif [ $1 = &#39;-a&#39; ]; then BLOG_FILES=$(\ls $postPath) else cat&amp;lt;&amp;lt;EOF &amp;gt; $postPath/$1.</description>
+      <description>&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
+今回は記事の作成と配信方法について解説する。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -31,10 +29,11 @@ function blog() { postPath=/Users/ladicle/Develop/src/github.com/Ladicle/blog/co
       <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/hugo-de-blog/</guid>
-      <description>このブログはHugoを使用してGithub.io上に建てている。
-静的Webサイトジェネレータは有名どころだとRailsのJekyllやOctopress、PythonのPelican、NodeのHexoなどが存在するが、 Hugoは速さを売りにしている。
-Why Hugo?  Golangで書かれている。I&amp;rsquo;m gopher!! モダンなThemesが揃っている  Hugoをインストールする  brew install hugoを実行してhugoをインストール1 hugoコマンドでサイトのベースを作成する  $ hugo new site &amp;lt;YOUR_SITE_NAME&amp;gt; $ tree . . ├── archetypes: : 独自のプロパティ定義 ├── config.toml : サイトのTitleや説明、テーマなど全体設定のファイル ├── content : ブログ記事等、サイトの中身を格納する ├── data : TOML, JSONなどの設定ファイル ├── layouts : 静的サイトを作成する時の変換レイアウトの指定 ├── static : CSSやJavaScriptを配置する └── themes : サイトのテーマを格納する 6 directories, 1 file   hugo serverで起動し、localhost:1313にアクセスする   1. OSX以外の場合はReleasesから該当のバイナリをDLしてPathを通す
- テーマを変更する テーマのここ一覧はここで見ることができる。</description>
+      <description>&lt;p&gt;このブログは&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を使用してGithub.io上に建てている。&lt;br /&gt;
+静的Webサイトジェネレータは有名どころだとRailsの&lt;a href=&#34;https://github.com/jekyll/jekyll&#34;&gt;Jekyll&lt;/a&gt;や&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;、Pythonの&lt;a href=&#34;https://github.com/getpelican/pelican&#34;&gt;Pelican&lt;/a&gt;、Nodeの&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;などが存在するが、
+Hugoは速さを売りにしている。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

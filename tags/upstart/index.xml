@@ -17,16 +17,11 @@
       <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/systemd-for-upstart/</guid>
-      <description>Kubernetesを14.04から16.04に移行した。
-もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、 修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。
- 元にしているk8sのansibleはkubernetes/contribのansibleディレクトリにある ubuntu16.04対応のPRはそのうち&amp;hellip;
- What is Systemd? Systemdを真面目に触るのが初めてだったのでここから始めた。 以下ページを参考にした。
- Systemd入門(1) - Unitの概念を理解する Systemd入門(2) - Serviceの操作方法 Systemd入門(3) - cgroupsと動的生成Unitに関する小ネタ Systemd入門(4) - serviceタイプUnitの設定ファイル Systemd入門(5) - PrivateTmpの実装を見る   (4)はgroupなど変わっているので参考程度
- File path UbuntuはFedoraとファイルパスなどが微妙に違い、 システムデフォルト設定は/usr/lib/systemd/systemではなく/lib/systemd/systemにある。
-EnvironmentFile EnvironmentFile=-/etc/sysconfig/whatever  -の有無によってファイルが存在しなかった時の動作が以下のように変わる。(参考)
- 有りの場合: ファイルが存在しなかった場合も無視 無しの場合: ファイルが存在しないとエラーを発生させる   複数ファイルを読み込む時は複数のEnvironmentFileを定義する
- Convert upstart file to systemd file 公式で変換方法についてわかりやすいドキュメントが公開されている。 ざっくりとした移行手順は以下の通り(細かいところは上記リンク参照)
- 設定ファイルを/etc/sysconfigに移行しEnvironmentFileで読み込み。 start onの依存関係はUnitのAfterに書き換え pre-startコマンドはServiceのExecStartPreに書き換え execコマンドはServiceのExecStartに書き換え  Sample Upstart file description &amp;quot;Kube-Apiserver service&amp;quot; respawn # start in conjunction with etcd start on started etcd stop on stopping etcd pre-start script # see also https://github.</description>
+      <description>&lt;p&gt;Kubernetesを14.04から16.04に移行した。&lt;br /&gt;
+もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
+修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

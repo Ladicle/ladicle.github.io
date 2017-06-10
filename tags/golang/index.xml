@@ -17,14 +17,10 @@
       <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/golang1.7-release-party/</guid>
-      <description>補欠だったので無理かと思っていたら、当日繰り上がった。 イベントページはこちら
-1. What&amp;rsquo;s new Go1.7? by @deeeet Golang1.7、残念ながらRelease表明されなかった(1.6の時以来2回目)
-2. Release note points  MacOS Sierraをサポート Linkerが速くなった(特にk8sのような大規模のコードへの恩恵は大きい) StackFrameが入り、LinuxのProfilerが使えるようになった -Xオプションをつけると、key=valueでつなげないものはエラーになる vendoring optionが使えなくなった // go-binary-only-packageを付けるとバイナリだけを提供できるようになった 標準パッケージは以下のようなものが変更された(他にもあるよ)  context: 今まで標準ではなかった testing: subtestとbenchmarkが作成できる http tracing: httpリクエストの各ステップにフック関数の挿入が可能に    所感
-HTTP tracingデバッグとチューニングにとても便利そう
- 3. About contribution of Go by @stanaka  GolangへのContribution方法(前回のGoConと同じ!) まずはContribution Guidlineをよむ GitHubではなくGerritを使う(FIX, DONEなコンパクトなコメントを返せる)   所感
-未だにGerrit慣れないが、コメントボタンよさそう
- 4. context package by @ono_matope スライドはこちら
- 1.7に標準パッケージに入ったが2014年にはPJが始まっていた 様々なライブラリのキャンセル要求インタフェースの標準か  ここら辺参照: このへんにキャンセルの話とか書いてある ▶ Go Concurrency Patterns: Pipelines and cancellation - The Go Blog https://t.</description>
+      <description>&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
+イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -33,8 +29,11 @@ HTTP tracingデバッグとチューニングにとても便利そう
       <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/pack-staic-file-to-binary-for-golang/</guid>
-      <description>markdownをgithubスタイルのHTMLに変換するmark2hというものを作成したが、 使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。 今回は、go-bindataを使って静的ファイルをGoのバイナリに組み込んでみる。
-go-bindataを使う  go-bindataのinstall  $ go get -u github.com/jteeuwen/go-bindata/...   静的ファイルを格納するディレクトリを作る(名前は適当なもの)  $ mkdir assets   go-bindataを実行する  $ go-bindata -o assets.go assets   template読み込み部分を置き換える  1 file changed, 2 insertions(+), 2 deletions(-) diff --git a/main.go b/main.go index 1b2ec1a..8d5cfdb 100644 --- a/main.go +++ b/main.go @@ -55,13 +55,13 @@ func main(){ os.Exit(0) } - tpl, err := ioutil.ReadFile(&amp;quot;markdown.html&amp;quot;) + tpl, err := Asset(templatePath) if err !</description>
+      <description>&lt;p&gt;markdownをgithubスタイルのHTMLに変換する&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;mark2h&lt;/a&gt;というものを作成したが、
+使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。
+今回は、&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;go-bindata&lt;/a&gt;を使って静的ファイルをGoのバイナリに組み込んでみる。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

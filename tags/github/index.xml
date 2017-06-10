@@ -17,18 +17,10 @@
       <pubDate>Tue, 02 Aug 2016 15:19:34 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/add-github-templates/</guid>
-      <description> GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから RPの品質やレビューの水準が一定に保たれたと感じている。
-Pull Requestのテンプレートを追加する 2016年の2月からGitHubがテンプレート機能をサポートした。(黒魔術なスクリプトは不要!) 使い方は簡単で、レポジトリのroot、又は.github/ディレクトリにPULL_REQUEST_TEMPLATE.mdを配置するだけだ。
-現在は以下のようなテンプレートを使用している。
-$ cat .github/PULL_REQUEST_TEMPLATE.md ## Ticket * https://[jira-host]/[ticket-id] ## Changes * ## Check lists * [ ] XXXの時はYYYを行う * [ ] 上記に該当しないため不要  PRのブランチ名にはJIRAのチケット番号を入れているため目的やReviewerの指定は省略した。 重点的にRVしてほしいポイントのみ記述する方式だ。 また、どうしても自動化できないタスクはチェックリストにして実施漏れを防いでいる。
- Note
-* IssueのテンプレートもISSUE_TEMPLATE.mdで作成できる
-* 拡張子は.mdや.txt、.org等READMEと同じくだいたい使える
- Contribution Guideを表示する Contribution GuideはCONTRIBUTING.mdファイルをレポジトリに配置するだけだ。 PR作成時、以下のようなリンクが表示されるようになる。
- Note
-* CONTRIBUTION.mdはルートに配置する方が見られる機会が増えるので良いと思う
-* 同じく拡張子は変更可能
- </description>
+      <description>&lt;p&gt;GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから
+RPの品質やレビューの水準が一定に保たれたと感じている。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

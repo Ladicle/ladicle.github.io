@@ -1,71 +1,82 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="jp">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="author" content="ladicle">
-		
-		<meta name="generator" content="Hugo 0.21-DEV" />
-		<title>k8sをUbuntu14.04から16.04に移行した &middot; Exception();</title>
-		<link rel="shortcut icon" href="https://blog.ladicle.com/images/favicon.ico">
-		<link rel="stylesheet" href="https://blog.ladicle.com/css/style.css">
-		<link rel="stylesheet" href="https://blog.ladicle.com/css/highlight.css">
-		
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>k8sをUbuntu14.04から16.04に移行した</title>
 
-		
-		<link rel="stylesheet" href="https://blog.ladicle.com/css/monosocialiconsfont.css">
-		
+<meta name="generator" content="Hugo 0.21" />
+<meta property="og:title" content="k8sをUbuntu14.04から16.04に移行した" />
+<meta property="og:description" content="convert from upstart file to systemd file" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://blog.ladicle.com/post/systemd-for-upstart/" />
 
-		
-		<link href="https://blog.ladicle.com/index.xml" rel="alternate" type="application/rss+xml" title="Exception();" />
-		
-	</head>
 
-    <body>
-       <nav class="main-nav">
-	
-	
-		<a href='https://blog.ladicle.com/'> <span class="arrow">←</span>Home</a>
-	
 
-	
-		<a href='https://blog.ladicle.com/about'>About</a>
-	
+<meta property="article:published_time" content="2016-08-09T19:42:46&#43;09:00"/>
+<meta property="article:modified_time" content="2016-08-09T19:42:46&#43;09:00"/>
 
-	
-	<a class="cta" href="https://blog.ladicle.com/index.xml">Subscribe</a>
-	
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="Exception();" rel="home">
+						<h1 class="logo__title">Exception();</h1>
+						
+					</a>
+				</div>
+			</div>
+			<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+    <li class="menu__item"><a class="menu__link " href="/">HOME</a></li>
+		<li class="menu__item "><a class="menu__link" href="/about/">ABOUT</a></li>
+	</ul>
 </nav>
 
-        <section id="wrapper">
-            <article class="post">
-                <header>
-                    <h1>k8sをUbuntu14.04から16.04に移行した</h1>
-                    <h2 class="headline">
-                    August 9, 2016 
-                    <br>
-                    
-                    
-                        
-                            <a href="https://blog.ladicle.com/tags/ubuntu">ubuntu</a>
-                        
-                            <a href="https://blog.ladicle.com/tags/kubernetes">kubernetes</a>
-                        
-                            <a href="https://blog.ladicle.com/tags/systemd">systemd</a>
-                        
-                            <a href="https://blog.ladicle.com/tags/upstart">upstart</a>
-                        
-                    
-                    
-                    </h2>
-                </header>
-                <section id="post-body">
-                    
+		</header>
+		<div class="wrapper clearfix">
 
-<p>Kubernetesを14.04から16.04に移行した。<br />
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post not_home">
+		<header class="post__header clearfix">
+			<h1 class="post__title">k8sをUbuntu14.04から16.04に移行した</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2016-08-09T19:42:46">August 09, 2016</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-tag" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+					<a class="meta-categories__link" href="/tags/ubuntu" rel="tag">ubuntu</a>, <a class="meta-categories__link" href="/tags/kubernetes" rel="tag">kubernetes</a>, <a class="meta-categories__link" href="/tags/systemd" rel="tag">systemd</a>, <a class="meta-categories__link" href="/tags/upstart" rel="tag">upstart</a></span>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			<p>Kubernetesを14.04から16.04に移行した。<br />
 もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
 修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。</p>
+
+<p></p>
 
 <blockquote>
 <p>元にしているk8sのansibleは<a href="https://github.com/kubernetes/contrib">kubernetes/contrib</a>の<code>ansible</code>ディレクトリにある
@@ -175,148 +186,58 @@ WantedBy=multi-user.target
 <blockquote>
 <p>Systemdとのお友達度が1あがった</p>
 </blockquote>
-
-                </section>
-            </article>
-            <footer id="post-meta" class="clearfix">
-                <a href="https://twitter.com/ladicle">
-                        <img class="avatar" src="https://blog.ladicle.com/images/avatar.png">
-                        <div>
-                            <span class="dark">ladicle</span>
-                            <span>Software Engineer - developing cloud services</span>
-                        </div>
-                    </a>
-                <section id="sharing">
-                    <a class="twitter" href="https://twitter.com/intent/tweet?text=https%3a%2f%2fblog.ladicle.com%2fpost%2fsystemd-for-upstart%2f - k8s%e3%82%92Ubuntu14.04%e3%81%8b%e3%82%8916.04%e3%81%ab%e7%a7%bb%e8%a1%8c%e3%81%97%e3%81%9f by @ladicle"><span class="icon-twitter">  </span></a>
-
-<a class="facebook" href="#" onclick="
-    window.open(
-      'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href),
-      'facebook-share-dialog',
-      'width=626,height=436');
-    return false;"><span class="icon-facebook-rect">  </span>
-</a>
-
-                </section>
-            </footer>
-
-            
-
-            <ul id="post-list" class="archive readmore">
-    <h3>Read more</h3>
-    
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/tocos-door-sensor1/">OSX上でTWE-LITEによるドアセンサをつくる (1) - 準備編 -<aside class="dates">Aug 21</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/jenkins-study9/">Jenkins勉強会#9で発表してきた<aside class="dates">Aug 11</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/systemd-for-upstart/">k8sをUbuntu14.04から16.04に移行した<aside class="dates">Aug 9</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/golang1.7-release-party/">Golang 1.7 release party in Tokyo<aside class="dates">Aug 8</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/pack-staic-file-to-binary-for-golang/">Golangのバイナリに静的ファイルを組み込む<aside class="dates">Aug 6</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/write-post-by-hugo/">Hugoで記事と固定ページを書く<aside class="dates">Aug 5</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/apache-mesos/">Apache Mesos勉強会に行ってきた<aside class="dates">Aug 4</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/kindle-unlimited/">Kindle Unlimitedの技術本<aside class="dates">Aug 3</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/add-github-templates/">Pull RequestテンプレートでPRの品質を保つ<aside class="dates">Aug 2</aside></a>
-        </li>
-        
-   
-    
-        
-        <li>
-            <a href="https://blog.ladicle.com/post/docker-left-oci/">コンテナとDockerについて思うこと<aside class="dates">Aug 1</aside></a>
-        </li>
-        
-   
-</ul>
-            <footer id="footer">
-    
-        <div id="social">
-
+		</div>
+	</article>
 	
 	
-    
-    <a class="symbol" href="https://www.facebook.com/ladicle">
-        facebook
-    </a>
-    
-    <a class="symbol" href="https://www.github.com/Ladicle">
-        github
-    </a>
-    
-    <a class="symbol" href="https://www.twitter.com/Ladicle">
-        twitterbird
-    </a>
-    
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'exception-1';
+    var disqus_identifier = 'https:\/\/blog.ladicle.com\/post\/systemd-for-upstart\/';
+    var disqus_title = 'k8sをUbuntu14.04から16.04に移行した';
+    var disqus_url = 'https:\/\/blog.ladicle.com\/post\/systemd-for-upstart\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
 
 
 </div>
 
-    
-    <p class="small">
-    
-        © Copyright 2017 ladicle
-    
-    </p>
-</footer>
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+  
+<div class="widget-outline widget">
+	<h4 class="widget__title">Outline</h4>
+  <div class="widget__content">
+    <div id="toc" class="well col-md-4 col-sm-6">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#what-is-systemd">What is Systemd?</a>
+<ul>
+<li><a href="#file-path">File path</a></li>
+<li><a href="#environmentfile">EnvironmentFile</a></li>
+</ul></li>
+<li><a href="#convert-upstart-file-to-systemd-file">Convert upstart file to systemd file</a>
+<ul>
+<li><a href="#sample-upstart-file">Sample Upstart file</a></li>
+<li><a href="#sample-systemd-file">Sample Systemd file</a></li>
+</ul></li>
+<li><a href="#おわり">おわり</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+  </div>
+</div>
 
-        </section>
+</aside>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script src="https://blog.ladicle.com/js/main.js"></script>
-<script src="https://blog.ladicle.com/js/highlight.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-
-    </body>
-</html>

@@ -17,17 +17,10 @@
       <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/apache-mesos/</guid>
-      <description>MesosはKubernetesと比較されることが多いので気になっていた。
-イベントのURLはこちら。
-1. Mesos とは何か 木内さん @クリエーションライン
-概要  DCOS(ﾃﾞｨｰｼｰｵｰｴｽ)と呼べ YARN日書いが、YARNはHadoopのためのジョブスケジューラ Mesosはサービス基盤の運用を目的にしている(対象範囲が広い) Mesos is cluster of cluster Dockerとの統合をサポート
-  コンテナ化すると分業が可能  データセンタチーム : 実行基盤の配置だけ インフラチーム : リソースの稼働状況だけ アプリケーションチーム : コンテナの内容だけ   この手の物は作業が少なくなるというより
-(むしろ見るコンポーネントは増えていることが多々) 分業できるところに利点を置いてるので、小さいチームもしくは大きいチームでも分業されないと 運用負荷は上がるばかりだと思う
- 2. Docker ホスティングサービス &amp;lsquo;Arukas&amp;rsquo; での Mesos + Marathon の活用について 山田 修司 さん @さくらインターネット
- 構成  Zookeeper Master Slave: executor実行, CPU情報の送信  k8s VS Mesos k8sはセットアップ簡単だけどシングルテナント向けでコンテナOnly。
- k8sのMultiTenant話はここら辺にある。
-セットアップ楽という話が出ていたが&amp;hellip;。(Mesosがものすごくツライのかもしれない)
- Twitterでの議論 Mesos+Marathonはなぜヘビー級に汚れる環境向けなのかの説明が結局なかった気がするが、なんでだろ。環境が分離されるから、がその理由だった?</description>
+      <description>&lt;p&gt;MesosはKubernetesと比較されることが多いので気になっていた。&lt;br /&gt;
+イベントのURLは&lt;a href=&#34;https://www.google.com/url?q=http%3A%2F%2Fconnpass.com%2Fevent%2F36415%2F&amp;amp;sa=D&amp;amp;usd=2&amp;amp;usg=AFQjCNHlDmy2a6EiNcCrDPxYCtHWQoGSIg&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

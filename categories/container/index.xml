@@ -17,20 +17,10 @@
       <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
       
       <guid>https://blog.ladicle.com/post/docker-left-oci/</guid>
-      <description> ガチャピン先生のDocker、OCIやめるってよの記事が話題だったので、 コンテナとDockerについて思ったことを書いてみる。
-コンテナ = Dockerか? Dockerによってコンテナが多くの人に使われるようになったのは確かだ。
-しかし、コンテナ = Dockerか? という訳ではないと思う。
-単純なコンテナの利点の利用&amp;mdash;
-例えば、『コンテナ化して各アプリケーションを隔離したい。』と思った時、 DockerはLinuxコンテナの技術を複雑に組み合わせたDockerはオーバースキルであることが多い。
-Dockerのよさ Dockerによってコンテナが流行(?)した理由として以下のようなものが考えられる。
-  技術の隠蔽化 DockerHubの存在   Linuxコンテナ技術自体は昔から利用されていたが、 これらが統合されてDockerという形でラッピングされたことによって、 アプリケーションレイヤのエンジニアにとっても使いやすいものとなった。
-また、DockerHubはDockerが流行に一躍をかっている。 様々なアプリケーションがDockerHubに登録されたことによって、 今までコンテナというものに触れたことがなかった人でも
-$ docker run nginx  という簡単なコマンドだけで
-『コンテナという技術によって簡単にアプリケーションが立ちがる』
-という体験ができる。
-(brewやaptのようなパッケージマネージャのように)
-参考になる  こういう文脈で I agreeではじまってるときは、たいていagreeしてない
- </description>
+      <description>&lt;p&gt;ガチャピン先生の&lt;a href=&#34;http://blog.gachapin-sensei.com/archives/5174099.html&#34;&gt;Docker、OCIやめるってよ&lt;/a&gt;の記事が話題だったので、
+コンテナとDockerについて思ったことを書いてみる。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
     </item>
     
   </channel>

@@ -38,11 +38,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/post/add-github-templates/</loc>
-    <lastmod>2016-08-02T15:19:34+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/post/docker-left-oci/</loc>
     <lastmod>2016-08-01T21:52:39+09:00</lastmod>
   </url>
@@ -87,8 +82,8 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/categories/container/</loc>
-    <lastmod>2016-08-01T21:52:39+09:00</lastmod>
+    <loc>https://blog.ladicle.com/categories/diary/</loc>
+    <lastmod>2016-08-03T12:33:51+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -105,19 +100,7 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/tags/github/</loc>
-    <lastmod>2016-08-02T15:19:34+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/tags/golang/</loc>
-    <lastmod>2016-08-08T19:48:11+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ladicle.com/categories/golang/</loc>
     <lastmod>2016-08-08T19:48:11+09:00</lastmod>
     <priority>0</priority>
   </url>
@@ -135,20 +118,14 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/categories/jenkins/</loc>
-    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/tags/kubernetes/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/categories/kubernetes/</loc>
-    <lastmod>2016-08-09T19:42:46+09:00</lastmod>
+    <loc>https://blog.ladicle.com/categories/meetup/</loc>
+    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -165,18 +142,6 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/tags/study/</loc>
-    <lastmod>2016-08-11T23:39:14+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ladicle.com/categories/study/</loc>
-    <lastmod>2016-08-04T20:22:57+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.ladicle.com/tags/systemd/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
@@ -189,25 +154,13 @@
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/categories/tips/</loc>
-    <lastmod>2016-08-05T16:43:31+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ladicle.com/categories/tool/</loc>
-    <lastmod>2016-07-31T21:46:40+09:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.ladicle.com/tags/ubuntu/</loc>
+    <loc>https://blog.ladicle.com/categories/technology/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://blog.ladicle.com/categories/ubuntu/</loc>
+    <loc>https://blog.ladicle.com/tags/ubuntu/</loc>
     <lastmod>2016-08-09T19:42:46+09:00</lastmod>
     <priority>0</priority>
   </url>

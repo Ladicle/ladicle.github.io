@@ -137,7 +137,7 @@ body {
 	padding: 5px 10px;
 	white-space: nowrap;
 	color: #fff;
-	background: #c5c5c5;
+	background #e5e5e5;
 }
 
 .btn:hover {
@@ -341,7 +341,7 @@ a:hover {
 
 /*** Lists ***/
 .post__content ul {
-	list-style: square;
+	list-style: initial;
 }
 
 .post__content ol {
@@ -369,7 +369,7 @@ dt, dd {
 }
 
 dt {
-	list-style-type: square;
+	list-style-type: initial;
 	font-weight: bold;
 }
 
@@ -967,10 +967,33 @@ textarea {
 	border-bottom: 3px solid #1da8be;
 }
 
+#TableOfContents {
+  padding: 0 1em;
+  color: #c4c4c4;
+}
+
+.widget-outline ul ul, .widget-outline ul ol, .widget-outline ol ol, .widget-outline ol ul {
+  margin-left: 1em;
+}
+
+.widget-outline ol li {
+  list-style-type: decimal;
+}
+
+.widget-outline ul ul li {
+  list-style-type: initial;
+}
+
+.widget-social__content {
+  display: inline-flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .widget-social__link {
-  display: inline-block;
+  display: block;
   margin: 0 8px 8px 0;
-  float: left;
+  background: #e5e5e5;
 }
 
 .widget-social__link.widget_link.btn {
@@ -979,6 +1002,10 @@ textarea {
 
 .widget-social__link-icon {
 	vertical-align: middle;
+}
+
+.rss__btn {
+  padding: 1px 6px;
 }
 
 /*** Default WordPress Widgets ***/

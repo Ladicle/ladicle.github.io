@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Exception();</title>
-    <link>https://blog.ladicle.com/</link>
-    <description>Recent content on Exception();</description>
+    <title>Technology on Exception();</title>
+    <link>https://blog.ladicle.com/categories/technology/</link>
+    <description>Recent content in Technology on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 09 Aug 2016 19:42:46 +0900</lastBuildDate>
     
-	<atom:link href="https://blog.ladicle.com/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://blog.ladicle.com/categories/technology/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Jenkins勉強会#9で発表してきた</title>
-      <link>https://blog.ladicle.com/post/jenkins-study9/</link>
-      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
-      
-      <guid>https://blog.ladicle.com/post/jenkins-study9/</guid>
-      <description>&lt;p&gt;コンテナCIとJobの管理方法について話してきた。&lt;br /&gt;
-話した内容や質問された内容を補足する。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
     
     <item>
       <title>k8sをUbuntu14.04から16.04に移行した</title>
@@ -32,18 +20,6 @@
       <description>&lt;p&gt;Kubernetesを14.04から16.04に移行した。&lt;br /&gt;
 もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
 修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Golang 1.7 release party in Tokyo</title>
-      <link>https://blog.ladicle.com/post/golang1.7-release-party/</link>
-      <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
-      
-      <guid>https://blog.ladicle.com/post/golang1.7-release-party/</guid>
-      <description>&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
-イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
@@ -69,30 +45,6 @@
       <guid>https://blog.ladicle.com/post/write-post-by-hugo/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
 今回は記事の作成と配信方法について解説する。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Apache Mesos勉強会に行ってきた</title>
-      <link>https://blog.ladicle.com/post/apache-mesos/</link>
-      <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
-      
-      <guid>https://blog.ladicle.com/post/apache-mesos/</guid>
-      <description>&lt;p&gt;MesosはKubernetesと比較されることが多いので気になっていた。&lt;br /&gt;
-イベントのURLは&lt;a href=&#34;https://www.google.com/url?q=http%3A%2F%2Fconnpass.com%2Fevent%2F36415%2F&amp;amp;sa=D&amp;amp;usd=2&amp;amp;usg=AFQjCNHlDmy2a6EiNcCrDPxYCtHWQoGSIg&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kindle Unlimitedの技術本</title>
-      <link>https://blog.ladicle.com/post/kindle-unlimited/</link>
-      <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
-      
-      <guid>https://blog.ladicle.com/post/kindle-unlimited/</guid>
-      <description>&lt;p&gt;Kindle Unlimitedが今日から開始した。&lt;br /&gt;
-持っている本や良みたかった本が登録されていたのでまとめてみた。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
     </item>

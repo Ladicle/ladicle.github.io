@@ -98,18 +98,6 @@
     </item>
     
     <item>
-      <title>Pull RequestテンプレートでPRの品質を保つ</title>
-      <link>https://blog.ladicle.com/post/add-github-templates/</link>
-      <pubDate>Tue, 02 Aug 2016 15:19:34 +0900</pubDate>
-      
-      <guid>https://blog.ladicle.com/post/add-github-templates/</guid>
-      <description>&lt;p&gt;GitHubにContribution Guideの表示やPull Requestのテンプレートを導入してから
-RPの品質やレビューの水準が一定に保たれたと感じている。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
       <title>コンテナとDockerについて思うこと</title>
       <link>https://blog.ladicle.com/post/docker-left-oci/</link>
       <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>

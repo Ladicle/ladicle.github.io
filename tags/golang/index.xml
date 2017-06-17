@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Golang on Exception();</title>
-    <link>https://ladicle.com/tags/golang/</link>
+    <link>https://www.ladicle.com/tags/golang/</link>
     <description>Recent content in Golang on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Mon, 08 Aug 2016 19:48:11 +0900</lastBuildDate>
     
-	<atom:link href="https://ladicle.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://www.ladicle.com/tags/golang/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Golang 1.7 release party in Tokyo</title>
-      <link>https://ladicle.com/post/golang1.7-release-party/</link>
+      <link>https://www.ladicle.com/post/golang1.7-release-party/</link>
       <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
       
-      <guid>https://ladicle.com/post/golang1.7-release-party/</guid>
+      <guid>https://www.ladicle.com/post/golang1.7-release-party/</guid>
       <description>&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
 イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
 
@@ -25,10 +25,10 @@
     
     <item>
       <title>Golangのバイナリに静的ファイルを組み込む</title>
-      <link>https://ladicle.com/post/pack-staic-file-to-binary-for-golang/</link>
+      <link>https://www.ladicle.com/post/pack-staic-file-to-binary-for-golang/</link>
       <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
       
-      <guid>https://ladicle.com/post/pack-staic-file-to-binary-for-golang/</guid>
+      <guid>https://www.ladicle.com/post/pack-staic-file-to-binary-for-golang/</guid>
       <description>&lt;p&gt;markdownをgithubスタイルのHTMLに変換する&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;mark2h&lt;/a&gt;というものを作成したが、
 使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。
 今回は、&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;go-bindata&lt;/a&gt;を使って静的ファイルをGoのバイナリに組み込んでみる。&lt;/p&gt;

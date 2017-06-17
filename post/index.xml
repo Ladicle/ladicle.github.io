@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Exception();</title>
-    <link>https://blog.ladicle.com/post/</link>
+    <link>https://ladicle.com/post/</link>
     <description>Recent content in Posts on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
     
-	<atom:link href="https://blog.ladicle.com/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins勉強会#9で発表してきた</title>
-      <link>https://blog.ladicle.com/post/jenkins-study9/</link>
+      <link>https://ladicle.com/post/jenkins-study9/</link>
       <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/jenkins-study9/</guid>
+      <guid>https://ladicle.com/post/jenkins-study9/</guid>
       <description>&lt;p&gt;コンテナCIとJobの管理方法について話してきた。&lt;br /&gt;
 話した内容や質問された内容を補足する。&lt;/p&gt;
 
@@ -25,10 +25,10 @@
     
     <item>
       <title>k8sをUbuntu14.04から16.04に移行した</title>
-      <link>https://blog.ladicle.com/post/systemd-for-upstart/</link>
+      <link>https://ladicle.com/post/systemd-for-upstart/</link>
       <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/systemd-for-upstart/</guid>
+      <guid>https://ladicle.com/post/systemd-for-upstart/</guid>
       <description>&lt;p&gt;Kubernetesを14.04から16.04に移行した。&lt;br /&gt;
 もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
 修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。&lt;/p&gt;
@@ -38,10 +38,10 @@
     
     <item>
       <title>Golang 1.7 release party in Tokyo</title>
-      <link>https://blog.ladicle.com/post/golang1.7-release-party/</link>
+      <link>https://ladicle.com/post/golang1.7-release-party/</link>
       <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/golang1.7-release-party/</guid>
+      <guid>https://ladicle.com/post/golang1.7-release-party/</guid>
       <description>&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
 イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
 
@@ -50,10 +50,10 @@
     
     <item>
       <title>Golangのバイナリに静的ファイルを組み込む</title>
-      <link>https://blog.ladicle.com/post/pack-staic-file-to-binary-for-golang/</link>
+      <link>https://ladicle.com/post/pack-staic-file-to-binary-for-golang/</link>
       <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/pack-staic-file-to-binary-for-golang/</guid>
+      <guid>https://ladicle.com/post/pack-staic-file-to-binary-for-golang/</guid>
       <description>&lt;p&gt;markdownをgithubスタイルのHTMLに変換する&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;mark2h&lt;/a&gt;というものを作成したが、
 使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。
 今回は、&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;go-bindata&lt;/a&gt;を使って静的ファイルをGoのバイナリに組み込んでみる。&lt;/p&gt;
@@ -63,10 +63,10 @@
     
     <item>
       <title>Hugoで記事と固定ページを書く</title>
-      <link>https://blog.ladicle.com/post/write-post-by-hugo/</link>
+      <link>https://ladicle.com/post/write-post-by-hugo/</link>
       <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/write-post-by-hugo/</guid>
+      <guid>https://ladicle.com/post/write-post-by-hugo/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
 今回は記事の作成と配信方法について解説する。&lt;/p&gt;
 
@@ -75,10 +75,10 @@
     
     <item>
       <title>Apache Mesos勉強会に行ってきた</title>
-      <link>https://blog.ladicle.com/post/apache-mesos/</link>
+      <link>https://ladicle.com/post/apache-mesos/</link>
       <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/apache-mesos/</guid>
+      <guid>https://ladicle.com/post/apache-mesos/</guid>
       <description>&lt;p&gt;MesosはKubernetesと比較されることが多いので気になっていた。&lt;br /&gt;
 イベントのURLは&lt;a href=&#34;https://www.google.com/url?q=http%3A%2F%2Fconnpass.com%2Fevent%2F36415%2F&amp;amp;sa=D&amp;amp;usd=2&amp;amp;usg=AFQjCNHlDmy2a6EiNcCrDPxYCtHWQoGSIg&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 
@@ -87,10 +87,10 @@
     
     <item>
       <title>Kindle Unlimitedの技術本</title>
-      <link>https://blog.ladicle.com/post/kindle-unlimited/</link>
+      <link>https://ladicle.com/post/kindle-unlimited/</link>
       <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/kindle-unlimited/</guid>
+      <guid>https://ladicle.com/post/kindle-unlimited/</guid>
       <description>&lt;p&gt;Kindle Unlimitedが今日から開始した。&lt;br /&gt;
 持っている本や良みたかった本が登録されていたのでまとめてみた。&lt;/p&gt;
 
@@ -99,10 +99,10 @@
     
     <item>
       <title>コンテナとDockerについて思うこと</title>
-      <link>https://blog.ladicle.com/post/docker-left-oci/</link>
+      <link>https://ladicle.com/post/docker-left-oci/</link>
       <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/docker-left-oci/</guid>
+      <guid>https://ladicle.com/post/docker-left-oci/</guid>
       <description>&lt;p&gt;ガチャピン先生の&lt;a href=&#34;http://blog.gachapin-sensei.com/archives/5174099.html&#34;&gt;Docker、OCIやめるってよ&lt;/a&gt;の記事が話題だったので、
 コンテナとDockerについて思ったことを書いてみる。&lt;/p&gt;
 
@@ -111,10 +111,10 @@
     
     <item>
       <title>Hugoで静的なブログを作成する</title>
-      <link>https://blog.ladicle.com/post/hugo-de-blog/</link>
+      <link>https://ladicle.com/post/hugo-de-blog/</link>
       <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
       
-      <guid>https://blog.ladicle.com/post/hugo-de-blog/</guid>
+      <guid>https://ladicle.com/post/hugo-de-blog/</guid>
       <description>&lt;p&gt;このブログは&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を使用してGithub.io上に建てている。&lt;br /&gt;
 静的Webサイトジェネレータは有名どころだとRailsの&lt;a href=&#34;https://github.com/jekyll/jekyll&#34;&gt;Jekyll&lt;/a&gt;や&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;、Pythonの&lt;a href=&#34;https://github.com/getpelican/pelican&#34;&gt;Pelican&lt;/a&gt;、Nodeの&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;などが存在するが、
 Hugoは速さを売りにしている。&lt;/p&gt;

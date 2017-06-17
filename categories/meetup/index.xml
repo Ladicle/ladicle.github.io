@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Meetup on Exception();</title>
-    <link>https://www.ladicle.com/categories/meetup/</link>
+    <link>https://ladicle.com/categories/meetup/</link>
     <description>Recent content in Meetup on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
     
-	<atom:link href="https://www.ladicle.com/categories/meetup/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.com/categories/meetup/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins勉強会#9で発表してきた</title>
-      <link>https://www.ladicle.com/post/jenkins-study9/</link>
+      <link>https://ladicle.com/post/jenkins-study9/</link>
       <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/jenkins-study9/</guid>
+      <guid>https://ladicle.com/post/jenkins-study9/</guid>
       <description>&lt;p&gt;コンテナCIとJobの管理方法について話してきた。&lt;br /&gt;
 話した内容や質問された内容を補足する。&lt;/p&gt;
 
@@ -25,10 +25,10 @@
     
     <item>
       <title>Golang 1.7 release party in Tokyo</title>
-      <link>https://www.ladicle.com/post/golang1.7-release-party/</link>
+      <link>https://ladicle.com/post/golang1.7-release-party/</link>
       <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/golang1.7-release-party/</guid>
+      <guid>https://ladicle.com/post/golang1.7-release-party/</guid>
       <description>&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
 イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
 
@@ -37,10 +37,10 @@
     
     <item>
       <title>Apache Mesos勉強会に行ってきた</title>
-      <link>https://www.ladicle.com/post/apache-mesos/</link>
+      <link>https://ladicle.com/post/apache-mesos/</link>
       <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/apache-mesos/</guid>
+      <guid>https://ladicle.com/post/apache-mesos/</guid>
       <description>&lt;p&gt;MesosはKubernetesと比較されることが多いので気になっていた。&lt;br /&gt;
 イベントのURLは&lt;a href=&#34;https://www.google.com/url?q=http%3A%2F%2Fconnpass.com%2Fevent%2F36415%2F&amp;amp;sa=D&amp;amp;usd=2&amp;amp;usg=AFQjCNHlDmy2a6EiNcCrDPxYCtHWQoGSIg&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
 

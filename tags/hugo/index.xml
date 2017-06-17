@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Hugo on Exception();</title>
-    <link>https://www.ladicle.com/tags/hugo/</link>
+    <link>https://ladicle.com/tags/hugo/</link>
     <description>Recent content in Hugo on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Fri, 05 Aug 2016 16:43:31 +0900</lastBuildDate>
     
-	<atom:link href="https://www.ladicle.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.com/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugoで記事と固定ページを書く</title>
-      <link>https://www.ladicle.com/post/write-post-by-hugo/</link>
+      <link>https://ladicle.com/post/write-post-by-hugo/</link>
       <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/write-post-by-hugo/</guid>
+      <guid>https://ladicle.com/post/write-post-by-hugo/</guid>
       <description>&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
 今回は記事の作成と配信方法について解説する。&lt;/p&gt;
 
@@ -25,10 +25,10 @@
     
     <item>
       <title>Hugoで静的なブログを作成する</title>
-      <link>https://www.ladicle.com/post/hugo-de-blog/</link>
+      <link>https://ladicle.com/post/hugo-de-blog/</link>
       <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/hugo-de-blog/</guid>
+      <guid>https://ladicle.com/post/hugo-de-blog/</guid>
       <description>&lt;p&gt;このブログは&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を使用してGithub.io上に建てている。&lt;br /&gt;
 静的Webサイトジェネレータは有名どころだとRailsの&lt;a href=&#34;https://github.com/jekyll/jekyll&#34;&gt;Jekyll&lt;/a&gt;や&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;、Pythonの&lt;a href=&#34;https://github.com/getpelican/pelican&#34;&gt;Pelican&lt;/a&gt;、Nodeの&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;などが存在するが、
 Hugoは速さを売りにしている。&lt;/p&gt;

@@ -13,10 +13,10 @@
     
     <item>
       <title>第1回 Kubernetesをはじめるなら今!</title>
-      <link>https://www.ladicle.com/post/kubernetes1.md/</link>
+      <link>https://www.ladicle.com/post/k8s1/</link>
       <pubDate>Fri, 23 Jun 2017 21:36:25 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/kubernetes1.md/</guid>
+      <guid>https://www.ladicle.com/post/k8s1/</guid>
       <description>&lt;p&gt;「Kubernetesを使える人を増やす」を目標にKubernetesについて綴ることにしました。というのも、会社で使っているKubernetesの運用がひとりなためです。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>

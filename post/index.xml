@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jun 2017 21:36:25 +0900</lastBuildDate>
     
 	<atom:link href="https://www.ladicle.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第1回 Kubernetesをはじめるなら今!</title>
+      <link>https://www.ladicle.com/post/kubernetes1.md/</link>
+      <pubDate>Fri, 23 Jun 2017 21:36:25 +0900</pubDate>
+      
+      <guid>https://www.ladicle.com/post/kubernetes1.md/</guid>
+      <description>&lt;p&gt;「Kubernetesを使える人を増やす」を目標にKubernetesについて綴ることにしました。というのも、会社で使っているKubernetesの運用がひとりなためです。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Jenkins勉強会#9で発表してきた</title>

@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://www.ladicle.com/post/k8s2/</loc>
+    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://www.ladicle.com/post/k8s1/</loc>
     <lastmod>2017-06-23T21:36:25+09:00</lastmod>
   </url>
@@ -100,7 +105,7 @@
   
   <url>
     <loc>https://www.ladicle.com/</loc>
-    <lastmod>2017-06-23T21:36:25+09:00</lastmod>
+    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -124,7 +129,7 @@
   
   <url>
     <loc>https://www.ladicle.com/tags/kubernetes/</loc>
-    <lastmod>2017-06-23T21:36:25+09:00</lastmod>
+    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -142,7 +147,7 @@
   
   <url>
     <loc>https://www.ladicle.com/post/</loc>
-    <lastmod>2017-06-23T21:36:25+09:00</lastmod>
+    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -160,7 +165,7 @@
   
   <url>
     <loc>https://www.ladicle.com/categories/technology/</loc>
-    <lastmod>2017-06-23T21:36:25+09:00</lastmod>
+    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

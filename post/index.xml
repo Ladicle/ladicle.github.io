@@ -6,10 +6,21 @@
     <description>Recent content in Posts on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Fri, 23 Jun 2017 21:36:25 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jun 2017 18:00:00 +0900</lastBuildDate>
     
 	<atom:link href="https://www.ladicle.com/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>第2回 Kubernetesの歩き方</title>
+      <link>https://www.ladicle.com/post/k8s2/</link>
+      <pubDate>Tue, 27 Jun 2017 18:00:00 +0900</pubDate>
+      
+      <guid>https://www.ladicle.com/post/k8s2/</guid>
+      <description>&lt;p&gt;Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよくを聞かれることが多くなってきたのでまとめてみました。この内容は&lt;a href=&#34;https://k8sjp.connpass.com/event/56945/&#34;&gt;Kubernetes meetoup Tokyo #5&lt;/a&gt;の内容です。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>第1回 Kubernetesをはじめるなら今!</title>

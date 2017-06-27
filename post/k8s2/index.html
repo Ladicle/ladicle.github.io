@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第2回 Kubernetesの歩き方</title>
+
+<meta name="generator" content="Hugo 0.24" />
+<meta property="og:title" content="第2回 Kubernetesの歩き方" />
+<meta property="og:description" content="Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよくを聞かれることが多くなってきたのでまとめてみました。この内容はKubernetes meetoup Tokyo #5の内容です。
+
+" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.ladicle.com/post/k8s2/" />
+
+
+
+<meta property="article:published_time" content="2017-06-27T18:00:00&#43;09:00"/>
+<meta property="article:modified_time" content="2017-06-27T18:00:00&#43;09:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,700" type="text/css" media="all" />
+<link rel="stylesheet" href="/css/style.css" type="text/css" media="all" />
+<script type="text/javascript" src="/js/scripts.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<link rel="shortcut icon" href="/favicon.ico">
+
+</head>
+<body class="body body-right-sidebar mobile" itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<div class="container container-outer">
+		<header class="header" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
+			<div class="container container-inner clearfix">
+				<div class="logo" role="banner" itemscope="itemscope" itemtype="http://schema.org/Brand">
+					<a class="logo__link" href="/" title="Exception();" rel="home">
+						<h1 class="logo__title">Exception();</h1>
+						
+					</a>
+				</div>
+			</div>
+			<nav class="menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+	<ul class="menu__list">
+    <li class="menu__item"><a class="menu__link " href="/">HOME</a></li>
+		<li class="menu__item "><a class="menu__link" href="/about/">ABOUT</a></li>
+	</ul>
+</nav>
+
+		</header>
+		<div class="wrapper clearfix">
+
+
+<div class="main-content content" role="main" itemprop="mainContentOfPage">
+	<article class="post not_home">
+		<header class="post__header clearfix">
+			<h1 class="post__title">第2回 Kubernetesの歩き方</h1>
+			<p class="post__meta meta">
+				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
+				<time class="post__meta-date" datetime="2017-06-27T18:00:00">June 27, 2017</time>
+				<span class="post__meta-categories meta-categories">
+					<svg class="icon icon-tag" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
+					<a class="meta-categories__link" href="/tags/kubernetes" rel="tag">kubernetes</a></span>
+			</p>
+		</header>
+		<div class="post__content clearfix">
+			<p>Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよくを聞かれることが多くなってきたのでまとめてみました。この内容は<a href="https://k8sjp.connpass.com/event/56945/">Kubernetes meetoup Tokyo #5</a>の内容です。</p>
+
+<p></p>
+
+<h2 id="あらすじ">あらすじ</h2>
+
+<p>次の6つのパターンのとき、どこを見にいくとどんな情報が置いてあるのかを紹介していきます。また、よりよい情報源があれば教えていただけると嬉しいです :)</p>
+
+<ol>
+<li>入門する</li>
+<li>アプリケーションを立ち上げる</li>
+<li>Clusterを運用する</li>
+<li>k8sユーザの動向を追う</li>
+<li>KubernetsをDeepDiveする</li>
+<li>困った時は</li>
+</ol>
+
+<h2 id="入門する">入門する</h2>
+
+<p>Kubernetesは独自用語がたっぷり含まれているので、いきなりアプリケーションをドキュメント読みつつ構築しようとするとハマります。まずはKubernetesのコンセプトをざっくり読んだ後に素晴らしいインタラクティブなチュートリアルを触ってみるのがよいと思います。(Intelに感謝)</p>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/concepts/">Concepts | Kubernetes</a>
+公式ドキュメント。Kubernetesの概念やアーキテクチャ、用語がまとめられている。OverviewとKubernetes Architectureだけ読んでおけばチュートリアルがやりやすくなるはず</li>
+<li><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">Overview | Kubernetes</a>
+Web上のターミナルでminikubeを使ったクラスタの構築からアプリケーションのデプロイ、スケールアップ、アップグレードを試せる</li>
+<li><a href="https://github.com/kubernetes/community/blob/master/contributors/devel/mesos-style.md">Building Mesos/Omega-style frameworks on Kubernetes</a>
+クラスタ管理アーキテクチャとしてのk8sの方針を知りたい時はここ</li>
+</ul>
+
+<blockquote>
+<p>日本語情報であれば<a href="http://gihyo.jp/magazine/wdpress/archive/2017/vol99">WEB+DB PRESS Vol.99｜技術評論社</a>の実践Kubernetesがとても分かりやすくまとまっていたのでオススメです</p>
+</blockquote>
+
+<h2 id="アプリケーションを立ち上げる">アプリケーションを立ち上げる</h2>
+
+<p>チュートリアルまでこなせば基本的なアプリケーションの立ち上げ方は分かるようになっているので、アプリケーションを立ち上げる先とアプリケーションの管理方法を考え始めます。クラスタを自前で運用する話は次章に取っておくとして、ここではKubernetesのマネージドサービスを提供しているものをまとめます。</p>
+
+<h3 id="kubernetesを提供するマネージドサービス">Kubernetesを提供するマネージドサービス</h3>
+
+<p>Kubernetesの運用はそれなりに辛いので、エンジニアも豊富にいるしマルチデータセンタにクラスタ構築してバンバン活用するぜ！とかでない限り、マネージドなサービスを使うというのはよい選択肢だと思います。(k8s外ですが、イメージレジストリの自前運用は面倒が多いのでそこら辺も合わせて検討すると◯)</p>
+
+<p><strong>マネージドクラウドサービス</strong></p>
+
+<ul>
+<li><a href="https://cloud.google.com/container-engine/">Google Container Engine</a>: いわゆる本家</li>
+<li><a href="https://www.openshift.com/">Red Hat OpenShift</a>: Fabric8を使ったアプリ管理とか</li>
+<li><a href="https://azure.microsoft.com/en-us/services/container-service/">Azure Container Service</a>: Deisを買収してWorkflow周りを強化してる</li>
+</ul>
+
+<p><strong>サポート付きサービス</strong></p>
+
+<ul>
+<li><a href="https://coreos.com/tectonic">CoreOS TECTONIC</a>: BaremetalやAWS上にTECTONICでインストールしたk8sのサポートを受け付けています</li>
+<li><a href="http://rancher.com/kubernetes/">Rancher Kubernetes</a>: Rancherでインストールしたk8sのサポートを受け付けています</li>
+</ul>
+
+<h3 id="アプリケーションの管理">アプリケーションの管理</h3>
+
+<p>チュートリアルのように数アプリケーションのみ起動するときは生のJSONやYAMLで設定ファイルを保持していても問題ありませんが、商用で使っていくとなると環境ごとのパラメータ管理や依存関係を保持するのが辛くなってきます。そらへんを解決する方法としては、K8s用のパッケージマネージャ <a href="https://github.com/kubernetes/helm">Helm</a> があります。</p>
+
+<p>テンプレートを作って変数ファイルを切り替えられたり、アプリケーションの依存関係を指定できたり、プラグイン使ってSecret情報をGPGで暗号/復号化したりと、さまざまな機能があります。公式ドキュメントが非常によくまとまっているので困った時はドキュメントが解決してくれるでしょう。</p>
+
+<ul>
+<li><a href="https://docs.helm.sh/">Helm Docs</a>: Helm Official Document</li>
+<li><a href="https://github.com/Azure/draft">Azure Draft</a>: Helmをさらにラッパしてイメージの管理までAzureでできるようにしたツール</li>
+</ul>
+
+<blockquote>
+<p><strong>番外編</strong> - Serverless</p>
+</blockquote>
+
+<p>Kubernetes上でServerlessなアプリケーションをデプロイしたいという場合次の3つの選択肢があります。GithubのStar数は上から順に2074, 493, 154です。(2017年6月27日調べ)</p>
+
+<ol>
+<li><a href="https://github.com/fission/fission">Fission</a> by Platform9</li>
+<li><a href="https://github.com/kubeless/kubeless">Kubeless</a> by Bitnami</li>
+<li><a href="https://github.com/funktionio/funktion">Funkiton</a> by Fabric8(RedHat)</li>
+</ol>
+
+<h2 id="clusterを運用する">Clusterを運用する</h2>
+
+<p>チュートリアルで使ったminikubeはお手軽ですが、あくまでもお試し用であって本番環境としては不向きです。本番環境にもデプロイ方法は色々ありますが現時点で主流なツールは以下の3つです。それぞれ向き不向きがあるので用途に応じて検討してください。</p>
+
+<ul>
+<li><a href="https://github.com/kubernetes/kops">kops</a>
+AWSに特化しているツール。AWSにデプロイするならこれ</li>
+<li><a href="https://github.com/kubernetes-incubator/kubespray">kargo</a>
+Ansibleベースでベアメタルや複数のクラウドプロバイダに対応している。デプロイ先によって対応している機能が違うので注意 (現在<code>kubespray</code>にコードベースも改名中)</li>
+<li><a href="https://github.com/kubernetes/kubeadm">kubeadm</a>:
+本番環境の流れで紹介しましたがMasterHAには対応していないので今後に期待したいツール (そのためにはk8s本体にmasterアクセスをロードバランスしたりする機能が入らないといけないので当分無理そう)</li>
+</ul>
+
+<blockquote>
+<p><strong>コラム</strong></p>
+</blockquote>
+
+<p>自前でクラスタ管理しているとMasterHA(特に証明書とロードバランサ周り)、ネットワークあたりではまりがちでなのでご注意ください。ちなみに、サーバ証明書は次のKubernetes1.7でアップグレード機能が入りそうです。</p>
+
+<h2 id="k8sユーザ-の動向を追う">k8sユーザの動向を追う</h2>
+
+<p>個人/企業Blogやmeetupのスライドと動画、Github上に公開されたk8s関連のツール情報はRedditとKubeWeeklyを見ると追いやすいです。週一くらいでReddit、たまにKubeWeekly、暇なときはk8s関連のPodcast聴いてるとなんとなく動向がわかります。</p>
+
+<ul>
+<li><a href="https://www.reddit.com/r/kubernetes/">Reddit Kubernetes</a>: 程よい情報量で楽しめる</li>
+<li><a href="https://kubeweekly.com/">Kubeweekly</a>: Kubernetes情報の週間まとめサイト</li>
+<li><a href="https://www.kubecast.com/">Kubecast</a>: Milos &amp; Ivanによる不定期なk8s専用podcast</li>
+</ul>
+
+<blockquote>
+<p><strong>コラム</strong></p>
+</blockquote>
+
+<p>Data nuts, Google Cloud Podcast, The Cloud Castsはよくk8sの話題がでるので聴いてます。また、<a href="https://softwareengineeringdaily.com/tag/kubernetes/">Software Engineering Daily</a>を使ってk8sタグで引っ掛けておくとk8sの回だけ収集できます。</p>
+
+<h2 id="kubernetsをdeepdiveする">KubernetsをDeepDiveする</h2>
+
+<p>運用していてトラブったり、アーキテクチャが気になって夜も眠れなくなったり、Kubernetesの開発がしたくなったときに見る場所を紹介していきます。</p>
+
+<h3 id="特定のアーキテクチャやロジックがきになる時">特定のアーキテクチャやロジックがきになる時</h3>
+
+<ul>
+<li><a href="https://github.com/kubernetes/community">kubernetes/community</a> の中の気になるSIGのディレクトリ内のドキュメントをチェック</li>
+<li><a href="https://github.com/kubernetes/community/tree/master/contributors/design-proposals">design-proposals</a> にあるデザインの中で気になるものをチェック</li>
+<li><a href="https://github.com/kubernetes/kubernetes">kubernetes</a> を動かしつつコードを読む</li>
+</ul>
+
+<h3 id="開発の最新情報を追いたいとき">開発の最新情報を追いたいとき</h3>
+
+<ul>
+<li><a href="https://groups.google.com/forum/#!forum/kubernetes-dev">Kubernetes developer/contributor discussion</a> をメールで購読 (1日ごとのサマリで丁度良い流量)</li>
+<li><a href="https://kubernetes.io/community/">Kubernetes community meeting</a> カレンダーはこちら。日本時間で参加するのはつらいので公開されている議事録や録画をYoutubeで見るのがオススメ。</li>
+</ul>
+
+<blockquote>
+<p><strong>開発に参加する前に</strong></p>
+</blockquote>
+
+<p><a href="https://github.com/kubernetes/community">kubernetes/community</a>に開発のためのお作法が書かれているのでざっと目を通しておくのがオススメです。次のようなものが書かれていたりします。</p>
+
+<ul>
+<li><a href="https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md">Pullreq作法</a></li>
+<li><a href="https://github.com/kubernetes/community/blob/master/contributors/devel/testing.md">Test作法</a></li>
+</ul>
+
+<h2 id="困った時は">困った時は</h2>
+
+<p>Kubernetesを使っていく中でリファレンスやコードを見ても分からないことが出てくるかもしれません。そんな時は次のところに助けを求めるとよいでしょう。</p>
+
+<ul>
+<li><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">TroubleShooting Guide</a>:  FAQなどへのリンク集 (以降の内容も書いてあります)</li>
+<li><a href="https://stackoverflow.com/search?q=kubernetes">StackOverflow</a>: 質問したいとき</li>
+<li><a href="http://slack.k8s.io">Kubernetes Slack</a>: ちょっとしたことを尋ねたり提案したいとき (日本語なら#jp-usersチャネルへ</li>
+<li><a href="https://github.com/kubernetes/kubernetes/issues">Github Kubernetes issues</a>: バグ報告や機能追加を提案したいとき</li>
+</ul>
+		</div>
+	</article>
+	
+	
+<div class="comments">
+	<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'exception-1';
+    var disqus_identifier = 'https:\/\/www.ladicle.com\/post\/k8s2\/';
+    var disqus_title = '第2回 Kubernetesの歩き方';
+    var disqus_url = 'https:\/\/www.ladicle.com\/post\/k8s2\/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+
+</div>
+
+<aside class="sidebar" itemscope="itemscope" itemtype="http://schema.org/WPSideBar">
+  
+<div class="widget-outline widget">
+	<h4 class="widget__title">Outline</h4>
+  <div class="widget__content">
+    <div id="toc" class="well col-md-4 col-sm-6">
+    <nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#あらすじ">あらすじ</a></li>
+<li><a href="#入門する">入門する</a></li>
+<li><a href="#アプリケーションを立ち上げる">アプリケーションを立ち上げる</a>
+<ul>
+<li><a href="#kubernetesを提供するマネージドサービス">Kubernetesを提供するマネージドサービス</a></li>
+<li><a href="#アプリケーションの管理">アプリケーションの管理</a></li>
+</ul></li>
+<li><a href="#clusterを運用する">Clusterを運用する</a></li>
+<li><a href="#k8sユーザ-の動向を追う">k8sユーザの動向を追う</a></li>
+<li><a href="#kubernetsをdeepdiveする">KubernetsをDeepDiveする</a>
+<ul>
+<li><a href="#特定のアーキテクチャやロジックがきになる時">特定のアーキテクチャやロジックがきになる時</a></li>
+<li><a href="#開発の最新情報を追いたいとき">開発の最新情報を追いたいとき</a></li>
+</ul></li>
+<li><a href="#困った時は">困った時は</a></li>
+</ul></li>
+</ul>
+</nav>
+    </div>
+  </div>
+</div>
+
+  
+</aside>
+

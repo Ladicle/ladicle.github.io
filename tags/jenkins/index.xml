@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jenkins on Exception();</title>
-    <link>https://www.ladicle.com/tags/jenkins/</link>
+    <link>https://ladicle.github.io/tags/jenkins/</link>
     <description>Recent content in Jenkins on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
     
-	<atom:link href="https://www.ladicle.com/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.github.io/tags/jenkins/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Jenkins勉強会#9で発表してきた</title>
-      <link>https://www.ladicle.com/post/jenkins-study9/</link>
+      <link>https://ladicle.github.io/post/jenkins-study9/</link>
       <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/jenkins-study9/</guid>
+      <guid>https://ladicle.github.io/post/jenkins-study9/</guid>
       <description>&lt;p&gt;コンテナCIとJobの管理方法について話してきた。&lt;br /&gt;
 話した内容や質問された内容を補足する。&lt;/p&gt;
 

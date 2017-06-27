@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Kubernetes on Exception();</title>
-    <link>https://www.ladicle.com/tags/kubernetes/</link>
+    <link>https://ladicle.github.io/tags/kubernetes/</link>
     <description>Recent content in Kubernetes on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     <lastBuildDate>Tue, 27 Jun 2017 18:00:00 +0900</lastBuildDate>
     
-	<atom:link href="https://www.ladicle.com/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.github.io/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>第2回 Kubernetesの歩き方</title>
-      <link>https://www.ladicle.com/post/k8s2/</link>
+      <link>https://ladicle.github.io/post/k8s2/</link>
       <pubDate>Tue, 27 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/k8s2/</guid>
+      <guid>https://ladicle.github.io/post/k8s2/</guid>
       <description>&lt;p&gt;Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよく聞かれるのでまとめてみました。(この記事は&lt;a href=&#34;https://k8sjp.connpass.com/event/56945/&#34;&gt;Kubernetes Meetup Tokyo#5&lt;/a&gt;の発表内容です)&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>第1回 Kubernetesをはじめるなら今!</title>
-      <link>https://www.ladicle.com/post/k8s1/</link>
+      <link>https://ladicle.github.io/post/k8s1/</link>
       <pubDate>Fri, 23 Jun 2017 21:36:25 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/k8s1/</guid>
+      <guid>https://ladicle.github.io/post/k8s1/</guid>
       <description>&lt;p&gt;「Kubernetesを使える人を増やす」を目標にKubernetesについて綴ることにしました。というのも、会社で使っているKubernetesの運用がひとりなためです。&lt;/p&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
@@ -35,10 +35,10 @@
     
     <item>
       <title>k8sをUbuntu14.04から16.04に移行した</title>
-      <link>https://www.ladicle.com/post/systemd-for-upstart/</link>
+      <link>https://ladicle.github.io/post/systemd-for-upstart/</link>
       <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/post/systemd-for-upstart/</guid>
+      <guid>https://ladicle.github.io/post/systemd-for-upstart/</guid>
       <description>&lt;p&gt;Kubernetesを14.04から16.04に移行した。&lt;br /&gt;
 もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
 修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。&lt;/p&gt;

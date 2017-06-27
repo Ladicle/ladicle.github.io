@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Exception();</title>
-    <link>https://www.ladicle.com/categories/</link>
+    <link>https://ladicle.github.io/categories/</link>
     <description>Recent content in Categories on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
     
-	<atom:link href="https://www.ladicle.com/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Diary</title>
-      <link>https://www.ladicle.com/categories/diary/</link>
+      <link>https://ladicle.github.io/categories/diary/</link>
       <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/categories/diary/</guid>
+      <guid>https://ladicle.github.io/categories/diary/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Meetup</title>
-      <link>https://www.ladicle.com/categories/meetup/</link>
+      <link>https://ladicle.github.io/categories/meetup/</link>
       <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/categories/meetup/</guid>
+      <guid>https://ladicle.github.io/categories/meetup/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Technology</title>
-      <link>https://www.ladicle.com/categories/technology/</link>
+      <link>https://ladicle.github.io/categories/technology/</link>
       <pubDate>Tue, 27 Jun 2017 18:00:00 +0900</pubDate>
       
-      <guid>https://www.ladicle.com/categories/technology/</guid>
+      <guid>https://ladicle.github.io/categories/technology/</guid>
       <description></description>
     </item>
     

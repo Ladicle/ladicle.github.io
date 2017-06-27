@@ -7,7 +7,7 @@
 
 <meta name="generator" content="Hugo 0.24" />
 <meta property="og:title" content="第2回 Kubernetesの歩き方" />
-<meta property="og:description" content="Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよくを聞かれることが多くなってきたのでまとめてみました。この内容はKubernetes meetoup Tokyo #5の内容です。
+<meta property="og:description" content="Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよくを聞かれることが多くなってきたのでまとめてみました。この内容はKubernetes meetoup Tokyo #5の内容です。(資料はこちら
 
 " />
 <meta property="og:type" content="article" />
@@ -74,7 +74,7 @@
 			</p>
 		</header>
 		<div class="post__content clearfix">
-			<p>Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよくを聞かれることが多くなってきたのでまとめてみました。この内容は<a href="https://k8sjp.connpass.com/event/56945/">Kubernetes meetoup Tokyo #5</a>の内容です。</p>
+			<p>Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよくを聞かれることが多くなってきたのでまとめてみました。この内容は<a href="https://k8sjp.connpass.com/event/56945/">Kubernetes meetoup Tokyo #5</a>の内容です。(資料は<a href="https://speakerdeck.com/ladicle/kubernetesfalsebu-kifang">こちら</a></p>
 
 <p></p>
 
@@ -84,8 +84,8 @@
 
 <ol>
 <li>入門する</li>
-<li>アプリケーションを立ち上げる</li>
-<li>Clusterを運用する</li>
+<li>アプリケーションを管理する</li>
+<li>Clusterを使う＆作る</li>
 <li>k8sユーザの動向を追う</li>
 <li>KubernetsをDeepDiveする</li>
 <li>困った時は</li>
@@ -93,58 +93,37 @@
 
 <h2 id="入門する">入門する</h2>
 
-<p>Kubernetesは独自用語がたっぷり含まれているので、いきなりアプリケーションをドキュメント読みつつ構築しようとするとハマります。まずはKubernetesのコンセプトをざっくり読んだ後に素晴らしいインタラクティブなチュートリアルを触ってみるのがよいと思います。(Intelに感謝)</p>
+<p>Kubernetesは独自用語がたっぷり含まれているので、いきなりアプリケーションをドキュメント読みつつ構築しようとするとハマります。まずはKubernetesのコンセプトをざっくり読んだ後に素晴らしいインタラクティブなチュートリアルを触ってみるのがよいです。</p>
 
 <ul>
-<li><a href="https://kubernetes.io/docs/concepts/">Concepts | Kubernetes</a>
+<li><a href="https://kubernetes.io/docs/concepts/">Concepts</a><br />
 公式ドキュメント。Kubernetesの概念やアーキテクチャ、用語がまとめられている。OverviewとKubernetes Architectureだけ読んでおけばチュートリアルがやりやすくなるはず</li>
-<li><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">Overview | Kubernetes</a>
+<li><a href="https://kubernetes.io/docs/tutorials/kubernetes-basics/">Tutorials</a><br />
 Web上のターミナルでminikubeを使ったクラスタの構築からアプリケーションのデプロイ、スケールアップ、アップグレードを試せる</li>
-<li><a href="https://github.com/kubernetes/community/blob/master/contributors/devel/mesos-style.md">Building Mesos/Omega-style frameworks on Kubernetes</a>
-クラスタ管理アーキテクチャとしてのk8sの方針を知りたい時はここ</li>
+<li><a href="https://github.com/kubernetes/community/blob/master/contributors/devel/mesos-style.md">Building Mesos/Omega-style frameworks on Kubernetes</a><br />
+クラスタ管理アーキテクチャとしてのk8sの方針を知りたいときはココ</li>
 </ul>
 
 <blockquote>
-<p>日本語情報であれば<a href="http://gihyo.jp/magazine/wdpress/archive/2017/vol99">WEB+DB PRESS Vol.99｜技術評論社</a>の実践Kubernetesがとても分かりやすくまとまっていたのでオススメです</p>
+<p>日本語情報</p>
 </blockquote>
 
-<h2 id="アプリケーションを立ち上げる">アプリケーションを立ち上げる</h2>
+<p>WEB+DB PRESS Vol.99の<a href="http://gihyo.jp/magazine/wdpress/archive/2017/vol99">実践Kubernetes</a> がとても分かりやすかったのでオススメです</p>
 
-<p>チュートリアルまでこなせば基本的なアプリケーションの立ち上げ方は分かるようになっているので、アプリケーションを立ち上げる先とアプリケーションの管理方法を考え始めます。クラスタを自前で運用する話は次章に取っておくとして、ここではKubernetesのマネージドサービスを提供しているものをまとめます。</p>
-
-<h3 id="kubernetesを提供するマネージドサービス">Kubernetesを提供するマネージドサービス</h3>
-
-<p>Kubernetesの運用はそれなりに辛いので、エンジニアも豊富にいるしマルチデータセンタにクラスタ構築してバンバン活用するぜ！とかでない限り、マネージドなサービスを使うというのはよい選択肢だと思います。(k8s外ですが、イメージレジストリの自前運用は面倒が多いのでそこら辺も合わせて検討すると◯)</p>
-
-<p><strong>マネージドクラウドサービス</strong></p>
-
-<ul>
-<li><a href="https://cloud.google.com/container-engine/">Google Container Engine</a>: いわゆる本家</li>
-<li><a href="https://www.openshift.com/">Red Hat OpenShift</a>: Fabric8を使ったアプリ管理とか</li>
-<li><a href="https://azure.microsoft.com/en-us/services/container-service/">Azure Container Service</a>: Deisを買収してWorkflow周りを強化してる</li>
-</ul>
-
-<p><strong>サポート付きサービス</strong></p>
-
-<ul>
-<li><a href="https://coreos.com/tectonic">CoreOS TECTONIC</a>: BaremetalやAWS上にTECTONICでインストールしたk8sのサポートを受け付けています</li>
-<li><a href="http://rancher.com/kubernetes/">Rancher Kubernetes</a>: Rancherでインストールしたk8sのサポートを受け付けています</li>
-</ul>
-
-<h3 id="アプリケーションの管理">アプリケーションの管理</h3>
+<h2 id="アプリケーションの管理">アプリケーションの管理</h2>
 
 <p>チュートリアルのように数アプリケーションのみ起動するときは生のJSONやYAMLで設定ファイルを保持していても問題ありませんが、商用で使っていくとなると環境ごとのパラメータ管理や依存関係を保持するのが辛くなってきます。そらへんを解決する方法としては、K8s用のパッケージマネージャ <a href="https://github.com/kubernetes/helm">Helm</a> があります。</p>
 
 <p>テンプレートを作って変数ファイルを切り替えられたり、アプリケーションの依存関係を指定できたり、プラグイン使ってSecret情報をGPGで暗号/復号化したりと、さまざまな機能があります。公式ドキュメントが非常によくまとまっているので困った時はドキュメントが解決してくれるでしょう。</p>
 
 <ul>
-<li><a href="https://docs.helm.sh/">Helm Docs</a>: Helm Official Document</li>
-<li><a href="https://github.com/Azure/draft">Azure Draft</a>: Helmをさらにラッパしてイメージの管理までAzureでできるようにしたツール</li>
+<li><a href="https://docs.helm.sh/">Helm Docs</a><br />
+Helm Official Document</li>
+<li><a href="https://github.com/Azure/draft">Azure Draft</a><br />
+DeisがMSに移ってからリリースされたよ</li>
 </ul>
 
-<blockquote>
-<p><strong>番外編</strong> - Serverless</p>
-</blockquote>
+<h3 id="番外編-serverless">番外編 - Serverless</h3>
 
 <p>Kubernetes上でServerlessなアプリケーションをデプロイしたいという場合次の3つの選択肢があります。GithubのStar数は上から順に2074, 493, 154です。(2017年6月27日調べ)</p>
 
@@ -154,16 +133,44 @@ Web上のターミナルでminikubeを使ったクラスタの構築からアプ
 <li><a href="https://github.com/funktionio/funktion">Funkiton</a> by Fabric8(RedHat)</li>
 </ol>
 
+<h2 id="clusterを使う-作る">Clusterを使う＆作る</h2>
+
+<p>チュートリアルまでこなせば基本的なアプリケーションの立ち上げ方は分かるようになっているので、アプリケーションを立ち上げる先を考え始めます。まずはKubernetesのマネージドサービスにのっかる話、2つ目は自前運用する話です。</p>
+
+<h3 id="マネージドサービス">マネージドサービス</h3>
+
+<p>Kubernetesの運用はそれなりに辛いので、エンジニアも豊富にいるしマルチデータセンタにクラスタ構築してバンバン活用するぜ！とかでない限り、マネージドなサービスを使うというのはよい選択肢だと思います。(k8s外ですが、イメージレジストリの自前運用は面倒が多いのでそこら辺も合わせて検討すると◯)</p>
+
+<p><strong>マネージドクラウドサービス</strong></p>
+
+<ul>
+<li><a href="https://cloud.google.com/container-engine/">Google Container Engine</a><br />
+いわゆる本家</li>
+<li><a href="https://www.openshift.com/">Red Hat OpenShift</a><br />
+Fabric8を使ったアプリ管理とか</li>
+<li><a href="https://azure.microsoft.com/en-us/services/container-service/">Azure Container Service</a><br />
+Deisを買収してWorkflow周りを強化してる</li>
+</ul>
+
+<p><strong>サポート付きサービス</strong></p>
+
+<ul>
+<li><a href="https://coreos.com/tectonic">CoreOS TECTONIC</a><br />
+BaremetalやAWS上にTECTONICでインストールしたk8sのサポート</li>
+<li><a href="http://rancher.com/kubernetes/">Rancher Kubernetes</a><br />
+Rancherでインストールしたk8sのサポート</li>
+</ul>
+
 <h2 id="clusterを運用する">Clusterを運用する</h2>
 
 <p>チュートリアルで使ったminikubeはお手軽ですが、あくまでもお試し用であって本番環境としては不向きです。本番環境にもデプロイ方法は色々ありますが現時点で主流なツールは以下の3つです。それぞれ向き不向きがあるので用途に応じて検討してください。</p>
 
 <ul>
-<li><a href="https://github.com/kubernetes/kops">kops</a>
+<li><a href="https://github.com/kubernetes/kops">kops</a><br />
 AWSに特化しているツール。AWSにデプロイするならこれ</li>
-<li><a href="https://github.com/kubernetes-incubator/kubespray">kargo</a>
+<li><a href="https://github.com/kubernetes-incubator/kubespray">kargo</a><br />
 Ansibleベースでベアメタルや複数のクラウドプロバイダに対応している。デプロイ先によって対応している機能が違うので注意 (現在<code>kubespray</code>にコードベースも改名中)</li>
-<li><a href="https://github.com/kubernetes/kubeadm">kubeadm</a>:
+<li><a href="https://github.com/kubernetes/kubeadm">kubeadm</a><br />
 本番環境の流れで紹介しましたがMasterHAには対応していないので今後に期待したいツール (そのためにはk8s本体にmasterアクセスをロードバランスしたりする機能が入らないといけないので当分無理そう)</li>
 </ul>
 
@@ -178,9 +185,12 @@ Ansibleベースでベアメタルや複数のクラウドプロバイダに対�
 <p>個人/企業Blogやmeetupのスライドと動画、Github上に公開されたk8s関連のツール情報はRedditとKubeWeeklyを見ると追いやすいです。週一くらいでReddit、たまにKubeWeekly、暇なときはk8s関連のPodcast聴いてるとなんとなく動向がわかります。</p>
 
 <ul>
-<li><a href="https://www.reddit.com/r/kubernetes/">Reddit Kubernetes</a>: 程よい情報量で楽しめる</li>
-<li><a href="https://kubeweekly.com/">Kubeweekly</a>: Kubernetes情報の週間まとめサイト</li>
-<li><a href="https://www.kubecast.com/">Kubecast</a>: Milos &amp; Ivanによる不定期なk8s専用podcast</li>
+<li><a href="https://www.reddit.com/r/kubernetes/">Reddit Kubernetes</a><br />
+程よい情報量で楽しめる</li>
+<li><a href="https://kubeweekly.com/">Kubeweekly</a><br />
+Kubernetes情報の週間まとめサイト</li>
+<li><a href="https://www.kubecast.com/">Kubecast</a><br />
+Milos &amp; Ivanによる不定期なk8s専用podcast</li>
 </ul>
 
 <blockquote>
@@ -191,28 +201,35 @@ Ansibleベースでベアメタルや複数のクラウドプロバイダに対�
 
 <h2 id="kubernetsをdeepdiveする">KubernetsをDeepDiveする</h2>
 
-<p>運用していてトラブったり、アーキテクチャが気になって夜も眠れなくなったり、Kubernetesの開発がしたくなったときに見る場所を紹介していきます。</p>
+<p>運用していてトラブったり、<br />
+アーキテクチャが気になって夜も眠れなくなったり、<br />
+Kubernetesの開発がしたくなった方は次の場所が参考になります。</p>
 
-<h3 id="特定のアーキテクチャやロジックがきになる時">特定のアーキテクチャやロジックがきになる時</h3>
+<h3 id="特定のアーキテクチャやロジックがきになる">特定のアーキテクチャやロジックがきになる</h3>
 
 <ul>
-<li><a href="https://github.com/kubernetes/community">kubernetes/community</a> の中の気になるSIGのディレクトリ内のドキュメントをチェック</li>
-<li><a href="https://github.com/kubernetes/community/tree/master/contributors/design-proposals">design-proposals</a> にあるデザインの中で気になるものをチェック</li>
-<li><a href="https://github.com/kubernetes/kubernetes">kubernetes</a> を動かしつつコードを読む</li>
+<li><a href="https://github.com/kubernetes/community">community</a><br />
+気になるSIGの情報をチェック</li>
+<li><a href="https://github.com/kubernetes/community/tree/master/contributors/design-proposals">design-proposals</a><br />
+該当するデザインドキュメントを読む</li>
+<li><a href="https://github.com/kubernetes/kubernetes">kubernetes</a><br />
+動かしつつコードを読む</li>
 </ul>
 
-<h3 id="開発の最新情報を追いたいとき">開発の最新情報を追いたいとき</h3>
+<h3 id="開発の最新情報を追いたい">開発の最新情報を追いたい</h3>
 
 <ul>
-<li><a href="https://groups.google.com/forum/#!forum/kubernetes-dev">Kubernetes developer/contributor discussion</a> をメールで購読 (1日ごとのサマリで丁度良い流量)</li>
-<li><a href="https://kubernetes.io/community/">Kubernetes community meeting</a> カレンダーはこちら。日本時間で参加するのはつらいので公開されている議事録や録画をYoutubeで見るのがオススメ。</li>
+<li><a href="https://groups.google.com/forum/#!forum/kubernetes-dev">Contributor Discussion</a><br />
+GoogleGroupに登録してメール購読 (1日ごとのサマリで丁度良い流量)</li>
+<li><a href="https://kubernetes.io/community/">Kubernetes community meeting</a><br />
+日程は上のメールでだいたいわかる。日本時間で参加するのはつらいので公開されている議事録や録画をYoutubeで見るのがオススメ。</li>
 </ul>
 
 <blockquote>
 <p><strong>開発に参加する前に</strong></p>
 </blockquote>
 
-<p><a href="https://github.com/kubernetes/community">kubernetes/community</a>に開発のためのお作法が書かれているのでざっと目を通しておくのがオススメです。次のようなものが書かれていたりします。</p>
+<p><a href="https://github.com/kubernetes/community">community</a>に開発のためのお作法が書かれているのでざっと目を通しておくのがオススメです。次のようなものが書かれていたりします。Go言語のコード規約とかツールとかもまとめられているのでk8s以外の開発にも参考になるものが多いです</p>
 
 <ul>
 <li><a href="https://github.com/kubernetes/community/blob/master/contributors/devel/pull-requests.md">Pullreq作法</a></li>
@@ -224,10 +241,14 @@ Ansibleベースでベアメタルや複数のクラウドプロバイダに対�
 <p>Kubernetesを使っていく中でリファレンスやコードを見ても分からないことが出てくるかもしれません。そんな時は次のところに助けを求めるとよいでしょう。</p>
 
 <ul>
-<li><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">TroubleShooting Guide</a>:  FAQなどへのリンク集 (以降の内容も書いてあります)</li>
-<li><a href="https://stackoverflow.com/search?q=kubernetes">StackOverflow</a>: 質問したいとき</li>
-<li><a href="http://slack.k8s.io">Kubernetes Slack</a>: ちょっとしたことを尋ねたり提案したいとき (日本語なら#jp-usersチャネルへ</li>
-<li><a href="https://github.com/kubernetes/kubernetes/issues">Github Kubernetes issues</a>: バグ報告や機能追加を提案したいとき</li>
+<li><a href="https://kubernetes.io/docs/tasks/debug-application-cluster/troubleshooting/">TroubleShooting Guide</a><br />
+FAQなどへのリンク集 (以降の内容も書いてあります)</li>
+<li><a href="https://stackoverflow.com/search?q=kubernetes">StackOverflow</a><br />
+単純に質問したいとき</li>
+<li><a href="http://slack.k8s.io">Kubernetes Slack</a><br />
+日本語なら#jp-usersチャネルへ</li>
+<li><a href="https://github.com/kubernetes/kubernetes/issues">Github Kubernetes issues</a><br />
+バグ報告や機能追加を提案したいとき</li>
 </ul>
 		</div>
 	</article>
@@ -266,17 +287,20 @@ Ansibleベースでベアメタルや複数のクラウドプロバイダに対�
 <ul>
 <li><a href="#あらすじ">あらすじ</a></li>
 <li><a href="#入門する">入門する</a></li>
-<li><a href="#アプリケーションを立ち上げる">アプリケーションを立ち上げる</a>
+<li><a href="#アプリケーションの管理">アプリケーションの管理</a>
 <ul>
-<li><a href="#kubernetesを提供するマネージドサービス">Kubernetesを提供するマネージドサービス</a></li>
-<li><a href="#アプリケーションの管理">アプリケーションの管理</a></li>
+<li><a href="#番外編-serverless">番外編 - Serverless</a></li>
+</ul></li>
+<li><a href="#clusterを使う-作る">Clusterを使う＆作る</a>
+<ul>
+<li><a href="#マネージドサービス">マネージドサービス</a></li>
 </ul></li>
 <li><a href="#clusterを運用する">Clusterを運用する</a></li>
 <li><a href="#k8sユーザ-の動向を追う">k8sユーザの動向を追う</a></li>
 <li><a href="#kubernetsをdeepdiveする">KubernetsをDeepDiveする</a>
 <ul>
-<li><a href="#特定のアーキテクチャやロジックがきになる時">特定のアーキテクチャやロジックがきになる時</a></li>
-<li><a href="#開発の最新情報を追いたいとき">開発の最新情報を追いたいとき</a></li>
+<li><a href="#特定のアーキテクチャやロジックがきになる">特定のアーキテクチャやロジックがきになる</a></li>
+<li><a href="#開発の最新情報を追いたい">開発の最新情報を追いたい</a></li>
 </ul></li>
 <li><a href="#困った時は">困った時は</a></li>
 </ul></li>

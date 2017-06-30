@@ -4,7 +4,7 @@
     background: #272b2d;
     color: #fff;
     -webkit-text-size-adjust: none;
-    font-family: "Consolas";
+    font-family: "Consolas", Courier New, Courier, monospace;
     font-weight: bold;
 }
 

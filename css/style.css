@@ -263,7 +263,7 @@ pre {
 	color: #4a4a4a;
 	margin-bottom: 20px;
 	margin-bottom: 1.25rem;
-	background: #23241f;
+	background: #272b2d;
 	border: 1px solid #ebebeb;
 	padding: 20px;
 	padding: 1.25rem;
@@ -415,7 +415,7 @@ select {
 
 /*** Navigation — Responsive-nav.js ***/
 .menu {
-	background: #222;
+  background: #272b2d;
 	width: 100%;
 	margin: 0 auto;
 	position: relative;

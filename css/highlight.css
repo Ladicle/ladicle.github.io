@@ -1,53 +1,21 @@
 .hljs {
     display: block;
     overflow-x: auto;
-    padding: 0.5em;
     background: #272b2d;
-    color: #d0d0d0;
+    color: #fff;
     -webkit-text-size-adjust: none;
 }
-.hljs,
-.hljs-tag,
-.hljs-subst {
-    color: #f8f8f2
-}
-.hljs-strong,
-.hljs-emphasis {
-    color: #a8a8a2
-}
-.hljs-bullet,
-.hljs-quote,
-.hljs-number,
-.hljs-regexp,
-.hljs-literal,
-.hljs-link {
-    color: #ae81ff
-}
-.hljs-code,
-.hljs-title,
-.hljs-section,
-.hljs-selector-class {
-    color: #a6e22e
-}
-.hljs-strong {
-    font-weight: bold
-}
-.hljs-emphasis {
-    font-style: italic
-}
-.hljs-keyword,
-.hljs-selector-tag,
-.hljs-name,
-.hljs-attr {
-    color: #f92672
+
+hljs-attr {
+    color: #ebde68;
 }
 .hljs-symbol,
 .hljs-attribute {
-    color: #66d9ef
+    color: #77bcd7;
 }
 .hljs-params,
 .hljs-class .hljs-title {
-    color: #f8f8f2
+    color: #c1ef65;
 }
 .hljs-string,
 .hljs-type,
@@ -59,10 +27,92 @@
 .hljs-addition,
 .hljs-variable,
 .hljs-template-variable {
-    color: #e6db74
+    color: #ffffb6;
 }
 .hljs-comment,
 .hljs-deletion,
 .hljs-meta {
-    color: #75715e
+    color: #777279;
+}
+.hljs-symbol,
+.ruby .hljs-symbol .hljs-string,
+.hljs-number,
+.hljs-variable,
+.vbscript,
+.hljs-literal,
+.hljs-name {
+    color: #77bcd7;
+}
+
+.hljs-shebang,
+.hljs-comment {
+    color: #777279;
+}
+
+.hljs-keyword,
+.hljs-tag,
+.tex .hljs-command,
+.hljs-request,
+.hljs-status,
+.clojure .hljs-attribute {
+    color: #ebde68;
+}
+
+.hljs-sub .hljs-keyword,
+.method,
+.hljs-list .hljs-title,
+.nginx .hljs-title {
+    color: #ffffb6;
+}
+
+.hljs-string,
+.hljs-tag .hljs-value,
+.hljs-cdata,
+.hljs-filter .hljs-argument,
+.hljs-attr_selector,
+.apache .hljs-cbracket,
+.hljs-date,
+.coffeescript .hljs-attribute {
+    color: #c1ef65;
+}
+
+.hljs-subst {
+    color: #daefa3;
+}
+
+.hljs-regexp {
+    color: #e9c062;
+}
+
+.hljs-title,
+.hljs-sub .hljs-identifier,
+.hljs-pi,
+.hljs-decorator,
+.tex .hljs-special,
+.hljs-type,
+.hljs-constant,
+.smalltalk .hljs-class,
+.hljs-doctag,
+.nginx .hljs-built_in {
+    color: #c1ef65;
+}
+
+.hljs-tag {
+    color: #96cbfe;
+}
+
+.hljs-rule .hljs-property,
+.hljs-id {
+    color: #ffffb6;
+}
+
+.hljs-class {
+    color: #fff;
+}
+.hljs-hexcolor {
+    color: #c6c5fe;
+}
+
+.hljs-number {
+    color:#77bcd7;
 }

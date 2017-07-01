@@ -984,6 +984,12 @@ textarea {
   list-style-type: initial;
 }
 
+.widget-share__content {
+    display: inline-block;
+    justify-content: center;
+    width: 100%;
+}
+
 .widget-social__content {
   display: inline-flex;
   justify-content: center;
@@ -996,12 +1002,23 @@ textarea {
   background: #e5e5e5;
 }
 
+.widget-share__link {
+    display: block;
+    margin: 0 8px 8px 8px;
+    background: #f2f2f2;
+}
+
 .widget-social__link.widget_link.btn {
   padding: 8px 4px 8px 8px;
 }
 
 .widget-social__link-icon {
 	vertical-align: middle;
+}
+
+.widget-share__link-icon {
+	  vertical-align: middle;
+    margin-right: 8px;
 }
 
 .rss__btn {

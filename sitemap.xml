@@ -3,6 +3,16 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ladicle.github.io/post/tla1/</loc>
+    <lastmod>2017-07-27T22:44:33+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.github.io/post/20170718_blog_themes/</loc>
+    <lastmod>2017-07-18T12:20:14+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ladicle.github.io/post/k8s2/</loc>
     <lastmod>2017-06-27T18:00:00+09:00</lastmod>
   </url>
@@ -93,7 +103,7 @@
   
   <url>
     <loc>https://ladicle.github.io/categories/diary/</loc>
-    <lastmod>2016-08-03T12:33:51+09:00</lastmod>
+    <lastmod>2017-07-18T12:20:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -105,7 +115,7 @@
   
   <url>
     <loc>https://ladicle.github.io/</loc>
-    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
+    <lastmod>2017-07-27T22:44:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -117,7 +127,7 @@
   
   <url>
     <loc>https://ladicle.github.io/tags/hugo/</loc>
-    <lastmod>2016-08-05T16:43:31+09:00</lastmod>
+    <lastmod>2017-07-18T12:20:14+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -147,7 +157,13 @@
   
   <url>
     <loc>https://ladicle.github.io/post/</loc>
-    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
+    <lastmod>2017-07-27T22:44:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.github.io/tags/proof/</loc>
+    <lastmod>2017-07-27T22:44:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -165,7 +181,13 @@
   
   <url>
     <loc>https://ladicle.github.io/categories/technology/</loc>
-    <lastmod>2017-06-27T18:00:00+09:00</lastmod>
+    <lastmod>2017-07-27T22:44:33+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.github.io/tags/tla&#43;/</loc>
+    <lastmod>2017-07-27T22:44:33+09:00</lastmod>
     <priority>0</priority>
   </url>
   

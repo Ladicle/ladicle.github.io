@@ -3,18 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>コンテナとDockerについて思うこと</title>
+<title>ブログのテーマを作り直した</title>
 
 <meta name="generator" content="Hugo 0.25.1" />
-<meta property="og:title" content="コンテナとDockerについて思うこと" />
-<meta property="og:description" content="inspired by gachapin-sensei" />
+<meta property="og:title" content="ブログのテーマを作り直した" />
+<meta property="og:description" content="ブログを1年ほど放置していたのもあってブログテーマを作り直しました。
+ひとまずHugo Themesから乗り換え先を探してみようとテーマを眺めたもののグッとくるものが見つからず、だったら自作しようと思い『わたしの考える最強のブログ』を整理するところからはじめました。
+
+" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ladicle.github.io/post/docker-left-oci/" />
+<meta property="og:url" content="https://ladicle.github.io/post/20170718_blog_themes/" />
 
 
 
-<meta property="article:published_time" content="2016-08-01T21:52:39&#43;09:00"/>
-<meta property="article:modified_time" content="2016-08-01T21:52:39&#43;09:00"/>
+<meta property="article:published_time" content="2017-07-18T12:20:14&#43;09:00"/>
+<meta property="article:modified_time" content="2017-07-18T12:20:14&#43;09:00"/>
 
 
 
@@ -65,61 +68,69 @@
 <div class="main-content content" role="main" itemprop="mainContentOfPage">
 	<article class="post not_home">
 		<header class="post__header clearfix">
-			<h1 class="post__title">コンテナとDockerについて思うこと</h1>
+			<h1 class="post__title">ブログのテーマを作り直した</h1>
 			<p class="post__meta meta">
 				<svg class="icon icon-time" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m8-.0000003c-4.4 0-8 3.6-8 8 0 4.4000003 3.6 8.0000003 8 8.0000003 4.4 0 8-3.6 8-8.0000003 0-4.4-3.6-8-8-8zm0 14.4000003c-3.52 0-6.4-2.88-6.4-6.4000003 0-3.52 2.88-6.4 6.4-6.4 3.52 0 6.4 2.88 6.4 6.4 0 3.5200003-2.88 6.4000003-6.4 6.4000003zm.4-10.4000003h-1.2v4.8l4.16 2.5600003.64-1.04-3.6-2.1600003z"/></svg>
-				<time class="post__meta-date" datetime="2016-08-01T21:52:39">August 01, 2016</time>
+				<time class="post__meta-date" datetime="2017-07-18T12:20:14">July 18, 2017</time>
 				<span class="post__meta-categories meta-categories">
 					<svg class="icon icon-tag" height="14" viewBox="0 0 16 16" width="14" xmlns="http://www.w3.org/2000/svg"><path d="m4.73135 3.3795002q0-.5597-.39604-.9557-.39604-.3961-.95577-.3961-.55974 0-.95578.3961-.39604.396-.39604.9557 0 .5598.39604.9558.39604.3961.95578.3961.55973 0 .95577-.3961.39604-.396.39604-.9558zm11.26865 6.0832q0 .5596998-.39076.9504998l-5.18548 5.196q-.41188.3908-.9610504.3908-.55974 0-.9505-.3908l-7.5511496-7.5616998q-.40132-.3907-.68119-1.0666-.27987-.6759-.27987-1.2357v-4.3934q0-.54920004.40132-.95050004.40132-.4013.9505-.4013h4.39339q.55974 0 1.23565.2799.67591.2798 1.07723.6812l7.55115 7.54060004q.39076.4118.39076.961z"/></svg>
-					<a class="meta-categories__link" href="/tags/docker" rel="tag">docker</a>, <a class="meta-categories__link" href="/tags/container" rel="tag">container</a></span>
+					<a class="meta-categories__link" href="/tags/hugo" rel="tag">hugo</a></span>
 			</p>
 		</header>
 		<div class="post__content clearfix">
-			<p>ガチャピン先生の<a href="http://blog.gachapin-sensei.com/archives/5174099.html">Docker、OCIやめるってよ</a>の記事が話題だったので、
-コンテナとDockerについて思ったことを書いてみる。</p>
+			<p>ブログを1年ほど放置していたのもあってブログテーマを作り直しました。<br />
+ひとまず<a href="https://themes.gohugo.io">Hugo Themes</a>から乗り換え先を探してみようとテーマを眺めたもののグッとくるものが見つからず、だったら自作しようと思い『わたしの考える最強のブログ』を整理するところからはじめました。</p>
 
 <p></p>
 
-<h2 id="コンテナ-dockerか">コンテナ = Dockerか?</h2>
+<h2 id="わたしの考える最強のブログとは">わたしの考える最強のブログとは？</h2>
 
-<p>Dockerによってコンテナが多くの人に使われるようになったのは確かだ。<br />
-しかし、<strong>コンテナ = Dockerか?</strong> という訳ではないと思う。<br />
-単純なコンテナの利点の利用&mdash;<br />
-例えば、『コンテナ化して各アプリケーションを隔離したい。』と思った時、
-DockerはLinuxコンテナの技術を複雑に組み合わせたDockerはオーバースキルであることが多い。</p>
+<p>まずはブログの目的から考えてみます。<br />
+いくつか書き出してみましたが大まかに次の2つに分類されました。</p>
 
-<h2 id="dockerのよさ">Dockerのよさ</h2>
-
-<p>Dockerによってコンテナが流行(?)した理由として以下のようなものが考えられる。</p>
-
-<blockquote>
 <ol>
-<li>技術の隠蔽化</li>
-<li>DockerHubの存在</li>
+<li>今やっていることをまとめ、後になって思い出すための記憶領域になること</li>
+<li>他の人に見てもらってツッコミをもらうこと</li>
 </ol>
-</blockquote>
 
-<p>Linuxコンテナ技術自体は昔から利用されていたが、
-これらが統合されてDockerという形でラッピングされたことによって、
-アプリケーションレイヤのエンジニアにとっても使いやすいものとなった。</p>
+<p>目的がわかったところで、次は今までのテーマの長所と短所を振り返ってみます。以前のベーステーマは図1の<a href="https://themes.gohugo.io/cactus/">cactus</a>というシンプルかつソースコードハイライトが綺麗なものでした。</p>
 
-<p>また、DockerHubはDockerが流行に一躍をかっている。
-様々なアプリケーションがDockerHubに登録されたことによって、
-今までコンテナというものに触れたことがなかった人でも</p>
+<p><img src="img/20170718/1_cactus.png" alt="cactus" />
+図1 元のテーマのcactus</p>
 
-<pre><code>$ docker run nginx
-</code></pre>
+<p><strong>利点</strong></p>
 
-<p>という簡単なコマンドだけで<br />
-『コンテナという技術によって簡単にアプリケーションが立ちがる』<br />
-という体験ができる。<br />
-(<code>brew</code>や<code>apt</code>のようなパッケージマネージャのように)</p>
+<ul>
+<li>とにかくシンプルで記事を読むのに集中できる</li>
+<li>落ち着いた配色で目が痛くない</li>
+<li>ソースコードハイライトが綺麗</li>
+</ul>
 
-<h2 id="参考になる">参考になる</h2>
+<p><strong>欠点</strong></p>
 
-<blockquote>
-<p>こういう文脈で I agreeではじまってるときは、たいていagreeしてない</p>
-</blockquote>
+<ul>
+<li>シンプルすぎて一画面から最新の数記事以外の情報を得られない</li>
+<li>タグやカテゴリーページへ遷移するのに複数クリック必要</li>
+<li>シェアボタンがわかりづらい</li>
+</ul>
+
+<p>これらを踏まえてブログに必要なパーツと構成を図に整理してみます。すると、私の考える最強のブログは次のようになりました。</p>
+
+<p><img src="img/20170718/2_ideal.png" alt="ideal" />
+図2 最強のブログ構成</p>
+
+<h2 id="実装する">実装する</h2>
+
+<p>さすがに一からHTMLとCSS書くのは面倒なので理想に近いテーマを探します。<a href="https://themes.gohugo.io/mainroad/">Mainroad</a>が近かったのでこれをベースに修正していきました。Hugoは標準機能が充実しているので、目次リンクの生成などは<a href="https://gohugo.io/content-management/toc/">標準機能</a>で作ることができます。<br />
+そんなこんなで今のテーマが完成しました。</p>
+
+<h2 id="今後改善するところ">今後改善するところ</h2>
+
+<ul>
+<li>ブログ記事の全文検索</li>
+<li>Githubのpush契機でRedPenを走らせる</li>
+<li>記事ページのみサイドバーを縮める</li>
+</ul>
 		</div>
 	</article>
 	
@@ -160,9 +171,9 @@ DockerはLinuxコンテナの技術を複雑に組み合わせたDockerはオー
 <ul>
 <li>
 <ul>
-<li><a href="#コンテナ-dockerか">コンテナ = Dockerか?</a></li>
-<li><a href="#dockerのよさ">Dockerのよさ</a></li>
-<li><a href="#参考になる">参考になる</a></li>
+<li><a href="#わたしの考える最強のブログとは">わたしの考える最強のブログとは？</a></li>
+<li><a href="#実装する">実装する</a></li>
+<li><a href="#今後改善するところ">今後改善するところ</a></li>
 </ul></li>
 </ul>
 </nav>
@@ -174,7 +185,7 @@ DockerはLinuxコンテナの技術を複雑に組み合わせたDockerはオー
   <h4 class="widget-social__title widget__title">Share</h4>
 	<div class="widget-share__content widget__content">
 		<div class="widget-social__item widget__item">
-			<a class="widget-share__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=%e3%82%b3%e3%83%b3%e3%83%86%e3%83%8a%e3%81%a8Docker%e3%81%ab%e3%81%a4%e3%81%84%e3%81%a6%e6%80%9d%e3%81%86%e3%81%93%e3%81%a8 https://ladicle.github.io%2fpost%2fdocker-left-oci%2f - by @ladicle">
+			<a class="widget-share__link widget__link btn" title="Twitter" rel="noopener noreferrer" href="https://twitter.com/intent/tweet?text=%e3%83%96%e3%83%ad%e3%82%b0%e3%81%ae%e3%83%86%e3%83%bc%e3%83%9e%e3%82%92%e4%bd%9c%e3%82%8a%e7%9b%b4%e3%81%97%e3%81%9f https://ladicle.github.io%2fpost%2f20170718_blog_themes%2f - by @ladicle">
 				<svg class="widget-share__link-icon icon-twitter" viewBox="0 0 384 312" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill="#fff"><path d="m384 36.9c-14.1 6.3-29.3 10.5-45.2 12.4 16.3-9.7 28.8-25.2 34.6-43.6-15.2 9-32.1 15.6-50 19.1-14.4-15.2-34.9-24.8-57.5-24.8-43.5 0-78.8 35.3-78.8 78.8 0 6.2.7 12.2 2 17.9-65.5-3.3-123.5-34.6-162.4-82.3-6.7 11.6-10.6 25.2-10.6 39.6 0 27.3 13.9 51.4 35 65.6-12.9-.4-25.1-4-35.7-9.9v1c0 38.2 27.2 70 63.2 77.2-6.6 1.8-13.6 2.8-20.8 2.8-5.1 0-10-.5-14.8-1.4 10 31.3 39.1 54.1 73.6 54.7-27 21.1-60.9 33.7-97.8 33.7-6.4 0-12.6-.4-18.8-1.1 34.9 22.4 76.3 35.4 120.8 35.4 144.9 0 224.1-120 224.1-224.1 0-3.4-.1-6.8-.2-10.2 15.4-11.1 28.7-25 39.3-40.8z"/></svg>
       twitter</a>
 		</div>

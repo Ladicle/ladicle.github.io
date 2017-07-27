@@ -6,10 +6,33 @@
     <description>Recent content on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Tue, 27 Jun 2017 18:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 27 Jul 2017 22:44:33 +0900</lastBuildDate>
     
 	<atom:link href="https://ladicle.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Lamport先生のTLA&#43;講座を聴いた</title>
+      <link>https://ladicle.github.io/post/tla1/</link>
+      <pubDate>Thu, 27 Jul 2017 22:44:33 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/tla1/</guid>
+      <description>&lt;p&gt;ありがたいことにLamport先生がTLA+の講座をご自身のwebサイト上に無料公開されていたので見てみた。その内容をメモったので保存しておく。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ブログのテーマを作り直した</title>
+      <link>https://ladicle.github.io/post/20170718_blog_themes/</link>
+      <pubDate>Tue, 18 Jul 2017 12:20:14 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/20170718_blog_themes/</guid>
+      <description>&lt;p&gt;ブログを1年ほど放置していたのもあってブログテーマを作り直しました。&lt;br /&gt;
+ひとまず&lt;a href=&#34;https://themes.gohugo.io&#34;&gt;Hugo Themes&lt;/a&gt;から乗り換え先を探してみようとテーマを眺めたもののグッとくるものが見つからず、だったら自作しようと思い『わたしの考える最強のブログ』を整理するところからはじめました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>第2回 Kubernetesの歩き方</title>

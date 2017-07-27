@@ -6,10 +6,22 @@
     <description>Recent content in Diary on Exception();</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>jp</language>
-    <lastBuildDate>Wed, 03 Aug 2016 12:33:51 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 18 Jul 2017 12:20:14 +0900</lastBuildDate>
     
 	<atom:link href="https://ladicle.github.io/categories/diary/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>ブログのテーマを作り直した</title>
+      <link>https://ladicle.github.io/post/20170718_blog_themes/</link>
+      <pubDate>Tue, 18 Jul 2017 12:20:14 +0900</pubDate>
+      
+      <guid>https://ladicle.github.io/post/20170718_blog_themes/</guid>
+      <description>&lt;p&gt;ブログを1年ほど放置していたのもあってブログテーマを作り直しました。&lt;br /&gt;
+ひとまず&lt;a href=&#34;https://themes.gohugo.io&#34;&gt;Hugo Themes&lt;/a&gt;から乗り換え先を探してみようとテーマを眺めたもののグッとくるものが見つからず、だったら自作しようと思い『わたしの考える最強のブログ』を整理するところからはじめました。&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Kindle Unlimitedの技術本</title>

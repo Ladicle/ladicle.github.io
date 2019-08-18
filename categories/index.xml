@@ -1,39 +1,84 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Exception();</title>
-    <link>https://ladicle.github.io/categories/</link>
-    <description>Recent content in Categories on Exception();</description>
+    <title>Categories on Ladicle</title>
+    <link>https://ladicle.com/categories/</link>
+    <description>Recent content in Categories on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
+    <lastBuildDate>Mon, 22 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ladicle.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.com/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Diary</title>
-      <link>https://ladicle.github.io/categories/diary/</link>
-      <pubDate>Tue, 18 Jul 2017 12:20:14 +0900</pubDate>
+      <title>event</title>
+      <link>https://ladicle.com/categories/event/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/categories/diary/</guid>
+      <guid>https://ladicle.com/categories/event/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Meetup</title>
-      <link>https://ladicle.github.io/categories/meetup/</link>
-      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      <title>book</title>
+      <link>https://ladicle.com/categories/book/</link>
+      <pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/categories/meetup/</guid>
+      <guid>https://ladicle.com/categories/book/</guid>
       <description></description>
     </item>
     
     <item>
-      <title>Technology</title>
-      <link>https://ladicle.github.io/categories/technology/</link>
-      <pubDate>Thu, 27 Jul 2017 22:44:33 +0900</pubDate>
+      <title>Emacs</title>
+      <link>https://ladicle.com/categories/emacs/</link>
+      <pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/categories/technology/</guid>
+      <guid>https://ladicle.com/categories/emacs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Private</title>
+      <link>https://ladicle.com/categories/private/</link>
+      <pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate>
+      
+      <guid>https://ladicle.com/categories/private/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>https://ladicle.com/categories/tools/</link>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/categories/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gadget</title>
+      <link>https://ladicle.com/categories/gadget/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/categories/gadget/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://ladicle.com/categories/design/</link>
+      <pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate>
+      
+      <guid>https://ladicle.com/categories/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>magazine</title>
+      <link>https://ladicle.com/categories/magazine/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/categories/magazine/</guid>
       <description></description>
     </item>
     

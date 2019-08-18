@@ -1,170 +1,110 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Exception();</title>
-    <link>https://ladicle.github.io/post/</link>
-    <description>Recent content in Posts on Exception();</description>
+    <title>Posts on Ladicle</title>
+    <link>https://ladicle.com/post/</link>
+    <description>Recent content in Posts on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
-    <lastBuildDate>Thu, 27 Jul 2017 22:44:33 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2019 16:46:00 +0900</lastBuildDate>
     
-	<atom:link href="https://ladicle.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Lamport先生のTLA&#43;講座を聴いた</title>
-      <link>https://ladicle.github.io/post/tla1/</link>
-      <pubDate>Thu, 27 Jul 2017 22:44:33 +0900</pubDate>
+      <title>Ladicle&#39;s Emacs Configuration</title>
+      <link>https://ladicle.com/post/config/</link>
+      <pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/tla1/</guid>
-      <description>&lt;p&gt;ありがたいことにLamport先生がTLA+の講座をご自身のwebサイト上に無料公開されていたので見てみた。その内容をメモったので保存しておく。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/post/config/</guid>
+      <description>.ox-hugo-toc ul { list-style: none; }  
+Table of Contents  1 Configuration  1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic  1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point  1.5 Key-bindings  1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra  1.6 Undo/Redo 1.7 Search/Replace  1.7.1 Projectile 1.</description>
     </item>
     
     <item>
-      <title>ブログのテーマを作り直した</title>
-      <link>https://ladicle.github.io/post/20170718_blog_themes/</link>
-      <pubDate>Tue, 18 Jul 2017 12:20:14 +0900</pubDate>
+      <title>ox-Hugo Cheat Sheet</title>
+      <link>https://ladicle.com/post/ox-hugo-cheat/</link>
+      <pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/20170718_blog_themes/</guid>
-      <description>&lt;p&gt;ブログを1年ほど放置していたのもあってブログテーマを作り直しました。&lt;br /&gt;
-ひとまず&lt;a href=&#34;https://themes.gohugo.io&#34;&gt;Hugo Themes&lt;/a&gt;から乗り換え先を探してみようとテーマを眺めたもののグッとくるものが見つからず、だったら自作しようと思い『わたしの考える最強のブログ』を整理するところからはじめました。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/post/ox-hugo-cheat/</guid>
+      <description>.ox-hugo-toc ul { list-style: none; }  
+Table of Contents  1 図、表、コードの導入と参照  1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト  2 Subtreeのプロパティと各種機能 [50%]  2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御  3 文字スタイルとHTML  3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧  4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価  5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力  6 参考文献   
+1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。</description>
     </item>
     
     <item>
-      <title>第2回 Kubernetesの歩き方</title>
-      <link>https://ladicle.github.io/post/k8s2/</link>
-      <pubDate>Tue, 27 Jun 2017 18:00:00 +0900</pubDate>
+      <title>2018年のふり返り</title>
+      <link>https://ladicle.com/post/2018-review/</link>
+      <pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/k8s2/</guid>
-      <description>&lt;p&gt;Kubernetesはどこから学ぶのがよいですか？とか、よい資料やサイト無いですか？とかよく聞かれるのでまとめてみました。(この記事は&lt;a href=&#34;https://k8sjp.connpass.com/event/56945/&#34;&gt;Kubernetes Meetup Tokyo#5&lt;/a&gt;の発表内容です)&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/post/2018-review/</guid>
+      <description> 転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。
+技術 転職してから仕事中はフルでコードを読んだり書いたりできるようになったので、去年と比べるとGitHubに緑がふえた。学生の頃に比べると体力の衰えを感じたので競技プログラミングをはじめたが、体調を崩し始めた5月くらいから遠のいてしまったので再開したい。
+また、Ruiさんの記事を見てC言語コンパイラを作りはじめた。その過程で大学の授業の内容が頭から抜けてることに気づいたため、回路や計算機のしくみまわりの本を読み直すなどした。来年は言語処理系とOSも作ってみたというお気持ち。
+仕事は引き続きKubernetes周りをやっている。前回のKubeConのKeynoteではBoringフェーズに入ったと話題になったが、普段触れているCRDまわりはまだまだBoringとは言いがたい。来年もうまく付き合っていきたい。あとはそろそろ本格的にService Meshを(ry
+英語 英語は「This is a pen.」くらいしか言えなかったため、英会話(Beliz + NativeCamp Callan Method)を始めるなどの対策を取った。今年の秋頃には初の英語プレゼンをしたり、後半のカンファレンスでは多少言葉をかわせたので、成長を感じる。来年も引き続き精進したい。
+生活 生活にもゆとりが出てきたため、ジムに行って筋トレマニアになってみたり、日々発展していく家の近所を探索したり、コーヒーショップを回ってノマドワーカーを気取るなどした。家は人間らしい文化的な生活をあきらめた模様替えをはたし、友人達にここオフィス？と聞かれるまでに至った。とても捗る。ただし、健康面は勢い余ってO157になってしまったので気をつけたい。(常温で放置された🍣食べるのダメ絶対
+対外活動 今年はJCDでプレゼン1本＆パネルディスカッション2本、英語プレゼン1本、KubeConのRecap1本にLT1本の計6本くらいの発表をしたようだ。また、Cloud Native Deep Diveというディスカッションベースの勉強会もはじめた。来年からはKubernetes Meetup Tokyoの運営にも参加していく。それでは皆様、来年もよろしくお願いします。
+ Securing Clusters with Kubernetes Extensibility ISUCONでEnvoyを使えるか？ Recap SIG API Machinery Deep Dive Istioと共にMicroservicesに立ち向かえ！  </description>
     </item>
     
     <item>
-      <title>第1回 Kubernetesをはじめるなら今!</title>
-      <link>https://ladicle.github.io/post/k8s1/</link>
-      <pubDate>Fri, 23 Jun 2017 21:36:25 +0900</pubDate>
+      <title>Linux Desktop Environment in 2018</title>
+      <link>https://ladicle.com/post/linux-desktop-2018/</link>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/post/k8s1/</guid>
-      <description>&lt;p&gt;「Kubernetesを使える人を増やす」を目標にKubernetesについて綴ることにしました。というのも、会社で使っているKubernetesの運用がひとりなためです。&lt;/p&gt;
+      <guid>https://ladicle.com/post/linux-desktop-2018/</guid>
+      <description>&amp;ldquo;Linuxデスクトップ環境&amp;rdquo;でggrると，いろんな記事がヒットしたので触発されてみた．普段遣いをmacOSからUbuntuに移行してまだ2ヶ月といったところだけど，最初の1ヶ月に構築した環境で満足しているので暫くこのままだと思う．
+なぜLinuxに移行したのか？困ってないか？ LaptopとしてXPSを選んだ理由とか，ディストリ検討の話はBye Bye Mackbook Pro. Hello, Ubntu XPS! に書いている．
+困ってないか？については全く困っていない．使って微妙だった点はMacbookProに比べるとバッテリーの持ちが悪いことと1，ファンの音が特徴的できになるということくらい．
+My dotfiles come out in Public しばらくdotfilesをprivateにしていたが，クローズド野郎 という煽りワードを聞いたのでLinux用の設定を追加するついでにGitHubで管理し始めた．
+ dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup  Major customizes    Figure1. My Pretty Desktop   Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
+Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを使っている．ターミナルの見ため含め，かわいみがあってポップでキュートでナウい青系なもの が好み．IconはPapirusのAdaptaバージョンを使っているのだが，GoファイルがGopher君になるのがツボ．
 
-&lt;p&gt;&lt;/p&gt;</description>
+あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
+Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
+
+が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
+Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
+ xkb &amp;amp; xremap services, suspend-hook.</description>
     </item>
     
     <item>
-      <title>Jenkins勉強会#9で発表してきた</title>
-      <link>https://ladicle.github.io/post/jenkins-study9/</link>
-      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      <title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title>
+      <link>https://ladicle.com/post/ubntun-install-into-xps/</link>
+      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/post/jenkins-study9/</guid>
-      <description>&lt;p&gt;コンテナCIとJobの管理方法について話してきた。&lt;br /&gt;
-話した内容や質問された内容を補足する。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/post/ubntun-install-into-xps/</guid>
+      <description>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.
+他に検討したモデル Core i7 8th, 13 inch, 16GB memory, 500 GB~ disk, ~1.3kg は必須，4K displayであればなおよしという条件で探していた.
+ ThinkPad: 赤ポチが好きだったので再び(ry と思ったものの，フルスペックにすると高かったので却下． HUAWEI MateBook X Pro: Macbookを意識しているのが感じられるlaptop. 軽さ, 性能, バッテリーの持ちが一番よかった．発売前で詳細がわからず見送り． HP Spectre Notebook: 性能も価格もXPSと一致してたので一番まよった. デザインが僅かにXPSのほうがこのみだったのでやめた．  ディストリビューションの検討 Desktop版のLinuxを使うのは高校生ぶり, その頃はUbuntuが入れようにもPCの性能足りなくてもっさりしてたため軽さ重視だった. もう時代が違うし流行りもわからんということで, Linux使ってる周りの人に聞いてみた. Gentoo，Arch，Ubuntuが候補に上がったが，PCとの相性1とセットアップの楽さでUbuntuに決定．
+Ubuntu 18.04のインストール BIOS設定の変更 BIOSに入るのはF2
+ SATA Controller: RAID -&amp;gt; AHCI Windows Boot Manager: disable Secure Boot: disable  USBからンストール Boot deviceの変更はF12
+16.04の時は無線に繋がらなかったりTouch panelの動作がおかしかったようだったが, 18.04は何も困らなかった2. Touch panelのカーソル移動はもっさりなので速度を最高まであげるとよい感じ.
+参考リンク  Dell XPS 13 (9370) に Ubuntu 16.</description>
     </item>
     
     <item>
-      <title>k8sをUbuntu14.04から16.04に移行した</title>
-      <link>https://ladicle.github.io/post/systemd-for-upstart/</link>
-      <pubDate>Tue, 09 Aug 2016 19:42:46 +0900</pubDate>
+      <title>Supporting AMP for Hugo templates</title>
+      <link>https://ladicle.com/post/support-amp/</link>
+      <pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate>
       
-      <guid>https://ladicle.github.io/post/systemd-for-upstart/</guid>
-      <description>&lt;p&gt;Kubernetesを14.04から16.04に移行した。&lt;br /&gt;
-もともとAnsibleでk8sのクラスタは構築していたのでplaybookを修正していったが、
-修正点のほとんどは、UpstartファイルをSystemdファイルの書き換えだけだった。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/post/support-amp/</guid>
+      <description> Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．
+作業の流れ  ざっと公式ページを見る ひたすら使えないタグやjsをampに対応したものに置き換える chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック ひたすら直す  変えたポイント  amp用の識別子たちを追加 cssファイルをconvertしてhtmlに吐き出し jsを全て取り払う  hilightjsはgist pluginに変更 menuはsidebar, accordion pluginに変更 jump to top buttonはanimation, position pluginに変更 disqusをiframeに変更 (まだ表示されない原因が分からない  imgタグをamp-imgに変換  所感 テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．
+references  https://www.ampproject.org/ https://www.ampstart.com  </description>
     </item>
     
     <item>
-      <title>Golang 1.7 release party in Tokyo</title>
-      <link>https://ladicle.github.io/post/golang1.7-release-party/</link>
-      <pubDate>Mon, 08 Aug 2016 19:48:11 +0900</pubDate>
+      <title>Setting up the Mistel BAROCCO</title>
+      <link>https://ladicle.com/post/mistel-barroco/</link>
+      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/post/golang1.7-release-party/</guid>
-      <description>&lt;p&gt;補欠だったので無理かと思っていたら、当日繰り上がった。
-イベントページは&lt;a href=&#34;http://gocon.connpass.com/event/37332/&#34;&gt;こちら&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Golangのバイナリに静的ファイルを組み込む</title>
-      <link>https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</link>
-      <pubDate>Sat, 06 Aug 2016 10:06:25 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/pack-staic-file-to-binary-for-golang/</guid>
-      <description>&lt;p&gt;markdownをgithubスタイルのHTMLに変換する&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;mark2h&lt;/a&gt;というものを作成したが、
-使用するCSSやHTMLのテンプレートはバイナリに組み込まないとパスが変わった時に反映されなくなってしまう。
-今回は、&lt;a href=&#34;https://github.com/Ladicle/mark2h&#34;&gt;go-bindata&lt;/a&gt;を使って静的ファイルをGoのバイナリに組み込んでみる。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hugoで記事と固定ページを書く</title>
-      <link>https://ladicle.github.io/post/write-post-by-hugo/</link>
-      <pubDate>Fri, 05 Aug 2016 16:43:31 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/write-post-by-hugo/</guid>
-      <description>&lt;p&gt;&lt;a href=&#34;https://ladicle.github.io/post/hugo-de-blog/&#34;&gt;前回&lt;/a&gt;は、Hugoのインストール方法とテーマの変更方法について説明した。
-今回は記事の作成と配信方法について解説する。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Apache Mesos勉強会に行ってきた</title>
-      <link>https://ladicle.github.io/post/apache-mesos/</link>
-      <pubDate>Thu, 04 Aug 2016 20:22:57 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/apache-mesos/</guid>
-      <description>&lt;p&gt;MesosはKubernetesと比較されることが多いので気になっていた。&lt;br /&gt;
-イベントのURLは&lt;a href=&#34;https://www.google.com/url?q=http%3A%2F%2Fconnpass.com%2Fevent%2F36415%2F&amp;amp;sa=D&amp;amp;usd=2&amp;amp;usg=AFQjCNHlDmy2a6EiNcCrDPxYCtHWQoGSIg&#34;&gt;こちら&lt;/a&gt;。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kindle Unlimitedの技術本</title>
-      <link>https://ladicle.github.io/post/kindle-unlimited/</link>
-      <pubDate>Wed, 03 Aug 2016 12:33:51 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/kindle-unlimited/</guid>
-      <description>&lt;p&gt;Kindle Unlimitedが今日から開始した。&lt;br /&gt;
-持っている本や良みたかった本が登録されていたのでまとめてみた。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>コンテナとDockerについて思うこと</title>
-      <link>https://ladicle.github.io/post/docker-left-oci/</link>
-      <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/docker-left-oci/</guid>
-      <description>&lt;p&gt;ガチャピン先生の&lt;a href=&#34;http://blog.gachapin-sensei.com/archives/5174099.html&#34;&gt;Docker、OCIやめるってよ&lt;/a&gt;の記事が話題だったので、
-コンテナとDockerについて思ったことを書いてみる。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Hugoで静的なブログを作成する</title>
-      <link>https://ladicle.github.io/post/hugo-de-blog/</link>
-      <pubDate>Sun, 31 Jul 2016 21:46:40 +0900</pubDate>
-      
-      <guid>https://ladicle.github.io/post/hugo-de-blog/</guid>
-      <description>&lt;p&gt;このブログは&lt;a href=&#34;https://gohugo.io/&#34;&gt;Hugo&lt;/a&gt;を使用してGithub.io上に建てている。&lt;br /&gt;
-静的Webサイトジェネレータは有名どころだとRailsの&lt;a href=&#34;https://github.com/jekyll/jekyll&#34;&gt;Jekyll&lt;/a&gt;や&lt;a href=&#34;http://octopress.org/&#34;&gt;Octopress&lt;/a&gt;、Pythonの&lt;a href=&#34;https://github.com/getpelican/pelican&#34;&gt;Pelican&lt;/a&gt;、Nodeの&lt;a href=&#34;https://hexo.io/&#34;&gt;Hexo&lt;/a&gt;などが存在するが、
-Hugoは速さを売りにしている。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/post/mistel-barroco/</guid>
+      <description>Refalforce派だったが，親指をもうちょっと有効に使いたかったのと健康のため分割キーボードに乗り換えることにした．Topreが分割キーボードを出していればそれで解決だったのだが，まだないので泣く泣く他の選択肢を模索．最終的にコンパクトかつ普通のキーボドに配列が近いMistel BAROCCO RGB White (US)を選択した．
+My keyboard layout    Figure1. custom keyboard layout   図1は現在使っているkeyboard layoutなのだが，緑色がBAROCCOのプログラム機能を使ってRemapしているキーで，黄色1はxkbでRemapしているキーを示している．BAROCCOのプログラム機能では一部のキーに制約があるため，このような形に落ち着いた．
+Upgrade a firmware ファームウェアが公式ページからダウンロードできる．最新のFirmwareは2018/01/08にリリースされた． USB抜くとRemap内容が消えてしまうみたいなバグが治るので基本的2には適用したほうが良い
+Remap the keyboard layout Remmap方法は説明書に乗っているがPDF or 紙媒体しかなく不便なのでメモ．
+Normal keys  Press the Fn + Ctrl Right Press a remapped key Program new values // locked keys are not lighting Press the PN  Remap FN and PN keys  Press the Fn/PN + Left Shift for 3s Press the Fn/PN key Choose a new position on the keyboard // locked positions are not lighting  Change the back light color and style RBGエディションを購入したのでけたましく光らせることができる3．PNをベースに，全体のスタイルの変更は5, キーごとに設定したい場合は9，どちらもEscからカラーパレットが使用できる．</description>
     </item>
     
   </channel>

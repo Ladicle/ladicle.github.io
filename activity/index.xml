@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Activities on Ladicle</title>
+    <link>https://ladicle.com/activity/</link>
+    <description>Recent content in Activities on Ladicle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 22 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ladicle.com/activity/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let&#39;s Customize Kubernetes to Develop an Automation Platform! - Cloud Native Days Tokyo 2019</title>
+      <link>https://ladicle.com/activity/cndt2019/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/cndt2019/</guid>
+      <description>  Links  Slide: https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru Event: https://cloudnativedays.jp/cndt2019/  </description>
+    </item>
+    
+    <item>
+      <title>[技術評論社] みんなのDocker/Kubernetes</title>
+      <link>https://ladicle.com/activity/mink8s/</link>
+      <pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/mink8s/</guid>
+      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10461-0 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/429710461X/gihyojp-22  </description>
+    </item>
+    
+    <item>
+      <title>Integrate with Tracing and Logging - OpenCensus Meetup #1</title>
+      <link>https://ladicle.com/activity/opencensus201904/</link>
+      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/opencensus201904/</guid>
+      <description>  Links  Slide: https://speakerdeck.com/ladicle/integration-with-tracing-and-logging Event: https://opencensus.connpass.com/event/123885/  </description>
+    </item>
+    
+    <item>
+      <title>[技術評論社] Kubernetes実践入門</title>
+      <link>https://ladicle.com/activity/practical-k8s/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/practical-k8s/</guid>
+      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10438-2 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/4297104385/gihyojp-22  </description>
+    </item>
+    
+    <item>
+      <title>Recap SIG API Machinery Deep Dive - Kubernetes meetup Tokyo #11</title>
+      <link>https://ladicle.com/activity/k8s-meetup11/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/k8s-meetup11/</guid>
+      <description>  I recapped SIG API Machinery Deep Dive of KubeCon Europe 2018. After that we more deep dive into the CRD validation and versioning.
+Links  Slide: https://speakerdeck.com/ladicle/recap-api-machinery-deep-dive Event: https://k8sjp.connpass.com/event/85336/ Video: https://www.youtube.com/watch?v=MTG5H4J2jHg  </description>
+    </item>
+    
+    <item>
+      <title>Manage Microservices with Istio - Japan Container Days v18.04</title>
+      <link>https://ladicle.com/activity/jkd1804/</link>
+      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/jkd1804/</guid>
+      <description>  I&amp;rsquo;ve developed and operated Microservices over 3 years, and they are gradually larger and more complexity. Managing those microservices is difficult. Istio is a great product! Because it can solve many problems that I faced.
+Links  Slide: https://speakerdeck.com/ladicle/istiotogong-nimaikurosabisunili-tixiang-kae Event: https://containerdays.jp  </description>
+    </item>
+    
+    <item>
+      <title>Software Design 9月号 - Web技術【超】入門: 通信すればしくみがわかる</title>
+      <link>https://ladicle.com/activity/sd201709/</link>
+      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/sd201709/</guid>
+      <description> Links  Software Design: http://gihyo.jp/magazine/SD/archive/2017/201709 Store(Amazon.co.jp): https://www.amazon.co.jp/o/ASIN/B072RC11J4/gihyojp-22  </description>
+    </item>
+    
+    <item>
+      <title>Mastodon on Kubernetes - Kubernetes meetup Tokyo #4</title>
+      <link>https://ladicle.com/activity/k8s-meetup4/</link>
+      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/k8s-meetup4/</guid>
+      <description>  I start to operate Mastdon on my home Kubernetes cluster. Mastdon is a twitter like social networking service. I talked about how to deploy it on the cluster, and how to use Services, PersistentVolumes, CronJobs, and Deployments.
+Links  Slide: https://speakerdeck.com/ladicle/mastodon-on-kubernetes Event: https://k8sjp.connpass.com/event/53737/ Video: https://youtu.be/GlbPk0mHgcs?t=2h13m52s Code: https://github.com/Ladicle/mastodon-chart  </description>
+    </item>
+    
+    <item>
+      <title>Software Design 5月号 - Linux入門(UNIXネットワーク編): コンピュータはどうやって通信するのか？</title>
+      <link>https://ladicle.com/activity/sd201704/</link>
+      <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/sd201704/</guid>
+      <description> Links  Software Design: http://gihyo.jp/magazine/SD/archive/2017/201705 Store (Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/B01N2627HG/gihyojp-22  </description>
+    </item>
+    
+    <item>
+      <title>Monitoring k8s with Prometheus - Prometheus Tokyo Meetup #1</title>
+      <link>https://ladicle.com/activity/prom-meetup1/</link>
+      <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/prom-meetup1/</guid>
+      <description>  Links  Slide: https://speakerdeck.com/ladicle/monitoring-kubernetes-with-prometheus Event: https://prometheus.connpass.com/event/53894/  </description>
+    </item>
+    
+    <item>
+      <title>Software Design 11月号 - 新人のときに知っておきたかったクラウドコンピューティングのしくみ</title>
+      <link>https://ladicle.com/activity/sd201611/</link>
+      <pubDate>Fri, 18 Nov 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/sd201611/</guid>
+      <description> Links  Magazine information: http://gihyo.jp/magazine/SD/archive/2016/201611 Store (Amazon): https://www.amazon.co.jp/o/ASIN/B01LBFWJT2/gihyojp-22  </description>
+    </item>
+    
+    <item>
+      <title>Conatiner Image Architecture - Container type virtualization study #10</title>
+      <link>https://ladicle.com/activity/ctvs10/</link>
+      <pubDate>Mon, 31 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/ctvs10/</guid>
+      <description>  Do you know how to build the Dockerfile? I talked about OCI image specification and docker image architecture for in-depth understanding of the process of building images, probing cache and parsing the Dockerfile.
+Links  Slide: https://speakerdeck.com/ladicle/container-image-architecture Event: https://ct-study.connpass.com/event/38841/ Video: https://www.youtube.com/watch?v=dc0YrpqgNDg  </description>
+    </item>
+    
+    <item>
+      <title>Container CI &amp; JJB - Jenkins Study #9</title>
+      <link>https://ladicle.com/activity/jenkinstudy9/</link>
+      <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/jenkinstudy9/</guid>
+      <description>  I talked about container CI and how to mange Jenkins jobs in our project. The OpenStack project is using Jenkins Job Builder. It manage a job definition using by YAML files.
+Links  Slide: https://speakerdeck.com/ladicle/container-ci-and-jenkins-job-builder Event: http://jenkins.connpass.com/event/35030/ Demo Code: https://github.com/Ladicle/jjb-demo  </description>
+    </item>
+    
+    <item>
+      <title>k8s helm &amp; helmc - Kubernetes meetup Tokyo #2</title>
+      <link>https://ladicle.com/activity/k8s-meetup2/</link>
+      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/k8s-meetup2/</guid>
+      <description>  I talked about helm and helmc. Helm is a package manager for Kubernetes, and Helm classic is a previous version of it. Helm will be implemented a lot of useful functions in the future, but it isn&amp;rsquo;t better than helmc for now. That&amp;rsquo;s why it&amp;rsquo;s better to manage manifests with helmc and follow the trend of helm.
+Links  Slide: https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc Event: https://k8sjp.connpass.com/event/33508/  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on Ladicle</title>
+    <link>https://ladicle.com/tags/automation/</link>
+    <description>Recent content in automation on Ladicle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 22 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ladicle.com/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let&#39;s Customize Kubernetes to Develop an Automation Platform! - Cloud Native Days Tokyo 2019</title>
+      <link>https://ladicle.com/activity/cndt2019/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/cndt2019/</guid>
+      <description>  Links  Slide: https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru Event: https://cloudnativedays.jp/cndt2019/  </description>
+    </item>
+    
+  </channel>
+</rss>

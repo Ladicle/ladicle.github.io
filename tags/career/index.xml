@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>career on Ladicle</title>
+    <link>https://ladicle.com/tags/career/</link>
+    <description>Recent content in career on Ladicle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 31 Dec 2018 20:51:09 +0900</lastBuildDate>
+    
+	<atom:link href="https://ladicle.com/tags/career/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2018年のふり返り</title>
+      <link>https://ladicle.com/post/2018-review/</link>
+      <pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate>
+      
+      <guid>https://ladicle.com/post/2018-review/</guid>
+      <description> 転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。
+技術 転職してから仕事中はフルでコードを読んだり書いたりできるようになったので、去年と比べるとGitHubに緑がふえた。学生の頃に比べると体力の衰えを感じたので競技プログラミングをはじめたが、体調を崩し始めた5月くらいから遠のいてしまったので再開したい。
+また、Ruiさんの記事を見てC言語コンパイラを作りはじめた。その過程で大学の授業の内容が頭から抜けてることに気づいたため、回路や計算機のしくみまわりの本を読み直すなどした。来年は言語処理系とOSも作ってみたというお気持ち。
+仕事は引き続きKubernetes周りをやっている。前回のKubeConのKeynoteではBoringフェーズに入ったと話題になったが、普段触れているCRDまわりはまだまだBoringとは言いがたい。来年もうまく付き合っていきたい。あとはそろそろ本格的にService Meshを(ry
+英語 英語は「This is a pen.」くらいしか言えなかったため、英会話(Beliz + NativeCamp Callan Method)を始めるなどの対策を取った。今年の秋頃には初の英語プレゼンをしたり、後半のカンファレンスでは多少言葉をかわせたので、成長を感じる。来年も引き続き精進したい。
+生活 生活にもゆとりが出てきたため、ジムに行って筋トレマニアになってみたり、日々発展していく家の近所を探索したり、コーヒーショップを回ってノマドワーカーを気取るなどした。家は人間らしい文化的な生活をあきらめた模様替えをはたし、友人達にここオフィス？と聞かれるまでに至った。とても捗る。ただし、健康面は勢い余ってO157になってしまったので気をつけたい。(常温で放置された🍣食べるのダメ絶対
+対外活動 今年はJCDでプレゼン1本＆パネルディスカッション2本、英語プレゼン1本、KubeConのRecap1本にLT1本の計6本くらいの発表をしたようだ。また、Cloud Native Deep Diveというディスカッションベースの勉強会もはじめた。来年からはKubernetes Meetup Tokyoの運営にも参加していく。それでは皆様、来年もよろしくお願いします。
+ Securing Clusters with Kubernetes Extensibility ISUCONでEnvoyを使えるか？ Recap SIG API Machinery Deep Dive Istioと共にMicroservicesに立ち向かえ！  </description>
+    </item>
+    
+  </channel>
+</rss>

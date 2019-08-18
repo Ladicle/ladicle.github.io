@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CRD on Ladicle</title>
+    <link>https://ladicle.com/tags/crd/</link>
+    <description>Recent content in CRD on Ladicle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Mon, 22 Jul 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://ladicle.com/tags/crd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Let&#39;s Customize Kubernetes to Develop an Automation Platform! - Cloud Native Days Tokyo 2019</title>
+      <link>https://ladicle.com/activity/cndt2019/</link>
+      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/cndt2019/</guid>
+      <description>  Links  Slide: https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru Event: https://cloudnativedays.jp/cndt2019/  </description>
+    </item>
+    
+    <item>
+      <title>Recap SIG API Machinery Deep Dive - Kubernetes meetup Tokyo #11</title>
+      <link>https://ladicle.com/activity/k8s-meetup11/</link>
+      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/k8s-meetup11/</guid>
+      <description>  I recapped SIG API Machinery Deep Dive of KubeCon Europe 2018. After that we more deep dive into the CRD validation and versioning.
+Links  Slide: https://speakerdeck.com/ladicle/recap-api-machinery-deep-dive Event: https://k8sjp.connpass.com/event/85336/ Video: https://www.youtube.com/watch?v=MTG5H4J2jHg  </description>
+    </item>
+    
+  </channel>
+</rss>

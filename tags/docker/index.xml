@@ -1,26 +1,41 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Docker on Exception();</title>
-    <link>https://ladicle.github.io/tags/docker/</link>
-    <description>Recent content in Docker on Exception();</description>
+    <title>Docker on Ladicle</title>
+    <link>https://ladicle.com/tags/docker/</link>
+    <description>Recent content in Docker on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
-    <lastBuildDate>Mon, 01 Aug 2016 21:52:39 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 18 Apr 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ladicle.github.io/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.com/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>コンテナとDockerについて思うこと</title>
-      <link>https://ladicle.github.io/post/docker-left-oci/</link>
-      <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
+      <title>[技術評論社] みんなのDocker/Kubernetes</title>
+      <link>https://ladicle.com/activity/mink8s/</link>
+      <pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/post/docker-left-oci/</guid>
-      <description>&lt;p&gt;ガチャピン先生の&lt;a href=&#34;http://blog.gachapin-sensei.com/archives/5174099.html&#34;&gt;Docker、OCIやめるってよ&lt;/a&gt;の記事が話題だったので、
-コンテナとDockerについて思ったことを書いてみる。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/activity/mink8s/</guid>
+      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10461-0 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/429710461X/gihyojp-22  </description>
+    </item>
+    
+    <item>
+      <title>[技術評論社] Kubernetes実践入門</title>
+      <link>https://ladicle.com/activity/practical-k8s/</link>
+      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/practical-k8s/</guid>
+      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10438-2 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/4297104385/gihyojp-22  </description>
+    </item>
+    
+    <item>
+      <title>Conatiner Image Architecture - Container type virtualization study #10</title>
+      <link>https://ladicle.com/activity/ctvs10/</link>
+      <pubDate>Mon, 31 Oct 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/ctvs10/</guid>
+      <description>  Do you know how to build the Dockerfile? I talked about OCI image specification and docker image architecture for in-depth understanding of the process of building images, probing cache and parsing the Dockerfile.
+Links  Slide: https://speakerdeck.com/ladicle/container-image-architecture Event: https://ct-study.connpass.com/event/38841/ Video: https://www.youtube.com/watch?v=dc0YrpqgNDg  </description>
     </item>
     
   </channel>

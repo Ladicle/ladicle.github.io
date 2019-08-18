@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Emacs on Ladicle</title>
+    <link>https://ladicle.com/categories/emacs/</link>
+    <description>Recent content in Emacs on Ladicle</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <lastBuildDate>Wed, 17 Apr 2019 16:46:00 +0900</lastBuildDate>
+    
+	<atom:link href="https://ladicle.com/categories/emacs/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ladicle&#39;s Emacs Configuration</title>
+      <link>https://ladicle.com/post/config/</link>
+      <pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate>
+      
+      <guid>https://ladicle.com/post/config/</guid>
+      <description>.ox-hugo-toc ul { list-style: none; }  
+Table of Contents  1 Configuration  1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic  1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point  1.5 Key-bindings  1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra  1.6 Undo/Redo 1.7 Search/Replace  1.7.1 Projectile 1.</description>
+    </item>
+    
+    <item>
+      <title>ox-Hugo Cheat Sheet</title>
+      <link>https://ladicle.com/post/ox-hugo-cheat/</link>
+      <pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate>
+      
+      <guid>https://ladicle.com/post/ox-hugo-cheat/</guid>
+      <description>.ox-hugo-toc ul { list-style: none; }  
+Table of Contents  1 図、表、コードの導入と参照  1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト  2 Subtreeのプロパティと各種機能 [50%]  2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御  3 文字スタイルとHTML  3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧  4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価  5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力  6 参考文献   
+1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。</description>
+    </item>
+    
+  </channel>
+</rss>

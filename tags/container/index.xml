@@ -1,38 +1,52 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Container on Exception();</title>
-    <link>https://ladicle.github.io/tags/container/</link>
-    <description>Recent content in Container on Exception();</description>
+    <title>container on Ladicle</title>
+    <link>https://ladicle.com/tags/container/</link>
+    <description>Recent content in container on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>jp</language>
-    <lastBuildDate>Thu, 11 Aug 2016 23:39:14 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 18 Nov 2016 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="https://ladicle.github.io/tags/container/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://ladicle.com/tags/container/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Jenkins勉強会#9で発表してきた</title>
-      <link>https://ladicle.github.io/post/jenkins-study9/</link>
-      <pubDate>Thu, 11 Aug 2016 23:39:14 +0900</pubDate>
+      <title>Software Design 11月号 - 新人のときに知っておきたかったクラウドコンピューティングのしくみ</title>
+      <link>https://ladicle.com/activity/sd201611/</link>
+      <pubDate>Fri, 18 Nov 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/post/jenkins-study9/</guid>
-      <description>&lt;p&gt;コンテナCIとJobの管理方法について話してきた。&lt;br /&gt;
-話した内容や質問された内容を補足する。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/activity/sd201611/</guid>
+      <description> Links  Magazine information: http://gihyo.jp/magazine/SD/archive/2016/201611 Store (Amazon): https://www.amazon.co.jp/o/ASIN/B01LBFWJT2/gihyojp-22  </description>
     </item>
     
     <item>
-      <title>コンテナとDockerについて思うこと</title>
-      <link>https://ladicle.github.io/post/docker-left-oci/</link>
-      <pubDate>Mon, 01 Aug 2016 21:52:39 +0900</pubDate>
+      <title>Conatiner Image Architecture - Container type virtualization study #10</title>
+      <link>https://ladicle.com/activity/ctvs10/</link>
+      <pubDate>Mon, 31 Oct 2016 00:00:00 +0000</pubDate>
       
-      <guid>https://ladicle.github.io/post/docker-left-oci/</guid>
-      <description>&lt;p&gt;ガチャピン先生の&lt;a href=&#34;http://blog.gachapin-sensei.com/archives/5174099.html&#34;&gt;Docker、OCIやめるってよ&lt;/a&gt;の記事が話題だったので、
-コンテナとDockerについて思ったことを書いてみる。&lt;/p&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
+      <guid>https://ladicle.com/activity/ctvs10/</guid>
+      <description>  Do you know how to build the Dockerfile? I talked about OCI image specification and docker image architecture for in-depth understanding of the process of building images, probing cache and parsing the Dockerfile.
+Links  Slide: https://speakerdeck.com/ladicle/container-image-architecture Event: https://ct-study.connpass.com/event/38841/ Video: https://www.youtube.com/watch?v=dc0YrpqgNDg  </description>
+    </item>
+    
+    <item>
+      <title>Container CI &amp; JJB - Jenkins Study #9</title>
+      <link>https://ladicle.com/activity/jenkinstudy9/</link>
+      <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/jenkinstudy9/</guid>
+      <description>  I talked about container CI and how to mange Jenkins jobs in our project. The OpenStack project is using Jenkins Job Builder. It manage a job definition using by YAML files.
+Links  Slide: https://speakerdeck.com/ladicle/container-ci-and-jenkins-job-builder Event: http://jenkins.connpass.com/event/35030/ Demo Code: https://github.com/Ladicle/jjb-demo  </description>
+    </item>
+    
+    <item>
+      <title>k8s helm &amp; helmc - Kubernetes meetup Tokyo #2</title>
+      <link>https://ladicle.com/activity/k8s-meetup2/</link>
+      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://ladicle.com/activity/k8s-meetup2/</guid>
+      <description>  I talked about helm and helmc. Helm is a package manager for Kubernetes, and Helm classic is a previous version of it. Helm will be implemented a lot of useful functions in the future, but it isn&amp;rsquo;t better than helmc for now. That&amp;rsquo;s why it&amp;rsquo;s better to manage manifests with helmc and follow the trend of helm.
+Links  Slide: https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc Event: https://k8sjp.connpass.com/event/33508/  </description>
     </item>
     
   </channel>

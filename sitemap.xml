@@ -3,6 +3,59 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://ladicle.com/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/post/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/tags/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/tags/ubuntu/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/tags/cloudflare/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/tags/k8s/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/tags/kubeadm/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/tags/nuc/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/post/k8s-home-cluster/</loc>
+    <lastmod>2019-08-26T21:56:24+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ladicle.com/activity/</loc>
     <lastmod>2019-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
@@ -21,26 +74,8 @@
   </url>
   
   <url>
-    <loc>https://ladicle.com/tags/kubernetes/</loc>
-    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ladicle.com/</loc>
-    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
     <loc>https://ladicle.com/activity/cndt2019/</loc>
     <lastmod>2019-07-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ladicle.com/tags/</loc>
-    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -63,6 +98,12 @@
   
   <url>
     <loc>https://ladicle.com/tags/kubebuilder/</loc>
+    <lastmod>2019-07-22T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ladicle.com/tags/kubernetes/</loc>
     <lastmod>2019-07-22T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
@@ -93,12 +134,6 @@
   <url>
     <loc>https://ladicle.com/post/config/</loc>
     <lastmod>2019-04-17T16:46:00+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://ladicle.com/post/</loc>
-    <lastmod>2019-04-17T16:46:00+09:00</lastmod>
-    <priority>0</priority>
   </url>
   
   <url>
@@ -224,12 +259,6 @@
   
   <url>
     <loc>https://ladicle.com/categories/tools/</loc>
-    <lastmod>2018-08-02T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ladicle.com/tags/ubuntu/</loc>
     <lastmod>2018-08-02T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>

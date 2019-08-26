@@ -5,10 +5,21 @@
     <link>https://ladicle.com/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Thu, 02 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate>
     
 	<atom:link href="https://ladicle.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>外出先でも快適なお家k8sクラスタを構築する</title>
+      <link>https://ladicle.com/post/k8s-home-cluster/</link>
+      <pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate>
+      
+      <guid>https://ladicle.com/post/k8s-home-cluster/</guid>
+      <description>.ox-hugo-toc ul { list-style: none; }  
+Table of Contents  1 なぜお家Kubernetesクラスタか 2 Workerのハードウェア構成と価格 3 マシンにUbuntuサーバをインストールする  3.1 Live USBの作成 3.2 インストーラの進化 3.3 LVMのディスク容量を増やす  4 Kubernetesの構成検討と構築  4.1 cri-oのセットアップ 4.2 kubeadmによるクラスタ構築  4.2.1 事前準備 4.2.2 Master/Workerの構築  4.3 ciliumのCNIプラグインを適用する 4.4 MetalLBの構築  5 CloudflareのArgo経由でSSHする  5.1 Server設定 5.2 Client設定 5.3 Cloudflare Accessでアクセスユーザを制限する  6 kubeadmによるクラスタアップグレード  6.1 CNIプラグインのアップグレード    
+1 なぜお家Kubernetesクラスタか なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。</description>
+    </item>
     
     <item>
       <title>Linux Desktop Environment in 2018</title>

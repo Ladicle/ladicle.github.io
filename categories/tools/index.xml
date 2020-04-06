@@ -22,11 +22,9 @@
 My dotfiles come out in Public しばらくdotfilesをprivateにしていたが，クローズド野郎 という煽りワードを聞いたのでLinux用の設定を追加するついでにGitHubで管理し始めた．
  dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup  Major customizes    Figure1. My Pretty Desktop   Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
 Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを使っている．ターミナルの見ため含め，かわいみがあってポップでキュートでナウい青系なもの が好み．IconはPapirusのAdaptaバージョンを使っているのだが，GoファイルがGopher君になるのがツボ．
-
-あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
+ あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
 Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
-
-が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
+ が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
 Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
  xkb &amp;amp; xremap services, suspend-hook.</description>
     </item>

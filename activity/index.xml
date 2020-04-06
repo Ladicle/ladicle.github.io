@@ -5,46 +5,10 @@
     <link>https://ladicle.com/activity/</link>
     <description>Recent content in Activities on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 22 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ladicle.com/activity/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Let&#39;s Customize Kubernetes to Develop an Automation Platform! - Cloud Native Days Tokyo 2019</title>
-      <link>https://ladicle.com/activity/cndt2019/</link>
-      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/cndt2019/</guid>
-      <description>  Links  Slide: https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru Event: https://cloudnativedays.jp/cndt2019/  </description>
-    </item>
-    
-    <item>
-      <title>[技術評論社] みんなのDocker/Kubernetes</title>
-      <link>https://ladicle.com/activity/mink8s/</link>
-      <pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/mink8s/</guid>
-      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10461-0 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/429710461X/gihyojp-22  </description>
-    </item>
-    
-    <item>
-      <title>Integrate with Tracing and Logging - OpenCensus Meetup #1</title>
-      <link>https://ladicle.com/activity/opencensus201904/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/opencensus201904/</guid>
-      <description>  Links  Slide: https://speakerdeck.com/ladicle/integration-with-tracing-and-logging Event: https://opencensus.connpass.com/event/123885/  </description>
-    </item>
-    
-    <item>
-      <title>[技術評論社] Kubernetes実践入門</title>
-      <link>https://ladicle.com/activity/practical-k8s/</link>
-      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/practical-k8s/</guid>
-      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10438-2 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/4297104385/gihyojp-22  </description>
-    </item>
     
     <item>
       <title>Recap SIG API Machinery Deep Dive - Kubernetes meetup Tokyo #11</title>

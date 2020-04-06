@@ -5,21 +5,10 @@
     <link>https://ladicle.com/tags/ubuntu/</link>
     <description>Recent content in Ubuntu on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 02 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ladicle.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>外出先でも快適なお家k8sクラスタを構築する</title>
-      <link>https://ladicle.com/post/k8s-home-cluster/</link>
-      <pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/k8s-home-cluster/</guid>
-      <description>.ox-hugo-toc ul { list-style: none; }  
-Table of Contents  1 なぜお家Kubernetesクラスタか 2 Workerのハードウェア構成と価格 3 マシンにUbuntuサーバをインストールする  3.1 Live USBの作成 3.2 インストーラの進化 3.3 LVMのディスク容量を増やす  4 Kubernetesの構成検討と構築  4.1 cri-oのセットアップ 4.2 kubeadmによるクラスタ構築  4.2.1 事前準備 4.2.2 Master/Workerの構築  4.3 ciliumのCNIプラグインを適用する 4.4 MetalLBの構築  5 CloudflareのArgo経由でSSHする  5.1 Server設定 5.2 Client設定 5.3 Cloudflare Accessでアクセスユーザを制限する  6 kubeadmによるクラスタアップグレード  6.1 CNIプラグインのアップグレード    
-1 なぜお家Kubernetesクラスタか なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。</description>
-    </item>
     
     <item>
       <title>Linux Desktop Environment in 2018</title>
@@ -33,11 +22,9 @@ Table of Contents  1 なぜお家Kubernetesクラスタか 2 Workerのハード�
 My dotfiles come out in Public しばらくdotfilesをprivateにしていたが，クローズド野郎 という煽りワードを聞いたのでLinux用の設定を追加するついでにGitHubで管理し始めた．
  dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup  Major customizes    Figure1. My Pretty Desktop   Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
 Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを使っている．ターミナルの見ため含め，かわいみがあってポップでキュートでナウい青系なもの が好み．IconはPapirusのAdaptaバージョンを使っているのだが，GoファイルがGopher君になるのがツボ．
-
-あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
+ あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
 Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
-
-が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
+ が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
 Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
  xkb &amp;amp; xremap services, suspend-hook.</description>
     </item>

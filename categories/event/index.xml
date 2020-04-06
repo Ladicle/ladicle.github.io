@@ -1,32 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>event on Ladicle</title>
+    <title>Event on Ladicle</title>
     <link>https://ladicle.com/categories/event/</link>
-    <description>Recent content in event on Ladicle</description>
+    <description>Recent content in Event on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 22 Jul 2019 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 17 May 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://ladicle.com/categories/event/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Let&#39;s Customize Kubernetes to Develop an Automation Platform! - Cloud Native Days Tokyo 2019</title>
-      <link>https://ladicle.com/activity/cndt2019/</link>
-      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/cndt2019/</guid>
-      <description>  Links  Slide: https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru Event: https://cloudnativedays.jp/cndt2019/  </description>
-    </item>
-    
-    <item>
-      <title>Integrate with Tracing and Logging - OpenCensus Meetup #1</title>
-      <link>https://ladicle.com/activity/opencensus201904/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/opencensus201904/</guid>
-      <description>  Links  Slide: https://speakerdeck.com/ladicle/integration-with-tracing-and-logging Event: https://opencensus.connpass.com/event/123885/  </description>
-    </item>
     
     <item>
       <title>Recap SIG API Machinery Deep Dive - Kubernetes meetup Tokyo #11</title>

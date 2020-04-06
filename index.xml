@@ -5,39 +5,10 @@
     <link>https://ladicle.com/</link>
     <description>Recent content on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 17 Apr 2019 16:46:00 +0900</lastBuildDate>
     
 	<atom:link href="https://ladicle.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>外出先でも快適なお家k8sクラスタを構築する</title>
-      <link>https://ladicle.com/post/k8s-home-cluster/</link>
-      <pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/k8s-home-cluster/</guid>
-      <description>.ox-hugo-toc ul { list-style: none; }  
-Table of Contents  1 なぜお家Kubernetesクラスタか 2 Workerのハードウェア構成と価格 3 マシンにUbuntuサーバをインストールする  3.1 Live USBの作成 3.2 インストーラの進化 3.3 LVMのディスク容量を増やす  4 Kubernetesの構成検討と構築  4.1 cri-oのセットアップ 4.2 kubeadmによるクラスタ構築  4.2.1 事前準備 4.2.2 Master/Workerの構築  4.3 ciliumのCNIプラグインを適用する 4.4 MetalLBの構築  5 CloudflareのArgo経由でSSHする  5.1 Server設定 5.2 Client設定 5.3 Cloudflare Accessでアクセスユーザを制限する  6 kubeadmによるクラスタアップグレード  6.1 CNIプラグインのアップグレード    
-1 なぜお家Kubernetesクラスタか なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。</description>
-    </item>
-    
-    <item>
-      <title>Let&#39;s Customize Kubernetes to Develop an Automation Platform! - Cloud Native Days Tokyo 2019</title>
-      <link>https://ladicle.com/activity/cndt2019/</link>
-      <pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/cndt2019/</guid>
-      <description>  Links  Slide: https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru Event: https://cloudnativedays.jp/cndt2019/  </description>
-    </item>
-    
-    <item>
-      <title>[技術評論社] みんなのDocker/Kubernetes</title>
-      <link>https://ladicle.com/activity/mink8s/</link>
-      <pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/mink8s/</guid>
-      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10461-0 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/429710461X/gihyojp-22  </description>
-    </item>
     
     <item>
       <title>Ladicle&#39;s Emacs Configuration</title>
@@ -47,24 +18,6 @@ Table of Contents  1 なぜお家Kubernetesクラスタか 2 Workerのハード�
       <guid>https://ladicle.com/post/config/</guid>
       <description>.ox-hugo-toc ul { list-style: none; }  
 Table of Contents  1 Configuration  1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic  1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point  1.5 Key-bindings  1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra  1.6 Undo/Redo 1.7 Search/Replace  1.7.1 Projectile 1.</description>
-    </item>
-    
-    <item>
-      <title>Integrate with Tracing and Logging - OpenCensus Meetup #1</title>
-      <link>https://ladicle.com/activity/opencensus201904/</link>
-      <pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/opencensus201904/</guid>
-      <description>  Links  Slide: https://speakerdeck.com/ladicle/integration-with-tracing-and-logging Event: https://opencensus.connpass.com/event/123885/  </description>
-    </item>
-    
-    <item>
-      <title>[技術評論社] Kubernetes実践入門</title>
-      <link>https://ladicle.com/activity/practical-k8s/</link>
-      <pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/practical-k8s/</guid>
-      <description> Links  Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10438-2 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/4297104385/gihyojp-22  </description>
     </item>
     
     <item>
@@ -106,11 +59,9 @@ Table of Contents  1 図、表、コードの導入と参照  1.1 図のAMP対�
 My dotfiles come out in Public しばらくdotfilesをprivateにしていたが，クローズド野郎 という煽りワードを聞いたのでLinux用の設定を追加するついでにGitHubで管理し始めた．
  dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup  Major customizes    Figure1. My Pretty Desktop   Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
 Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを使っている．ターミナルの見ため含め，かわいみがあってポップでキュートでナウい青系なもの が好み．IconはPapirusのAdaptaバージョンを使っているのだが，GoファイルがGopher君になるのがツボ．
-
-あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
+ あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
 Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
-
-が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
+ が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
 Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
  xkb &amp;amp; xremap services, suspend-hook.</description>
     </item>
@@ -169,10 +120,10 @@ Links  Slide: https://speakerdeck.com/ladicle/istiotogong-nimaikurosabisunili-ti
       <guid>https://ladicle.com/about/</guid>
       <description>Aya Igarashi (@ladicle)  Just here for code? - It&amp;rsquo;s on Github.
  I&amp;rsquo;m working at Z Lab Corp.
-8 years software engineer with an experience. Researched and developed highly scalable Container Platform based on Kubernetes.
+6 years software engineer with an experience. Researched and developed highly scalable Container Platform based on Kubernetes.
 Key programming language skill is Go, Python and Java.
 My interesting things are operating system and distributed system design.
-Publication  Apr 2019 Docker and Kubernetes for Everyone May 2019 Kubernetes practical guide Sep 2017 Software Design - The mechanism of Internet.</description>
+Publication  Sep 2017 Software Design - The mechanism of Internet. May 2017 Software Design - How do computers communicate?</description>
     </item>
     
     <item>

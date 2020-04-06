@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>CI on Ladicle</title>
+    <title>Ci on Ladicle</title>
     <link>https://ladicle.com/tags/ci/</link>
-    <description>Recent content in CI on Ladicle</description>
+    <description>Recent content in Ci on Ladicle</description>
     <generator>Hugo -- gohugo.io</generator>
     <lastBuildDate>Wed, 10 Aug 2016 00:00:00 +0000</lastBuildDate>
     

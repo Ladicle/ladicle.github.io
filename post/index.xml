@@ -1,109 +1,32 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Ladicle</title>
-    <link>https://ladicle.com/post/</link>
-    <description>Recent content in Posts on Ladicle</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 17 Apr 2019 16:46:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://ladicle.com/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Ladicle&#39;s Emacs Configuration</title>
-      <link>https://ladicle.com/post/config/</link>
-      <pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/config/</guid>
-      <description>.ox-hugo-toc ul { list-style: none; }  
-Table of Contents  1 Configuration  1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic  1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point  1.5 Key-bindings  1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra  1.6 Undo/Redo 1.7 Search/Replace  1.7.1 Projectile 1.</description>
-    </item>
-    
-    <item>
-      <title>ox-Hugo Cheat Sheet</title>
-      <link>https://ladicle.com/post/ox-hugo-cheat/</link>
-      <pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/ox-hugo-cheat/</guid>
-      <description>.ox-hugo-toc ul { list-style: none; }  
-Table of Contents  1 図、表、コードの導入と参照  1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト  2 Subtreeのプロパティと各種機能 [50%]  2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御  3 文字スタイルとHTML  3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧  4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価  5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力  6 参考文献   
-1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。</description>
-    </item>
-    
-    <item>
-      <title>2018年のふり返り</title>
-      <link>https://ladicle.com/post/2018-review/</link>
-      <pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/2018-review/</guid>
-      <description> 転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Ladicle</title><link>https://ladicle.com/post/</link><description>Recent content in Posts on Ladicle</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate><atom:link href="https://ladicle.com/post/index.xml" rel="self" type="application/rss+xml"/><item><title>外出先でも快適なお家k8sクラスタを構築する</title><link>https://ladicle.com/post/k8s-home-cluster/</link><pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate><guid>https://ladicle.com/post/k8s-home-cluster/</guid><description>.ox-hugo-toc ul { list-style: none; } Table of Contents 1 なぜお家Kubernetesクラスタか 2 Workerのハードウェア構成と価格 3 マシンにUbuntuサーバをインストールする 3.1 Live USBの作成 3.2 インストーラの進化 3.3 LVMのディスク容量を増やす 4 Kubernetesの構成検討と構築 4.1 cri-oのセットアップ 4.2 kubeadmによるクラスタ構築 4.2.1 事前準備 4.2.2 Master/Workerの構築 4.3 ciliumのCNIプラグインを適用する 4.4 MetalLBの構築 5 CloudflareのArgo経由でSSHする 5.1 Server設定 5.2 Client設定 5.3 Cloudflare Accessでアクセスユーザを制限する 6 kubeadmによるクラスタアップグレード 6.1 CNIプラグインのアップグレード 1 なぜお家Kubernetesクラスタか なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。</description></item><item><title>Ladicle's Emacs Configuration</title><link>https://ladicle.com/post/config/</link><pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/config/</guid><description>.ox-hugo-toc ul { list-style: none; } Table of Contents 1 Configuration 1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic 1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point 1.5 Key-bindings 1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra 1.6 Undo/Redo 1.7 Search/Replace 1.7.1 Projectile 1.</description></item><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>.ox-hugo-toc ul { list-style: none; } Table of Contents 1 図、表、コードの導入と参照 1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト 2 Subtreeのプロパティと各種機能 [50%] 2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御 3 文字スタイルとHTML 3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧 4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価 5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力 6 参考文献 1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。</description></item><item><title>2018年のふり返り</title><link>https://ladicle.com/post/2018-review/</link><pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate><guid>https://ladicle.com/post/2018-review/</guid><description>転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。
 技術 転職してから仕事中はフルでコードを読んだり書いたりできるようになったので、去年と比べるとGitHubに緑がふえた。学生の頃に比べると体力の衰えを感じたので競技プログラミングをはじめたが、体調を崩し始めた5月くらいから遠のいてしまったので再開したい。
 また、Ruiさんの記事を見てC言語コンパイラを作りはじめた。その過程で大学の授業の内容が頭から抜けてることに気づいたため、回路や計算機のしくみまわりの本を読み直すなどした。来年は言語処理系とOSも作ってみたというお気持ち。
 仕事は引き続きKubernetes周りをやっている。前回のKubeConのKeynoteではBoringフェーズに入ったと話題になったが、普段触れているCRDまわりはまだまだBoringとは言いがたい。来年もうまく付き合っていきたい。あとはそろそろ本格的にService Meshを(ry
 英語 英語は「This is a pen.」くらいしか言えなかったため、英会話(Beliz + NativeCamp Callan Method)を始めるなどの対策を取った。今年の秋頃には初の英語プレゼンをしたり、後半のカンファレンスでは多少言葉をかわせたので、成長を感じる。来年も引き続き精進したい。
 生活 生活にもゆとりが出てきたため、ジムに行って筋トレマニアになってみたり、日々発展していく家の近所を探索したり、コーヒーショップを回ってノマドワーカーを気取るなどした。家は人間らしい文化的な生活をあきらめた模様替えをはたし、友人達にここオフィス？と聞かれるまでに至った。とても捗る。ただし、健康面は勢い余ってO157になってしまったので気をつけたい。(常温で放置された🍣食べるのダメ絶対
 対外活動 今年はJCDでプレゼン1本＆パネルディスカッション2本、英語プレゼン1本、KubeConのRecap1本にLT1本の計6本くらいの発表をしたようだ。また、Cloud Native Deep Diveというディスカッションベースの勉強会もはじめた。来年からはKubernetes Meetup Tokyoの運営にも参加していく。それでは皆様、来年もよろしくお願いします。
- Securing Clusters with Kubernetes Extensibility ISUCONでEnvoyを使えるか？ Recap SIG API Machinery Deep Dive Istioと共にMicroservicesに立ち向かえ！  </description>
-    </item>
-    
-    <item>
-      <title>Linux Desktop Environment in 2018</title>
-      <link>https://ladicle.com/post/linux-desktop-2018/</link>
-      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/post/linux-desktop-2018/</guid>
-      <description>&amp;ldquo;Linuxデスクトップ環境&amp;rdquo;でggrると，いろんな記事がヒットしたので触発されてみた．普段遣いをmacOSからUbuntuに移行してまだ2ヶ月といったところだけど，最初の1ヶ月に構築した環境で満足しているので暫くこのままだと思う．
+Securing Clusters with Kubernetes Extensibility ISUCONでEnvoyを使えるか？ Recap SIG API Machinery Deep Dive Istioと共にMicroservicesに立ち向かえ！</description></item><item><title>Linux Desktop Environment in 2018</title><link>https://ladicle.com/post/linux-desktop-2018/</link><pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate><guid>https://ladicle.com/post/linux-desktop-2018/</guid><description>&amp;ldquo;Linuxデスクトップ環境&amp;quot;でggrると，いろんな記事がヒットしたので触発されてみた．普段遣いをmacOSからUbuntuに移行してまだ2ヶ月といったところだけど，最初の1ヶ月に構築した環境で満足しているので暫くこのままだと思う．
 なぜLinuxに移行したのか？困ってないか？ LaptopとしてXPSを選んだ理由とか，ディストリ検討の話はBye Bye Mackbook Pro. Hello, Ubntu XPS! に書いている．
 困ってないか？については全く困っていない．使って微妙だった点はMacbookProに比べるとバッテリーの持ちが悪いことと1，ファンの音が特徴的できになるということくらい．
 My dotfiles come out in Public しばらくdotfilesをprivateにしていたが，クローズド野郎 という煽りワードを聞いたのでLinux用の設定を追加するついでにGitHubで管理し始めた．
- dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup  Major customizes    Figure1. My Pretty Desktop   Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
+dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup Major customizes Figure1. My Pretty Desktop
+Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
 Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを使っている．ターミナルの見ため含め，かわいみがあってポップでキュートでナウい青系なもの が好み．IconはPapirusのAdaptaバージョンを使っているのだが，GoファイルがGopher君になるのがツボ．
- あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
+あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
 Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
- が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
+が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
 Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
- xkb &amp;amp; xremap services, suspend-hook.</description>
-    </item>
-    
-    <item>
-      <title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title>
-      <link>https://ladicle.com/post/ubntun-install-into-xps/</link>
-      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/post/ubntun-install-into-xps/</guid>
-      <description>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.
+xkb &amp;amp; xremap services, suspend-hook.</description></item><item><title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title><link>https://ladicle.com/post/ubntun-install-into-xps/</link><pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate><guid>https://ladicle.com/post/ubntun-install-into-xps/</guid><description>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.
 他に検討したモデル Core i7 8th, 13 inch, 16GB memory, 500 GB~ disk, ~1.3kg は必須，4K displayであればなおよしという条件で探していた.
- ThinkPad: 赤ポチが好きだったので再び(ry と思ったものの，フルスペックにすると高かったので却下． HUAWEI MateBook X Pro: Macbookを意識しているのが感じられるlaptop. 軽さ, 性能, バッテリーの持ちが一番よかった．発売前で詳細がわからず見送り． HP Spectre Notebook: 性能も価格もXPSと一致してたので一番まよった. デザインが僅かにXPSのほうがこのみだったのでやめた．  ディストリビューションの検討 Desktop版のLinuxを使うのは高校生ぶり, その頃はUbuntuが入れようにもPCの性能足りなくてもっさりしてたため軽さ重視だった. もう時代が違うし流行りもわからんということで, Linux使ってる周りの人に聞いてみた. Gentoo，Arch，Ubuntuが候補に上がったが，PCとの相性1とセットアップの楽さでUbuntuに決定．
+ThinkPad: 赤ポチが好きだったので再び(ry と思ったものの，フルスペックにすると高かったので却下． HUAWEI MateBook X Pro: Macbookを意識しているのが感じられるlaptop. 軽さ, 性能, バッテリーの持ちが一番よかった．発売前で詳細がわからず見送り． HP Spectre Notebook: 性能も価格もXPSと一致してたので一番まよった. デザインが僅かにXPSのほうがこのみだったのでやめた． ディストリビューションの検討 Desktop版のLinuxを使うのは高校生ぶり, その頃はUbuntuが入れようにもPCの性能足りなくてもっさりしてたため軽さ重視だった. もう時代が違うし流行りもわからんということで, Linux使ってる周りの人に聞いてみた. Gentoo，Arch，Ubuntuが候補に上がったが，PCとの相性1とセットアップの楽さでUbuntuに決定．
 Ubuntu 18.04のインストール BIOS設定の変更 BIOSに入るのはF2
- SATA Controller: RAID -&amp;gt; AHCI Windows Boot Manager: disable Secure Boot: disable  USBからンストール Boot deviceの変更はF12
+SATA Controller: RAID -&amp;gt; AHCI Windows Boot Manager: disable Secure Boot: disable USBからンストール Boot deviceの変更はF12
 16.04の時は無線に繋がらなかったりTouch panelの動作がおかしかったようだったが, 18.04は何も困らなかった2. Touch panelのカーソル移動はもっさりなので速度を最高まであげるとよい感じ.
-参考リンク  Dell XPS 13 (9370) に Ubuntu 16.</description>
-    </item>
-    
-    <item>
-      <title>Supporting AMP for Hugo templates</title>
-      <link>https://ladicle.com/post/support-amp/</link>
-      <pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/support-amp/</guid>
-      <description> Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．
-作業の流れ  ざっと公式ページを見る ひたすら使えないタグやjsをampに対応したものに置き換える chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック ひたすら直す  変えたポイント  amp用の識別子たちを追加 cssファイルをconvertしてhtmlに吐き出し jsを全て取り払う  hilightjsはgist pluginに変更 menuはsidebar, accordion pluginに変更 jump to top buttonはanimation, position pluginに変更 disqusをiframeに変更 (まだ表示されない原因が分からない  imgタグをamp-imgに変換  所感 テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．
-references  https://www.ampproject.org/ https://www.ampstart.com  </description>
-    </item>
-    
-    <item>
-      <title>Setting up the Mistel BAROCCO</title>
-      <link>https://ladicle.com/post/mistel-barroco/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/post/mistel-barroco/</guid>
-      <description>Refalforce派だったが，親指をもうちょっと有効に使いたかったのと健康のため分割キーボードに乗り換えることにした．Topreが分割キーボードを出していればそれで解決だったのだが，まだないので泣く泣く他の選択肢を模索．最終的にコンパクトかつ普通のキーボドに配列が近いMistel BAROCCO RGB White (US)を選択した．
-My keyboard layout    Figure1. custom keyboard layout   図1は現在使っているkeyboard layoutなのだが，緑色がBAROCCOのプログラム機能を使ってRemapしているキーで，黄色1はxkbでRemapしているキーを示している．BAROCCOのプログラム機能では一部のキーに制約があるため，このような形に落ち着いた．
+参考リンク Dell XPS 13 (9370) に Ubuntu 16.</description></item><item><title>Supporting AMP for Hugo templates</title><link>https://ladicle.com/post/support-amp/</link><pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate><guid>https://ladicle.com/post/support-amp/</guid><description>Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．
+作業の流れ ざっと公式ページを見る ひたすら使えないタグやjsをampに対応したものに置き換える chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック ひたすら直す 変えたポイント amp用の識別子たちを追加 cssファイルをconvertしてhtmlに吐き出し jsを全て取り払う hilightjsはgist pluginに変更 menuはsidebar, accordion pluginに変更 jump to top buttonはanimation, position pluginに変更 disqusをiframeに変更 (まだ表示されない原因が分からない imgタグをamp-imgに変換 所感 テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．
+references https://www.ampproject.org/ https://www.ampstart.com</description></item><item><title>Setting up the Mistel BAROCCO</title><link>https://ladicle.com/post/mistel-barroco/</link><pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate><guid>https://ladicle.com/post/mistel-barroco/</guid><description>Refalforce派だったが，親指をもうちょっと有効に使いたかったのと健康のため分割キーボードに乗り換えることにした．Topreが分割キーボードを出していればそれで解決だったのだが，まだないので泣く泣く他の選択肢を模索．最終的にコンパクトかつ普通のキーボドに配列が近いMistel BAROCCO RGB White (US)を選択した．
+My keyboard layout Figure1. custom keyboard layout
+図1は現在使っているkeyboard layoutなのだが，緑色がBAROCCOのプログラム機能を使ってRemapしているキーで，黄色1はxkbでRemapしているキーを示している．BAROCCOのプログラム機能では一部のキーに制約があるため，このような形に落ち着いた．
 Upgrade a firmware ファームウェアが公式ページからダウンロードできる．最新のFirmwareは2018/01/08にリリースされた． USB抜くとRemap内容が消えてしまうみたいなバグが治るので基本的2には適用したほうが良い
 Remap the keyboard layout Remmap方法は説明書に乗っているがPDF or 紙媒体しかなく不便なのでメモ．
-Normal keys  Press the Fn + Ctrl Right Press a remapped key Program new values // locked keys are not lighting Press the PN  Remap FN and PN keys  Press the Fn/PN + Left Shift for 3s Press the Fn/PN key Choose a new position on the keyboard // locked positions are not lighting  Change the back light color and style RBGエディションを購入したのでけたましく光らせることができる3．PNをベースに，全体のスタイルの変更は5, キーごとに設定したい場合は9，どちらもEscからカラーパレットが使用できる．</description>
-    </item>
-    
-  </channel>
-</rss>
+Normal keys Press the Fn + Ctrl Right Press a remapped key Program new values // locked keys are not lighting Press the PN Remap FN and PN keys Press the Fn/PN + Left Shift for 3s Press the Fn/PN key Choose a new position on the keyboard // locked positions are not lighting Change the back light color and style RBGエディションを購入したのでけたましく光らせることができる3．PNをベースに，全体のスタイルの変更は5, キーごとに設定したい場合は9，どちらもEscからカラーパレットが使用できる．</description></item></channel></rss>

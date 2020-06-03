@@ -1,219 +1,43 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Ladicle</title>
-    <link>https://ladicle.com/</link>
-    <description>Recent content on Ladicle</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <lastBuildDate>Wed, 17 Apr 2019 16:46:00 +0900</lastBuildDate>
-    
-	<atom:link href="https://ladicle.com/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Ladicle&#39;s Emacs Configuration</title>
-      <link>https://ladicle.com/post/config/</link>
-      <pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/config/</guid>
-      <description>.ox-hugo-toc ul { list-style: none; }  
-Table of Contents  1 Configuration  1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic  1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point  1.5 Key-bindings  1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra  1.6 Undo/Redo 1.7 Search/Replace  1.7.1 Projectile 1.</description>
-    </item>
-    
-    <item>
-      <title>ox-Hugo Cheat Sheet</title>
-      <link>https://ladicle.com/post/ox-hugo-cheat/</link>
-      <pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/ox-hugo-cheat/</guid>
-      <description>.ox-hugo-toc ul { list-style: none; }  
-Table of Contents  1 図、表、コードの導入と参照  1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト  2 Subtreeのプロパティと各種機能 [50%]  2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御  3 文字スタイルとHTML  3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧  4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価  5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力  6 参考文献   
-1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。</description>
-    </item>
-    
-    <item>
-      <title>2018年のふり返り</title>
-      <link>https://ladicle.com/post/2018-review/</link>
-      <pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/2018-review/</guid>
-      <description> 転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ladicle</title><link>https://ladicle.com/</link><description>Recent content on Ladicle</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 02 Jun 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://ladicle.com/index.xml" rel="self" type="application/rss+xml"/><item><title>Kubernetes上のアプリケーション開発を加速させるツール(1) - Skaffold</title><link>https://ladicle.com/activity/publications/areyakore1/</link><pubDate>Tue, 02 Jun 2020 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/publications/areyakore1/</guid><description/></item><item><title>Docker/Kubernetes開発・運用のためのセキュリティ実践ガイド</title><link>https://ladicle.com/activity/publications/dockersec/</link><pubDate>Thu, 27 Feb 2020 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/publications/dockersec/</guid><description>Links Mynavi.jp: https://book.mynavi.jp/ec/products/detail/id=114099 Store(Amazon.co.jp): https://www.amazon.co.jp/dp/B085C8LYDC/ref=cm_sw_r_cp_awdb_c_GllGEbTQS2AW3</description></item><item><title>外出先でも快適なお家k8sクラスタを構築する</title><link>https://ladicle.com/post/k8s-home-cluster/</link><pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate><guid>https://ladicle.com/post/k8s-home-cluster/</guid><description>.ox-hugo-toc ul { list-style: none; } Table of Contents 1 なぜお家Kubernetesクラスタか 2 Workerのハードウェア構成と価格 3 マシンにUbuntuサーバをインストールする 3.1 Live USBの作成 3.2 インストーラの進化 3.3 LVMのディスク容量を増やす 4 Kubernetesの構成検討と構築 4.1 cri-oのセットアップ 4.2 kubeadmによるクラスタ構築 4.2.1 事前準備 4.2.2 Master/Workerの構築 4.3 ciliumのCNIプラグインを適用する 4.4 MetalLBの構築 5 CloudflareのArgo経由でSSHする 5.1 Server設定 5.2 Client設定 5.3 Cloudflare Accessでアクセスユーザを制限する 6 kubeadmによるクラスタアップグレード 6.1 CNIプラグインのアップグレード 1 なぜお家Kubernetesクラスタか なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。</description></item><item><title>Kubernetesを拡張して日々のオペレーションを自動化する</title><link>https://ladicle.com/activity/talks/cndt2019/</link><pubDate>Mon, 22 Jul 2019 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/cndt2019/</guid><description> Links Slide: https://speakerdeck.com/ladicle/kuberneteswokuo-zhang-siteri-falseoperesiyonwozi-dong-hua-suru Event: https://cloudnativedays.jp/cndt2019/</description></item><item><title>みんなのDocker/Kubernetes</title><link>https://ladicle.com/activity/publications/mink8s/</link><pubDate>Thu, 18 Apr 2019 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/publications/mink8s/</guid><description>Links Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10461-0 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/429710461X/gihyojp-22</description></item><item><title>Ladicle's Emacs Configuration</title><link>https://ladicle.com/post/config/</link><pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/config/</guid><description>.ox-hugo-toc ul { list-style: none; } Table of Contents 1 Configuration 1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic 1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point 1.5 Key-bindings 1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra 1.6 Undo/Redo 1.7 Search/Replace 1.7.1 Projectile 1.</description></item><item><title>Integrate with Tracing and Logging</title><link>https://ladicle.com/activity/talks/opencensus201904/</link><pubDate>Wed, 03 Apr 2019 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/opencensus201904/</guid><description> Links Slide: https://speakerdeck.com/ladicle/integration-with-tracing-and-logging Event: https://opencensus.connpass.com/event/123885/</description></item><item><title>Kubernetes実践入門</title><link>https://ladicle.com/activity/publications/practical-k8s/</link><pubDate>Sat, 02 Mar 2019 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/publications/practical-k8s/</guid><description>Links Gihyo.jp: https://gihyo.jp/book/2019/978-4-297-10438-2 Store(Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/4297104385/gihyojp-22</description></item><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>.ox-hugo-toc ul { list-style: none; } Table of Contents 1 図、表、コードの導入と参照 1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト 2 Subtreeのプロパティと各種機能 [50%] 2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御 3 文字スタイルとHTML 3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧 4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価 5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力 6 参考文献 1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。</description></item><item><title>2018年のふり返り</title><link>https://ladicle.com/post/2018-review/</link><pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate><guid>https://ladicle.com/post/2018-review/</guid><description>転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。
 技術 転職してから仕事中はフルでコードを読んだり書いたりできるようになったので、去年と比べるとGitHubに緑がふえた。学生の頃に比べると体力の衰えを感じたので競技プログラミングをはじめたが、体調を崩し始めた5月くらいから遠のいてしまったので再開したい。
 また、Ruiさんの記事を見てC言語コンパイラを作りはじめた。その過程で大学の授業の内容が頭から抜けてることに気づいたため、回路や計算機のしくみまわりの本を読み直すなどした。来年は言語処理系とOSも作ってみたというお気持ち。
 仕事は引き続きKubernetes周りをやっている。前回のKubeConのKeynoteではBoringフェーズに入ったと話題になったが、普段触れているCRDまわりはまだまだBoringとは言いがたい。来年もうまく付き合っていきたい。あとはそろそろ本格的にService Meshを(ry
 英語 英語は「This is a pen.」くらいしか言えなかったため、英会話(Beliz + NativeCamp Callan Method)を始めるなどの対策を取った。今年の秋頃には初の英語プレゼンをしたり、後半のカンファレンスでは多少言葉をかわせたので、成長を感じる。来年も引き続き精進したい。
 生活 生活にもゆとりが出てきたため、ジムに行って筋トレマニアになってみたり、日々発展していく家の近所を探索したり、コーヒーショップを回ってノマドワーカーを気取るなどした。家は人間らしい文化的な生活をあきらめた模様替えをはたし、友人達にここオフィス？と聞かれるまでに至った。とても捗る。ただし、健康面は勢い余ってO157になってしまったので気をつけたい。(常温で放置された🍣食べるのダメ絶対
 対外活動 今年はJCDでプレゼン1本＆パネルディスカッション2本、英語プレゼン1本、KubeConのRecap1本にLT1本の計6本くらいの発表をしたようだ。また、Cloud Native Deep Diveというディスカッションベースの勉強会もはじめた。来年からはKubernetes Meetup Tokyoの運営にも参加していく。それでは皆様、来年もよろしくお願いします。
- Securing Clusters with Kubernetes Extensibility ISUCONでEnvoyを使えるか？ Recap SIG API Machinery Deep Dive Istioと共にMicroservicesに立ち向かえ！  </description>
-    </item>
-    
-    <item>
-      <title>Linux Desktop Environment in 2018</title>
-      <link>https://ladicle.com/post/linux-desktop-2018/</link>
-      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/post/linux-desktop-2018/</guid>
-      <description>&amp;ldquo;Linuxデスクトップ環境&amp;rdquo;でggrると，いろんな記事がヒットしたので触発されてみた．普段遣いをmacOSからUbuntuに移行してまだ2ヶ月といったところだけど，最初の1ヶ月に構築した環境で満足しているので暫くこのままだと思う．
+Securing Clusters with Kubernetes Extensibility ISUCONでEnvoyを使えるか？ Recap SIG API Machinery Deep Dive Istioと共にMicroservicesに立ち向かえ！</description></item><item><title>Securing Clusters with Kubernetes Extensibility</title><link>https://ladicle.com/activity/talks/kcnm/</link><pubDate>Thu, 25 Oct 2018 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/kcnm/</guid><description> Links Slide: https://speakerdeck.com/ladicle/securing-clusters-with-kubernetes-extensibility Event: https://wantedly.connpass.com/event/105371/</description></item><item><title>Linux Desktop Environment in 2018</title><link>https://ladicle.com/post/linux-desktop-2018/</link><pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate><guid>https://ladicle.com/post/linux-desktop-2018/</guid><description>&amp;ldquo;Linuxデスクトップ環境&amp;quot;でggrると，いろんな記事がヒットしたので触発されてみた．普段遣いをmacOSからUbuntuに移行してまだ2ヶ月といったところだけど，最初の1ヶ月に構築した環境で満足しているので暫くこのままだと思う．
 なぜLinuxに移行したのか？困ってないか？ LaptopとしてXPSを選んだ理由とか，ディストリ検討の話はBye Bye Mackbook Pro. Hello, Ubntu XPS! に書いている．
 困ってないか？については全く困っていない．使って微妙だった点はMacbookProに比べるとバッテリーの持ちが悪いことと1，ファンの音が特徴的できになるということくらい．
 My dotfiles come out in Public しばらくdotfilesをprivateにしていたが，クローズド野郎 という煽りワードを聞いたのでLinux用の設定を追加するついでにGitHubで管理し始めた．
- dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup  Major customizes    Figure1. My Pretty Desktop   Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
+dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup Major customizes Figure1. My Pretty Desktop
+Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
 Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを使っている．ターミナルの見ため含め，かわいみがあってポップでキュートでナウい青系なもの が好み．IconはPapirusのAdaptaバージョンを使っているのだが，GoファイルがGopher君になるのがツボ．
- あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
+あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
 Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
- が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
+が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
 Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
- xkb &amp;amp; xremap services, suspend-hook.</description>
-    </item>
-    
-    <item>
-      <title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title>
-      <link>https://ladicle.com/post/ubntun-install-into-xps/</link>
-      <pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/post/ubntun-install-into-xps/</guid>
-      <description>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.
+xkb &amp;amp; xremap services, suspend-hook.</description></item><item><title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title><link>https://ladicle.com/post/ubntun-install-into-xps/</link><pubDate>Sat, 09 Jun 2018 00:00:00 +0000</pubDate><guid>https://ladicle.com/post/ubntun-install-into-xps/</guid><description>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.
 他に検討したモデル Core i7 8th, 13 inch, 16GB memory, 500 GB~ disk, ~1.3kg は必須，4K displayであればなおよしという条件で探していた.
- ThinkPad: 赤ポチが好きだったので再び(ry と思ったものの，フルスペックにすると高かったので却下． HUAWEI MateBook X Pro: Macbookを意識しているのが感じられるlaptop. 軽さ, 性能, バッテリーの持ちが一番よかった．発売前で詳細がわからず見送り． HP Spectre Notebook: 性能も価格もXPSと一致してたので一番まよった. デザインが僅かにXPSのほうがこのみだったのでやめた．  ディストリビューションの検討 Desktop版のLinuxを使うのは高校生ぶり, その頃はUbuntuが入れようにもPCの性能足りなくてもっさりしてたため軽さ重視だった. もう時代が違うし流行りもわからんということで, Linux使ってる周りの人に聞いてみた. Gentoo，Arch，Ubuntuが候補に上がったが，PCとの相性1とセットアップの楽さでUbuntuに決定．
+ThinkPad: 赤ポチが好きだったので再び(ry と思ったものの，フルスペックにすると高かったので却下． HUAWEI MateBook X Pro: Macbookを意識しているのが感じられるlaptop. 軽さ, 性能, バッテリーの持ちが一番よかった．発売前で詳細がわからず見送り． HP Spectre Notebook: 性能も価格もXPSと一致してたので一番まよった. デザインが僅かにXPSのほうがこのみだったのでやめた． ディストリビューションの検討 Desktop版のLinuxを使うのは高校生ぶり, その頃はUbuntuが入れようにもPCの性能足りなくてもっさりしてたため軽さ重視だった. もう時代が違うし流行りもわからんということで, Linux使ってる周りの人に聞いてみた. Gentoo，Arch，Ubuntuが候補に上がったが，PCとの相性1とセットアップの楽さでUbuntuに決定．
 Ubuntu 18.04のインストール BIOS設定の変更 BIOSに入るのはF2
- SATA Controller: RAID -&amp;gt; AHCI Windows Boot Manager: disable Secure Boot: disable  USBからンストール Boot deviceの変更はF12
+SATA Controller: RAID -&amp;gt; AHCI Windows Boot Manager: disable Secure Boot: disable USBからンストール Boot deviceの変更はF12
 16.04の時は無線に繋がらなかったりTouch panelの動作がおかしかったようだったが, 18.04は何も困らなかった2. Touch panelのカーソル移動はもっさりなので速度を最高まであげるとよい感じ.
-参考リンク  Dell XPS 13 (9370) に Ubuntu 16.</description>
-    </item>
-    
-    <item>
-      <title>Supporting AMP for Hugo templates</title>
-      <link>https://ladicle.com/post/support-amp/</link>
-      <pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate>
-      
-      <guid>https://ladicle.com/post/support-amp/</guid>
-      <description> Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．
-作業の流れ  ざっと公式ページを見る ひたすら使えないタグやjsをampに対応したものに置き換える chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック ひたすら直す  変えたポイント  amp用の識別子たちを追加 cssファイルをconvertしてhtmlに吐き出し jsを全て取り払う  hilightjsはgist pluginに変更 menuはsidebar, accordion pluginに変更 jump to top buttonはanimation, position pluginに変更 disqusをiframeに変更 (まだ表示されない原因が分からない  imgタグをamp-imgに変換  所感 テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．
-references  https://www.ampproject.org/ https://www.ampstart.com  </description>
-    </item>
-    
-    <item>
-      <title>Recap SIG API Machinery Deep Dive - Kubernetes meetup Tokyo #11</title>
-      <link>https://ladicle.com/activity/k8s-meetup11/</link>
-      <pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/k8s-meetup11/</guid>
-      <description>  I recapped SIG API Machinery Deep Dive of KubeCon Europe 2018. After that we more deep dive into the CRD validation and versioning.
-Links  Slide: https://speakerdeck.com/ladicle/recap-api-machinery-deep-dive Event: https://k8sjp.connpass.com/event/85336/ Video: https://www.youtube.com/watch?v=MTG5H4J2jHg  </description>
-    </item>
-    
-    <item>
-      <title>Manage Microservices with Istio - Japan Container Days v18.04</title>
-      <link>https://ladicle.com/activity/jkd1804/</link>
-      <pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/jkd1804/</guid>
-      <description>  I&amp;rsquo;ve developed and operated Microservices over 3 years, and they are gradually larger and more complexity. Managing those microservices is difficult. Istio is a great product! Because it can solve many problems that I faced.
-Links  Slide: https://speakerdeck.com/ladicle/istiotogong-nimaikurosabisunili-tixiang-kae Event: https://containerdays.jp  </description>
-    </item>
-    
-    <item>
-      <title>about</title>
-      <link>https://ladicle.com/about/</link>
-      <pubDate>Sat, 06 Jan 2018 21:04:38 +0900</pubDate>
-      
-      <guid>https://ladicle.com/about/</guid>
-      <description>Aya Igarashi (@ladicle)  Just here for code? - It&amp;rsquo;s on Github.
- I&amp;rsquo;m working at Z Lab Corp.
-6 years software engineer with an experience. Researched and developed highly scalable Container Platform based on Kubernetes.
+参考リンク Dell XPS 13 (9370) に Ubuntu 16.</description></item><item><title>Supporting AMP for Hugo templates</title><link>https://ladicle.com/post/support-amp/</link><pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate><guid>https://ladicle.com/post/support-amp/</guid><description>Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．
+作業の流れ ざっと公式ページを見る ひたすら使えないタグやjsをampに対応したものに置き換える chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック ひたすら直す 変えたポイント amp用の識別子たちを追加 cssファイルをconvertしてhtmlに吐き出し jsを全て取り払う hilightjsはgist pluginに変更 menuはsidebar, accordion pluginに変更 jump to top buttonはanimation, position pluginに変更 disqusをiframeに変更 (まだ表示されない原因が分からない imgタグをamp-imgに変換 所感 テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．
+references https://www.ampproject.org/ https://www.ampstart.com</description></item><item><title>Recap SIG API Machinery Deep Dive</title><link>https://ladicle.com/activity/talks/k8s-meetup11/</link><pubDate>Thu, 17 May 2018 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/k8s-meetup11/</guid><description> I recapped SIG API Machinery Deep Dive of KubeCon Europe 2018. After that we more deep dive into the CRD validation and versioning.
+Links Slide: https://speakerdeck.com/ladicle/recap-api-machinery-deep-dive Event: https://k8sjp.connpass.com/event/85336/ Video: https://www.youtube.com/watch?v=MTG5H4J2jHg</description></item><item><title>Istioと共にMicroservicesに立ち向かえ!</title><link>https://ladicle.com/activity/talks/jkd1804/</link><pubDate>Thu, 19 Apr 2018 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/jkd1804/</guid><description> I&amp;rsquo;ve developed and operated Microservices over 3 years, and they are gradually larger and more complexity. Managing those microservices is difficult. Istio is a great product! Because it can solve many problems that I faced.
+Links Slide: https://speakerdeck.com/ladicle/istiotogong-nimaikurosabisunili-tixiang-kae Event: https://containerdays.jp</description></item><item><title>about</title><link>https://ladicle.com/about/</link><pubDate>Sat, 06 Jan 2018 21:04:38 +0900</pubDate><guid>https://ladicle.com/about/</guid><description>Aya Igarashi (@ladicle) Just here for code? - It&amp;rsquo;s on Github.
+I&amp;rsquo;m working at Z Lab Corp.
+8 years software engineer with an experience. Researched and developed highly scalable Container Platform based on Kubernetes.
 Key programming language skill is Go, Python and Java.
 My interesting things are operating system and distributed system design.
-Publication  Sep 2017 Software Design - The mechanism of Internet. May 2017 Software Design - How do computers communicate?</description>
-    </item>
-    
-    <item>
-      <title>Setting up the Mistel BAROCCO</title>
-      <link>https://ladicle.com/post/mistel-barroco/</link>
-      <pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/post/mistel-barroco/</guid>
-      <description>Refalforce派だったが，親指をもうちょっと有効に使いたかったのと健康のため分割キーボードに乗り換えることにした．Topreが分割キーボードを出していればそれで解決だったのだが，まだないので泣く泣く他の選択肢を模索．最終的にコンパクトかつ普通のキーボドに配列が近いMistel BAROCCO RGB White (US)を選択した．
-My keyboard layout    Figure1. custom keyboard layout   図1は現在使っているkeyboard layoutなのだが，緑色がBAROCCOのプログラム機能を使ってRemapしているキーで，黄色1はxkbでRemapしているキーを示している．BAROCCOのプログラム機能では一部のキーに制約があるため，このような形に落ち着いた．
+Publication Apr 2019 Docker and Kubernetes for Everyone May 2019 Kubernetes practical guide Sep 2017 Software Design - The mechanism of Internet.</description></item><item><title>Setting up the Mistel BAROCCO</title><link>https://ladicle.com/post/mistel-barroco/</link><pubDate>Tue, 28 Nov 2017 00:00:00 +0000</pubDate><guid>https://ladicle.com/post/mistel-barroco/</guid><description>Refalforce派だったが，親指をもうちょっと有効に使いたかったのと健康のため分割キーボードに乗り換えることにした．Topreが分割キーボードを出していればそれで解決だったのだが，まだないので泣く泣く他の選択肢を模索．最終的にコンパクトかつ普通のキーボドに配列が近いMistel BAROCCO RGB White (US)を選択した．
+My keyboard layout Figure1. custom keyboard layout
+図1は現在使っているkeyboard layoutなのだが，緑色がBAROCCOのプログラム機能を使ってRemapしているキーで，黄色1はxkbでRemapしているキーを示している．BAROCCOのプログラム機能では一部のキーに制約があるため，このような形に落ち着いた．
 Upgrade a firmware ファームウェアが公式ページからダウンロードできる．最新のFirmwareは2018/01/08にリリースされた． USB抜くとRemap内容が消えてしまうみたいなバグが治るので基本的2には適用したほうが良い
 Remap the keyboard layout Remmap方法は説明書に乗っているがPDF or 紙媒体しかなく不便なのでメモ．
-Normal keys  Press the Fn + Ctrl Right Press a remapped key Program new values // locked keys are not lighting Press the PN  Remap FN and PN keys  Press the Fn/PN + Left Shift for 3s Press the Fn/PN key Choose a new position on the keyboard // locked positions are not lighting  Change the back light color and style RBGエディションを購入したのでけたましく光らせることができる3．PNをベースに，全体のスタイルの変更は5, キーごとに設定したい場合は9，どちらもEscからカラーパレットが使用できる．</description>
-    </item>
-    
-    <item>
-      <title>Software Design 9月号 - Web技術【超】入門: 通信すればしくみがわかる</title>
-      <link>https://ladicle.com/activity/sd201709/</link>
-      <pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/sd201709/</guid>
-      <description> Links  Software Design: http://gihyo.jp/magazine/SD/archive/2017/201709 Store(Amazon.co.jp): https://www.amazon.co.jp/o/ASIN/B072RC11J4/gihyojp-22  </description>
-    </item>
-    
-    <item>
-      <title>Mastodon on Kubernetes - Kubernetes meetup Tokyo #4</title>
-      <link>https://ladicle.com/activity/k8s-meetup4/</link>
-      <pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/k8s-meetup4/</guid>
-      <description>  I start to operate Mastdon on my home Kubernetes cluster. Mastdon is a twitter like social networking service. I talked about how to deploy it on the cluster, and how to use Services, PersistentVolumes, CronJobs, and Deployments.
-Links  Slide: https://speakerdeck.com/ladicle/mastodon-on-kubernetes Event: https://k8sjp.connpass.com/event/53737/ Video: https://youtu.be/GlbPk0mHgcs?t=2h13m52s Code: https://github.com/Ladicle/mastodon-chart  </description>
-    </item>
-    
-    <item>
-      <title>Software Design 5月号 - Linux入門(UNIXネットワーク編): コンピュータはどうやって通信するのか？</title>
-      <link>https://ladicle.com/activity/sd201704/</link>
-      <pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/sd201704/</guid>
-      <description> Links  Software Design: http://gihyo.jp/magazine/SD/archive/2017/201705 Store (Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/B01N2627HG/gihyojp-22  </description>
-    </item>
-    
-    <item>
-      <title>Monitoring k8s with Prometheus - Prometheus Tokyo Meetup #1</title>
-      <link>https://ladicle.com/activity/prom-meetup1/</link>
-      <pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/prom-meetup1/</guid>
-      <description>  Links  Slide: https://speakerdeck.com/ladicle/monitoring-kubernetes-with-prometheus Event: https://prometheus.connpass.com/event/53894/  </description>
-    </item>
-    
-    <item>
-      <title>Software Design 11月号 - 新人のときに知っておきたかったクラウドコンピューティングのしくみ</title>
-      <link>https://ladicle.com/activity/sd201611/</link>
-      <pubDate>Fri, 18 Nov 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/sd201611/</guid>
-      <description> Links  Magazine information: http://gihyo.jp/magazine/SD/archive/2016/201611 Store (Amazon): https://www.amazon.co.jp/o/ASIN/B01LBFWJT2/gihyojp-22  </description>
-    </item>
-    
-    <item>
-      <title>Conatiner Image Architecture - Container type virtualization study #10</title>
-      <link>https://ladicle.com/activity/ctvs10/</link>
-      <pubDate>Mon, 31 Oct 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/ctvs10/</guid>
-      <description>  Do you know how to build the Dockerfile? I talked about OCI image specification and docker image architecture for in-depth understanding of the process of building images, probing cache and parsing the Dockerfile.
-Links  Slide: https://speakerdeck.com/ladicle/container-image-architecture Event: https://ct-study.connpass.com/event/38841/ Video: https://www.youtube.com/watch?v=dc0YrpqgNDg  </description>
-    </item>
-    
-    <item>
-      <title>Container CI &amp; JJB - Jenkins Study #9</title>
-      <link>https://ladicle.com/activity/jenkinstudy9/</link>
-      <pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/jenkinstudy9/</guid>
-      <description>  I talked about container CI and how to mange Jenkins jobs in our project. The OpenStack project is using Jenkins Job Builder. It manage a job definition using by YAML files.
-Links  Slide: https://speakerdeck.com/ladicle/container-ci-and-jenkins-job-builder Event: http://jenkins.connpass.com/event/35030/ Demo Code: https://github.com/Ladicle/jjb-demo  </description>
-    </item>
-    
-    <item>
-      <title>k8s helm &amp; helmc - Kubernetes meetup Tokyo #2</title>
-      <link>https://ladicle.com/activity/k8s-meetup2/</link>
-      <pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate>
-      
-      <guid>https://ladicle.com/activity/k8s-meetup2/</guid>
-      <description>  I talked about helm and helmc. Helm is a package manager for Kubernetes, and Helm classic is a previous version of it. Helm will be implemented a lot of useful functions in the future, but it isn&amp;rsquo;t better than helmc for now. That&amp;rsquo;s why it&amp;rsquo;s better to manage manifests with helmc and follow the trend of helm.
-Links  Slide: https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc Event: https://k8sjp.connpass.com/event/33508/  </description>
-    </item>
-    
-  </channel>
-</rss>
+Normal keys Press the Fn + Ctrl Right Press a remapped key Program new values // locked keys are not lighting Press the PN Remap FN and PN keys Press the Fn/PN + Left Shift for 3s Press the Fn/PN key Choose a new position on the keyboard // locked positions are not lighting Change the back light color and style RBGエディションを購入したのでけたましく光らせることができる3．PNをベースに，全体のスタイルの変更は5, キーごとに設定したい場合は9，どちらもEscからカラーパレットが使用できる．</description></item><item><title>Software Design September, 2017</title><link>https://ladicle.com/activity/publications/sd201709/</link><pubDate>Fri, 18 Aug 2017 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/publications/sd201709/</guid><description>Links Software Design: http://gihyo.jp/magazine/SD/archive/2017/201709 Store(Amazon.co.jp): https://www.amazon.co.jp/o/ASIN/B072RC11J4/gihyojp-22</description></item><item><title>Mastodon on Kubernetes</title><link>https://ladicle.com/activity/talks/k8s-meetup4/</link><pubDate>Thu, 20 Apr 2017 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/k8s-meetup4/</guid><description> I start to operate Mastdon on my home Kubernetes cluster. Mastdon is a twitter like social networking service. I talked about how to deploy it on the cluster, and how to use Services, PersistentVolumes, CronJobs, and Deployments.
+Links Slide: https://speakerdeck.com/ladicle/mastodon-on-kubernetes Event: https://k8sjp.connpass.com/event/53737/ Video: https://youtu.be/GlbPk0mHgcs?t=2h13m52s Code: https://github.com/Ladicle/mastodon-chart</description></item><item><title>Software Design May, 2017</title><link>https://ladicle.com/activity/publications/sd201704/</link><pubDate>Tue, 18 Apr 2017 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/publications/sd201704/</guid><description>Links Software Design: http://gihyo.jp/magazine/SD/archive/2017/201705 Store (Amazon.co.jp): http://www.amazon.co.jp/o/ASIN/B01N2627HG/gihyojp-22</description></item><item><title>Monitoring k8s with Prometheus</title><link>https://ladicle.com/activity/talks/prom-meetup1/</link><pubDate>Wed, 12 Apr 2017 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/prom-meetup1/</guid><description> Links Slide: https://speakerdeck.com/ladicle/monitoring-kubernetes-with-prometheus Event: https://prometheus.connpass.com/event/53894/</description></item><item><title>Software Design November, 2016</title><link>https://ladicle.com/activity/publications/sd201611/</link><pubDate>Fri, 18 Nov 2016 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/publications/sd201611/</guid><description>Links Magazine information: http://gihyo.jp/magazine/SD/archive/2016/201611 Store (Amazon): https://www.amazon.co.jp/o/ASIN/B01LBFWJT2/gihyojp-22</description></item><item><title>Conatiner Image Architecture</title><link>https://ladicle.com/activity/talks/ctvs10/</link><pubDate>Mon, 31 Oct 2016 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/ctvs10/</guid><description> Do you know how to build the Dockerfile? I talked about OCI image specification and docker image architecture for in-depth understanding of the process of building images, probing cache and parsing the Dockerfile.
+Links Slide: https://speakerdeck.com/ladicle/container-image-architecture Event: https://ct-study.connpass.com/event/38841/ Video: https://www.youtube.com/watch?v=dc0YrpqgNDg</description></item><item><title>Container CI &amp; JJB</title><link>https://ladicle.com/activity/talks/jenkinstudy9/</link><pubDate>Wed, 10 Aug 2016 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/jenkinstudy9/</guid><description> I talked about container CI and how to mange Jenkins jobs in our project. The OpenStack project is using Jenkins Job Builder. It manage a job definition using by YAML files.
+Links Slide: https://speakerdeck.com/ladicle/container-ci-and-jenkins-job-builder Event: http://jenkins.connpass.com/event/35030/ Demo Code: https://github.com/Ladicle/jjb-demo</description></item><item><title>k8s helm &amp; helmc</title><link>https://ladicle.com/activity/talks/k8s-meetup2/</link><pubDate>Mon, 20 Jun 2016 00:00:00 +0000</pubDate><guid>https://ladicle.com/activity/talks/k8s-meetup2/</guid><description> I talked about helm and helmc. Helm is a package manager for Kubernetes, and Helm classic is a previous version of it. Helm will be implemented a lot of useful functions in the future, but it isn&amp;rsquo;t better than helmc for now. That&amp;rsquo;s why it&amp;rsquo;s better to manage manifests with helmc and follow the trend of helm.
+Links Slide: https://speakerdeck.com/ladicle/kubernetes-helm-and-helmc Event: https://k8sjp.connpass.com/event/33508/</description></item></channel></rss>

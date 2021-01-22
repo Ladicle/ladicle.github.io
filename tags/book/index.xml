@@ -4,7 +4,7 @@ FOSDEM 2月はFOSDEMのため初めての1人海外でベルギー。そして�
 FOSDEM自体は面白いカンファレンスだったので次は発表者としていけるようになりたい。 (ビールも飯も最高だった
 3冊目の本 去年からやっていたDocker &amp;amp; Kubernetesのセキュリティ本が出版された。 FOSDEMの行き帰りの飛行機の中でもレビューした気がする。
 KubeFest &amp;amp; Kubernetes Meetup Tokyo 緊急事態宣言の前、カンファレンスが中止になったり、延期になったりと各コミュニティごとに判断が委ねられた頃、 Kubernetesの1Dayイベントもオンライン開催に変更しKubeFestとして開催した。 オンライン開催の都合上CNCF公式のKubernetes Communityイベントにはならなかったが、多くの方に参加していただけて本当に良かった。
-Kubernetes Meetup Tokyoの方はローカル&amp;amp;オンライン同時開催からオンラインのみになったけど、 引きつづき毎月やっていけてよかった。(発表者は常に募集しています!
+Kubernetes Meetup Tokyoの方はローカル&amp;amp;オンライン同時開催からオンラインのみになったけど、 引きつづき毎月やっていけて嬉しい。(発表者は常に募集しています!
 KubeCon KubeConで初めての発表。自作ツールについて話せる機会がもらえたのは本当に嬉しかった。 (acceptメールは驚きすぎて2度見した)
 現地を楽しみにしていたのでオンラインになってしまったのは残念だったが、 Slack上でフィードバックもらったり、他の発表者と交流できて楽しかった。
 お家Hack 2人とも家で仕事するようになり、広さを求めて昭和な物件を購入してフルリノベした。 全て自分で設計したいという気持ちで建築・照明工学の本や図面を読み漁りつつ、昔の電気工事士のテキスト引っ張り出してきたり、 リフォーム産業新聞読んだり、図面書いたり、3Dモデル作ったりして希望通りのものを工務店の人に工事してもらった。 トラブルも多発するし、全てを自分で決めるのは想像以上に大変で、時間も無限に吸われていったが、諸々自動化されて暮らしは快適になったので結果オーライ。
@@ -12,4 +12,4 @@ KubeCon KubeConで初めての発表。自作ツールについて話せる機�
 英語 Figure 4: TOEIC
 コロナ渦でTOEICがオンラインでも受けられると聞き、久しぶりに試験を受けた。 TOEIC対策はできなかったが、前回から100弱くらい上がってついに800台にのってよかった。 人としゃべる機会が減って癒やしとなったCambly(オンライン英会話)のおかげだと思う。
 Web連載記事 会社のメンバーと書いた記事。私はKubernetes上のアプリケーション開発を加速させるツール(Skaffold &amp;amp; Telepresence)について2本書いた。
-https://thinkit.co.jp/article/17553 https://thinkit.co.jp/article/17853 その他 今年もAdvent Calendar書きました。(Z Labのも初めて?</description></item></channel></rss>
+https://thinkit.co.jp/article/17553 https://thinkit.co.jp/article/17853 その他 今年もAdvent Calendarを書いた。(Z Labのも初めて?</description></item></channel></rss>

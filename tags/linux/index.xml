@@ -9,4 +9,10 @@ Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを�
 Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
 が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
 Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
-xkb &amp;amp; xremap services, suspend-hook.</description></item></channel></rss>
+xkb &amp;amp; xremap services, suspend-hook.</description></item><item><title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title><link>https://ladicle.com/post/ubntun-install-into-xps/</link><pubDate>Sat, 09 Jun 2018 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/ubntun-install-into-xps/</guid><description>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.
+他に検討したモデル Core i7 8th, 13 inch, 16GB memory, 500 GB~ disk, ~1.3kg は必須，4K displayであればなおよしという条件で探していた.
+ThinkPad: 赤ポチが好きだったので再び(ry と思ったものの，フルスペックにすると高かったので却下． HUAWEI MateBook X Pro: Macbookを意識しているのが感じられるlaptop. 軽さ, 性能, バッテリーの持ちが一番よかった．発売前で詳細がわからず見送り． HP Spectre Notebook: 性能も価格もXPSと一致してたので一番まよった. デザインが僅かにXPSのほうがこのみだったのでやめた． ディストリビューションの検討 Desktop版のLinuxを使うのは高校生ぶり, その頃はUbuntuが入れようにもPCの性能足りなくてもっさりしてたため軽さ重視だった. もう時代が違うし流行りもわからんということで, Linux使ってる周りの人に聞いてみた. Gentoo，Arch，Ubuntuが候補に上がったが，PCとの相性1とセットアップの楽さでUbuntuに決定．
+Ubuntu 18.04のインストール BIOS設定の変更 BIOSに入るのはF2
+SATA Controller: RAID -&amp;gt; AHCI Windows Boot Manager: disable Secure Boot: disable USBからンストール Boot deviceの変更はF12
+16.04の時は無線に繋がらなかったりTouch panelの動作がおかしかったようだったが, 18.04は何も困らなかった2. Touch panelのカーソル移動はもっさりなので速度を最高まであげるとよい感じ.
+参考リンク Dell XPS 13 (9370) に Ubuntu 16.</description></item></channel></rss>

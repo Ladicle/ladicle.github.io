@@ -4,4 +4,5 @@ iPadのPaperというアプリで図を書く ShareからAirDropを使ってフ�
 NotesへiPadから写真/ドキュメント/図/を挿入 公式メモアプリのNotes2で 右クリック &amp;gt; insert from iPhone or iPad &amp;gt; Take Photo/Scan Document/Add sketch 画像/PDFにiPadで書き込み Finderから画像/PDFを 右クリック &amp;gt; Quick Action &amp;gt; Markup Notes以外でも連携したい Figure 1: Integration Flow
 公式の機能も便利なんだけど、Notesだけだとコードのシンタックスハイライトとか機能が無さすぎるので常用できない。(つまりEmacs org-mode3つかいたい) また、iPadでの作図もPaper4というアプリが使いやすいのでこれを使いたい。何か良い方法がないかと考えていると、Appleデバイス間のクリップボード同期機能 を思い出した。
 クリップボードを利用すれば、アプリケーションに縛られることなくiPad&amp;lt;-&amp;gt;Mac間で連携できる。非常に便利5。
-iPadのPaperで図を書く ShareからCopyを選択 MacのEmacsでペースト(ペースト時にhookして画像のみ書き込み部分をCrop) 実際の設定 Clipboardから画像を生成するところはpngpaste6、そして画像の余白自動切り抜きはImageMagicのmogrifyを利用している。 メイン処理自体はShellScriptなのでどのエディタからも同じように利用できるはずだ。</description></item></channel></rss>
+iPadのPaperで図を書く ShareからCopyを選択 MacのEmacsでペースト(ペースト時にhookして画像のみ書き込み部分をCrop) 実際の設定 Clipboardから画像を生成するところはpngpaste6、そして画像の余白自動切り抜きはImageMagicのmogrifyを利用している。 メイン処理自体はShellScriptなのでどのエディタからも同じように利用できるはずだ。
+(defun org-insert-clipboard-image () &amp;#34;Generate png file from a clipboard image and insert a link with caption and org-download tag to current buffer.</description></item></channel></rss>

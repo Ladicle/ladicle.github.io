@@ -4,8 +4,8 @@
 &amp;mdash; ladicle (@Ladicle) January 5, 2021 試した結果は、家の中は問題なかったものの玄関のドアを抜けてすぐロストした。流石に共用部には中継機をに撒けないので、おとなしく室内のドアセンサに転用する。(ボタン電池だけで数年持つ &amp;amp; 市販品より小型なのがすばらし)
 ちなみに&amp;hellip;技適通ってるLoRaモジュールは、良さげなやつがComming Soonになってたのでそれが出たら再挑戦したい。
 使用したデバイス TWELITE CUE RED1: 約3x3cmと超小型。 デフォルトアプリが書き込まれているため、電子工作せずに即遊べる MONOSTICK: PCに挿してTWELITE CUEのデータを受信したり、書き換えたりするもの Amazonで買った:
-" target="\_blank"
 OTAで開閉センサモードに書き換える TWELITE CUEのデフォルトAPPでは磁気センサと加速度センサ両方の情報が送られている。このままでも開閉センサとして利用できるが、電池持ちが悪くなるので TWELITE PAL とおなじ開閉センサPALモードに書き換える。こちらのモードであれば数年は電池が持つ。
 マニュアルに書かれていたURLからそれっぽいドキュメントを探すもののLinuxのせいか動かなかったり、古いバージョンの別サイトに置かれた方法で動かなかった1手順だけうごいたり&amp;hellip;。TWELITEはデフォルト動かすのは早いけど、他のことやろうとするとドキュメントが分散していて難しい。
 TWELITE STAGE SDKのインストール TWELITE APPの設定変更はMONOSTICK経由の無線書き換え(OTA)に対応しているのでこれを利用する。 書き換えはTWELITE STAGEから行うので、TWELITE STAGE SDK &amp;gt; ダウンロード &amp;gt; Linux版をクリックする。
-$ unzip MWSTAGE-2020-12_linux.zip # 詳細はINSTALLディレクトリのreadme.txt参照 $ MWSTAGE/TWELITE_Stage/INSTALL/ubuntu $ ./make_launch_icon.sh $ sudo ./set_udev_sudo.sh Code 1: TWELITE STAGE SDKのインストール これでインストールが完了するので、TWELITE STAGEを起動する。</description></item></channel></rss>
+$ unzip MWSTAGE-2020-12_linux.zip # 詳細はINSTALLディレクトリのreadme.txt参照 $ MWSTAGE/TWELITE_Stage/INSTALL/ubuntu $ ./make_launch_icon.sh $ sudo ./set_udev_sudo.sh Code 1: TWELITE STAGE SDKのインストール これでインストールが完了するので、TWELITE STAGEを起動する。
+OTA設定で子機/親機の書き換え 手順通りにやって、 電池を抜く と書き込めた (ドキュメントにはこの記載がなかった) また、そのままではデータを受信できないので親機も書き換えること。</description></item></channel></rss>

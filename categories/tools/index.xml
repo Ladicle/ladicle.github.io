@@ -9,4 +9,5 @@ Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを�
 Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
 が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
 Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
-xkb &amp;amp; xremap services, suspend-hook.</description></item></channel></rss>
+xkb &amp;amp; xremap services, suspend-hook.service xkb configuration xremap configuration TrackpadのGestureは，挙動をmacOSと揃えたくてfusumaを使っている．LaptopをクラムシェルモードにしたときはMagicPad2を使っているのだが，MagicPad2のドライバは未対応 3のため自分でパッチを当てる必要がある．magictrackpad2-dkmsは先日のアプデで動かなくなったので直さないとなーというステータス．
+Misc 日本語入力: ibus-mozcを使っているが，google/mozc#381にあるとおり，デフォルト入力ソースを設定から変更できないため，デフォルトをHIRAGANAに変更したものをパッチして使っている．</description></item></channel></rss>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>programming on Ladicle</title><link>https://ladicle.com/tags/programming/</link><description>Recent content in programming on Ladicle</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Sat, 31 Dec 2022 16:50:00 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/programming/index.xml" rel="self" type="application/rss+xml"/><item><title>2022年ふり返り</title><link>https://ladicle.com/post/look-back-2022/</link><pubDate>Sat, 31 Dec 2022 16:50:00 +0900</pubDate><guid>https://ladicle.com/post/look-back-2022/</guid><description>みなさま2022年もありがとうございました! 今年は本当に色々な方に助けられました。2023年も引き続き宜しくお願いします 🙌
+仕事・転職 去年末からZ Labの認証基盤のチームに移動していました。久しぶりにコンテナから離れてVMと戯れていましたが、Ansible時代ぶりだったので初Terraformしたり一周回って新鮮でした。
+9月には個人事業主としてCloudNatixというUSのスタートアップに転職し、再びk8sのコントローラ書いたりと基盤開発に戻りました。前々職、前職共にOpenStackベースのオンプレ環境だったので、なんだかんだAWSといったパブリッククラウドを仕事で使うのは初です。また、前職と比較的同じ領域なものの課題は大きくことなるので楽しかったです。
+働き方は引き続きフルリモートなので大きな変化はなく、時差の関係で少しだけ朝方になったくらいです。英語は&amp;hellip;今年もうちょい精進します。
+アウトプット 今年といっていいのか微妙なところですが&amp;hellip;LinuxブートキャンプというSoftware Designの別冊本が出版されました。3章のUnixネットワーク編に私の記事も再録されています。
+イベント関連は、引き続きKubernetes Meetup Tokyoの運営、k8s変更点調査のSIG-APIを担当しました。単発では、TechFeed Experts Night#7 〜 コンテナ技術を語るで登壇しました。
+競プロ 半年間、前前職のメンバと週1で前週のAtCoder ABCの内容を復習していました。皆でワイワイしながら複数の解法や実装方法について話せるのが楽しかったです。会のコンセプト通り緑色になれて嬉しかったです。
+また、2018年ぶりの競プロでしたが、当時にくらべると全体のレベルが上がっているのを感じました。若い人の優秀さを肌でかんじつつ、何もしていないとランクが下がっていくのが刺激的でモチベが上りました。
+生活・買い物 ベストDIYは数ヶ月かかった玄関タイルの張り替えです。我ながら、タイルのコーキングが満足いく仕上がりになり、玄関に愛着がわきました。
+謎の流でNHKおはよう日本の取材が自宅にくることになり、ozaさんが調理したぬか漬けを食べる役をやりました。プロの機材とカメラワークによっていつものキッチンがお料理番組の絵になったのが面白かったです。
+買って良かったものは洗剤自動投入のドラム式洗濯機、コマンダンテ、ヘッドスパマシン、Studio Display 5K、Xiaomi モニタライト、Stream Deck、AirPods Pro2です。
+これから 少し余裕も出てきたのでOSSや登壇も再開していく予定です(そろそろオフラインイベントにも参加したい)。RustはCLIくらいしか作れなかったのでもうちょい踏み込んでいきたいです。
+仕事以外だと筋トレ継続しつつ、理想をいえばちょっと走れるようになりたいところ。小型船舶のライセンスも取れたらいいな。</description></item></channel></rss>

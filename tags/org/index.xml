@@ -1,10 +1,379 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Org on Ladicle</title><link>https://ladicle.com/tags/org/</link><description>Recent content in Org on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 22 Jan 2021 22:13:55 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/org/index.xml" rel="self" type="application/rss+xml"/><item><title>org-captureのテンプレート ver. 2021</title><link>https://ladicle.com/post/20210120_105729/</link><pubDate>Fri, 22 Jan 2021 22:13:55 +0900</pubDate><guid>https://ladicle.com/post/20210120_105729/</guid><description>かつてのorg-rememberとか、org-captureに移行してスグぐらいの頃は機能足りなかったせいか書き換えることが多かったけど、最近はテンプレートも安定してきた。
-個人メモは1ファイルに書き連ねていくよりも org-journal で日々書き捨て、読み返したいものだけ(個人&amp;amp;パブリック)ブログにエクスポート方式の相性が良かったので、org-capture templateもその日のjournalに吐き出すものが多い。
-(defun ladicle/get-today-diary () (concat org-journal-dir (format-time-string &amp;#34;%Y%m%d.org&amp;#34; (current-time)))) (setq org-capture-templates &amp;#39;((&amp;#34;t&amp;#34; &amp;#34;Write down the thoughts of this moment with a timestamp.&amp;#34; entry (file+headline ladicle/get-today-diary &amp;#34;Log&amp;#34;) &amp;#34;* %T %^{Tweet}&amp;#34; :immediate-finish t) (&amp;#34;e&amp;#34; &amp;#34;Add event to the today&amp;#39;s journal file.&amp;#34; entry (file+headline ladicle/get-today-diary &amp;#34;Events&amp;#34;) &amp;#34;* %^T %^{Title}&amp;#34; :immediate-finish t) (&amp;#34;h&amp;#34; &amp;#34;Create a private blog post to the today&amp;#39;s journal file.&amp;#34; entry (file+headline ladicle/get-today-diary &amp;#34;Memo&amp;#34;) &amp;#34;%[~/Dropbox/org/capture_templates/hugo_post.org]&amp;#34; :jump-to-captured t) (&amp;#34;i&amp;#34; &amp;#34;Add a task to inbox.</description></item><item><title>コードリーティングの記録とOrg Capture</title><link>https://ladicle.com/post/20200625_123915/</link><pubDate>Thu, 25 Jun 2020 21:37:29 +0900</pubDate><guid>https://ladicle.com/post/20200625_123915/</guid><description>Table of Contents org-captureで楽をする 各種ソースコードホスティングサービスのリンクを取得 他の人にシュッと共有する 人間忘れるものなので、コードリーディングする時はorg-modeでメモをとっている。 このメモを取る時なのだけど、単純に文章だけだと後から追いづらい。 なので、気になった箇所は文章と共にファイルリンク1とGitHubへのリンクもセットで記録している。
-Code Reading コードリーディングについては &amp;ldquo;Code Reading―オープンソースから学ぶソフトウェア開発技法&amp;rdquo; がおすすめ。 今でこそ慣れたが、はじめはOpenStackとかKubernetesとか大規模なソースコードを読むのに苦戦した。 感覚で改善してしまったが、この本ではその普段何となくやっていたことがうまく言語化されている点が良かった。
-org-captureで楽をする メモと共にリンクを記録しているといったが、流石にファイルパス・行番号・コミットハッシュ・GitHubリンクを手動で調べて挿入するのでは面倒すぎる。 そこで、org-captureを使ってカーソル位置の情報をメモ帳の指定した位置に挿入している。
-Your browser does not support the video tag. Video 1: org-captureでコードのリンクをメモに挿入する例 実際の設定はこんな感じ。org-captureの (function) オプションを利用して書き込み先のバッファとカーソル位置を選択、 書き込み先のサブツリーは事前に (org-code-capture--store-here) でマークしておく。
-ファイルリンクをコメントアウトしているのは、外部に公開するときはローカルのファイルパスを公開しても意味がないため。 ローカルではコメントアウトされたリンクでもジャンプできるので問題なし。
-(defconst ladicle/org-journal-dir &amp;#34;~/Dropbox/org/journal/&amp;#34;) (defconst ladicle/org-journal-file-format (concat ladicle/org-journal-dir &amp;#34;%Y%m%d.org&amp;#34;)) (defvar org-code-capture--store-file &amp;#34;&amp;#34;) (defvar org-code-capture--store-header &amp;#34;&amp;#34;) ;; This function is used in combination with a coding template of org-capture. (defun org-code-capture--store-here () &amp;#34;Register current subtree as a capture point.</description></item><item><title>Ladicle's Emacs Configuration</title><link>https://ladicle.com/post/config/</link><pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/config/</guid><description>Latest version is here.
-Ladicle&amp;rsquo;s Emacs Configuration 2024 Ladicle&amp;rsquo;s Emacs Configuration 2022 Table of Contents 1 Configuration 1.1 Table of Contents:TOC_3_gh: 1.2 ScreenShot 1.3 Load Path 1.4 Generic 1.4.1 Server 1.4.2 Editing 1.4.3 Smartparens 1.4.4 History 1.4.5 GUI/Font 1.4.6 OS 1.4.7 Icons 1.4.8 posframe 1.4.9 point 1.5 Key-bindings 1.5.1 Mouse 1.5.2 Custom Maps 1.5.3 Global 1.5.4 which-key 1.5.5 Hydra 1.6 Undo/Redo 1.7 Search/Replace 1.7.1 Projectile 1.7.2 Wgrep 1.7.3 Ag 1.</description></item><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>Table of Contents 1 図、表、コードの導入と参照 1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト 2 Subtreeのプロパティと各種機能 [50%] 2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御 3 文字スタイルとHTML 3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧 4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価 5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力 6 参考文献 1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。
-(setq org-blackfriday--org-element-string &amp;#39;((src-block . &amp;#34;Code&amp;#34;) (table . &amp;#34;表&amp;#34;) (figure . &amp;#34;Figure&amp;#34;))) Code 1: 識別子名の設定 また、Code 1のように識別子のカスタマイズも可能だ。他にも識別子を変更する方法がある。それは、言語設定をすることだ。ファイルのトップに #+language: jp のように記述すると、識別子がその言語で翻訳されて出力される。Code 2のように明示的に設定していた場合、自動翻訳は実施されない。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Org on Ladicle</title><link>https://ladicle.com/tags/org/</link><description>Recent content in Org on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 22 Jan 2021 22:13:55 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/org/index.xml" rel="self" type="application/rss+xml"/><item><title>org-captureのテンプレート ver. 2021</title><link>https://ladicle.com/post/20210120_105729/</link><pubDate>Fri, 22 Jan 2021 22:13:55 +0900</pubDate><guid>https://ladicle.com/post/20210120_105729/</guid><description>&lt;p>かつてのorg-rememberとか、org-captureに移行してスグぐらいの頃は機能足りなかったせいか書き換えることが多かったけど、最近はテンプレートも安定してきた。&lt;/p></description></item><item><title>コードリーティングの記録とOrg Capture</title><link>https://ladicle.com/post/20200625_123915/</link><pubDate>Thu, 25 Jun 2020 21:37:29 +0900</pubDate><guid>https://ladicle.com/post/20200625_123915/</guid><description>&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;a href="#org-capture%E3%81%A7%E6%A5%BD%E3%82%92%E3%81%99%E3%82%8B">org-captureで楽をする&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E5%90%84%E7%A8%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E5%8F%96%E5%BE%97">各種ソースコードホスティングサービスのリンクを取得&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#%E4%BB%96%E3%81%AE%E4%BA%BA%E3%81%AB%E3%82%B7%E3%83%A5%E3%83%83%E3%81%A8%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B">他の人にシュッと共有する&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;p>人間忘れるものなので、コードリーディングする時はorg-modeでメモをとっている。
+このメモを取る時なのだけど、単純に文章だけだと後から追いづらい。
+なので、気になった箇所は文章と共にファイルリンク&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>とGitHubへのリンクもセットで記録している。&lt;/p></description></item><item><title>Ladicle's Emacs Configuration</title><link>https://ladicle.com/post/config/</link><pubDate>Wed, 17 Apr 2019 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/config/</guid><description>&lt;blockquote>
+&lt;p>Latest version is here.&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://gist.github.com/Ladicle/6825bf1e16987e0d5e4347b2de91339d">Ladicle&amp;rsquo;s Emacs Configuration 2024&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://gist.github.com/Ladicle/119c57fc97439c1b103f7847aa03be52">Ladicle&amp;rsquo;s Emacs Configuration 2022&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/blockquote>
+&lt;style>
+ .ox-hugo-toc ul {
+ list-style: none;
+ }
+&lt;/style>
+&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1&lt;/span> &lt;a href="#configuration">Configuration&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.1&lt;/span> &lt;a href="#table-of-contents">Table of Contents&lt;/a>:TOC_3_gh:&lt;/li>
+&lt;li>&lt;span class="section-num">1.2&lt;/span> &lt;a href="#screenshot">ScreenShot&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.3&lt;/span> &lt;a href="#load-path">Load Path&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4&lt;/span> &lt;a href="#generic">Generic&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.4.1&lt;/span> &lt;a href="#server">Server&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.2&lt;/span> &lt;a href="#editing">Editing&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.3&lt;/span> &lt;a href="#smartparens">Smartparens&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.4&lt;/span> &lt;a href="#history">History&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.5&lt;/span> &lt;a href="#gui-font">GUI/Font&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.6&lt;/span> &lt;a href="#os">OS&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.7&lt;/span> &lt;a href="#icons">Icons&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.8&lt;/span> &lt;a href="#posframe">posframe&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.4.9&lt;/span> &lt;a href="#point">point&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.5&lt;/span> &lt;a href="#key-bindings">Key-bindings&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.5.1&lt;/span> &lt;a href="#mouse">Mouse&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.5.2&lt;/span> &lt;a href="#custom-maps">Custom Maps&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.5.3&lt;/span> &lt;a href="#global">Global&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.5.4&lt;/span> &lt;a href="#which-key">which-key&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.5.5&lt;/span> &lt;a href="#hydra">Hydra&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.6&lt;/span> &lt;a href="#undo-redo">Undo/Redo&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.7&lt;/span> &lt;a href="#search-replace">Search/Replace&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.7.1&lt;/span> &lt;a href="#projectile">Projectile&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.7.2&lt;/span> &lt;a href="#wgrep">Wgrep&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.7.3&lt;/span> &lt;a href="#ag">Ag&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.7.4&lt;/span> &lt;a href="#ivy">Ivy&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.7.5&lt;/span> &lt;a href="#anzu">Anzu&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.7.6&lt;/span> &lt;a href="#migemo">Migemo&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.8&lt;/span> &lt;a href="#cursor">Cursor&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.8.1&lt;/span> &lt;a href="#multiple-cursor">multiple-cursor&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.8.2&lt;/span> &lt;a href="#avy-ace">avy/ace&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.8.3&lt;/span> &lt;a href="#smart-move">Smart move&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.9&lt;/span> &lt;a href="#check">Check&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.9.1&lt;/span> &lt;a href="#flymake">flymake&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.9.2&lt;/span> &lt;a href="#flyspell">flyspell&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.10&lt;/span> &lt;a href="#project">Project&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.10.1&lt;/span> &lt;a href="#persp">persp&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.11&lt;/span> &lt;a href="#complition">Complition&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.11.1&lt;/span> &lt;a href="#yasnippet">Yasnippet&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.11.2&lt;/span> &lt;a href="#company">Company&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.12&lt;/span> &lt;a href="#git">Git&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.12.1&lt;/span> &lt;a href="#timemachine">Timemachine&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.12.2&lt;/span> &lt;a href="#diffview">Diffview&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.12.3&lt;/span> &lt;a href="#magit">Magit&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.12.4&lt;/span> &lt;a href="#gitmodes">GitModes&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.12.5&lt;/span> &lt;a href="#gitgutter">GitGutter&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.12.6&lt;/span> &lt;a href="#git-remote">Git Remote&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.12.7&lt;/span> &lt;a href="#github">GitHub&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.12.8&lt;/span> &lt;a href="#smerge">Smerge&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.13&lt;/span> &lt;a href="#tools">Tools&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.13.1&lt;/span> &lt;a href="#google-translater">Google Translater&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.13.2&lt;/span> &lt;a href="#google-this">google this!&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.13.3&lt;/span> &lt;a href="#wakatime">wakatime&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.14&lt;/span> &lt;a href="#language">Language&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.14.1&lt;/span> &lt;a href="#lsp">LSP&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.2&lt;/span> &lt;a href="#golang">Golang&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.3&lt;/span> &lt;a href="#c-c">C/C++&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.4&lt;/span> &lt;a href="#plantuml">PlantUML&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.5&lt;/span> &lt;a href="#org">Org&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.6&lt;/span> &lt;a href="#r">R&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.7&lt;/span> &lt;a href="#html-css-js">HTML/CSS/JS&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.8&lt;/span> &lt;a href="#protobuf">Protobuf&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.9&lt;/span> &lt;a href="#fish">Fish&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.10&lt;/span> &lt;a href="#markdown">Markdown&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.11&lt;/span> &lt;a href="#log">Log&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.12&lt;/span> &lt;a href="#systemd">Systemd&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.13&lt;/span> &lt;a href="#yaml">YAML&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.14&lt;/span> &lt;a href="#bazel">Bazel&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.14.15&lt;/span> &lt;a href="#dockerfile">Dockerfile&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.15&lt;/span> &lt;a href="#custom-functions">Custom Functions&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.15.1&lt;/span> &lt;a href="#change-letter-case">Change letter case&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.15.2&lt;/span> &lt;a href="#change-smart-kill-word">Change smart Kill-word&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.15.3&lt;/span> &lt;a href="#kill-word-or-region">Kill word or Region&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.15.4&lt;/span> &lt;a href="#add-execution-flag-to-a-file-with-shelbang">Add execution flag to a file with shelbang&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.15.5&lt;/span> &lt;a href="#copy-file-path">Copy file path&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.16&lt;/span> &lt;a href="#ui">UI&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.16.1&lt;/span> &lt;a href="#dashboard">Dashboard&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.2&lt;/span> &lt;a href="#general">General&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.3&lt;/span> &lt;a href="#persp">persp&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.4&lt;/span> &lt;a href="#imenu-list">imenu-list&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.5&lt;/span> &lt;a href="#transparency">Transparency&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.6&lt;/span> &lt;a href="#minimap">Minimap&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.7&lt;/span> &lt;a href="#neotree">Neotree&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.8&lt;/span> &lt;a href="#doom-dracula-theme-modeline">Doom dracula Theme/Modeline&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.9&lt;/span> &lt;a href="#nyan-mode">Nyan-mode&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.10&lt;/span> &lt;a href="#hide-modeline">Hide Modeline&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.11&lt;/span> &lt;a href="#line-number">Line number&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.12&lt;/span> &lt;a href="#dimmer">Dimmer&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.13&lt;/span> &lt;a href="#fill-column-indicator">fill-column-indicator&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.14&lt;/span> &lt;a href="#presentation">Presentation&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.16.15&lt;/span> &lt;a href="#eshell">Eshell&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.17&lt;/span> &lt;a href="#high-lights">High-Lights&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.17.1&lt;/span> &lt;a href="#highlight-line">Highlight Line&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.17.2&lt;/span> &lt;a href="#paren">Paren&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.17.3&lt;/span> &lt;a href="#highlight-symbol">Highlight-symbol&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.17.4&lt;/span> &lt;a href="#beacon">Beacon&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.17.5&lt;/span> &lt;a href="#rainbow-delimiters">Rainbow delimiters&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.17.6&lt;/span> &lt;a href="#rainbow-mode">Rainbow Mode&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.17.7&lt;/span> &lt;a href="#volatile">Volatile&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.17.8&lt;/span> &lt;a href="#indent">Indent&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">1.18&lt;/span> &lt;a href="#mark">Mark&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.18.1&lt;/span> &lt;a href="#backward-forward">backward-forward&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.18.2&lt;/span> &lt;a href="#point-undo">Point Undo&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;h2 id="configuration">&lt;span class="section-num">1&lt;/span> Configuration&lt;/h2>
+&lt;h3 id="table-of-contents">&lt;span class="section-num">1.1&lt;/span> Table of Contents&lt;/h3>
+&lt;h3 id="screenshot">&lt;span class="section-num">1.2&lt;/span> ScreenShot&lt;/h3>
+&lt;figure>&lt;img src="https://ladicle.com/ox-hugo/screenshot.png">
+&lt;/figure>
+
+&lt;h3 id="load-path">&lt;span class="section-num">1.3&lt;/span> Load Path&lt;/h3>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">user-emacs-directory&lt;/span> &lt;span style="color:#d14">&amp;#34;~/Developments/src/github.com/Ladicle/dotfiles/common/emacs.d/elisp&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">eval-and-compile&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">load-prefer-newer&lt;/span> &lt;span style="color:#008080">t&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008080">package-user-dir&lt;/span> &lt;span style="color:#d14">&amp;#34;~/Developments/src/github.com/Ladicle/dotfiles/common/emacs.d/elpa&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008080">package--init-file-ensured&lt;/span> &lt;span style="color:#008080">t&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#008080">package-enable-at-startup&lt;/span> &lt;span style="color:#008080">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">unless&lt;/span> (&lt;span style="color:#900;font-weight:bold">file-directory-p&lt;/span> &lt;span style="color:#008080">package-user-dir&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">make-directory&lt;/span> &lt;span style="color:#008080">package-user-dir&lt;/span> &lt;span style="color:#008080">t&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">eval-and-compile&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">load-path&lt;/span> (&lt;span style="color:#900;font-weight:bold">append&lt;/span> &lt;span style="color:#008080">load-path&lt;/span> (&lt;span style="color:#900;font-weight:bold">directory-files&lt;/span> &lt;span style="color:#008080">package-user-dir&lt;/span> &lt;span style="color:#008080">t&lt;/span> &lt;span style="color:#d14">&amp;#34;^[^.]&amp;#34;&lt;/span> &lt;span style="color:#008080">t&lt;/span>))))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">eval-when-compile&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">require&lt;/span> &lt;span style="color:#990073">&amp;#39;package&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">package-initialize&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">add-to-list&lt;/span> &lt;span style="color:#990073">&amp;#39;package-archives&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#d14">&amp;#34;gnu&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#d14">&amp;#34;https://elpa.gnu.org/packages/&amp;#34;&lt;/span>) &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">add-to-list&lt;/span> &lt;span style="color:#990073">&amp;#39;package-archives&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#d14">&amp;#34;melpa&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#d14">&amp;#34;https://melpa.org/packages/&amp;#34;&lt;/span>) &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">add-to-list&lt;/span> &lt;span style="color:#990073">&amp;#39;package-archives&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#d14">&amp;#34;org&amp;#34;&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#d14">&amp;#34;http://orgmode.org/elpa/&amp;#34;&lt;/span>) &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">unless&lt;/span> (&lt;span style="color:#008080">package-installed-p&lt;/span> &lt;span style="color:#990073">&amp;#39;use-package&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">package-refresh-contents&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">package-install&lt;/span> &lt;span style="color:#990073">&amp;#39;use-package&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">package-install&lt;/span> &lt;span style="color:#990073">&amp;#39;diminish&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">package-install&lt;/span> &lt;span style="color:#990073">&amp;#39;quelpa&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">package-install&lt;/span> &lt;span style="color:#990073">&amp;#39;bind-key&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">use-package-always-ensure&lt;/span> &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">use-package-expand-minimally&lt;/span> &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">require&lt;/span> &lt;span style="color:#990073">&amp;#39;use-package&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">require&lt;/span> &lt;span style="color:#990073">&amp;#39;diminish&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">require&lt;/span> &lt;span style="color:#990073">&amp;#39;bind-key&lt;/span>)
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h3 id="generic">&lt;span class="section-num">1.4&lt;/span> Generic&lt;/h3>
+&lt;h4 id="server">&lt;span class="section-num">1.4.1&lt;/span> Server&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">use-package&lt;/span> &lt;span style="color:#008080">server&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:ensure&lt;/span> &lt;span style="color:#008080">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span> (&lt;span style="color:#008080">after-init&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">server-mode&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="editing">&lt;span class="section-num">1.4.2&lt;/span> Editing&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; Ignore split window horizontally&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">split-width-threshold&lt;/span> &lt;span style="color:#008080">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">split-width-threshold&lt;/span> &lt;span style="color:#099">160&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; Default Encoding&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">prefer-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8-unix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">set-locale-environment&lt;/span> &lt;span style="color:#d14">&amp;#34;en_US.UTF-8&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">set-default-coding-systems&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8-unix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">set-selection-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8-unix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">set-buffer-file-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8-unix&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">set-clipboard-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8&lt;/span>) &lt;span style="color:#998;font-style:italic">; included by set-selection-coding-system&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">set-keyboard-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8&lt;/span>) &lt;span style="color:#998;font-style:italic">; configured by prefer-coding-system&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#008080">set-terminal-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8&lt;/span>) &lt;span style="color:#998;font-style:italic">; configured by prefer-coding-system&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">buffer-file-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8&lt;/span>) &lt;span style="color:#998;font-style:italic">; utf-8-unix&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">save-buffer-coding-system&lt;/span> &lt;span style="color:#990073">&amp;#39;utf-8-unix&lt;/span>) &lt;span style="color:#998;font-style:italic">; nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">process-coding-system-alist&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#900;font-weight:bold">cons&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#d14">&amp;#34;grep&amp;#34;&lt;/span> &lt;span style="color:#008080">utf-8&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">utf-8&lt;/span>) &lt;span style="color:#008080">process-coding-system-alist&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; Quiet Startup&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">inhibit-startup-screen&lt;/span> &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">inhibit-startup-message&lt;/span> &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">inhibit-startup-echo-area-message&lt;/span> &lt;span style="color:#008080">t&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">initial-scratch-message&lt;/span> &lt;span style="color:#008080">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">defun&lt;/span> &lt;span style="color:#008080">display-startup-echo-area-message&lt;/span> ()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#900;font-weight:bold">message&lt;/span> &lt;span style="color:#d14">&amp;#34;&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">frame-title-format&lt;/span> &lt;span style="color:#008080">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">ring-bell-function&lt;/span> &lt;span style="color:#990073">&amp;#39;ignore&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">uniquify-buffer-name-style&lt;/span> &lt;span style="color:#990073">&amp;#39;post-forward-angle-brackets&lt;/span>) &lt;span style="color:#998;font-style:italic">; Show path if names are same&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">adaptive-fill-regexp&lt;/span> &lt;span style="color:#d14">&amp;#34;[ t]+|[ t]*([0-9]+.|*+)[ t]*&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">adaptive-fill-first-line-regexp&lt;/span> &lt;span style="color:#d14">&amp;#34;^* *$&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">sentence-end&lt;/span> &lt;span style="color:#d14">&amp;#34;\\([。、！？]\\|……\\|[,.?!][]\&amp;#34;&amp;#39;)}]*\\($\\|[ \t]\\)\\)[ \t\n]*&amp;#34;&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">sentence-end-double-space&lt;/span> &lt;span style="color:#008080">nil&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">delete-by-moving-to-trash&lt;/span> &lt;span style="color:#008080">t&lt;/span>) &lt;span style="color:#998;font-style:italic">; Deleting files go to OS&amp;#39;s trash folder&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">make-backup-files&lt;/span> &lt;span style="color:#008080">nil&lt;/span>) &lt;span style="color:#998;font-style:italic">; Forbide to make backup files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">auto-save-default&lt;/span> &lt;span style="color:#008080">nil&lt;/span>) &lt;span style="color:#998;font-style:italic">; Disable auto save&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">set-mark-command-repeat-pop&lt;/span> &lt;span style="color:#008080">t&lt;/span>) &lt;span style="color:#998;font-style:italic">; Repeating C-SPC after popping mark pops it again&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">track-eol&lt;/span> &lt;span style="color:#008080">t&lt;/span>)			&lt;span style="color:#998;font-style:italic">; Keep cursor at end of lines.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq&lt;/span> &lt;span style="color:#008080">line-move-visual&lt;/span> &lt;span style="color:#008080">nil&lt;/span>)		&lt;span style="color:#998;font-style:italic">; To be required by track-eol&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq-default&lt;/span> &lt;span style="color:#008080">kill-whole-line&lt;/span> &lt;span style="color:#008080">t&lt;/span>)	&lt;span style="color:#998;font-style:italic">; Kill line including &amp;#39;\n&amp;#39;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">setq-default&lt;/span> &lt;span style="color:#008080">indent-tabs-mode&lt;/span> &lt;span style="color:#008080">nil&lt;/span>) &lt;span style="color:#998;font-style:italic">; use space&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">defalias&lt;/span> &lt;span style="color:#990073">&amp;#39;yes-or-no-p&lt;/span> &lt;span style="color:#900;font-weight:bold">#&amp;#39;&lt;/span>&lt;span style="color:#008080">y-or-n-p&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">when&lt;/span> (&lt;span style="color:#900;font-weight:bold">functionp&lt;/span> &lt;span style="color:#990073">&amp;#39;mac-auto-ascii-mode&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">mac-auto-ascii-mode&lt;/span> &lt;span style="color:#099">1&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; Delete selection if insert someting&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">use-package&lt;/span> &lt;span style="color:#008080">delsel&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:ensure&lt;/span> &lt;span style="color:#008080">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span> (&lt;span style="color:#008080">after-init&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">delete-selection-mode&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; Automatically reload files was modified by external program&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">use-package&lt;/span> &lt;span style="color:#008080">autorevert&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:ensure&lt;/span> &lt;span style="color:#008080">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:diminish&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span> (&lt;span style="color:#008080">after-init&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">global-auto-revert-mode&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; Hungry deletion&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">use-package&lt;/span> &lt;span style="color:#008080">hungry-delete&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:diminish&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span> (&lt;span style="color:#008080">after-init&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">global-hungry-delete-mode&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:config&lt;/span> (&lt;span style="color:#0086b3">setq-default&lt;/span> &lt;span style="color:#008080">hungry-delete-chars-to-skip&lt;/span> &lt;span style="color:#d14">&amp;#34; \t\f\v&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="smartparens">&lt;span class="section-num">1.4.3&lt;/span> Smartparens&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">use-package&lt;/span> &lt;span style="color:#008080">smartparens&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">after-init&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">smartparens-global-mode&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:config&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">require&lt;/span> &lt;span style="color:#990073">&amp;#39;smartparens-config&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">sp-pair&lt;/span> &lt;span style="color:#d14">&amp;#34;=&amp;#34;&lt;/span> &lt;span style="color:#d14">&amp;#34;=&amp;#34;&lt;/span> &lt;span style="color:#0086b3">:actions&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#008080">wrap&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">sp-pair&lt;/span> &lt;span style="color:#d14">&amp;#34;+&amp;#34;&lt;/span> &lt;span style="color:#d14">&amp;#34;+&amp;#34;&lt;/span> &lt;span style="color:#0086b3">:actions&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#008080">wrap&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">sp-pair&lt;/span> &lt;span style="color:#d14">&amp;#34;&amp;lt;&amp;#34;&lt;/span> &lt;span style="color:#d14">&amp;#34;&amp;gt;&amp;#34;&lt;/span> &lt;span style="color:#0086b3">:actions&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#008080">wrap&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">sp-pair&lt;/span> &lt;span style="color:#d14">&amp;#34;$&amp;#34;&lt;/span> &lt;span style="color:#d14">&amp;#34;$&amp;#34;&lt;/span> &lt;span style="color:#0086b3">:actions&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>(&lt;span style="color:#008080">wrap&lt;/span>)))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="history">&lt;span class="section-num">1.4.4&lt;/span> History&lt;/h4>
+&lt;div class="highlight">&lt;pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-emacs-lisp" data-lang="emacs-lisp">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; History&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">use-package&lt;/span> &lt;span style="color:#008080">saveplace&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:ensure&lt;/span> &lt;span style="color:#008080">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span> (&lt;span style="color:#008080">after-init&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">save-place-mode&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#998;font-style:italic">;; Recent files&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>(&lt;span style="color:#0086b3">use-package&lt;/span> &lt;span style="color:#008080">recentf&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:ensure&lt;/span> &lt;span style="color:#008080">nil&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span> (&lt;span style="color:#008080">after-init&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> &lt;span style="color:#008080">recentf-mode&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:custom&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">recentf-max-saved-items&lt;/span> &lt;span style="color:#099">20000000&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">recentf-auto-cleanup&lt;/span> &lt;span style="color:#990073">&amp;#39;never&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">recentf-exclude&lt;/span> &lt;span style="color:#000;font-weight:bold">&amp;#39;&lt;/span>((&lt;span style="color:#900;font-weight:bold">expand-file-name&lt;/span> &lt;span style="color:#008080">package-user-dir&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d14">&amp;#34;.cache&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d14">&amp;#34;cache&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d14">&amp;#34;recentf&amp;#34;&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#d14">&amp;#34;COMMIT_EDITMSG\\&amp;#39;&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:preface&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">defun&lt;/span> &lt;span style="color:#008080">ladicle/recentf-save-list-silence&lt;/span> ()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">interactive&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">let&lt;/span> ((&lt;span style="color:#008080">message-log-max&lt;/span> &lt;span style="color:#008080">nil&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">if&lt;/span> (&lt;span style="color:#900;font-weight:bold">fboundp&lt;/span> &lt;span style="color:#990073">&amp;#39;shut-up&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">shut-up&lt;/span> (&lt;span style="color:#008080">recentf-save-list&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">recentf-save-list&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#900;font-weight:bold">message&lt;/span> &lt;span style="color:#d14">&amp;#34;&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">defun&lt;/span> &lt;span style="color:#008080">ladicle/recentf-cleanup-silence&lt;/span> ()
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">interactive&lt;/span>)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">let&lt;/span> ((&lt;span style="color:#008080">message-log-max&lt;/span> &lt;span style="color:#008080">nil&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#0086b3">if&lt;/span> &lt;span style="color:#008080">shutup-p&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">shut-up&lt;/span> (&lt;span style="color:#008080">recentf-cleanup&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">recentf-cleanup&lt;/span>)))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#900;font-weight:bold">message&lt;/span> &lt;span style="color:#d14">&amp;#34;&amp;#34;&lt;/span>))
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#0086b3">:hook&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> (&lt;span style="color:#008080">focus-out-hook&lt;/span> &lt;span style="color:#000;font-weight:bold">.&lt;/span> (&lt;span style="color:#008080">ladicle/recentf-save-list-silence&lt;/span> &lt;span style="color:#008080">ladicle/recentf-cleanup-silence&lt;/span>)))
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;h4 id="gui-font">&lt;span class="section-num">1.4.5&lt;/span> GUI/Font&lt;/h4>
+&lt;p>font-size check&lt;/p></description></item><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>&lt;style>
+ .ox-hugo-toc ul {
+ list-style: none;
+ }
+&lt;/style>
+&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1&lt;/span> &lt;a href="#%E5%9B%B3-%E8%A1%A8-%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E5%B0%8E%E5%85%A5%E3%81%A8%E5%8F%82%E7%85%A7">図、表、コードの導入と参照&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.1&lt;/span> &lt;a href="#%E5%9B%B3%E3%81%AEamp%E5%AF%BE%E5%BF%9C">図のAMP対応&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.2&lt;/span> &lt;a href="#chroma%E3%81%AB%E3%82%88%E3%82%8B%E3%82%B7%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">Chromaによるシンタックスハイライト&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">2&lt;/span> &lt;a href="#subtree%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%A8%E5%90%84%E7%A8%AE%E6%A9%9F%E8%83%BD">Subtreeのプロパティと各種機能 &lt;code>[50%]&lt;/code>&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">2.1&lt;/span> &lt;a href="#draft%E3%83%95%E3%83%A9%E3%82%B0%E3%82%92todo%E3%82%BF%E3%82%B0%E3%81%A7%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B">&lt;span class="org-todo todo TODO">TODO&lt;/span> DraftフラグをTODOタグで切り替える&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">2.2&lt;/span> &lt;a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%AB%E3%82%88%E3%82%8B%E7%9B%AE%E6%AC%A1%E3%81%A8hugo%E3%81%AE%E5%88%B6%E5%BE%A1">&lt;span class="org-todo done DONE">DONE&lt;/span> プロパティによる目次とHUGOの制御&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">3&lt;/span> &lt;a href="#%E6%96%87%E5%AD%97%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%A8html">文字スタイルとHTML&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">3.1&lt;/span> &lt;a href="#markdown%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%95%E3%82%8C%E3%82%8B%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E4%B8%80%E8%A6%A7">Markdownに変換されるスタイル一覧&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.2&lt;/span> &lt;a href="#%E5%BC%95%E7%94%A8%E3%81%99%E3%82%8B">引用する&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.3&lt;/span> &lt;a href="#html%E3%81%AE%E5%88%B6%E5%BE%A1%E3%81%A8note%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E8%BF%BD%E5%8A%A0">HTMLの制御とNoteブロックの追加&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.4&lt;/span> &lt;a href="#%E3%83%AA%E3%82%B9%E3%83%88%E4%B8%80%E8%A6%A7">リスト一覧&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">4&lt;/span> &lt;a href="#latex%E6%95%B0%E5%BC%8F%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80">LaTex数式を埋め込む&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5&lt;/span> &lt;a href="#org-babel%E3%81%AB%E3%82%88%E3%82%8B%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E8%A9%95%E4%BE%A1">org-babelによるコードブロックの評価&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">5.1&lt;/span> &lt;a href="#graphviz-plantuml-ditaa%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%81%AE%E5%87%BA%E5%8A%9B">Graphviz, PlantUML, ditaaを使ったの出力&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5.2&lt;/span> &lt;a href="#r-x-ggplot2-%E3%81%AB%E3%82%88%E3%82%8Bsvg%E5%BD%A2%E5%BC%8F%E3%81%AE%E3%82%B0%E3%83%A9%E3%83%95%E5%87%BA%E5%8A%9B">R x ggplot2 によるSVG形式のグラフ出力&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">6&lt;/span> &lt;a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;h2 id="図-表-コードの導入と参照">&lt;span class="section-num">1&lt;/span> 図、表、コードの導入と参照&lt;/h2>
+&lt;p>画像や、テーブルはキャプションを付けたり、&lt;a href="#code--sample">Code 1&lt;/a>のように参照することができる。参照したい名前を &lt;code>#+NAME: &amp;lt;name&amp;gt;&lt;/code> に設定すると、通常のorgリンクを使って &lt;code>[[&amp;lt;name&amp;gt;]]&lt;/code> で参照できる。デフォルトでは、参照時に番号のみ表示されるが、&lt;a href="#code--expand-name">Code 2&lt;/a>のように変数を設定すると識別子まで展開することができる。&lt;/p></description></item></channel></rss>

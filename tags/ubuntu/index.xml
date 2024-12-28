@@ -1,22 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on Ladicle</title><link>https://ladicle.com/tags/ubuntu/</link><description>Recent content in Ubuntu on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>外出先でも快適なお家k8sクラスタを構築する</title><link>https://ladicle.com/post/k8s-home-cluster/</link><pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate><guid>https://ladicle.com/post/k8s-home-cluster/</guid><description>Table of Contents 1 なぜお家Kubernetesクラスタか 2 Workerのハードウェア構成と価格 3 マシンにUbuntuサーバをインストールする 3.1 Live USBの作成 3.2 インストーラの進化 3.3 LVMのディスク容量を増やす 4 Kubernetesの構成検討と構築 4.1 cri-oのセットアップ 4.2 kubeadmによるクラスタ構築 4.2.1 事前準備 4.2.2 Master/Workerの構築 4.3 ciliumのCNIプラグインを適用する 4.4 MetalLBの構築 5 CloudflareのArgo経由でSSHする 5.1 Server設定 5.2 Client設定 5.3 Cloudflare Accessでアクセスユーザを制限する 6 kubeadmによるクラスタアップグレード 6.1 CNIプラグインのアップグレード 1 なぜお家Kubernetesクラスタか なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。
-2 Workerのハードウェア構成と価格 Figure 1: (左): 届いたパーツ群、(右): 配線が完了したNUC
-Master用のNUCは自宅のものを再利用したため、ここには含まれていない。こちらのスペックは数世代前のi5 NUCで32GBメモリ、2TBのディスクを積んでいる。メモリが市場に溢れてる今が買い時ということで8GBと悩んだ結果16GBにした。ツクモで全て買おうとしていたが購入制限に引っかかったので1台だけソフマップとなっている。また、スイッチのポートも足りなくなってきたので一緒に購入した(最近のNETGEARは謎にスマホアプリから設定変更や状態確認ができて面白い。
-Table 1: パーツと価格 Shop Item Price(JPY) Number Total(JPY) TSUKUMO NUC8I3BEH (BOXNUC8I3BEH) 35,366 2 70,732 CT2K8G4SFS824A (Crucial 16GB:8GBx2) 11,858 3 35,574 WDS500G2B0B (WD 500GB SSD) 6,980 3 20,940 Sofmap NUC8I3BEH (BOXNUC8I3BEH) 35,366 1 35,366 Amazon GS105E-200JPS (NETGEAR Switching Hub 5port) 3,570 1 3,570 BSACC0802BKA (BUFFALO power cable 3pin/2pin plug) 482 3 1,446 Yodobashi LA-SL6-005BK (SANWA SUPPLY CAT6 LAN cable 0.</description></item><item><title>Linux Desktop Environment in 2018</title><link>https://ladicle.com/post/linux-desktop-2018/</link><pubDate>Thu, 02 Aug 2018 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/linux-desktop-2018/</guid><description>&amp;ldquo;Linuxデスクトップ環境&amp;quot;でggrると，いろんな記事がヒットしたので触発されてみた．普段遣いをmacOSからUbuntuに移行してまだ2ヶ月といったところだけど，最初の1ヶ月に構築した環境で満足しているので暫くこのままだと思う．
-なぜLinuxに移行したのか？困ってないか？ LaptopとしてXPSを選んだ理由とか，ディストリ検討の話はBye Bye Mackbook Pro. Hello, Ubntu XPS! に書いている．
-困ってないか？については全く困っていない．使って微妙だった点はMacbookProに比べるとバッテリーの持ちが悪いことと1，ファンの音が特徴的できになるということくらい．
-My dotfiles come out in Public しばらくdotfilesをprivateにしていたが，クローズド野郎 という煽りワードを聞いたのでLinux用の設定を追加するついでにGitHubで管理し始めた．
-dotfiles: https://github.com/Ladicle/dotfiles setup-scripts: https://github.com/Ladicle/setup-tools/blob/master/linux/setup Major customizes Figure1. My Pretty Desktop
-Desktop: GNOME Xorg Ubuntu 18.04からUnityからGNOMEにもどったのでデフォルトのまま．Window protocolはWaylandに一回切り替えてみたけど不安定だったのでXorgに戻した．あとは「タイル式こそ私が求めていたものでは？」と検討したものの，ターミナルを透過して後ろにブラウザ開いて何かを表示していることが多いことに気づいたため不採用．
-Theme: Adapta-Eta, Papirus-Adapta Figure1の通り，Adaptaのblueテーマを使っている．ターミナルの見ため含め，かわいみがあってポップでキュートでナウい青系なもの が好み．IconはPapirusのAdaptaバージョンを使っているのだが，GoファイルがGopher君になるのがツボ．
-あとは画面領域を無駄に削られたくないので，hide-top-barの拡張とか設定でDockを消したりしている．起動時は，全画面でターミナルだけ表示される．
-Terminal Emulator: Tilix 同様の理由により，タブとかタイトルバーとか無駄なものをすべて消せる &amp;amp; FuraCode-Nard-Font2をつかえるものから選択した． Nard Fontというのは，プログラミング用フォントに大量のiconをパッチが提供されたもので，その中でもリガチャという文字の並びによって見た目が変わる特殊フォントを使っている．
-が，しかしTilixはリガチャが使えない．キーのトランジットも設定できない のでASCIIの制御コードを外れたショートカットが使えないという問題点もある．画面分割もtmuxなのでTilixには依存しておらず，よりよいTerminalに出会ったら乗り換える予定．
-Key remapper: xkb+xremap, Gesture: fusuma Key remapperは数字記号反転とかkeyboardレイアウトその変更にxkb，特定のWindow選択とかアプリごとのショートカット設定をxremapで設定している．xkbはsuspend復帰時に設定がoverrideされたりとハマったが，systemdのservice使ってhookする形に落ち着いた．
-xkb &amp;amp; xremap services, suspend-hook.service xkb configuration xremap configuration TrackpadのGestureは，挙動をmacOSと揃えたくてfusumaを使っている．LaptopをクラムシェルモードにしたときはMagicPad2を使っているのだが，MagicPad2のドライバは未対応 3のため自分でパッチを当てる必要がある．magictrackpad2-dkmsは先日のアプデで動かなくなったので直さないとなーというステータス．
-Misc 日本語入力: ibus-mozcを使っているが，google/mozc#381にあるとおり，デフォルト入力ソースを設定から変更できないため，デフォルトをHIRAGANAに変更したものをパッチして使っている．</description></item><item><title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title><link>https://ladicle.com/post/ubntun-install-into-xps/</link><pubDate>Sat, 09 Jun 2018 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/ubntun-install-into-xps/</guid><description>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.
-他に検討したモデル Core i7 8th, 13 inch, 16GB memory, 500 GB~ disk, ~1.3kg は必須，4K displayであればなおよしという条件で探していた.
-ThinkPad: 赤ポチが好きだったので再び(ry と思ったものの，フルスペックにすると高かったので却下． HUAWEI MateBook X Pro: Macbookを意識しているのが感じられるlaptop. 軽さ, 性能, バッテリーの持ちが一番よかった．発売前で詳細がわからず見送り． HP Spectre Notebook: 性能も価格もXPSと一致してたので一番まよった. デザインが僅かにXPSのほうがこのみだったのでやめた． ディストリビューションの検討 Desktop版のLinuxを使うのは高校生ぶり, その頃はUbuntuが入れようにもPCの性能足りなくてもっさりしてたため軽さ重視だった. もう時代が違うし流行りもわからんということで, Linux使ってる周りの人に聞いてみた. Gentoo，Arch，Ubuntuが候補に上がったが，PCとの相性1とセットアップの楽さでUbuntuに決定．
-Ubuntu 18.04のインストール BIOS設定の変更 BIOSに入るのはF2
-SATA Controller: RAID -&amp;gt; AHCI Windows Boot Manager: disable Secure Boot: disable USBからンストール Boot deviceの変更はF12
-16.04の時は無線に繋がらなかったりTouch panelの動作がおかしかったようだったが, 18.04は何も困らなかった2. Touch panelのカーソル移動はもっさりなので速度を最高まであげるとよい感じ.
-参考リンク Dell XPS 13 (9370) に Ubuntu 16.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ubuntu on Ladicle</title><link>https://ladicle.com/tags/ubuntu/</link><description>Recent content in Ubuntu on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/ubuntu/index.xml" rel="self" type="application/rss+xml"/><item><title>外出先でも快適なお家k8sクラスタを構築する</title><link>https://ladicle.com/post/k8s-home-cluster/</link><pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate><guid>https://ladicle.com/post/k8s-home-cluster/</guid><description>&lt;style>
+ .ox-hugo-toc ul {
+ list-style: none;
+ }
+&lt;/style>
+&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1&lt;/span> &lt;a href="#%E3%81%AA%E3%81%9C%E3%81%8A%E5%AE%B6kubernetes%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%81%8B">なぜお家Kubernetesクラスタか&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">2&lt;/span> &lt;a href="#worker%E3%81%AE%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2%E6%A7%8B%E6%88%90%E3%81%A8%E4%BE%A1%E6%A0%BC">Workerのハードウェア構成と価格&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3&lt;/span> &lt;a href="#%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABubuntu%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B">マシンにUbuntuサーバをインストールする&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">3.1&lt;/span> &lt;a href="#live-usb%E3%81%AE%E4%BD%9C%E6%88%90">Live USBの作成&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.2&lt;/span> &lt;a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A9%E3%81%AE%E9%80%B2%E5%8C%96">インストーラの進化&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.3&lt;/span> &lt;a href="#lvm%E3%81%AE%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E5%AE%B9%E9%87%8F%E3%82%92%E5%A2%97%E3%82%84%E3%81%99">LVMのディスク容量を増やす&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">4&lt;/span> &lt;a href="#kubernetes%E3%81%AE%E6%A7%8B%E6%88%90%E6%A4%9C%E8%A8%8E%E3%81%A8%E6%A7%8B%E7%AF%89">Kubernetesの構成検討と構築&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">4.1&lt;/span> &lt;a href="#cri-o%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97">cri-oのセットアップ&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">4.2&lt;/span> &lt;a href="#kubeadm%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E6%A7%8B%E7%AF%89">kubeadmによるクラスタ構築&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">4.2.1&lt;/span> &lt;a href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99">事前準備&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">4.2.2&lt;/span> &lt;a href="#master-worker%E3%81%AE%E6%A7%8B%E7%AF%89">Master/Workerの構築&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">4.3&lt;/span> &lt;a href="#cilium%E3%81%AEcni%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%92%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B">ciliumのCNIプラグインを適用する&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">4.4&lt;/span> &lt;a href="#metallb%E3%81%AE%E6%A7%8B%E7%AF%89">MetalLBの構築&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">5&lt;/span> &lt;a href="#cloudflare%E3%81%AEargo%E7%B5%8C%E7%94%B1%E3%81%A7ssh%E3%81%99%E3%82%8B">CloudflareのArgo経由でSSHする&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">5.1&lt;/span> &lt;a href="#server%E8%A8%AD%E5%AE%9A">Server設定&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5.2&lt;/span> &lt;a href="#client%E8%A8%AD%E5%AE%9A">Client設定&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5.3&lt;/span> &lt;a href="#cloudflare-access%E3%81%A7%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%92%E5%88%B6%E9%99%90%E3%81%99%E3%82%8B">Cloudflare Accessでアクセスユーザを制限する&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">6&lt;/span> &lt;a href="#kubeadm%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89">kubeadmによるクラスタアップグレード&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">6.1&lt;/span> &lt;a href="#cni%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89">CNIプラグインのアップグレード&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;h2 id="なぜお家kubernetesクラスタか">&lt;span class="section-num">1&lt;/span> なぜお家Kubernetesクラスタか&lt;/h2>
+&lt;p>なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。&lt;/p></description></item><item><title>Linux Desktop Environment in 2018</title><link>https://ladicle.com/post/linux-desktop-2018/</link><pubDate>Thu, 02 Aug 2018 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/linux-desktop-2018/</guid><description>&lt;p>&amp;ldquo;Linuxデスクトップ環境&amp;quot;でggrると，いろんな記事がヒットしたので触発されてみた．普段遣いをmacOSからUbuntuに移行してまだ2ヶ月といったところだけど，最初の1ヶ月に構築した環境で満足しているので暫くこのままだと思う．&lt;/p></description></item><item><title>Bye Bye Mackbook Pro. Hello, Ubntu XPS!</title><link>https://ladicle.com/post/ubntun-install-into-xps/</link><pubDate>Sat, 09 Jun 2018 16:46:00 +0900</pubDate><guid>https://ladicle.com/post/ubntun-install-into-xps/</guid><description>&lt;p>最近コンテナ周りの開発をしているせいかMacbookでDockerとかVM経由してLinuxで作業する機会が多い. Proの性能がなかなか上がらないのもあって普段使いのlaptopをDell XPS 13(9370)に移行した.&lt;/p></description></item></channel></rss>

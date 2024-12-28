@@ -1,16 +1,104 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Ladicle</title><link>https://ladicle.com/tags/hugo/</link><description>Recent content in Hugo on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 28 Jun 2020 14:08:10 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>独自URL Schemeの追加と、そのハンドラの実装</title><link>https://ladicle.com/post/20200627_182059/</link><pubDate>Sun, 28 Jun 2020 14:08:10 +0900</pubDate><guid>https://ladicle.com/post/20200627_182059/</guid><description>Table of Contents 独自URL Schemeの追加 TIPS Macアプリの簡単なアイコン変更方法 go-scheme-handlerの実装 独自Scheme利用した編集ボタンをつける TIPS Chromeの確認ダイアログを初回のみ表示させる URLには https:// Schemeを利用することが多いが、 mailto: file: のように他にもいろいろなScheme1がある。 また、macOS標準のScheme以外にも独自URL Schemeを追加するアプリケーションも存在する(e.g. org-protocol:)2。 では、これらアプリケーションはどのように登録しているのだろうか?
-独自URL Schemeの追加 Figure 1: 独自Schemeを利用したブログの編集ボタン
-独自URL Schemeは、Script Editorで作成したApplicationを適宜変更していくと楽に追加できる。 また、URLのハンドリング部分を全てAppleScriptで書いてもいいが、慣れていないので今後のメンテナンスを考えGoで実装したhandlerを呼び出すことにした。
-ここでは例として、 go://journal/&amp;lt;date&amp;gt; 形式のリンクを踏むと該当する日記をEmacsで開くものを実装する。 まずはScriptEditorを起動して新規ファイルを作成し、ドキュメント3見つつCode 1のスクリプトを書いた。
-on gohandler(input) do shell script &amp;#34;/Applications/GoHandler.app/Contents/MacOS/bin/go-scheme-handler &amp;#34; &amp;amp; (quoted form of input) end gohandler on open location input gohandler(input) end open location display dialog &amp;#34;GoHandler handles URL with the `go:` scheme :)&amp;#34; Code 1: go://.</description></item><item><title>HugoでもTwitterCard画像を自動生成したい</title><link>https://ladicle.com/post/20200623_164459/</link><pubDate>Tue, 23 Jun 2020 14:59:00 +0900</pubDate><guid>https://ladicle.com/post/20200623_164459/</guid><description>Table of Contents どう生成するか考える GoでTwitterCardを生成する カスタマイズのしやすさ フォント、禁則処理、座標計算 etc. 更新のあった記事を対象に生成する HugoにTwitterCard(&amp;amp;OGP)情報を設定する キャッシュ対策 最近、Twitterを眺めているとイイ感じのサムネが設定されたブログ記事を見かけるようになった。 OGP1やTwitterCardl2にはそのような生成機能が無いので各々画像を生成しているのだと思われるが、 Hugoにもそのような機能は無い。ということで、この土日にGoで画像生成するコマンドを書いた。
-どう生成するか考える Hugoは静的サイトジェネレータなので、一般的なブログサービスのように動的なことは考えず、 単純にサイト生成時に画像も生成すれば良いだろう。
-では、どう生成すべきか？ImageMagicを使う方法や、Hugoでサムネ用ページを生成しそれをCode 1のように Headless Chrome を使ってスクショを撮る方法が考えられる。しかし、サムネをスクショするだけに起動するには少々重い。
-docker run --rm -u $(id -u $USER) --cap-add=SYS_ADMIN --name capture -v $PWD:/workdir -w /workdir \ justinribeiro/chrome-headless \ --window-size=1200,628 \ --headless \ --disable-gpu \ --screenshot http://path.to/capture/target Code 1: Headless Chromeを使ってスクリーンショットを生成する例 このサイトを生成しているGitHub Actionでも動くような、軽量でポータブルなものが欲しい。 ということで、GoでHugoの記事からサムネ画像生成するCLIを作ることにした。
-GoでTwitterCardを生成する コードを書く前に、実際のHugoページのメタ情報(FrontMatter)を使って、 「見やすくてポップな感じのTwitterCardが欲しい」 という自分のオーダに沿った最終形態をイメージした。 ここでKeynoteで下書きしたのは正解で、Goから実際に描画するときに左上からの座標やフォントサイズ、Hex Colorなどの取得に便利だった。
-Figure 1: KeynoteでTwitterCardの最終形態をデザインする
-カスタマイズのしやすさ 最終形態をイメージできたので、実際に実装していく。 今後のTwitterCardの仕様変更やデザインを変えたくなった時のことを考えて、なるべくカスタマイズしやすいCLIを考えてみる。
-表示したい項目(titleやtagなど)は今後変わらなそうなので固定、サイト全体で共通な背景画像はKeynoteなどの編集ツールで修正できる方が楽なのでテンプレとして読み込む。 テンプレートと合わせて変更したくなるテキストの位置やサイズ、色はパラメータで調整できると便利そうだ。
-ただし、可変値のすべてをCLIのフラグや引数で指定するのは大変なのでなるべくデフォルト値を提供した上で、変更したい時だけ設定ファイルから変更を可能にしたい。 そんなこんなを検討した結果が tcardgen 。リポジトリはGitHubで公開している。</description></item><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>Table of Contents 1 図、表、コードの導入と参照 1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト 2 Subtreeのプロパティと各種機能 [50%] 2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御 3 文字スタイルとHTML 3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧 4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価 5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力 6 参考文献 1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。
-(setq org-blackfriday--org-element-string &amp;#39;((src-block . &amp;#34;Code&amp;#34;) (table . &amp;#34;表&amp;#34;) (figure . &amp;#34;Figure&amp;#34;))) Code 1: 識別子名の設定 また、Code 1のように識別子のカスタマイズも可能だ。他にも識別子を変更する方法がある。それは、言語設定をすることだ。ファイルのトップに #+language: jp のように記述すると、識別子がその言語で翻訳されて出力される。Code 2のように明示的に設定していた場合、自動翻訳は実施されない。</description></item><item><title>Supporting AMP for Hugo templates</title><link>https://ladicle.com/post/support-amp/</link><pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate><guid>https://ladicle.com/post/support-amp/</guid><description>Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．
-作業の流れ ざっと公式ページを見る ひたすら使えないタグやjsをampに対応したものに置き換える chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック ひたすら直す 変えたポイント amp用の識別子たちを追加 cssファイルをconvertしてhtmlに吐き出し jsを全て取り払う hilightjsはgist pluginに変更 menuはsidebar, accordion pluginに変更 jump to top buttonはanimation, position pluginに変更 disqusをiframeに変更 (まだ表示されない原因が分からない imgタグをamp-imgに変換 所感 テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．
-references https://www.ampproject.org/ https://www.ampstart.com</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on Ladicle</title><link>https://ladicle.com/tags/hugo/</link><description>Recent content in Hugo on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 28 Jun 2020 14:08:10 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>独自URL Schemeの追加と、そのハンドラの実装</title><link>https://ladicle.com/post/20200627_182059/</link><pubDate>Sun, 28 Jun 2020 14:08:10 +0900</pubDate><guid>https://ladicle.com/post/20200627_182059/</guid><description>&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;a href="#%E7%8B%AC%E8%87%AAurl-scheme%E3%81%AE%E8%BF%BD%E5%8A%A0">独自URL Schemeの追加&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#mac%E3%82%A2%E3%83%97%E3%83%AA%E3%81%AE%E7%B0%A1%E5%8D%98%E3%81%AA%E3%82%A2%E3%82%A4%E3%82%B3%E3%83%B3%E5%A4%89%E6%9B%B4%E6%96%B9%E6%B3%95">&lt;span class="org-todo done TIPS">TIPS&lt;/span> Macアプリの簡単なアイコン変更方法&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#go-scheme-handler%E3%81%AE%E5%AE%9F%E8%A3%85">go-scheme-handlerの実装&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E7%8B%AC%E8%87%AAscheme%E5%88%A9%E7%94%A8%E3%81%97%E3%81%9F%E7%B7%A8%E9%9B%86%E3%83%9C%E3%82%BF%E3%83%B3%E3%82%92%E3%81%A4%E3%81%91%E3%82%8B">独自Scheme利用した編集ボタンをつける&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#chrome%E3%81%AE%E7%A2%BA%E8%AA%8D%E3%83%80%E3%82%A4%E3%82%A2%E3%83%AD%E3%82%B0%E3%82%92%E5%88%9D%E5%9B%9E%E3%81%AE%E3%81%BF%E8%A1%A8%E7%A4%BA%E3%81%95%E3%81%9B%E3%82%8B">&lt;span class="org-todo done TIPS">TIPS&lt;/span> Chromeの確認ダイアログを初回のみ表示させる&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;p>URLには &lt;code>https://&lt;/code> Schemeを利用することが多いが、 &lt;code>mailto:&lt;/code> &lt;code>file:&lt;/code> のように他にもいろいろなScheme&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>がある。
+また、macOS標準のScheme以外にも独自URL Schemeを追加するアプリケーションも存在する(e.g. &lt;code>org-protocol:&lt;/code>)&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>。
+では、これらアプリケーションはどのように登録しているのだろうか?&lt;/p></description></item><item><title>HugoでもTwitterCard画像を自動生成したい</title><link>https://ladicle.com/post/20200623_164459/</link><pubDate>Tue, 23 Jun 2020 14:59:00 +0900</pubDate><guid>https://ladicle.com/post/20200623_164459/</guid><description>&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;a href="#%E3%81%A9%E3%81%86%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B%E3%81%8B%E8%80%83%E3%81%88%E3%82%8B">どう生成するか考える&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#go%E3%81%A7twittercard%E3%82%92%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B">GoでTwitterCardを生成する&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA%E3%81%AE%E3%81%97%E3%82%84%E3%81%99%E3%81%95">カスタマイズのしやすさ&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E3%83%95%E3%82%A9%E3%83%B3%E3%83%88-%E7%A6%81%E5%89%87%E5%87%A6%E7%90%86-%E5%BA%A7%E6%A8%99%E8%A8%88%E7%AE%97-etc-dot">フォント、禁則処理、座標計算 etc.&lt;/a>&lt;/li>
+&lt;li>&lt;a href="#%E6%9B%B4%E6%96%B0%E3%81%AE%E3%81%82%E3%81%A3%E3%81%9F%E8%A8%98%E4%BA%8B%E3%82%92%E5%AF%BE%E8%B1%A1%E3%81%AB%E7%94%9F%E6%88%90%E3%81%99%E3%82%8B">更新のあった記事を対象に生成する&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;a href="#hugo%E3%81%ABtwittercard--and-ogp--%E6%83%85%E5%A0%B1%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B">HugoにTwitterCard(&amp;amp;OGP)情報を設定する&lt;/a>
+&lt;ul>
+&lt;li>&lt;a href="#%E3%82%AD%E3%83%A3%E3%83%83%E3%82%B7%E3%83%A5%E5%AF%BE%E7%AD%96">キャッシュ対策&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;p>最近、Twitterを眺めているとイイ感じのサムネが設定されたブログ記事を見かけるようになった。
+OGP&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>やTwitterCardl&lt;sup id="fnref:2">&lt;a href="#fn:2" class="footnote-ref" role="doc-noteref">2&lt;/a>&lt;/sup>にはそのような生成機能が無いので各々画像を生成しているのだと思われるが、
+Hugoにもそのような機能は無い。ということで、この土日にGoで画像生成するコマンドを書いた。&lt;/p></description></item><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>&lt;style>
+ .ox-hugo-toc ul {
+ list-style: none;
+ }
+&lt;/style>
+&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1&lt;/span> &lt;a href="#%E5%9B%B3-%E8%A1%A8-%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E5%B0%8E%E5%85%A5%E3%81%A8%E5%8F%82%E7%85%A7">図、表、コードの導入と参照&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.1&lt;/span> &lt;a href="#%E5%9B%B3%E3%81%AEamp%E5%AF%BE%E5%BF%9C">図のAMP対応&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.2&lt;/span> &lt;a href="#chroma%E3%81%AB%E3%82%88%E3%82%8B%E3%82%B7%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">Chromaによるシンタックスハイライト&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">2&lt;/span> &lt;a href="#subtree%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%A8%E5%90%84%E7%A8%AE%E6%A9%9F%E8%83%BD">Subtreeのプロパティと各種機能 &lt;code>[50%]&lt;/code>&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">2.1&lt;/span> &lt;a href="#draft%E3%83%95%E3%83%A9%E3%82%B0%E3%82%92todo%E3%82%BF%E3%82%B0%E3%81%A7%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B">&lt;span class="org-todo todo TODO">TODO&lt;/span> DraftフラグをTODOタグで切り替える&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">2.2&lt;/span> &lt;a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%AB%E3%82%88%E3%82%8B%E7%9B%AE%E6%AC%A1%E3%81%A8hugo%E3%81%AE%E5%88%B6%E5%BE%A1">&lt;span class="org-todo done DONE">DONE&lt;/span> プロパティによる目次とHUGOの制御&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">3&lt;/span> &lt;a href="#%E6%96%87%E5%AD%97%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%A8html">文字スタイルとHTML&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">3.1&lt;/span> &lt;a href="#markdown%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%95%E3%82%8C%E3%82%8B%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E4%B8%80%E8%A6%A7">Markdownに変換されるスタイル一覧&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.2&lt;/span> &lt;a href="#%E5%BC%95%E7%94%A8%E3%81%99%E3%82%8B">引用する&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.3&lt;/span> &lt;a href="#html%E3%81%AE%E5%88%B6%E5%BE%A1%E3%81%A8note%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E8%BF%BD%E5%8A%A0">HTMLの制御とNoteブロックの追加&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.4&lt;/span> &lt;a href="#%E3%83%AA%E3%82%B9%E3%83%88%E4%B8%80%E8%A6%A7">リスト一覧&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">4&lt;/span> &lt;a href="#latex%E6%95%B0%E5%BC%8F%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80">LaTex数式を埋め込む&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5&lt;/span> &lt;a href="#org-babel%E3%81%AB%E3%82%88%E3%82%8B%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E8%A9%95%E4%BE%A1">org-babelによるコードブロックの評価&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">5.1&lt;/span> &lt;a href="#graphviz-plantuml-ditaa%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%81%AE%E5%87%BA%E5%8A%9B">Graphviz, PlantUML, ditaaを使ったの出力&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5.2&lt;/span> &lt;a href="#r-x-ggplot2-%E3%81%AB%E3%82%88%E3%82%8Bsvg%E5%BD%A2%E5%BC%8F%E3%81%AE%E3%82%B0%E3%83%A9%E3%83%95%E5%87%BA%E5%8A%9B">R x ggplot2 によるSVG形式のグラフ出力&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">6&lt;/span> &lt;a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;h2 id="図-表-コードの導入と参照">&lt;span class="section-num">1&lt;/span> 図、表、コードの導入と参照&lt;/h2>
+&lt;p>画像や、テーブルはキャプションを付けたり、&lt;a href="#code--sample">Code 1&lt;/a>のように参照することができる。参照したい名前を &lt;code>#+NAME: &amp;lt;name&amp;gt;&lt;/code> に設定すると、通常のorgリンクを使って &lt;code>[[&amp;lt;name&amp;gt;]]&lt;/code> で参照できる。デフォルトでは、参照時に番号のみ表示されるが、&lt;a href="#code--expand-name">Code 2&lt;/a>のように変数を設定すると識別子まで展開することができる。&lt;/p></description></item><item><title>Supporting AMP for Hugo templates</title><link>https://ladicle.com/post/support-amp/</link><pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate><guid>https://ladicle.com/post/support-amp/</guid><description>&lt;p>Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．&lt;/p>
+&lt;h2 id="作業の流れ">作業の流れ&lt;/h2>
+&lt;ol>
+&lt;li>ざっと公式ページを見る&lt;/li>
+&lt;li>ひたすら使えないタグやjsをampに対応したものに置き換える&lt;/li>
+&lt;li>chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック&lt;/li>
+&lt;li>ひたすら直す&lt;/li>
+&lt;/ol>
+&lt;h2 id="変えたポイント">変えたポイント&lt;/h2>
+&lt;ul>
+&lt;li>amp用の識別子たちを追加&lt;/li>
+&lt;li>cssファイルをconvertしてhtmlに吐き出し&lt;/li>
+&lt;li>jsを全て取り払う&lt;/li>
+&lt;li>hilightjsはgist pluginに変更&lt;/li>
+&lt;li>menuはsidebar, accordion pluginに変更&lt;/li>
+&lt;li>jump to top buttonはanimation, position pluginに変更&lt;/li>
+&lt;li>disqusをiframeに変更 (まだ表示されない原因が分からない&lt;/li>
+&lt;li>imgタグをamp-imgに変換&lt;/li>
+&lt;/ul>
+&lt;h2 id="所感">所感&lt;/h2>
+&lt;p>テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．&lt;/p></description></item></channel></rss>

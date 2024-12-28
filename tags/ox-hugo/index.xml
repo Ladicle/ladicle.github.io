@@ -1,2 +1,42 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ox-Hugo on Ladicle</title><link>https://ladicle.com/tags/ox-hugo/</link><description>Recent content in Ox-Hugo on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 16 Jan 2019 14:51:27 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/ox-hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>Table of Contents 1 図、表、コードの導入と参照 1.1 図のAMP対応 1.2 Chromaによるシンタックスハイライト 2 Subtreeのプロパティと各種機能 [50%] 2.1 TODO DraftフラグをTODOタグで切り替える 2.2 DONE プロパティによる目次とHUGOの制御 3 文字スタイルとHTML 3.1 Markdownに変換されるスタイル一覧 3.2 引用する 3.3 HTMLの制御とNoteブロックの追加 3.4 リスト一覧 4 LaTex数式を埋め込む 5 org-babelによるコードブロックの評価 5.1 Graphviz, PlantUML, ditaaを使ったの出力 5.2 R x ggplot2 によるSVG形式のグラフ出力 6 参考文献 1 図、表、コードの導入と参照 画像や、テーブルはキャプションを付けたり、Code 1のように参照することができる。参照したい名前を #+NAME: &amp;lt;name&amp;gt; に設定すると、通常のorgリンクを使って [[&amp;lt;name&amp;gt;]] で参照できる。デフォルトでは、参照時に番号のみ表示されるが、Code 2のように変数を設定すると識別子まで展開することができる。
-(setq org-blackfriday--org-element-string &amp;#39;((src-block . &amp;#34;Code&amp;#34;) (table . &amp;#34;表&amp;#34;) (figure . &amp;#34;Figure&amp;#34;))) Code 1: 識別子名の設定 また、Code 1のように識別子のカスタマイズも可能だ。他にも識別子を変更する方法がある。それは、言語設定をすることだ。ファイルのトップに #+language: jp のように記述すると、識別子がその言語で翻訳されて出力される。Code 2のように明示的に設定していた場合、自動翻訳は実施されない。</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ox-Hugo on Ladicle</title><link>https://ladicle.com/tags/ox-hugo/</link><description>Recent content in Ox-Hugo on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 16 Jan 2019 14:51:27 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/ox-hugo/index.xml" rel="self" type="application/rss+xml"/><item><title>ox-Hugo Cheat Sheet</title><link>https://ladicle.com/post/ox-hugo-cheat/</link><pubDate>Wed, 16 Jan 2019 14:51:27 +0900</pubDate><guid>https://ladicle.com/post/ox-hugo-cheat/</guid><description>&lt;style>
+ .ox-hugo-toc ul {
+ list-style: none;
+ }
+&lt;/style>
+&lt;div class="ox-hugo-toc toc">
+&lt;div>&lt;/div>
+&lt;div class="heading">Table of Contents&lt;/div>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1&lt;/span> &lt;a href="#%E5%9B%B3-%E8%A1%A8-%E3%82%B3%E3%83%BC%E3%83%89%E3%81%AE%E5%B0%8E%E5%85%A5%E3%81%A8%E5%8F%82%E7%85%A7">図、表、コードの導入と参照&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">1.1&lt;/span> &lt;a href="#%E5%9B%B3%E3%81%AEamp%E5%AF%BE%E5%BF%9C">図のAMP対応&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">1.2&lt;/span> &lt;a href="#chroma%E3%81%AB%E3%82%88%E3%82%8B%E3%82%B7%E3%83%B3%E3%82%BF%E3%83%83%E3%82%AF%E3%82%B9%E3%83%8F%E3%82%A4%E3%83%A9%E3%82%A4%E3%83%88">Chromaによるシンタックスハイライト&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">2&lt;/span> &lt;a href="#subtree%E3%81%AE%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%A8%E5%90%84%E7%A8%AE%E6%A9%9F%E8%83%BD">Subtreeのプロパティと各種機能 &lt;code>[50%]&lt;/code>&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">2.1&lt;/span> &lt;a href="#draft%E3%83%95%E3%83%A9%E3%82%B0%E3%82%92todo%E3%82%BF%E3%82%B0%E3%81%A7%E5%88%87%E3%82%8A%E6%9B%BF%E3%81%88%E3%82%8B">&lt;span class="org-todo todo TODO">TODO&lt;/span> DraftフラグをTODOタグで切り替える&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">2.2&lt;/span> &lt;a href="#%E3%83%97%E3%83%AD%E3%83%91%E3%83%86%E3%82%A3%E3%81%AB%E3%82%88%E3%82%8B%E7%9B%AE%E6%AC%A1%E3%81%A8hugo%E3%81%AE%E5%88%B6%E5%BE%A1">&lt;span class="org-todo done DONE">DONE&lt;/span> プロパティによる目次とHUGOの制御&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">3&lt;/span> &lt;a href="#%E6%96%87%E5%AD%97%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E3%81%A8html">文字スタイルとHTML&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">3.1&lt;/span> &lt;a href="#markdown%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%95%E3%82%8C%E3%82%8B%E3%82%B9%E3%82%BF%E3%82%A4%E3%83%AB%E4%B8%80%E8%A6%A7">Markdownに変換されるスタイル一覧&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.2&lt;/span> &lt;a href="#%E5%BC%95%E7%94%A8%E3%81%99%E3%82%8B">引用する&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.3&lt;/span> &lt;a href="#html%E3%81%AE%E5%88%B6%E5%BE%A1%E3%81%A8note%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E8%BF%BD%E5%8A%A0">HTMLの制御とNoteブロックの追加&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">3.4&lt;/span> &lt;a href="#%E3%83%AA%E3%82%B9%E3%83%88%E4%B8%80%E8%A6%A7">リスト一覧&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">4&lt;/span> &lt;a href="#latex%E6%95%B0%E5%BC%8F%E3%82%92%E5%9F%8B%E3%82%81%E8%BE%BC%E3%82%80">LaTex数式を埋め込む&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5&lt;/span> &lt;a href="#org-babel%E3%81%AB%E3%82%88%E3%82%8B%E3%82%B3%E3%83%BC%E3%83%89%E3%83%96%E3%83%AD%E3%83%83%E3%82%AF%E3%81%AE%E8%A9%95%E4%BE%A1">org-babelによるコードブロックの評価&lt;/a>
+&lt;ul>
+&lt;li>&lt;span class="section-num">5.1&lt;/span> &lt;a href="#graphviz-plantuml-ditaa%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%9F%E3%81%AE%E5%87%BA%E5%8A%9B">Graphviz, PlantUML, ditaaを使ったの出力&lt;/a>&lt;/li>
+&lt;li>&lt;span class="section-num">5.2&lt;/span> &lt;a href="#r-x-ggplot2-%E3%81%AB%E3%82%88%E3%82%8Bsvg%E5%BD%A2%E5%BC%8F%E3%81%AE%E3%82%B0%E3%83%A9%E3%83%95%E5%87%BA%E5%8A%9B">R x ggplot2 によるSVG形式のグラフ出力&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;span class="section-num">6&lt;/span> &lt;a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/div>
+&lt;!--endtoc-->
+&lt;h2 id="図-表-コードの導入と参照">&lt;span class="section-num">1&lt;/span> 図、表、コードの導入と参照&lt;/h2>
+&lt;p>画像や、テーブルはキャプションを付けたり、&lt;a href="#code--sample">Code 1&lt;/a>のように参照することができる。参照したい名前を &lt;code>#+NAME: &amp;lt;name&amp;gt;&lt;/code> に設定すると、通常のorgリンクを使って &lt;code>[[&amp;lt;name&amp;gt;]]&lt;/code> で参照できる。デフォルトでは、参照時に番号のみ表示されるが、&lt;a href="#code--expand-name">Code 2&lt;/a>のように変数を設定すると識別子まで展開することができる。&lt;/p></description></item></channel></rss>

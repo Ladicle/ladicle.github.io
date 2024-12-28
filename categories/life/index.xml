@@ -1,42 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Life on Ladicle</title><link>https://ladicle.com/categories/life/</link><description>Recent content in Life on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 31 Dec 2023 22:40:00 +0900</lastBuildDate><atom:link href="https://ladicle.com/categories/life/index.xml" rel="self" type="application/rss+xml"/><item><title>2023年ふり返り</title><link>https://ladicle.com/post/look-back-2023/</link><pubDate>Sun, 31 Dec 2023 22:40:00 +0900</pubDate><guid>https://ladicle.com/post/look-back-2023/</guid><description>みなさま2023年もありがとうございました!2024年も引き続き宜しくお願いします 🙌
-仕事・コミュニティ 引き続き個人事業主としてCloudNatixという会社でk8sまわりのコード書いたり、他にもちょっと手伝ったり、書籍の監修をしていました。何かあれば声をかけていただければ!
-イベント関連は、Kubernetes Meetup Tokyoが久しぶりに物理とオンラインのハイブリット開催しました。また、少人数で議論メインな勉強会やりたくてKEP持ち寄り会を開催したり、2019年ぶりに外にでて久しぶりな人や物理では初めましてな人とお話しできて楽しかったです。
-生活・買い物 よかった映画: グランツーリスモ、ハミルトン、エブエブ 楽しかったイベント: フジコヘミングのソロピアノコンサート、奉仕茶会、オーストラリア旅行、北欧ガラス展、琵琶寄席 買ってよかった: iPhone15 Pro、プジョーのスパイスミル、BOSKAのチーズナイフ各種とフォンデュ鍋、Microplaneのグレーター</description></item><item><title>2022年ふり返り</title><link>https://ladicle.com/post/look-back-2022/</link><pubDate>Sat, 31 Dec 2022 16:50:00 +0900</pubDate><guid>https://ladicle.com/post/look-back-2022/</guid><description>みなさま2022年もありがとうございました! 今年は本当に色々な方に助けられました。2023年も引き続き宜しくお願いします 🙌
-仕事・転職 去年末からZ Labの認証基盤のチームに移動していました。久しぶりにコンテナから離れてVMと戯れていましたが、Ansible時代ぶりだったので初Terraformしたり一周回って新鮮でした。
-9月には個人事業主としてCloudNatixというUSのスタートアップに転職し、再びk8sのコントローラ書いたりと基盤開発に戻りました。前々職、前職共にOpenStackベースのオンプレ環境だったので、なんだかんだAWSといったパブリッククラウドを仕事で使うのは初です。また、前職と比較的同じ領域なものの課題は大きくことなるので楽しかったです。
-働き方は引き続きフルリモートなので大きな変化はなく、時差の関係で少しだけ朝方になったくらいです。英語は&amp;hellip;今年もうちょい精進します。
-アウトプット 今年といっていいのか微妙なところですが&amp;hellip;LinuxブートキャンプというSoftware Designの別冊本が出版されました。3章のUnixネットワーク編に私の記事も再録されています。
-イベント関連は、引き続きKubernetes Meetup Tokyoの運営、k8s変更点調査のSIG-APIを担当しました。単発では、TechFeed Experts Night#7 〜 コンテナ技術を語るで登壇しました。
-競プロ 半年間、前前職のメンバと週1で前週のAtCoder ABCの内容を復習していました。皆でワイワイしながら複数の解法や実装方法について話せるのが楽しかったです。会のコンセプト通り緑色になれて嬉しかったです。
-また、2018年ぶりの競プロでしたが、当時にくらべると全体のレベルが上がっているのを感じました。若い人の優秀さを肌でかんじつつ、何もしていないとランクが下がっていくのが刺激的でモチベが上りました。
-生活・買い物 ベストDIYは数ヶ月かかった玄関タイルの張り替えです。我ながら、タイルのコーキングが満足いく仕上がりになり、玄関に愛着がわきました。
-謎の流でNHKおはよう日本の取材が自宅にくることになり、ozaさんが調理したぬか漬けを食べる役をやりました。プロの機材とカメラワークによっていつものキッチンがお料理番組の絵になったのが面白かったです。
-買って良かったものは洗剤自動投入のドラム式洗濯機、コマンダンテ、ヘッドスパマシン、Studio Display 5K、Xiaomi モニタライト、Stream Deck、AirPods Pro2です。
-これから 少し余裕も出てきたのでOSSや登壇も再開していく予定です(そろそろオフラインイベントにも参加したい)。RustはCLIくらいしか作れなかったのでもうちょい踏み込んでいきたいです。
-仕事以外だと筋トレ継続しつつ、理想をいえばちょっと走れるようになりたいところ。小型船舶のライセンスも取れたらいいな。</description></item><item><title>飲みもの 2021</title><link>https://ladicle.com/post/drink-2021/</link><pubDate>Fri, 31 Dec 2021 18:08:00 +0900</pubDate><guid>https://ladicle.com/post/drink-2021/</guid><description>2021年、引っ越しの関係で買って良かったモノがありすぎたので飲みものに絞ってみる。 在宅勤務が始まり、外食が多かった生活から一転、3食自炊ついでに飲みものも色々手を出すようになった。 ちなみに、飲みものの淹れ方は全てYouTubeで学んだ(便利! 珈琲 昔カフェイン錠剤にハマってカフェイン中毒になったこともあり、 朝起きて10時くらいに1杯ノーマル珈琲、午後にデカフェを1杯飲むのがスタンダード。
-ドリップ珈琲 マシン使ってた時期もあったけど最終的にハンドドリップに収束した。 ドリップ中は無になれるので仕事休憩に最適。
-Figure 1: ドリップスタンドと珈琲とおやつ
-珈琲豆 コスパ重視で加藤コーヒ ノーマル: (200g×3袋)9種類の珈琲豆から3袋をまとめ買い 色々選べるけどグァテマラ飲んでる率が高い デカフェ: (200gx4袋)眠れる珈琲コロンビアスペシャル デカフェ苦手だったけどここのはかなり好み コーヒーミル Kalita 電動ミル CM-50 ブラック Kalita Next Gが欲しかったけど、デカいし高いので見送り 安いしどうかなと思ったけど挽いた豆買うより圧倒的に旨いので満足 使い方も手軽で、2人分で8秒くらいで挽いて、ドリッパーの上でひっくり返すだけ 静電気問題はRoss Droplet Technique 1のおかげで解決した 箸を一本蛇口で濡らして挽く前にぐるぐるしている ミルに残ったカスもティッシュで軽く拭くだけで取れるので後片付けも簡単 ドリップスタンド&amp;amp;ドリッパー KINTO SCS-S04 ブリューワースタンドセット 4cups 普段は2人分しか淹れないが、豆の膨らみによってはギリとのことで4cupsの方を買った おしゃれだけなのでは? スタンド不要では? とか思って躊躇してた時期も会ったけど1年近く毎日使っていて大満足 食洗機にそのまま突っ込めるのもポイント ドリッパーは評判の良いV60も買ってみたが私のスキルだとうまく淹れられなかった フィルタ HARIO V60ペーパーフィルター 4cups 500枚入り ホワイト KINTOより安くて手軽に手に入るのでこっちを使ってる ドリッパよりちょい大きめだけど深めに折れば問題なし フィルタスタンド ペーパーホルダー収納ラック V60 (Stainless Steel) もう売ってなかったけどこれを使っている 自立形 &amp;amp; V60に対応しているモノが意外と少なかった ケトル BALMUDA The Pot K02A-BK 邪魔にならないデザイン &amp;amp; ドリップしやすい点は満足してる 色々な飲みものに手を出しているので温度調節できる方が良かったかも(?</description></item><item><title>2020年ふり返り</title><link>https://ladicle.com/post/20201226_214511/</link><pubDate>Sat, 26 Dec 2020 23:28:25 +0900</pubDate><guid>https://ladicle.com/post/20201226_214511/</guid><description>Figure 1: 今年の草
-ほんとうに今年は色々ありすぎて3月にあったコトが数年前のことのようだ。 一年後にはみんなでビール飲めることを願いたい。
-FOSDEM 2月はFOSDEMのため初めての1人海外でベルギー。そして今年最初で最後の海外。 コロナが流行り始めた頃…まだアジアンの病気だと思われていたので暴行が問題になり始めた頃。 若干不安だったが、たまに席よけられるくらいで支障はなかった。
-FOSDEM自体は面白いカンファレンスだったので次は発表者としていけるようになりたい。 (ビールも飯も最高だった
-3冊目の本 去年からやっていたDocker &amp;amp; Kubernetesのセキュリティ本が出版された。 FOSDEMの行き帰りの飛行機の中でもレビューした気がする。
-KubeFest &amp;amp; Kubernetes Meetup Tokyo 緊急事態宣言の前、カンファレンスが中止になったり、延期になったりと各コミュニティごとに判断が委ねられた頃、 Kubernetesの1Dayイベントもオンライン開催に変更しKubeFestとして開催した。 オンライン開催の都合上CNCF公式のKubernetes Communityイベントにはならなかったが、多くの方に参加していただけて本当に良かった。
-Kubernetes Meetup Tokyoの方はローカル&amp;amp;オンライン同時開催からオンラインのみになったけど、 引きつづき毎月やっていけて嬉しい。(発表者は常に募集しています!
-KubeCon KubeConで初めての発表。自作ツールについて話せる機会がもらえたのは本当に嬉しかった。 (acceptメールは驚きすぎて2度見した)
-現地を楽しみにしていたのでオンラインになってしまったのは残念だったが、 Slack上でフィードバックもらったり、他の発表者と交流できて楽しかった。
-お家Hack 2人とも家で仕事するようになり、広さを求めて昭和な物件を購入してフルリノベした。 全て自分で設計したいという気持ちで建築・照明工学の本や図面を読み漁りつつ、昔の電気工事士のテキスト引っ張り出してきたり、 リフォーム産業新聞読んだり、図面書いたり、3Dモデル作ったりして希望通りのものを工務店の人に工事してもらった。 トラブルも多発するし、全てを自分で決めるのは想像以上に大変で、時間も無限に吸われていったが、諸々自動化されて暮らしは快適になったので結果オーライ。
-今年は人生で一番Lifeに時間を使った感じがある。
-英語 Figure 4: TOEIC
-コロナ渦でTOEICがオンラインでも受けられると聞き、久しぶりに試験を受けた。 TOEIC対策はできなかったが、前回から100弱くらい上がってついに800台にのってよかった。 人としゃべる機会が減って癒やしとなったCambly(オンライン英会話)のおかげだと思う。
-Web連載記事 会社のメンバーと書いた記事。私はKubernetes上のアプリケーション開発を加速させるツール(Skaffold &amp;amp; Telepresence)について2本書いた。
-https://thinkit.co.jp/article/17553 https://thinkit.co.jp/article/17853 その他 今年もAdvent Calendarを書いた。(Z Labのも初めて?全日埋まって嬉しい) また直近ではGoogle’s Tech Elevateに参加していた。4週目あたりは引っ越しとかぶってしまったので残念。 DIY, Oculus Quest(Beat Saber)&amp;hellip; 特にSwitch(リングフィット/ZUMBA)のおかげで引きこもりながらも運動できているので任天堂さまさま。 あと冷え性が突然なおった。
-来年もやっていきたい。良いお年を!
-(年末は引きこもって呑みます</description></item><item><title>2018年のふり返り</title><link>https://ladicle.com/post/2018-review/</link><pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate><guid>https://ladicle.com/post/2018-review/</guid><description>転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。
-技術 転職してから仕事中はフルでコードを読んだり書いたりできるようになったので、去年と比べるとGitHubに緑がふえた。学生の頃に比べると体力の衰えを感じたので競技プログラミングをはじめたが、体調を崩し始めた5月くらいから遠のいてしまったので再開したい。
-また、Ruiさんの記事を見てC言語コンパイラを作りはじめた。その過程で大学の授業の内容が頭から抜けてることに気づいたため、回路や計算機のしくみまわりの本を読み直すなどした。来年は言語処理系とOSも作ってみたというお気持ち。
-仕事は引き続きKubernetes周りをやっている。前回のKubeConのKeynoteではBoringフェーズに入ったと話題になったが、普段触れているCRDまわりはまだまだBoringとは言いがたい。来年もうまく付き合っていきたい。あとはそろそろ本格的にService Meshを(ry
-英語 英語は「This is a pen.」くらいしか言えなかったため、英会話(Beliz + NativeCamp Callan Method)を始めるなどの対策を取った。今年の秋頃には初の英語プレゼンをしたり、後半のカンファレンスでは多少言葉をかわせたので、成長を感じる。来年も引き続き精進したい。
-生活 生活にもゆとりが出てきたため、ジムに行って筋トレマニアになってみたり、日々発展していく家の近所を探索したり、コーヒーショップを回ってノマドワーカーを気取るなどした。家は人間らしい文化的な生活をあきらめた模様替えをはたし、友人達にここオフィス？と聞かれるまでに至った。とても捗る。ただし、健康面は勢い余ってO157になってしまったので気をつけたい。(常温で放置された🍣食べるのダメ絶対
-対外活動 今年はJCDでプレゼン1本＆パネルディスカッション2本、英語プレゼン1本、KubeConのRecap1本にLT1本の計6本くらいの発表をしたようだ。また、Cloud Native Deep Diveというディスカッションベースの勉強会もはじめた。来年からはKubernetes Meetup Tokyoの運営にも参加していく。それでは皆様、来年もよろしくお願いします。
-Securing Clusters with Kubernetes Extensibility ISUCONでEnvoyを使えるか？ Recap SIG API Machinery Deep Dive Istioと共にMicroservicesに立ち向かえ！</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Life on Ladicle</title><link>https://ladicle.com/categories/life/</link><description>Recent content in Life on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sun, 31 Dec 2023 22:40:00 +0900</lastBuildDate><atom:link href="https://ladicle.com/categories/life/index.xml" rel="self" type="application/rss+xml"/><item><title>2023年ふり返り</title><link>https://ladicle.com/post/look-back-2023/</link><pubDate>Sun, 31 Dec 2023 22:40:00 +0900</pubDate><guid>https://ladicle.com/post/look-back-2023/</guid><description>&lt;p>みなさま2023年もありがとうございました!2024年も引き続き宜しくお願いします 🙌&lt;/p>
+&lt;h2 id="仕事コミュニティ">仕事・コミュニティ&lt;/h2>
+&lt;p>引き続き個人事業主として&lt;a href="https://www.cloudnatix.com/">CloudNatix&lt;/a>という会社でk8sまわりのコード書いたり、他にもちょっと手伝ったり、書籍の監修をしていました。何かあれば声をかけていただければ!&lt;/p>
+&lt;p>イベント関連は、Kubernetes Meetup Tokyoが久しぶりに物理とオンラインのハイブリット開催しました。また、少人数で議論メインな勉強会やりたくてKEP持ち寄り会を開催したり、2019年ぶりに外にでて久しぶりな人や物理では初めましてな人とお話しできて楽しかったです。&lt;/p></description></item><item><title>2022年ふり返り</title><link>https://ladicle.com/post/look-back-2022/</link><pubDate>Sat, 31 Dec 2022 16:50:00 +0900</pubDate><guid>https://ladicle.com/post/look-back-2022/</guid><description>&lt;p>みなさま2022年もありがとうございました! 今年は本当に色々な方に助けられました。2023年も引き続き宜しくお願いします 🙌&lt;/p>
+&lt;h2 id="仕事転職">仕事・転職&lt;/h2>
+&lt;p>去年末からZ Labの認証基盤のチームに移動していました。久しぶりにコンテナから離れてVMと戯れていましたが、Ansible時代ぶりだったので初Terraformしたり一周回って新鮮でした。&lt;/p></description></item><item><title>飲みもの 2021</title><link>https://ladicle.com/post/drink-2021/</link><pubDate>Fri, 31 Dec 2021 18:08:00 +0900</pubDate><guid>https://ladicle.com/post/drink-2021/</guid><description>&lt;summary>
+2021年、引っ越しの関係で買って良かったモノがありすぎたので飲みものに絞ってみる。
+在宅勤務が始まり、外食が多かった生活から一転、3食自炊ついでに飲みものも色々手を出すようになった。
+ちなみに、飲みものの淹れ方は全てYouTubeで学んだ(便利!
+&lt;/summary>
+&lt;h2 id="珈琲">珈琲&lt;/h2>
+&lt;p>昔カフェイン錠剤にハマってカフェイン中毒になったこともあり、
+朝起きて10時くらいに1杯ノーマル珈琲、午後にデカフェを1杯飲むのがスタンダード。&lt;/p></description></item><item><title>2020年ふり返り</title><link>https://ladicle.com/post/20201226_214511/</link><pubDate>Sat, 26 Dec 2020 23:28:25 +0900</pubDate><guid>https://ladicle.com/post/20201226_214511/</guid><description>&lt;figure>&lt;img src="https://ladicle.com/ox-hugo/20201226_230613.png"
+ alt="Figure 1: 今年の草">&lt;figcaption>
+ &lt;p>Figure 1: 今年の草&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>ほんとうに今年は色々ありすぎて3月にあったコトが数年前のことのようだ。
+一年後にはみんなでビール飲めることを願いたい。&lt;/p></description></item><item><title>2018年のふり返り</title><link>https://ladicle.com/post/2018-review/</link><pubDate>Mon, 31 Dec 2018 20:51:09 +0900</pubDate><guid>https://ladicle.com/post/2018-review/</guid><description>&lt;p>転職して初めて迎えたこの1年は、色々なことに挑戦できたよい年だったと思う。初の海外出張ではKubeConに参加し、その後もSDCやChaosCon等に参加するため初のアメリカ上陸を果たした。シリコンバーレーではお上りさんらしくドロイド君等にはしゃぎ、食事中に車の窓ガラスが割られるなどのアメリカらしい？洗礼を受けた。&lt;/p></description></item></channel></rss>

@@ -1,17 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>House on Ladicle</title><link>https://ladicle.com/tags/house/</link><description>Recent content in House on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 26 Dec 2020 23:28:25 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/house/index.xml" rel="self" type="application/rss+xml"/><item><title>2020年ふり返り</title><link>https://ladicle.com/post/20201226_214511/</link><pubDate>Sat, 26 Dec 2020 23:28:25 +0900</pubDate><guid>https://ladicle.com/post/20201226_214511/</guid><description>Figure 1: 今年の草
-ほんとうに今年は色々ありすぎて3月にあったコトが数年前のことのようだ。 一年後にはみんなでビール飲めることを願いたい。
-FOSDEM 2月はFOSDEMのため初めての1人海外でベルギー。そして今年最初で最後の海外。 コロナが流行り始めた頃…まだアジアンの病気だと思われていたので暴行が問題になり始めた頃。 若干不安だったが、たまに席よけられるくらいで支障はなかった。
-FOSDEM自体は面白いカンファレンスだったので次は発表者としていけるようになりたい。 (ビールも飯も最高だった
-3冊目の本 去年からやっていたDocker &amp;amp; Kubernetesのセキュリティ本が出版された。 FOSDEMの行き帰りの飛行機の中でもレビューした気がする。
-KubeFest &amp;amp; Kubernetes Meetup Tokyo 緊急事態宣言の前、カンファレンスが中止になったり、延期になったりと各コミュニティごとに判断が委ねられた頃、 Kubernetesの1Dayイベントもオンライン開催に変更しKubeFestとして開催した。 オンライン開催の都合上CNCF公式のKubernetes Communityイベントにはならなかったが、多くの方に参加していただけて本当に良かった。
-Kubernetes Meetup Tokyoの方はローカル&amp;amp;オンライン同時開催からオンラインのみになったけど、 引きつづき毎月やっていけて嬉しい。(発表者は常に募集しています!
-KubeCon KubeConで初めての発表。自作ツールについて話せる機会がもらえたのは本当に嬉しかった。 (acceptメールは驚きすぎて2度見した)
-現地を楽しみにしていたのでオンラインになってしまったのは残念だったが、 Slack上でフィードバックもらったり、他の発表者と交流できて楽しかった。
-お家Hack 2人とも家で仕事するようになり、広さを求めて昭和な物件を購入してフルリノベした。 全て自分で設計したいという気持ちで建築・照明工学の本や図面を読み漁りつつ、昔の電気工事士のテキスト引っ張り出してきたり、 リフォーム産業新聞読んだり、図面書いたり、3Dモデル作ったりして希望通りのものを工務店の人に工事してもらった。 トラブルも多発するし、全てを自分で決めるのは想像以上に大変で、時間も無限に吸われていったが、諸々自動化されて暮らしは快適になったので結果オーライ。
-今年は人生で一番Lifeに時間を使った感じがある。
-英語 Figure 4: TOEIC
-コロナ渦でTOEICがオンラインでも受けられると聞き、久しぶりに試験を受けた。 TOEIC対策はできなかったが、前回から100弱くらい上がってついに800台にのってよかった。 人としゃべる機会が減って癒やしとなったCambly(オンライン英会話)のおかげだと思う。
-Web連載記事 会社のメンバーと書いた記事。私はKubernetes上のアプリケーション開発を加速させるツール(Skaffold &amp;amp; Telepresence)について2本書いた。
-https://thinkit.co.jp/article/17553 https://thinkit.co.jp/article/17853 その他 今年もAdvent Calendarを書いた。(Z Labのも初めて?全日埋まって嬉しい) また直近ではGoogle’s Tech Elevateに参加していた。4週目あたりは引っ越しとかぶってしまったので残念。 DIY, Oculus Quest(Beat Saber)&amp;hellip; 特にSwitch(リングフィット/ZUMBA)のおかげで引きこもりながらも運動できているので任天堂さまさま。 あと冷え性が突然なおった。
-来年もやっていきたい。良いお年を!
-(年末は引きこもって呑みます</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>House on Ladicle</title><link>https://ladicle.com/tags/house/</link><description>Recent content in House on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Sat, 26 Dec 2020 23:28:25 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/house/index.xml" rel="self" type="application/rss+xml"/><item><title>2020年ふり返り</title><link>https://ladicle.com/post/20201226_214511/</link><pubDate>Sat, 26 Dec 2020 23:28:25 +0900</pubDate><guid>https://ladicle.com/post/20201226_214511/</guid><description>&lt;figure>&lt;img src="https://ladicle.com/ox-hugo/20201226_230613.png"
+ alt="Figure 1: 今年の草">&lt;figcaption>
+ &lt;p>Figure 1: 今年の草&lt;/p>
+ &lt;/figcaption>
+&lt;/figure>
+
+&lt;p>ほんとうに今年は色々ありすぎて3月にあったコトが数年前のことのようだ。
+一年後にはみんなでビール飲めることを願いたい。&lt;/p></description></item></channel></rss>

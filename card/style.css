@@ -76,6 +76,7 @@ body{
         border: none;
         border-radius: 0;
     }
+    .info-box { margin: 0 auto 2em auto; }
     .profile-pic-section { border-radius: 0; }
     .avatar{ width: 72%; }
 }

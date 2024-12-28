@@ -1,0 +1,7 @@
+{
+ "name": "Ladicle",
+ "display": "standalone",
+ "theme_color": "#FCA311",
+ "background_color": "#001220",
+ "start_url": "/card"
+}

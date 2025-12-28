@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code-Reading on Ladicle</title><link>https://ladicle.com/tags/code-reading/</link><description>Recent content in Code-Reading on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 25 Jun 2020 21:37:29 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/code-reading/index.xml" rel="self" type="application/rss+xml"/><item><title>コードリーティングの記録とOrg Capture</title><link>https://ladicle.com/post/20200625_123915/</link><pubDate>Thu, 25 Jun 2020 21:37:29 +0900</pubDate><guid>https://ladicle.com/post/20200625_123915/</guid><description>&lt;div class="ox-hugo-toc toc">
-&lt;div>&lt;/div>
-&lt;div class="heading">Table of Contents&lt;/div>
-&lt;ul>
-&lt;li>&lt;a href="#org-capture%E3%81%A7%E6%A5%BD%E3%82%92%E3%81%99%E3%82%8B">org-captureで楽をする&lt;/a>
-&lt;ul>
-&lt;li>&lt;a href="#%E5%90%84%E7%A8%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E5%8F%96%E5%BE%97">各種ソースコードホスティングサービスのリンクを取得&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;a href="#%E4%BB%96%E3%81%AE%E4%BA%BA%E3%81%AB%E3%82%B7%E3%83%A5%E3%83%83%E3%81%A8%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B">他の人にシュッと共有する&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;!--endtoc-->
-&lt;p>人間忘れるものなので、コードリーディングする時はorg-modeでメモをとっている。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Code-Reading on Ladicle</title><link>https://ladicle.com/tags/code-reading/</link><description>Recent content in Code-Reading on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Thu, 25 Jun 2020 21:37:29 +0900</lastBuildDate><atom:link href="https://ladicle.com/tags/code-reading/index.xml" rel="self" type="application/rss+xml"/><item><title>コードリーティングの記録とOrg Capture</title><link>https://ladicle.com/post/20200625_123915/</link><pubDate>Thu, 25 Jun 2020 21:37:29 +0900</pubDate><guid>https://ladicle.com/post/20200625_123915/</guid><description>&lt;div class="ox-hugo-toc toc"&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div class="heading"&gt;Table of Contents&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#org-capture%E3%81%A7%E6%A5%BD%E3%82%92%E3%81%99%E3%82%8B"&gt;org-captureで楽をする&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="#%E5%90%84%E7%A8%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%B3%E3%83%BC%E3%83%89%E3%83%9B%E3%82%B9%E3%83%86%E3%82%A3%E3%83%B3%E3%82%B0%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9%E3%81%AE%E3%83%AA%E3%83%B3%E3%82%AF%E3%82%92%E5%8F%96%E5%BE%97"&gt;各種ソースコードホスティングサービスのリンクを取得&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href="#%E4%BB%96%E3%81%AE%E4%BA%BA%E3%81%AB%E3%82%B7%E3%83%A5%E3%83%83%E3%81%A8%E5%85%B1%E6%9C%89%E3%81%99%E3%82%8B"&gt;他の人にシュッと共有する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!--endtoc--&gt;
+&lt;p&gt;人間忘れるものなので、コードリーディングする時はorg-modeでメモをとっている。
 このメモを取る時なのだけど、単純に文章だけだと後から追いづらい。
-なので、気になった箇所は文章と共にファイルリンク&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>とGitHubへのリンクもセットで記録している。&lt;/p></description></item></channel></rss>
+なので、気になった箇所は文章と共にファイルリンク&lt;sup id="fnref:1"&gt;&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref"&gt;1&lt;/a&gt;&lt;/sup&gt;とGitHubへのリンクもセットで記録している。&lt;/p&gt;</description></item></channel></rss>

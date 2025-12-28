@@ -1,48 +1,48 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Ladicle</title><link>https://ladicle.com/categories/kubernetes/</link><description>Recent content in Kubernetes on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate><atom:link href="https://ladicle.com/categories/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>外出先でも快適なお家k8sクラスタを構築する</title><link>https://ladicle.com/post/k8s-home-cluster/</link><pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate><guid>https://ladicle.com/post/k8s-home-cluster/</guid><description>&lt;style>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Kubernetes on Ladicle</title><link>https://ladicle.com/categories/kubernetes/</link><description>Recent content in Kubernetes on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Mon, 26 Aug 2019 21:56:24 +0900</lastBuildDate><atom:link href="https://ladicle.com/categories/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>外出先でも快適なお家k8sクラスタを構築する</title><link>https://ladicle.com/post/k8s-home-cluster/</link><pubDate>Mon, 26 Aug 2019 21:56:24 +0900</pubDate><guid>https://ladicle.com/post/k8s-home-cluster/</guid><description>&lt;style&gt;
  .ox-hugo-toc ul {
  list-style: none;
  }
-&lt;/style>
-&lt;div class="ox-hugo-toc toc">
-&lt;div>&lt;/div>
-&lt;div class="heading">Table of Contents&lt;/div>
-&lt;ul>
-&lt;li>&lt;span class="section-num">1&lt;/span> &lt;a href="#%E3%81%AA%E3%81%9C%E3%81%8A%E5%AE%B6kubernetes%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%81%8B">なぜお家Kubernetesクラスタか&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">2&lt;/span> &lt;a href="#worker%E3%81%AE%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2%E6%A7%8B%E6%88%90%E3%81%A8%E4%BE%A1%E6%A0%BC">Workerのハードウェア構成と価格&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">3&lt;/span> &lt;a href="#%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABubuntu%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B">マシンにUbuntuサーバをインストールする&lt;/a>
-&lt;ul>
-&lt;li>&lt;span class="section-num">3.1&lt;/span> &lt;a href="#live-usb%E3%81%AE%E4%BD%9C%E6%88%90">Live USBの作成&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">3.2&lt;/span> &lt;a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A9%E3%81%AE%E9%80%B2%E5%8C%96">インストーラの進化&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">3.3&lt;/span> &lt;a href="#lvm%E3%81%AE%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E5%AE%B9%E9%87%8F%E3%82%92%E5%A2%97%E3%82%84%E3%81%99">LVMのディスク容量を増やす&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;span class="section-num">4&lt;/span> &lt;a href="#kubernetes%E3%81%AE%E6%A7%8B%E6%88%90%E6%A4%9C%E8%A8%8E%E3%81%A8%E6%A7%8B%E7%AF%89">Kubernetesの構成検討と構築&lt;/a>
-&lt;ul>
-&lt;li>&lt;span class="section-num">4.1&lt;/span> &lt;a href="#cri-o%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97">cri-oのセットアップ&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">4.2&lt;/span> &lt;a href="#kubeadm%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E6%A7%8B%E7%AF%89">kubeadmによるクラスタ構築&lt;/a>
-&lt;ul>
-&lt;li>&lt;span class="section-num">4.2.1&lt;/span> &lt;a href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99">事前準備&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">4.2.2&lt;/span> &lt;a href="#master-worker%E3%81%AE%E6%A7%8B%E7%AF%89">Master/Workerの構築&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;span class="section-num">4.3&lt;/span> &lt;a href="#cilium%E3%81%AEcni%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%92%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B">ciliumのCNIプラグインを適用する&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">4.4&lt;/span> &lt;a href="#metallb%E3%81%AE%E6%A7%8B%E7%AF%89">MetalLBの構築&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;span class="section-num">5&lt;/span> &lt;a href="#cloudflare%E3%81%AEargo%E7%B5%8C%E7%94%B1%E3%81%A7ssh%E3%81%99%E3%82%8B">CloudflareのArgo経由でSSHする&lt;/a>
-&lt;ul>
-&lt;li>&lt;span class="section-num">5.1&lt;/span> &lt;a href="#server%E8%A8%AD%E5%AE%9A">Server設定&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">5.2&lt;/span> &lt;a href="#client%E8%A8%AD%E5%AE%9A">Client設定&lt;/a>&lt;/li>
-&lt;li>&lt;span class="section-num">5.3&lt;/span> &lt;a href="#cloudflare-access%E3%81%A7%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%92%E5%88%B6%E9%99%90%E3%81%99%E3%82%8B">Cloudflare Accessでアクセスユーザを制限する&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>&lt;span class="section-num">6&lt;/span> &lt;a href="#kubeadm%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89">kubeadmによるクラスタアップグレード&lt;/a>
-&lt;ul>
-&lt;li>&lt;span class="section-num">6.1&lt;/span> &lt;a href="#cni%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89">CNIプラグインのアップグレード&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;/ul>
-&lt;/div>
-&lt;!--endtoc-->
-&lt;h2 id="なぜお家kubernetesクラスタか">&lt;span class="section-num">1&lt;/span> なぜお家Kubernetesクラスタか&lt;/h2>
-&lt;p>なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。&lt;/p></description></item></channel></rss>
+&lt;/style&gt;
+&lt;div class="ox-hugo-toc toc"&gt;
+&lt;div&gt;&lt;/div&gt;
+&lt;div class="heading"&gt;Table of Contents&lt;/div&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;1&lt;/span&gt; &lt;a href="#%E3%81%AA%E3%81%9C%E3%81%8A%E5%AE%B6kubernetes%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%81%8B"&gt;なぜお家Kubernetesクラスタか&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;2&lt;/span&gt; &lt;a href="#worker%E3%81%AE%E3%83%8F%E3%83%BC%E3%83%89%E3%82%A6%E3%82%A7%E3%82%A2%E6%A7%8B%E6%88%90%E3%81%A8%E4%BE%A1%E6%A0%BC"&gt;Workerのハードウェア構成と価格&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;3&lt;/span&gt; &lt;a href="#%E3%83%9E%E3%82%B7%E3%83%B3%E3%81%ABubuntu%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%AB%E3%81%99%E3%82%8B"&gt;マシンにUbuntuサーバをインストールする&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;3.1&lt;/span&gt; &lt;a href="#live-usb%E3%81%AE%E4%BD%9C%E6%88%90"&gt;Live USBの作成&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;3.2&lt;/span&gt; &lt;a href="#%E3%82%A4%E3%83%B3%E3%82%B9%E3%83%88%E3%83%BC%E3%83%A9%E3%81%AE%E9%80%B2%E5%8C%96"&gt;インストーラの進化&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;3.3&lt;/span&gt; &lt;a href="#lvm%E3%81%AE%E3%83%87%E3%82%A3%E3%82%B9%E3%82%AF%E5%AE%B9%E9%87%8F%E3%82%92%E5%A2%97%E3%82%84%E3%81%99"&gt;LVMのディスク容量を増やす&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;4&lt;/span&gt; &lt;a href="#kubernetes%E3%81%AE%E6%A7%8B%E6%88%90%E6%A4%9C%E8%A8%8E%E3%81%A8%E6%A7%8B%E7%AF%89"&gt;Kubernetesの構成検討と構築&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;4.1&lt;/span&gt; &lt;a href="#cri-o%E3%81%AE%E3%82%BB%E3%83%83%E3%83%88%E3%82%A2%E3%83%83%E3%83%97"&gt;cri-oのセットアップ&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;4.2&lt;/span&gt; &lt;a href="#kubeadm%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E6%A7%8B%E7%AF%89"&gt;kubeadmによるクラスタ構築&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;4.2.1&lt;/span&gt; &lt;a href="#%E4%BA%8B%E5%89%8D%E6%BA%96%E5%82%99"&gt;事前準備&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;4.2.2&lt;/span&gt; &lt;a href="#master-worker%E3%81%AE%E6%A7%8B%E7%AF%89"&gt;Master/Workerの構築&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;4.3&lt;/span&gt; &lt;a href="#cilium%E3%81%AEcni%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%82%92%E9%81%A9%E7%94%A8%E3%81%99%E3%82%8B"&gt;ciliumのCNIプラグインを適用する&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;4.4&lt;/span&gt; &lt;a href="#metallb%E3%81%AE%E6%A7%8B%E7%AF%89"&gt;MetalLBの構築&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;5&lt;/span&gt; &lt;a href="#cloudflare%E3%81%AEargo%E7%B5%8C%E7%94%B1%E3%81%A7ssh%E3%81%99%E3%82%8B"&gt;CloudflareのArgo経由でSSHする&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;5.1&lt;/span&gt; &lt;a href="#server%E8%A8%AD%E5%AE%9A"&gt;Server設定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;5.2&lt;/span&gt; &lt;a href="#client%E8%A8%AD%E5%AE%9A"&gt;Client設定&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;5.3&lt;/span&gt; &lt;a href="#cloudflare-access%E3%81%A7%E3%82%A2%E3%82%AF%E3%82%BB%E3%82%B9%E3%83%A6%E3%83%BC%E3%82%B6%E3%82%92%E5%88%B6%E9%99%90%E3%81%99%E3%82%8B"&gt;Cloudflare Accessでアクセスユーザを制限する&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;6&lt;/span&gt; &lt;a href="#kubeadm%E3%81%AB%E3%82%88%E3%82%8B%E3%82%AF%E3%83%A9%E3%82%B9%E3%82%BF%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89"&gt;kubeadmによるクラスタアップグレード&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;span class="section-num"&gt;6.1&lt;/span&gt; &lt;a href="#cni%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E3%82%A2%E3%83%83%E3%83%97%E3%82%B0%E3%83%AC%E3%83%BC%E3%83%89"&gt;CNIプラグインのアップグレード&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;
+&lt;!--endtoc--&gt;
+&lt;h2 id="なぜお家kubernetesクラスタか"&gt;&lt;span class="section-num"&gt;1&lt;/span&gt; なぜお家Kubernetesクラスタか&lt;/h2&gt;
+&lt;p&gt;なんでもクラウドサービスな時代だが、やはりそれなりのスペックを求めるとそれなりのお値段になってしまう。また、サービスによっては下回りの構成変更の柔軟性や新機能が利用できるようになるまでラグもサービスに依存する。そんな状況を鑑みると、実験場として請求書に怯えることなく使えるお家クラスタが欲しくなってくるものだ。&lt;/p&gt;</description></item></channel></rss>

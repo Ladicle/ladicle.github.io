@@ -1,21 +1,21 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Ladicle</title><link>https://ladicle.com/categories/web/</link><description>Recent content in Web on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 06 Jun 2018 19:41:39 +0900</lastBuildDate><atom:link href="https://ladicle.com/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Supporting AMP for Hugo templates</title><link>https://ladicle.com/post/support-amp/</link><pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate><guid>https://ladicle.com/post/support-amp/</guid><description>&lt;p>Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．&lt;/p>
-&lt;h2 id="作業の流れ">作業の流れ&lt;/h2>
-&lt;ol>
-&lt;li>ざっと公式ページを見る&lt;/li>
-&lt;li>ひたすら使えないタグやjsをampに対応したものに置き換える&lt;/li>
-&lt;li>chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック&lt;/li>
-&lt;li>ひたすら直す&lt;/li>
-&lt;/ol>
-&lt;h2 id="変えたポイント">変えたポイント&lt;/h2>
-&lt;ul>
-&lt;li>amp用の識別子たちを追加&lt;/li>
-&lt;li>cssファイルをconvertしてhtmlに吐き出し&lt;/li>
-&lt;li>jsを全て取り払う&lt;/li>
-&lt;li>hilightjsはgist pluginに変更&lt;/li>
-&lt;li>menuはsidebar, accordion pluginに変更&lt;/li>
-&lt;li>jump to top buttonはanimation, position pluginに変更&lt;/li>
-&lt;li>disqusをiframeに変更 (まだ表示されない原因が分からない&lt;/li>
-&lt;li>imgタグをamp-imgに変換&lt;/li>
-&lt;/ul>
-&lt;h2 id="所感">所感&lt;/h2>
-&lt;p>テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．&lt;/p></description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Web on Ladicle</title><link>https://ladicle.com/categories/web/</link><description>Recent content in Web on Ladicle</description><generator>Hugo</generator><language>en</language><lastBuildDate>Wed, 06 Jun 2018 19:41:39 +0900</lastBuildDate><atom:link href="https://ladicle.com/categories/web/index.xml" rel="self" type="application/rss+xml"/><item><title>Supporting AMP for Hugo templates</title><link>https://ladicle.com/post/support-amp/</link><pubDate>Wed, 06 Jun 2018 19:41:39 +0900</pubDate><guid>https://ladicle.com/post/support-amp/</guid><description>&lt;p&gt;Istio v0.8がリリースされたので更新内容についての記事を書こうとしていたら，いつのまにかテンプレートのAMP対応をしていた．&lt;/p&gt;
+&lt;h2 id="作業の流れ"&gt;作業の流れ&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;ざっと公式ページを見る&lt;/li&gt;
+&lt;li&gt;ひたすら使えないタグやjsをampに対応したものに置き換える&lt;/li&gt;
+&lt;li&gt;chromeのアドレスバーに#development=1を追加してconsoleにvalidation errorが出ていないかチェック&lt;/li&gt;
+&lt;li&gt;ひたすら直す&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id="変えたポイント"&gt;変えたポイント&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;amp用の識別子たちを追加&lt;/li&gt;
+&lt;li&gt;cssファイルをconvertしてhtmlに吐き出し&lt;/li&gt;
+&lt;li&gt;jsを全て取り払う&lt;/li&gt;
+&lt;li&gt;hilightjsはgist pluginに変更&lt;/li&gt;
+&lt;li&gt;menuはsidebar, accordion pluginに変更&lt;/li&gt;
+&lt;li&gt;jump to top buttonはanimation, position pluginに変更&lt;/li&gt;
+&lt;li&gt;disqusをiframeに変更 (まだ表示されない原因が分からない&lt;/li&gt;
+&lt;li&gt;imgタグをamp-imgに変換&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="所感"&gt;所感&lt;/h2&gt;
+&lt;p&gt;テンプレは3つだけなので，思っていたよりは楽だった．しかしページ数が多かったり，jsを使ったスタイリッシュなサイトは辛そうだなという感じ．表示は以前より大幅に早くなったのでしあわせ．ページごとのmeta情報の生成は面倒でやっていない．&lt;/p&gt;</description></item></channel></rss>
